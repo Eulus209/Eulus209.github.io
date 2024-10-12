@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title>贪吃蛇</title>
-    <url>/2024/10/01/Game/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe src="./Game.html" width="100%" height="600px"></iframe>
+    <url>/posts/Game/</url>
+    <content><![CDATA[<iframe src="./Game.html" width="100%" height="600px"></iframe>
 
 ]]></content>
       <tags>
@@ -12,10 +12,10 @@
   </entry>
   <entry>
     <title>MySQL基础语法</title>
-    <url>/2024/10/11/MySQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 align="center">MySQl知识点总结</h1>
+    <url>/posts/MySQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 align="center">MySQl知识点总结</h1>
 
-<p><img src="/2024/10/11/MySQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/123214339_p0_master1200.jpg" alt="123214339_p0_master1200" loading="lazy"></p>
+<p><img src="/posts/MySQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/123214339_p0_master1200.jpg" alt="123214339_p0_master1200" loading="lazy"></p>
 <hr>
 <h1 id="1-SQl语法"><a href="#1-SQl语法" class="headerlink" title="1.SQl语法"></a>1.SQl语法</h1><hr>
 <h2 id="1-1-通用语法"><a href="#1-1-通用语法" class="headerlink" title="1.1 通用语法"></a>1.1 通用语法</h2><p>a&gt; SQL语句可以单行或多行书写，以分号结尾。</p>
@@ -147,7 +147,7 @@
 <h2 id="3-2-外键约束"><a href="#3-2-外键约束" class="headerlink" title="3.2 外键约束"></a>3.2 外键约束</h2><ul>
 <li>外键：用来让两张表的数据之间建立连接，从而保证数据的一致性和完整性。</li>
 </ul>
-<h3 id="3-2-1-语法"><a href="#3-2-1-语法" class="headerlink" title="3.2.1 语法"></a>3.2.1 语法</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a&gt;添加外键</span><br><span class="line">	create table 表名(</span><br><span class="line">    字段名 数据类型,</span><br><span class="line">    ...</span><br><span class="line">    [constraint] [外键名称] foreign key (外键字段名) references 主表 (主表列名)</span><br><span class="line">    );</span><br><span class="line">    alter table 表名 add constraint 外键名称 foreign key (外键字段名) references 主表 (主表列名) ;</span><br><span class="line">b&gt;删除外键</span><br><span class="line">	alter table table_name drop foreign key key_name;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-1-语法"><a href="#3-2-1-语法" class="headerlink" title="3.2.1 语法"></a>3.2.1 语法</h3><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">a&gt;添加外键</span><br><span class="line">	<span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">    字段名 数据类型,</span><br><span class="line">    ...</span><br><span class="line">    [constraint] [外键名称] <span class="keyword">foreign</span> <span class="keyword">key</span> (外键字段名) <span class="keyword">references</span> 主表 (主表列名)</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> constraint 外键名称 <span class="keyword">foreign</span> <span class="keyword">key</span> (外键字段名) <span class="keyword">references</span> 主表 (主表列名) ;</span><br><span class="line">b&gt;删除外键</span><br><span class="line">	<span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">drop</span> <span class="keyword">foreign</span> <span class="keyword">key</span> key_name;</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-2-2-删除-更新行为"><a href="#3-2-2-删除-更新行为" class="headerlink" title="3.2.2 删除&#x2F;更新行为"></a>3.2.2 删除&#x2F;更新行为</h3><table>
 <thead>
@@ -217,12 +217,12 @@
 <ol>
 <li>隐式内连接</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select 字段列表 from 表1 , 表2 where 条件 ... ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表<span class="number">1</span> , 表<span class="number">2</span> <span class="keyword">where</span> 条件 ... ;</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>显式内连接</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select 字段列表 from 表1 [ inner ] join 表2 on 连接条件 ... ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表<span class="number">1</span> [ <span class="keyword">inner</span> ] <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 连接条件 ... ;</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="4-5-外连接"><a href="#4-5-外连接" class="headerlink" title="4.5 外连接"></a>4.5 外连接</h2><ul>
@@ -231,13 +231,13 @@
 <ol>
 <li>左外连接</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select 字段列表 from 表1 left [ outer ] join 表2 on 条件 ... ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表<span class="number">1</span> <span class="keyword">left</span> [ <span class="keyword">outer</span> ] <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 条件 ... ;</span><br></pre></td></tr></table></figure>
 
 <p>左外连接相当于查询表1(左表)的所有数据，当然也包含表1和表2交集部分的数据。</p>
 <ol start="2">
 <li>右外连接</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select 字段列表 from 表1 right [ outer ] join 表2 on 条件 ... ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表<span class="number">1</span> <span class="keyword">right</span> [ <span class="keyword">outer</span> ] <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 条件 ... ;</span><br></pre></td></tr></table></figure>
 
 <p>右外连接相当于查询表2(右表)的所有数据，当然也包含表1和表2交集部分的数据。</p>
 <blockquote>
@@ -245,7 +245,7 @@
 </blockquote>
 <hr>
 <h2 id="4-6-自连接"><a href="#4-6-自连接" class="headerlink" title="4.6 自连接"></a>4.6 自连接</h2><h3 id="4-6-1-自连接查询，顾名思义，就是自己连接自己，也就是把一张表连接查询多次。"><a href="#4-6-1-自连接查询，顾名思义，就是自己连接自己，也就是把一张表连接查询多次。" class="headerlink" title="4.6.1 自连接查询，顾名思义，就是自己连接自己，也就是把一张表连接查询多次。"></a>4.6.1 自连接查询，顾名思义，就是自己连接自己，也就是把一张表连接查询多次。</h3><p>自连接的查询语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select 字段列表 from 表A 别名A join 表A 别名B on 条件 ... ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">select</span> 字段列表 <span class="selector-tag">from</span> 表<span class="selector-tag">A</span> 别名<span class="selector-tag">A</span> join 表<span class="selector-tag">A</span> 别名<span class="selector-tag">B</span> on 条件 ... ;</span><br></pre></td></tr></table></figure>
 
 <p>而对于自连接查询，可以是内连接查询，也可以是外连接查询。</p>
 <blockquote>
@@ -254,7 +254,7 @@
 <h3 id="4-6-2-联合查询"><a href="#4-6-2-联合查询" class="headerlink" title="4.6.2 联合查询"></a>4.6.2 联合查询</h3><ul>
 <li>对于union查询，就是把多次查询的结果合并起来，形成一个新的查询结果集。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select 字段列表 from 表A ...</span><br><span class="line">union [ all ]</span><br><span class="line">select 字段列表 from 表B ....;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">select</span> 字段列表 <span class="selector-tag">from</span> 表<span class="selector-tag">A</span> ...</span><br><span class="line">union <span class="selector-attr">[ all ]</span></span><br><span class="line"><span class="selector-tag">select</span> 字段列表 <span class="selector-tag">from</span> 表<span class="selector-tag">B</span> ....;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>对于联合查询的多张表的列数必须保持一致，字段类型也需要保持一致。 </p>
@@ -265,14 +265,14 @@
 <hr>
 <h2 id="4-7-子查询"><a href="#4-7-子查询" class="headerlink" title="4.7 子查询"></a>4.7 子查询</h2><h3 id="4-7-1-概述"><a href="#4-7-1-概述" class="headerlink" title="4.7.1 概述"></a>4.7.1 概述</h3><ul>
 <li><p>概念：SQL语句中嵌套SELECT语句，称为嵌套查询，又称子查询</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM t1 WHERE column1 = ( SELECT column1 FROM t2 );</span><br></pre></td></tr></table></figure>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t1 <span class="keyword">WHERE</span> column1 = ( <span class="keyword">SELECT</span> column1 <span class="keyword">FROM</span> t2 );</span><br></pre></td></tr></table></figure>
 
 <p>子查询外部的语句可以是INSERT &#x2F; UPDATE &#x2F; DELETE &#x2F; SELECT 的任何一个。</p>
 </li>
 <li><p>分类</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">根据子查询结果不同，分为：</span><br><span class="line">A. 标量子查询（子查询结果为单个值）</span><br><span class="line">B. 列子查询(子查询结果为一列)</span><br><span class="line">C. 行子查询(子查询结果为一行)</span><br><span class="line">D. 表子查询(子查询结果为多行多列)</span><br></pre></td></tr></table></figure>
+<figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line">根据子查询结果不同，分为：</span><br><span class="line">A. 标量子查询（子查询结果为单个值）</span><br><span class="line">B. 列子查询<span class="comment">(子查询结果为一列)</span></span><br><span class="line">C. 行子查询<span class="comment">(子查询结果为一行)</span></span><br><span class="line">D. 表子查询<span class="comment">(子查询结果为多行多列)</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">根据子查询位置，分为：</span><br><span class="line">A. WHERE之后 </span><br><span class="line">B. FROM之后 </span><br><span class="line">C. SELECT之后</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">根据子查询位置，分为：</span><br><span class="line"><span class="selector-tag">A</span>. WHERE之后 </span><br><span class="line"><span class="selector-tag">B</span>. <span class="selector-tag">FROM</span>之后 </span><br><span class="line">C. <span class="selector-tag">SELECT</span>之后</span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
 <h3 id="4-7-2-标量子查询"><a href="#4-7-2-标量子查询" class="headerlink" title="4.7.2 标量子查询"></a>4.7.2 标量子查询</h3><blockquote>
@@ -411,23 +411,23 @@
 </li>
 </ol>
 <p><em><strong>查询隔离级别</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select @@transaction_isolation;</span><br></pre></td></tr></table></figure>
+<figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> @<span class="symbol">@transaction_isolation</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 
 <p><em><strong>设置事务隔离级别</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set [sesion|global] transaction isolation level &#123;read uncommitted&#125; | read committed | repeatable read | serializable&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> [sesion|<span class="keyword">global</span>] <span class="keyword">transaction</span> <span class="keyword">isolation</span> <span class="keyword">level</span> &#123;<span class="keyword">read</span> <span class="keyword">uncommitted</span>&#125; | <span class="keyword">read</span> <span class="keyword">committed</span> | <span class="keyword">repeatable</span> <span class="keyword">read</span> | <span class="keyword">serializable</span>&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注意：事务隔离级别越高，数据越安全，但是性能越低。</p>
 </blockquote>
 ]]></content>
       <tags>
-        <tag>mysql 数据库</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
     <title>Vue学习笔记</title>
-    <url>/2024/10/12/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="vue核心语法"><a href="#vue核心语法" class="headerlink" title="vue核心语法"></a>vue核心语法</h1><p><img src="/2024/10/12/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx.png" alt="7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx" loading="lazy"></p>
+    <url>/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="vue核心语法"><a href="#vue核心语法" class="headerlink" title="vue核心语法"></a>vue核心语法</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx.png" alt="7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx" loading="lazy"></p>
 <h2 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a>样例代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Vue.js Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 插值表达式 --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- computed不用加() --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- 4.指令 --&gt;</span><br><span class="line">         &lt;!-- 内容指令   --&gt;&lt;!-- text,html都会覆盖原始内容 --&gt;</span><br><span class="line">         &lt;p v-text=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p v-html=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         </span><br><span class="line">          &lt;!-- 渲染指令 --&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in 3&quot;&gt;Elaina&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in arr&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;(item,key,index) in obj&quot;&gt;&#123;&#123;item&#125;&#125;&amp;nbsp;&#123;&#123;key&#125;&#125;&amp;nbsp;&#123;&#123;index&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-if=&quot;&quot;&gt;1017&lt;/p&gt;</span><br><span class="line">        &lt;p v-show=&quot;&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 属性指令 --&gt;</span><br><span class="line">         &lt;p v-bind:title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p :title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">            &lt;!-- v-bind可以简写成: --&gt;</span><br><span class="line"></span><br><span class="line">         &lt;!-- 事件指令 --&gt;</span><br><span class="line">          &lt;button v-on:click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;button @click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;!-- v-on简写成@ --&gt;</span><br><span class="line"></span><br><span class="line">          &lt;!-- 表单指令 --&gt;</span><br><span class="line">          &lt;hr&gt; </span><br><span class="line">          &lt;p&gt;表单指令&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model=&quot;inputValue&quot;&gt;</span><br><span class="line">           &lt;p v-text=&quot;inputValue&quot;&gt;&lt;/p&gt;</span><br><span class="line">            &lt;hr&gt;</span><br><span class="line">           &lt;!-- 5.修饰符 --&gt;</span><br><span class="line">            &lt;p&gt;修饰符&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model.trim=&quot;inputValue&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        // 1. 响应式数据与插值表达式</span><br><span class="line">        const vm = new Vue(&#123;</span><br><span class="line">            el: &#x27;#app&#x27;,</span><br><span class="line">            data() &#123;</span><br><span class="line">                return &#123;</span><br><span class="line">                    title: &#x27;这是文本&#x27;,</span><br><span class="line">                    content: &#x27;这是内容&#x27;,</span><br><span class="line">                    htmlContent: &#x27;&lt;h1&gt;这是html内容&lt;/h1&gt;&#x27;,</span><br><span class="line">                    arr:[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;],</span><br><span class="line">                    obj:&#123;a:1,b:2,c:3&#125;,</span><br><span class="line">                    inputValue:&#x27;默认内容&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //1.3函数methods属性</span><br><span class="line">            methods: &#123;</span><br><span class="line">                output()&#123;</span><br><span class="line">                    console.log(&quot;output&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //2计算属性computed属性:具有缓存性质，只有当计算属性的值发生变化时，才会重新计算</span><br><span class="line">            computed: &#123;</span><br><span class="line">                outputCon()&#123;</span><br><span class="line">                    console.log(&quot;computed&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //3.侦听器watch属性:监听数据的变化，并执行相应的函数</span><br><span class="line">            watch: &#123;</span><br><span class="line">                title(newVal, oldVal)&#123;</span><br><span class="line">                    console.log(&quot;title changed&quot;, newVal, oldVal);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 <p>在 Vue.js 中，响应式数据、插值表达式、计算属性、侦听器和指令是关键概念。以下是详细讲解和知识笔记：</p>
@@ -496,7 +496,7 @@
 <li><strong>修饰符</strong>为指令增加额外的功能，如去除空白字符、事件捕获等。</li>
 </ol>
 <p>希望这能帮助你更深入了解 Vue.js 的响应式数据与核心功能。如果有其他问题，欢迎随时讨论！</p>
-<h1 id="脚手架与组件化开发"><a href="#脚手架与组件化开发" class="headerlink" title="脚手架与组件化开发"></a>脚手架与组件化开发</h1><p><img src="/2024/10/12/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/WXS7VQMlCQOoZYm.jpeg" alt="WXS7VQMlCQOoZYm" loading="lazy"></p>
+<h1 id="脚手架与组件化开发"><a href="#脚手架与组件化开发" class="headerlink" title="脚手架与组件化开发"></a>脚手架与组件化开发</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/WXS7VQMlCQOoZYm.jpeg" alt="WXS7VQMlCQOoZYm" loading="lazy"></p>
 <hr>
 <h2 id="一、脚手架（Vue-CLI）"><a href="#一、脚手架（Vue-CLI）" class="headerlink" title="一、脚手架（Vue CLI）"></a>一、脚手架（Vue CLI）</h2><h3 id="1-什么是脚手架？"><a href="#1-什么是脚手架？" class="headerlink" title="1. 什么是脚手架？"></a>1. 什么是脚手架？</h3><p><strong>脚手架</strong>（Scaffolding）是指用于快速搭建项目基础结构的工具。在 Vue.js 中，官方提供了 <strong>Vue CLI</strong>（Command Line Interface），它是一个基于 Node.js 的命令行工具，用于快速创建 Vue.js 项目，集成了现代前端开发所需的各种功能和配置。</p>
 <h3 id="2-Vue-CLI-的功能和优势"><a href="#2-Vue-CLI-的功能和优势" class="headerlink" title="2. Vue CLI 的功能和优势"></a>2. Vue CLI 的功能和优势</h3><ul>
@@ -660,13 +660,23 @@
 <p>希望以上内容能帮助你深入理解 Vue.js 中的脚手架和组件化开发。如果你还有其他问题，欢迎继续提问！</p>
 ]]></content>
       <tags>
-        <tag>vue 前端</tag>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>魔女之旅</title>
+    <url>/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/</url>
+    <content><![CDATA[<h1 id="请别在意。我是旅人，得继续旅行才行"><a href="#请别在意。我是旅人，得继续旅行才行" class="headerlink" title="请别在意。我是旅人，得继续旅行才行!"></a>请别在意。我是旅人，得继续旅行才行!</h1><p><img src="/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/Elaina.jpg" alt="Elaina" loading="lazy"></p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">《魔女之旅》（日语：魔女の旅々）是由白石定规创作、あずーる插画的一部轻小说，并有Drama <span class="built_in">CD</span>、漫画等衍生作品。</span><br><span class="line"></span><br><span class="line">原作介绍</span><br><span class="line"><span class="number">2014</span>年在Amazon Kindle首次公开，<span class="number">2016</span>年修正后单行本化。</span><br><span class="line"></span><br><span class="line">剧情简介</span><br><span class="line">某个地方有个正在旅行的魔女，她的名字是伊蕾娜。</span><br><span class="line">身为旅人，在很长很长的旅途中，她与形形色色的国家与人们邂逅。</span><br><span class="line"></span><br><span class="line">只允许魔法师入境的国家、</span><br><span class="line">最喜欢肌肉的壮汉、</span><br><span class="line">在死亡深渊等待恋人归来的青年、</span><br><span class="line">独自留守国家早已灭亡的公主…</span><br><span class="line"></span><br><span class="line">最后，还有她身为魔女的至今为止与从今以后。</span><br><span class="line">和莫名其妙、滑稽可笑的人们相遇，接触某人美丽的日常生活，魔女日复一日编织出相逢与离别的故事。</span><br><span class="line"></span><br><span class="line">——《第一卷导语》</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>动漫</tag>
       </tags>
   </entry>
   <entry>
     <title>空之境界</title>
-    <url>/2024/10/11/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/2024/10/11/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/d437d1dddb0c30c851e1741af02585236ee8758b.jpg" alt="d437d1dddb0c30c851e1741af02585236ee8758b" loading="lazy"></p>
+    <url>/posts/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/</url>
+    <content><![CDATA[<p><img src="/posts/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/d437d1dddb0c30c851e1741af02585236ee8758b.jpg" alt="d437d1dddb0c30c851e1741af02585236ee8758b" loading="lazy"></p>
 <p>《空之境界》是由日本作家奈须蘑菇所著的一系列轻小说，原作是奈须蘑菇在1998年至1999年间于个人主页上连载的同人小说。后来由武内崇负责插画，并且被Type-Moon正式出版。这部作品以其深刻的主题、复杂的叙事结构以及丰富的象征意义而闻名，在读者中拥有很高的评价。</p>
 <h3 id="故事概要"><a href="#故事概要" class="headerlink" title="故事概要"></a>故事概要</h3><p>《空之境界》的故事围绕着两仪家的继承者——两仪式（Ryougi Shiki）展开。故事开始时，式刚刚从长达两年的昏迷中醒来，她发现自己拥有了可以看到事物“死相”的能力。随着故事的发展，式与她的青梅竹马黑桐干也（Kokutou Mikiya）以及其他角色一起经历了一系列超自然事件，这些事件揭示了关于生命、死亡、自我认知等深层次的主题。</p>
 <h3 id="深度分析"><a href="#深度分析" class="headerlink" title="深度分析"></a>深度分析</h3><h4 id="一、生死观与存在主义"><a href="#一、生死观与存在主义" class="headerlink" title="一、生死观与存在主义"></a>一、生死观与存在主义</h4><p>《空之境界》深入探讨了生死的意义。通过两仪式的眼睛，我们可以看到一个不同于常人的世界：每个物体都有其“线”，即生命的轨迹；当这些线断裂时，则意味着死亡的到来。这种设定不仅仅是一种视觉上的创新，更重要的是它反映了作者对于生死界限模糊化的一种思考方式。同时，《空之境界》也涉及到了个体如何面对自身存在的问题，特别是当主角们面临选择生存还是牺牲的时候，他们对自我价值的认知成为了推动剧情发展的重要因素之一。</p>
@@ -677,16 +687,6 @@
 ]]></content>
       <tags>
         <tag>动漫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>魔女之旅</title>
-    <url>/2024/10/11/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="请别在意。我是旅人，得继续旅行才行"><a href="#请别在意。我是旅人，得继续旅行才行" class="headerlink" title="请别在意。我是旅人，得继续旅行才行!"></a>请别在意。我是旅人，得继续旅行才行!</h1><p><img src="/2024/10/11/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/Elaina.jpg" alt="Elaina" loading="lazy"></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">《魔女之旅》（日语：魔女の旅々）是由白石定规创作、あずーる插画的一部轻小说，并有Drama CD、漫画等衍生作品。</span><br><span class="line"></span><br><span class="line">原作介绍</span><br><span class="line">2014年在Amazon Kindle首次公开，2016年修正后单行本化。</span><br><span class="line"></span><br><span class="line">剧情简介</span><br><span class="line">某个地方有个正在旅行的魔女，她的名字是伊蕾娜。</span><br><span class="line">身为旅人，在很长很长的旅途中，她与形形色色的国家与人们邂逅。</span><br><span class="line"></span><br><span class="line">只允许魔法师入境的国家、</span><br><span class="line">最喜欢肌肉的壮汉、</span><br><span class="line">在死亡深渊等待恋人归来的青年、</span><br><span class="line">独自留守国家早已灭亡的公主…</span><br><span class="line"></span><br><span class="line">最后，还有她身为魔女的至今为止与从今以后。</span><br><span class="line">和莫名其妙、滑稽可笑的人们相遇，接触某人美丽的日常生活，魔女日复一日编织出相逢与离别的故事。</span><br><span class="line"></span><br><span class="line">——《第一卷导语》</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>动漫 魔女之旅</tag>
       </tags>
   </entry>
 </search>
