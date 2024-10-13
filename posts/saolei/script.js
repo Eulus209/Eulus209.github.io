@@ -3,7 +3,6 @@ const timerDisplay = document.getElementById('timer');
 const scoreDisplay = document.getElementById('score');
 const message = document.getElementById('message');
 const resetBtn = document.getElementById('resetBtn');
-
 const boardSize = 10;
 const mineCount = 10;
 let mineLocations = [];
@@ -12,7 +11,6 @@ let score = 0;
 let time = 0;
 let timerInterval;
 let gameEnded = false;
-
 function initGame() {
     mineLocations = [];
     revealedCount = 0;
@@ -31,12 +29,10 @@ function initGame() {
         cell.addEventListener('click', revealCell);
         board.appendChild(cell);
     }
-
     placeMines();
     calculateMineNeighbors();
     timerInterval = setInterval(updateTimer, 1000);
 }
-
 function placeMines() {
     while (mineLocations.length < mineCount) {
         const mineLocation = Math.floor(Math.random() * boardSize * boardSize);
@@ -129,7 +125,7 @@ function endGame(result) {
         message.textContent = 'Victory!';
     } else {
         message.textContent = 'Game Over!';
-        revealAllMines();  // 调用新函数显示所有地雷
+        revealAllMines(); 
     }
 
     message.classList.remove('hidden');
@@ -138,7 +134,7 @@ function endGame(result) {
 function revealAllMines() {
     mineLocations.forEach(mineIndex => {
         const mineCell = document.querySelector(`[data-index="${mineIndex}"]`);
-        mineCell.classList.add('mine');  // 将地雷格子标记为 'mine' 类
+        mineCell.classList.add('mine');
     });
 }
 
