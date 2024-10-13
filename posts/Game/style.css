@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+canvas {
+    border: 2px solid #333;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+button {
+    padding: 5px 15px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+label {
+    font-size: 16px;
+}
