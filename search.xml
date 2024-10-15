@@ -776,6 +776,255 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue学习笔记</title>
+    <url>/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="vue核心语法"><a href="#vue核心语法" class="headerlink" title="vue核心语法"></a>vue核心语法</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx.png" alt="7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx" loading="lazy"></p>
+<h2 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a>样例代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Vue.js Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 插值表达式 --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- computed不用加() --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- 4.指令 --&gt;</span><br><span class="line">         &lt;!-- 内容指令   --&gt;&lt;!-- text,html都会覆盖原始内容 --&gt;</span><br><span class="line">         &lt;p v-text=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p v-html=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         </span><br><span class="line">          &lt;!-- 渲染指令 --&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in 3&quot;&gt;Elaina&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in arr&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;(item,key,index) in obj&quot;&gt;&#123;&#123;item&#125;&#125;&amp;nbsp;&#123;&#123;key&#125;&#125;&amp;nbsp;&#123;&#123;index&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-if=&quot;&quot;&gt;1017&lt;/p&gt;</span><br><span class="line">        &lt;p v-show=&quot;&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 属性指令 --&gt;</span><br><span class="line">         &lt;p v-bind:title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p :title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">            &lt;!-- v-bind可以简写成: --&gt;</span><br><span class="line"></span><br><span class="line">         &lt;!-- 事件指令 --&gt;</span><br><span class="line">          &lt;button v-on:click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;button @click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;!-- v-on简写成@ --&gt;</span><br><span class="line"></span><br><span class="line">          &lt;!-- 表单指令 --&gt;</span><br><span class="line">          &lt;hr&gt; </span><br><span class="line">          &lt;p&gt;表单指令&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model=&quot;inputValue&quot;&gt;</span><br><span class="line">           &lt;p v-text=&quot;inputValue&quot;&gt;&lt;/p&gt;</span><br><span class="line">            &lt;hr&gt;</span><br><span class="line">           &lt;!-- 5.修饰符 --&gt;</span><br><span class="line">            &lt;p&gt;修饰符&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model.trim=&quot;inputValue&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        // 1. 响应式数据与插值表达式</span><br><span class="line">        const vm = new Vue(&#123;</span><br><span class="line">            el: &#x27;#app&#x27;,</span><br><span class="line">            data() &#123;</span><br><span class="line">                return &#123;</span><br><span class="line">                    title: &#x27;这是文本&#x27;,</span><br><span class="line">                    content: &#x27;这是内容&#x27;,</span><br><span class="line">                    htmlContent: &#x27;&lt;h1&gt;这是html内容&lt;/h1&gt;&#x27;,</span><br><span class="line">                    arr:[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;],</span><br><span class="line">                    obj:&#123;a:1,b:2,c:3&#125;,</span><br><span class="line">                    inputValue:&#x27;默认内容&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //1.3函数methods属性</span><br><span class="line">            methods: &#123;</span><br><span class="line">                output()&#123;</span><br><span class="line">                    console.log(&quot;output&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //2计算属性computed属性:具有缓存性质，只有当计算属性的值发生变化时，才会重新计算</span><br><span class="line">            computed: &#123;</span><br><span class="line">                outputCon()&#123;</span><br><span class="line">                    console.log(&quot;computed&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //3.侦听器watch属性:监听数据的变化，并执行相应的函数</span><br><span class="line">            watch: &#123;</span><br><span class="line">                title(newVal, oldVal)&#123;</span><br><span class="line">                    console.log(&quot;title changed&quot;, newVal, oldVal);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在 Vue.js 中，响应式数据、插值表达式、计算属性、侦听器和指令是关键概念。以下是详细讲解和知识笔记：</p>
+<h2 id="1-响应式数据-Reactive-Data"><a href="#1-响应式数据-Reactive-Data" class="headerlink" title="1. 响应式数据 (Reactive Data)"></a>1. 响应式数据 (Reactive Data)</h2><p>Vue.js 中的数据对象是响应式的，即当数据发生变化时，视图会自动更新。通过 <code>data</code> 定义的数据是响应式的，Vue.js 使用<strong>依赖追踪</strong>来检测数据的变化并更新 DOM。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">data</span>: &#123;</span><br><span class="line">  <span class="attr">title</span>: <span class="string">&#x27;这是标题&#x27;</span>,</span><br><span class="line">  <span class="attr">content</span>: <span class="string">&#x27;这是内容&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在模板中使用 <code>&#123;&#123; title &#125;&#125;</code>，当 <code>title</code> 变化时，DOM 会自动更新。</p>
+<h2 id="2-插值表达式-Interpolation"><a href="#2-插值表达式-Interpolation" class="headerlink" title="2. 插值表达式 (Interpolation)"></a>2. 插值表达式 (Interpolation)</h2><p>插值表达式用于将数据绑定到 HTML 中。使用 <code>&#123;&#123; &#125;&#125;</code> 可以直接在模板中显示数据。</p>
+<p>示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  <span class="comment">&lt;!-- 显示 title 的值 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-计算属性-Computed-Properties"><a href="#3-计算属性-Computed-Properties" class="headerlink" title="3. 计算属性 (Computed Properties)"></a>3. 计算属性 (Computed Properties)</h2><p>计算属性是依赖其他数据计算得到的值，具有<strong>缓存</strong>的功能，只有相关依赖变化时才会重新计算。和方法不同，计算属性不会重复执行，除非依赖的数据改变。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  <span class="title function_">outputCon</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Test &quot;</span> + <span class="variable language_">this</span>.<span class="property">title</span> + <span class="variable language_">this</span>.<span class="property">content</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当 <code>title</code> 或 <code>content</code> 变化时，<code>outputCon</code> 会被重新计算，否则将直接返回缓存的值。</p>
+<h2 id="4-侦听器-Watchers"><a href="#4-侦听器-Watchers" class="headerlink" title="4. 侦听器 (Watchers)"></a>4. 侦听器 (Watchers)</h2><p>侦听器用于监听数据的变化，并在数据变化时执行特定操作，常用于异步任务或需要手动执行额外逻辑时。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">watch</span>: &#123;</span><br><span class="line">  <span class="title function_">title</span>(<span class="params">newVal, oldVal</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Title changed from&#x27;</span>, oldVal, <span class="string">&#x27;to&#x27;</span>, newVal);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>每当 <code>title</code> 改变时，侦听器会记录新旧值。</p>
+<h2 id="5-指令-Directives"><a href="#5-指令-Directives" class="headerlink" title="5. 指令 (Directives)"></a>5. 指令 (Directives)</h2><p>Vue 提供了很多指令来操作 DOM，常见的有 <code>v-text</code>, <code>v-html</code>, <code>v-if</code>, <code>v-show</code>, <code>v-for</code>, <code>v-bind</code>, <code>v-on</code> 等。</p>
+<h3 id="内容指令"><a href="#内容指令" class="headerlink" title="内容指令"></a>内容指令</h3><ul>
+<li><code>v-text</code>：替换元素的文本内容。</li>
+<li><code>v-html</code>：将数据作为 HTML 插入，允许解析 HTML 标签。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="渲染指令"><a href="#渲染指令" class="headerlink" title="渲染指令"></a>渲染指令</h3><ul>
+<li><code>v-for</code>：循环渲染列表。</li>
+<li><code>v-if</code>：根据条件渲染元素，元素不存在于 DOM 中。</li>
+<li><code>v-show</code>：根据条件显示&#x2F;隐藏元素，元素仍然存在于 DOM 中。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;item in arr&quot;</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;showItem&quot;</span>&gt;</span>显示内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">&quot;showItem&quot;</span>&gt;</span>显示或隐藏<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="属性指令"><a href="#属性指令" class="headerlink" title="属性指令"></a>属性指令</h3><ul>
+<li><code>v-bind</code>：动态绑定元素的属性，可以简写为 <code>:</code>。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> <span class="comment">&lt;!-- 简写 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h3><ul>
+<li><code>v-on</code>：绑定事件监听器，可以简写为 <code>@</code>。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 简写 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="表单指令"><a href="#表单指令" class="headerlink" title="表单指令"></a>表单指令</h3><ul>
+<li><code>v-model</code>：双向绑定表单元素的数据。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; inputValue &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-修饰符-Modifiers"><a href="#6-修饰符-Modifiers" class="headerlink" title="6. 修饰符 (Modifiers)"></a>6. 修饰符 (Modifiers)</h2><p>修饰符是对指令的附加操作，常见于事件处理和表单输入中。例如：</p>
+<ul>
+<li><code>.trim</code>：去除输入框两端的空白。</li>
+<li><code>.lazy</code>：在 <code>input</code> 失焦时更新数据，而不是在每次输入时更新。</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.trim</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span>  <span class="comment">&lt;!-- 输入时自动去除两端空格 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="知识笔记总结："><a href="#知识笔记总结：" class="headerlink" title="知识笔记总结："></a>知识笔记总结：</h2><ol>
+<li><strong>响应式数据</strong>让 Vue.js 能够自动追踪数据变化并更新 DOM。</li>
+<li><strong>插值表达式</strong>用于将数据直接显示在 HTML 中。</li>
+<li><strong>计算属性</strong>具有缓存功能，用于处理复杂的逻辑计算。</li>
+<li><strong>侦听器</strong>适合监听数据变化并执行额外逻辑，尤其是异步任务。</li>
+<li><strong>指令</strong>提供了强大的模板功能，如条件渲染、列表渲染、事件处理等。</li>
+<li><strong>修饰符</strong>为指令增加额外的功能，如去除空白字符、事件捕获等。</li>
+</ol>
+<p>希望这能帮助你更深入了解 Vue.js 的响应式数据与核心功能。如果有其他问题，欢迎随时讨论！</p>
+<h1 id="脚手架与组件化开发"><a href="#脚手架与组件化开发" class="headerlink" title="脚手架与组件化开发"></a>脚手架与组件化开发</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/WXS7VQMlCQOoZYm.jpeg" alt="WXS7VQMlCQOoZYm" loading="lazy"></p>
+<hr>
+<h2 id="一、脚手架（Vue-CLI）"><a href="#一、脚手架（Vue-CLI）" class="headerlink" title="一、脚手架（Vue CLI）"></a>一、脚手架（Vue CLI）</h2><h3 id="1-什么是脚手架？"><a href="#1-什么是脚手架？" class="headerlink" title="1. 什么是脚手架？"></a>1. 什么是脚手架？</h3><p><strong>脚手架</strong>（Scaffolding）是指用于快速搭建项目基础结构的工具。在 Vue.js 中，官方提供了 <strong>Vue CLI</strong>（Command Line Interface），它是一个基于 Node.js 的命令行工具，用于快速创建 Vue.js 项目，集成了现代前端开发所需的各种功能和配置。</p>
+<h3 id="2-Vue-CLI-的功能和优势"><a href="#2-Vue-CLI-的功能和优势" class="headerlink" title="2. Vue CLI 的功能和优势"></a>2. Vue CLI 的功能和优势</h3><ul>
+<li><strong>快速搭建项目</strong>：通过简单的命令即可生成一个带有预设配置的 Vue.js 项目。</li>
+<li><strong>可定制化</strong>：支持自定义配置，满足不同项目的特殊需求。</li>
+<li><strong>插件系统</strong>：提供了丰富的官方和社区插件，如路由（Vue Router）、状态管理（Vuex）、TypeScript 支持等。</li>
+<li><strong>热重载</strong>：内置开发服务器，支持模块热替换（HMR），提高开发效率。</li>
+<li><strong>优化的生产构建</strong>：自动进行代码分割、压缩、优化，提升应用性能。</li>
+<li><strong>单元测试和端到端测试</strong>：集成了 Jest、Mocha 等测试框架，支持编写测试用例。</li>
+</ul>
+<h3 id="3-安装和使用-Vue-CLI"><a href="#3-安装和使用-Vue-CLI" class="headerlink" title="3. 安装和使用 Vue CLI"></a>3. 安装和使用 Vue CLI</h3><h4 id="3-1-安装-Vue-CLI"><a href="#3-1-安装-Vue-CLI" class="headerlink" title="3.1 安装 Vue CLI"></a>3.1 安装 Vue CLI</h4><p>确保已安装 Node.js 和 npm，然后在命令行中全局安装 Vue CLI：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，可以使用以下命令查看版本，验证安装是否成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-创建新项目"><a href="#3-2-创建新项目" class="headerlink" title="3.2 创建新项目"></a>3.2 创建新项目</h4><p>使用 <code>vue create</code> 命令创建新项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
+
+<p>系统会提示选择预设配置：</p>
+<ul>
+<li><strong>默认预设</strong>：包含 Babel、ESLint 等基本配置。</li>
+<li><strong>手动选择特性</strong>：可以根据需要添加路由、Vuex、CSS 预处理器等。</li>
+</ul>
+<h4 id="3-3-运行项目"><a href="#3-3-运行项目" class="headerlink" title="3.3 运行项目"></a>3.3 运行项目</h4><p>进入项目目录，启动开发服务器：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，开发服务器运行在 <code>http://localhost:8080</code>。</p>
+<h3 id="4-Vue-CLI-项目结构"><a href="#4-Vue-CLI-项目结构" class="headerlink" title="4. Vue CLI 项目结构"></a>4. Vue CLI 项目结构</h3><p>Vue CLI 生成的项目结构通常如下：</p>
+<ul>
+<li><code>public/</code>：公共静态资源目录，存放未被 Webpack 处理的文件。</li>
+<li><code>src/</code>：源代码目录。<ul>
+<li><code>main.js</code>：应用的入口文件。</li>
+<li><code>App.vue</code>：根组件。</li>
+<li><code>assets/</code>：资源文件夹，存放图片、字体等。</li>
+<li><code>components/</code>：存放全局或通用组件。</li>
+</ul>
+</li>
+<li><code>babel.config.js</code>：Babel 配置文件。</li>
+<li><code>package.json</code>：项目元数据和依赖项。</li>
+<li><code>vue.config.js</code>：可选的 Vue CLI 配置文件，用于修改默认设置。</li>
+</ul>
+<h3 id="5-配置和自定义"><a href="#5-配置和自定义" class="headerlink" title="5. 配置和自定义"></a>5. 配置和自定义</h3><p>可以在 <code>vue.config.js</code> 中对项目进行自定义配置，如修改端口、配置代理、添加别名等。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="attr">port</span>: <span class="number">8081</span>, <span class="comment">// 修改端口</span></span><br><span class="line">    <span class="attr">proxy</span>: <span class="string">&#x27;http://api.example.com&#x27;</span> <span class="comment">// 配置代理</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">      <span class="attr">alias</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;@&#x27;</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;src/&#x27;</span>) <span class="comment">// 添加路径别名</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-使用插件"><a href="#6-使用插件" class="headerlink" title="6. 使用插件"></a>6. 使用插件</h3><p>Vue CLI 提供了插件系统，可以在创建项目时或之后添加插件。</p>
+<p><strong>添加插件示例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add router</span><br><span class="line">vue add vuex</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、组件化开发"><a href="#二、组件化开发" class="headerlink" title="二、组件化开发"></a>二、组件化开发</h2><h3 id="1-什么是组件化？"><a href="#1-什么是组件化？" class="headerlink" title="1. 什么是组件化？"></a>1. 什么是组件化？</h3><p><strong>组件化</strong>是将界面划分为独立、可复用的组件，每个组件包含自己的模板、逻辑和样式。Vue.js 强烈鼓励组件化开发，以提高代码的可维护性和复用性。</p>
+<h3 id="2-组件的基本概念"><a href="#2-组件的基本概念" class="headerlink" title="2. 组件的基本概念"></a>2. 组件的基本概念</h3><ul>
+<li><strong>组件实例</strong>：每个组件都是一个 Vue 实例，拥有自己的数据、方法、生命周期等。</li>
+<li><strong>父子关系</strong>：组件可以嵌套，父组件可以传递数据给子组件。</li>
+<li><strong>封装性</strong>：组件内部的实现细节对外部是透明的。</li>
+</ul>
+<h3 id="3-创建组件"><a href="#3-创建组件" class="headerlink" title="3. 创建组件"></a>3. 创建组件</h3><h4 id="3-1-单文件组件（-vue-文件）"><a href="#3-1-单文件组件（-vue-文件）" class="headerlink" title="3.1 单文件组件（.vue 文件）"></a>3.1 单文件组件（.vue 文件）</h4><p>这是 Vue.js 推荐的组件书写方式，包含 <code>&lt;template&gt;</code>、<code>&lt;script&gt;</code> 和 <code>&lt;style&gt;</code> 三个部分。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- MyComponent.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;my-component&quot;&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123; title &#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;MyComponent&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    title: String,</span><br><span class="line">    content: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.my-component &#123;</span><br><span class="line">  /* 样式定义 */</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-注册组件"><a href="#3-2-注册组件" class="headerlink" title="3.2 注册组件"></a>3.2 注册组件</h4><p><strong>局部注册：</strong></p>
+<p>在使用组件的父组件中导入并注册：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;my-component :title=&quot;title&quot; :content=&quot;content&quot;&gt;&lt;/my-component&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import MyComponent from &#x27;./components/MyComponent.vue&#x27;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    MyComponent</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &#x27;组件标题&#x27;,</span><br><span class="line">      content: &#x27;组件内容&#x27;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>全局注册：</strong></p>
+<p>在 <code>main.js</code> 中注册，全局组件可在任何地方使用。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">MyComponent</span> <span class="keyword">from</span> <span class="string">&#x27;./components/MyComponent.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;MyComponent&#x27;</span>, <span class="title class_">MyComponent</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-组件之间的通信"><a href="#4-组件之间的通信" class="headerlink" title="4. 组件之间的通信"></a>4. 组件之间的通信</h3><h4 id="4-1-父子组件通信"><a href="#4-1-父子组件通信" class="headerlink" title="4.1 父子组件通信"></a>4.1 父子组件通信</h4><ul>
+<li><p><strong>父组件传递数据给子组件</strong>：使用 <code>props</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件定义 props --&gt;</span><br><span class="line">props: &#123;</span><br><span class="line">  message: String</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>子组件触发事件通知父组件</strong>：使用 <code>$emit</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件中 --&gt;</span><br><span class="line">this.$emit(&#x27;eventName&#x27;, payload);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件中 --&gt;</span><br><span class="line">&lt;child-component @eventName=&quot;handleEvent&quot;&gt;&lt;/child-component&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4-2-兄弟组件通信"><a href="#4-2-兄弟组件通信" class="headerlink" title="4.2 兄弟组件通信"></a>4.2 兄弟组件通信</h4><ul>
+<li><p><strong>通过父组件中转</strong>：将数据提升到共同的父组件，由父组件管理和传递。</p>
+</li>
+<li><p><strong>事件总线（Event Bus）</strong>：创建一个空的 Vue 实例作为事件总线，但在 Vue 3 中不推荐使用。</p>
+</li>
+<li><p><strong>Vuex 状态管理</strong>：对于复杂的应用，使用 Vuex 统一管理状态。</p>
+</li>
+</ul>
+<h4 id="4-3-跨级组件通信"><a href="#4-3-跨级组件通信" class="headerlink" title="4.3 跨级组件通信"></a>4.3 跨级组件通信</h4><ul>
+<li><p><strong>Provide&#x2F;Inject</strong>：祖先组件提供数据，后代组件注入数据。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 祖先组件</span></span><br><span class="line"><span class="title function_">provide</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">dataKey</span>: <span class="variable language_">this</span>.<span class="property">dataValue</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 后代组件</span></span><br><span class="line"><span class="attr">inject</span>: [<span class="string">&#x27;dataKey&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="5-插槽（Slots）"><a href="#5-插槽（Slots）" class="headerlink" title="5. 插槽（Slots）"></a>5. 插槽（Slots）</h3><p>插槽用于在组件中插入父组件的内容，增强组件的灵活性。</p>
+<h4 id="5-1-默认插槽"><a href="#5-1-默认插槽" class="headerlink" title="5.1 默认插槽"></a>5.1 默认插槽</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component&gt;</span><br><span class="line">  &lt;p&gt;插入的内容&lt;/p&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-2-具名插槽"><a href="#5-2-具名插槽" class="headerlink" title="5.2 具名插槽"></a>5.2 具名插槽</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt; &lt;!-- 默认插槽 --&gt;</span><br><span class="line">    &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component&gt;</span><br><span class="line">  &lt;template v-slot:header&gt;</span><br><span class="line">    &lt;h1&gt;标题内容&lt;/h1&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">  &lt;p&gt;主要内容&lt;/p&gt;</span><br><span class="line">  &lt;template v-slot:footer&gt;</span><br><span class="line">    &lt;p&gt;页脚内容&lt;/p&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-3-作用域插槽"><a href="#5-3-作用域插槽" class="headerlink" title="5.3 作用域插槽"></a>5.3 作用域插槽</h4><p>用于将子组件的数据传递给父组件的插槽内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot :user=&quot;userData&quot;&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      userData: &#123; name: &#x27;Alice&#x27;, age: 25 &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component v-slot:default=&quot;slotProps&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; slotProps.user.name &#125;&#125; - &#123;&#123; slotProps.user.age &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-动态组件和异步组件"><a href="#6-动态组件和异步组件" class="headerlink" title="6. 动态组件和异步组件"></a>6. 动态组件和异步组件</h3><h4 id="6-1-动态组件"><a href="#6-1-动态组件" class="headerlink" title="6.1 动态组件"></a>6.1 动态组件</h4><p>使用 <code>&lt;component&gt;</code> 标签和 <code>:is</code> 属性，根据条件渲染不同的组件。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;component :is=&quot;currentComponent&quot;&gt;&lt;/component&gt;</span><br><span class="line">    &lt;button @click=&quot;toggleComponent&quot;&gt;切换组件&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      currentComponent: &#x27;ComponentA&#x27;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    ComponentA,</span><br><span class="line">    ComponentB</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    toggleComponent() &#123;</span><br><span class="line">      this.currentComponent = this.currentComponent === &#x27;ComponentA&#x27; ? &#x27;ComponentB&#x27; : &#x27;ComponentA&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-2-异步组件"><a href="#6-2-异步组件" class="headerlink" title="6.2 异步组件"></a>6.2 异步组件</h4><p>对于大型组件，可以使用异步加载，优化首屏加载速度。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">AsyncComponent</span> = (<span class="params"></span>) =&gt; <span class="keyword">import</span>(<span class="string">&#x27;./components/AsyncComponent.vue&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-组件生命周期"><a href="#7-组件生命周期" class="headerlink" title="7. 组件生命周期"></a>7. 组件生命周期</h3><p>组件在创建、更新、销毁的过程中，会触发一系列的生命周期钩子函数，可以在这些函数中执行相应的逻辑。</p>
+<ul>
+<li><p><strong>常用生命周期钩子：</strong></p>
+<ul>
+<li><code>beforeCreate</code>：实例初始化之后，数据观测和事件配置之前。</li>
+<li><code>created</code>：实例已创建，完成数据观测、属性和方法的运算，尚未挂载。</li>
+<li><code>beforeMount</code>：在挂载开始之前调用。</li>
+<li><code>mounted</code>：实例挂载到 DOM 上后调用。</li>
+<li><code>beforeUpdate</code>：数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。</li>
+<li><code>updated</code>：由于数据更改导致的虚拟 DOM 重新渲染和打补丁之后调用。</li>
+<li><code>beforeDestroy</code>：实例销毁之前调用。</li>
+<li><code>destroyed</code>：实例销毁后调用。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="知识笔记总结"><a href="#知识笔记总结" class="headerlink" title="知识笔记总结"></a>知识笔记总结</h2><h3 id="脚手架（Vue-CLI）"><a href="#脚手架（Vue-CLI）" class="headerlink" title="脚手架（Vue CLI）"></a>脚手架（Vue CLI）</h3><ul>
+<li><strong>安装与创建项目</strong>：<code>npm install -g @vue/cli</code>，<code>vue create project-name</code>。</li>
+<li><strong>项目结构</strong>：了解 Vue CLI 项目的基本目录结构和文件作用。</li>
+<li><strong>配置与插件</strong>：使用 <code>vue.config.js</code> 进行自定义配置，使用插件系统扩展功能。</li>
+<li><strong>命令</strong>：<ul>
+<li><code>npm run serve</code>：启动开发服务器。</li>
+<li><code>npm run build</code>：构建生产环境代码。</li>
+<li><code>npm run test</code>：运行测试。</li>
+</ul>
+</li>
+</ul>
+<h3 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h3><ul>
+<li><strong>组件创建</strong>：使用单文件组件 <code>.vue</code>，包含模板、脚本和样式。</li>
+<li><strong>组件注册</strong>：区分全局注册和局部注册，推荐使用局部注册管理组件。</li>
+<li><strong>组件通信</strong>：<ul>
+<li><strong>父子通信</strong>：<code>props</code> 和 <code>$emit</code>。</li>
+<li><strong>兄弟通信</strong>：通过共同的父组件或状态管理（Vuex）。</li>
+<li><strong>跨级通信</strong>：<code>provide</code> 和 <code>inject</code>。</li>
+</ul>
+</li>
+<li><strong>插槽（Slots）</strong>：使用默认插槽、具名插槽和作用域插槽增强组件的灵活性。</li>
+<li><strong>动态组件</strong>：使用 <code>&lt;component :is=&quot;componentName&quot;&gt;</code> 动态渲染组件。</li>
+<li><strong>生命周期钩子</strong>：理解各个生命周期的作用，合理使用钩子函数。</li>
+</ul>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ul>
+<li><strong>组件命名</strong>：遵循命名规范，使用大驼峰或短横线命名法。</li>
+<li><strong>单一职责</strong>：每个组件只负责完成一个功能，保持组件的高内聚低耦合。</li>
+<li><strong>样式作用域</strong>：使用 <code>scoped</code> 或 CSS Modules，防止样式污染。</li>
+<li><strong>性能优化</strong>：使用异步组件、路由懒加载等手段优化性能。</li>
+<li><strong>代码规范</strong>：遵循 ESLint 规则，保持代码风格一致。</li>
+</ul>
+<hr>
+<p>希望以上内容能帮助你深入理解 Vue.js 中的脚手架和组件化开发。如果你还有其他问题，欢迎继续提问！</p>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>扫雷</title>
+    <url>/posts/saolei/</url>
+    <content><![CDATA[<iframe src="./扫雷.html" width="100%" height="600px"></iframe>
+
+]]></content>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>30分钟学会Vue</title>
     <url>/posts/VueNote/</url>
     <content><![CDATA[<h1 id="核心语法"><a href="#核心语法" class="headerlink" title="核心语法"></a>核心语法</h1><p><img src="/posts/VueNote/0423fa51789c2f54ed5f8784310c5aa9a3f2f3f1.jpg" alt="0423fa51789c2f54ed5f8784310c5aa9a3f2f3f1" loading="lazy"></p>
@@ -1570,258 +1819,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue学习笔记</title>
-    <url>/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="vue核心语法"><a href="#vue核心语法" class="headerlink" title="vue核心语法"></a>vue核心语法</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx.png" alt="7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx" loading="lazy"></p>
-<h2 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a>样例代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Vue.js Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 插值表达式 --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- computed不用加() --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- 4.指令 --&gt;</span><br><span class="line">         &lt;!-- 内容指令   --&gt;&lt;!-- text,html都会覆盖原始内容 --&gt;</span><br><span class="line">         &lt;p v-text=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p v-html=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         </span><br><span class="line">          &lt;!-- 渲染指令 --&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in 3&quot;&gt;Elaina&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in arr&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;(item,key,index) in obj&quot;&gt;&#123;&#123;item&#125;&#125;&amp;nbsp;&#123;&#123;key&#125;&#125;&amp;nbsp;&#123;&#123;index&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-if=&quot;&quot;&gt;1017&lt;/p&gt;</span><br><span class="line">        &lt;p v-show=&quot;&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 属性指令 --&gt;</span><br><span class="line">         &lt;p v-bind:title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p :title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">            &lt;!-- v-bind可以简写成: --&gt;</span><br><span class="line"></span><br><span class="line">         &lt;!-- 事件指令 --&gt;</span><br><span class="line">          &lt;button v-on:click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;button @click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;!-- v-on简写成@ --&gt;</span><br><span class="line"></span><br><span class="line">          &lt;!-- 表单指令 --&gt;</span><br><span class="line">          &lt;hr&gt; </span><br><span class="line">          &lt;p&gt;表单指令&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model=&quot;inputValue&quot;&gt;</span><br><span class="line">           &lt;p v-text=&quot;inputValue&quot;&gt;&lt;/p&gt;</span><br><span class="line">            &lt;hr&gt;</span><br><span class="line">           &lt;!-- 5.修饰符 --&gt;</span><br><span class="line">            &lt;p&gt;修饰符&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model.trim=&quot;inputValue&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        // 1. 响应式数据与插值表达式</span><br><span class="line">        const vm = new Vue(&#123;</span><br><span class="line">            el: &#x27;#app&#x27;,</span><br><span class="line">            data() &#123;</span><br><span class="line">                return &#123;</span><br><span class="line">                    title: &#x27;这是文本&#x27;,</span><br><span class="line">                    content: &#x27;这是内容&#x27;,</span><br><span class="line">                    htmlContent: &#x27;&lt;h1&gt;这是html内容&lt;/h1&gt;&#x27;,</span><br><span class="line">                    arr:[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;],</span><br><span class="line">                    obj:&#123;a:1,b:2,c:3&#125;,</span><br><span class="line">                    inputValue:&#x27;默认内容&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //1.3函数methods属性</span><br><span class="line">            methods: &#123;</span><br><span class="line">                output()&#123;</span><br><span class="line">                    console.log(&quot;output&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //2计算属性computed属性:具有缓存性质，只有当计算属性的值发生变化时，才会重新计算</span><br><span class="line">            computed: &#123;</span><br><span class="line">                outputCon()&#123;</span><br><span class="line">                    console.log(&quot;computed&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //3.侦听器watch属性:监听数据的变化，并执行相应的函数</span><br><span class="line">            watch: &#123;</span><br><span class="line">                title(newVal, oldVal)&#123;</span><br><span class="line">                    console.log(&quot;title changed&quot;, newVal, oldVal);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在 Vue.js 中，响应式数据、插值表达式、计算属性、侦听器和指令是关键概念。以下是详细讲解和知识笔记：</p>
-<h2 id="1-响应式数据-Reactive-Data"><a href="#1-响应式数据-Reactive-Data" class="headerlink" title="1. 响应式数据 (Reactive Data)"></a>1. 响应式数据 (Reactive Data)</h2><p>Vue.js 中的数据对象是响应式的，即当数据发生变化时，视图会自动更新。通过 <code>data</code> 定义的数据是响应式的，Vue.js 使用<strong>依赖追踪</strong>来检测数据的变化并更新 DOM。</p>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">data</span>: &#123;</span><br><span class="line">  <span class="attr">title</span>: <span class="string">&#x27;这是标题&#x27;</span>,</span><br><span class="line">  <span class="attr">content</span>: <span class="string">&#x27;这是内容&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在模板中使用 <code>&#123;&#123; title &#125;&#125;</code>，当 <code>title</code> 变化时，DOM 会自动更新。</p>
-<h2 id="2-插值表达式-Interpolation"><a href="#2-插值表达式-Interpolation" class="headerlink" title="2. 插值表达式 (Interpolation)"></a>2. 插值表达式 (Interpolation)</h2><p>插值表达式用于将数据绑定到 HTML 中。使用 <code>&#123;&#123; &#125;&#125;</code> 可以直接在模板中显示数据。</p>
-<p>示例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  <span class="comment">&lt;!-- 显示 title 的值 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-计算属性-Computed-Properties"><a href="#3-计算属性-Computed-Properties" class="headerlink" title="3. 计算属性 (Computed Properties)"></a>3. 计算属性 (Computed Properties)</h2><p>计算属性是依赖其他数据计算得到的值，具有<strong>缓存</strong>的功能，只有相关依赖变化时才会重新计算。和方法不同，计算属性不会重复执行，除非依赖的数据改变。</p>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  <span class="title function_">outputCon</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Test &quot;</span> + <span class="variable language_">this</span>.<span class="property">title</span> + <span class="variable language_">this</span>.<span class="property">content</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当 <code>title</code> 或 <code>content</code> 变化时，<code>outputCon</code> 会被重新计算，否则将直接返回缓存的值。</p>
-<h2 id="4-侦听器-Watchers"><a href="#4-侦听器-Watchers" class="headerlink" title="4. 侦听器 (Watchers)"></a>4. 侦听器 (Watchers)</h2><p>侦听器用于监听数据的变化，并在数据变化时执行特定操作，常用于异步任务或需要手动执行额外逻辑时。</p>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">watch</span>: &#123;</span><br><span class="line">  <span class="title function_">title</span>(<span class="params">newVal, oldVal</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Title changed from&#x27;</span>, oldVal, <span class="string">&#x27;to&#x27;</span>, newVal);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>每当 <code>title</code> 改变时，侦听器会记录新旧值。</p>
-<h2 id="5-指令-Directives"><a href="#5-指令-Directives" class="headerlink" title="5. 指令 (Directives)"></a>5. 指令 (Directives)</h2><p>Vue 提供了很多指令来操作 DOM，常见的有 <code>v-text</code>, <code>v-html</code>, <code>v-if</code>, <code>v-show</code>, <code>v-for</code>, <code>v-bind</code>, <code>v-on</code> 等。</p>
-<h3 id="内容指令"><a href="#内容指令" class="headerlink" title="内容指令"></a>内容指令</h3><ul>
-<li><code>v-text</code>：替换元素的文本内容。</li>
-<li><code>v-html</code>：将数据作为 HTML 插入，允许解析 HTML 标签。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="渲染指令"><a href="#渲染指令" class="headerlink" title="渲染指令"></a>渲染指令</h3><ul>
-<li><code>v-for</code>：循环渲染列表。</li>
-<li><code>v-if</code>：根据条件渲染元素，元素不存在于 DOM 中。</li>
-<li><code>v-show</code>：根据条件显示&#x2F;隐藏元素，元素仍然存在于 DOM 中。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;item in arr&quot;</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;showItem&quot;</span>&gt;</span>显示内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">&quot;showItem&quot;</span>&gt;</span>显示或隐藏<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="属性指令"><a href="#属性指令" class="headerlink" title="属性指令"></a>属性指令</h3><ul>
-<li><code>v-bind</code>：动态绑定元素的属性，可以简写为 <code>:</code>。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> <span class="comment">&lt;!-- 简写 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h3><ul>
-<li><code>v-on</code>：绑定事件监听器，可以简写为 <code>@</code>。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 简写 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="表单指令"><a href="#表单指令" class="headerlink" title="表单指令"></a>表单指令</h3><ul>
-<li><code>v-model</code>：双向绑定表单元素的数据。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; inputValue &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="6-修饰符-Modifiers"><a href="#6-修饰符-Modifiers" class="headerlink" title="6. 修饰符 (Modifiers)"></a>6. 修饰符 (Modifiers)</h2><p>修饰符是对指令的附加操作，常见于事件处理和表单输入中。例如：</p>
-<ul>
-<li><code>.trim</code>：去除输入框两端的空白。</li>
-<li><code>.lazy</code>：在 <code>input</code> 失焦时更新数据，而不是在每次输入时更新。</li>
-</ul>
-<p>示例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.trim</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span>  <span class="comment">&lt;!-- 输入时自动去除两端空格 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="知识笔记总结："><a href="#知识笔记总结：" class="headerlink" title="知识笔记总结："></a>知识笔记总结：</h2><ol>
-<li><strong>响应式数据</strong>让 Vue.js 能够自动追踪数据变化并更新 DOM。</li>
-<li><strong>插值表达式</strong>用于将数据直接显示在 HTML 中。</li>
-<li><strong>计算属性</strong>具有缓存功能，用于处理复杂的逻辑计算。</li>
-<li><strong>侦听器</strong>适合监听数据变化并执行额外逻辑，尤其是异步任务。</li>
-<li><strong>指令</strong>提供了强大的模板功能，如条件渲染、列表渲染、事件处理等。</li>
-<li><strong>修饰符</strong>为指令增加额外的功能，如去除空白字符、事件捕获等。</li>
-</ol>
-<p>希望这能帮助你更深入了解 Vue.js 的响应式数据与核心功能。如果有其他问题，欢迎随时讨论！</p>
-<h1 id="脚手架与组件化开发"><a href="#脚手架与组件化开发" class="headerlink" title="脚手架与组件化开发"></a>脚手架与组件化开发</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/WXS7VQMlCQOoZYm.jpeg" alt="WXS7VQMlCQOoZYm" loading="lazy"></p>
-<hr>
-<h2 id="一、脚手架（Vue-CLI）"><a href="#一、脚手架（Vue-CLI）" class="headerlink" title="一、脚手架（Vue CLI）"></a>一、脚手架（Vue CLI）</h2><h3 id="1-什么是脚手架？"><a href="#1-什么是脚手架？" class="headerlink" title="1. 什么是脚手架？"></a>1. 什么是脚手架？</h3><p><strong>脚手架</strong>（Scaffolding）是指用于快速搭建项目基础结构的工具。在 Vue.js 中，官方提供了 <strong>Vue CLI</strong>（Command Line Interface），它是一个基于 Node.js 的命令行工具，用于快速创建 Vue.js 项目，集成了现代前端开发所需的各种功能和配置。</p>
-<h3 id="2-Vue-CLI-的功能和优势"><a href="#2-Vue-CLI-的功能和优势" class="headerlink" title="2. Vue CLI 的功能和优势"></a>2. Vue CLI 的功能和优势</h3><ul>
-<li><strong>快速搭建项目</strong>：通过简单的命令即可生成一个带有预设配置的 Vue.js 项目。</li>
-<li><strong>可定制化</strong>：支持自定义配置，满足不同项目的特殊需求。</li>
-<li><strong>插件系统</strong>：提供了丰富的官方和社区插件，如路由（Vue Router）、状态管理（Vuex）、TypeScript 支持等。</li>
-<li><strong>热重载</strong>：内置开发服务器，支持模块热替换（HMR），提高开发效率。</li>
-<li><strong>优化的生产构建</strong>：自动进行代码分割、压缩、优化，提升应用性能。</li>
-<li><strong>单元测试和端到端测试</strong>：集成了 Jest、Mocha 等测试框架，支持编写测试用例。</li>
-</ul>
-<h3 id="3-安装和使用-Vue-CLI"><a href="#3-安装和使用-Vue-CLI" class="headerlink" title="3. 安装和使用 Vue CLI"></a>3. 安装和使用 Vue CLI</h3><h4 id="3-1-安装-Vue-CLI"><a href="#3-1-安装-Vue-CLI" class="headerlink" title="3.1 安装 Vue CLI"></a>3.1 安装 Vue CLI</h4><p>确保已安装 Node.js 和 npm，然后在命令行中全局安装 Vue CLI：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，可以使用以下命令查看版本，验证安装是否成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-创建新项目"><a href="#3-2-创建新项目" class="headerlink" title="3.2 创建新项目"></a>3.2 创建新项目</h4><p>使用 <code>vue create</code> 命令创建新项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
-
-<p>系统会提示选择预设配置：</p>
-<ul>
-<li><strong>默认预设</strong>：包含 Babel、ESLint 等基本配置。</li>
-<li><strong>手动选择特性</strong>：可以根据需要添加路由、Vuex、CSS 预处理器等。</li>
-</ul>
-<h4 id="3-3-运行项目"><a href="#3-3-运行项目" class="headerlink" title="3.3 运行项目"></a>3.3 运行项目</h4><p>进入项目目录，启动开发服务器：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
-
-<p>默认情况下，开发服务器运行在 <code>http://localhost:8080</code>。</p>
-<h3 id="4-Vue-CLI-项目结构"><a href="#4-Vue-CLI-项目结构" class="headerlink" title="4. Vue CLI 项目结构"></a>4. Vue CLI 项目结构</h3><p>Vue CLI 生成的项目结构通常如下：</p>
-<ul>
-<li><code>public/</code>：公共静态资源目录，存放未被 Webpack 处理的文件。</li>
-<li><code>src/</code>：源代码目录。<ul>
-<li><code>main.js</code>：应用的入口文件。</li>
-<li><code>App.vue</code>：根组件。</li>
-<li><code>assets/</code>：资源文件夹，存放图片、字体等。</li>
-<li><code>components/</code>：存放全局或通用组件。</li>
-</ul>
-</li>
-<li><code>babel.config.js</code>：Babel 配置文件。</li>
-<li><code>package.json</code>：项目元数据和依赖项。</li>
-<li><code>vue.config.js</code>：可选的 Vue CLI 配置文件，用于修改默认设置。</li>
-</ul>
-<h3 id="5-配置和自定义"><a href="#5-配置和自定义" class="headerlink" title="5. 配置和自定义"></a>5. 配置和自定义</h3><p>可以在 <code>vue.config.js</code> 中对项目进行自定义配置，如修改端口、配置代理、添加别名等。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="attr">port</span>: <span class="number">8081</span>, <span class="comment">// 修改端口</span></span><br><span class="line">    <span class="attr">proxy</span>: <span class="string">&#x27;http://api.example.com&#x27;</span> <span class="comment">// 配置代理</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">      <span class="attr">alias</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;@&#x27;</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;src/&#x27;</span>) <span class="comment">// 添加路径别名</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-使用插件"><a href="#6-使用插件" class="headerlink" title="6. 使用插件"></a>6. 使用插件</h3><p>Vue CLI 提供了插件系统，可以在创建项目时或之后添加插件。</p>
-<p><strong>添加插件示例：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add router</span><br><span class="line">vue add vuex</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="二、组件化开发"><a href="#二、组件化开发" class="headerlink" title="二、组件化开发"></a>二、组件化开发</h2><h3 id="1-什么是组件化？"><a href="#1-什么是组件化？" class="headerlink" title="1. 什么是组件化？"></a>1. 什么是组件化？</h3><p><strong>组件化</strong>是将界面划分为独立、可复用的组件，每个组件包含自己的模板、逻辑和样式。Vue.js 强烈鼓励组件化开发，以提高代码的可维护性和复用性。</p>
-<h3 id="2-组件的基本概念"><a href="#2-组件的基本概念" class="headerlink" title="2. 组件的基本概念"></a>2. 组件的基本概念</h3><ul>
-<li><strong>组件实例</strong>：每个组件都是一个 Vue 实例，拥有自己的数据、方法、生命周期等。</li>
-<li><strong>父子关系</strong>：组件可以嵌套，父组件可以传递数据给子组件。</li>
-<li><strong>封装性</strong>：组件内部的实现细节对外部是透明的。</li>
-</ul>
-<h3 id="3-创建组件"><a href="#3-创建组件" class="headerlink" title="3. 创建组件"></a>3. 创建组件</h3><h4 id="3-1-单文件组件（-vue-文件）"><a href="#3-1-单文件组件（-vue-文件）" class="headerlink" title="3.1 单文件组件（.vue 文件）"></a>3.1 单文件组件（.vue 文件）</h4><p>这是 Vue.js 推荐的组件书写方式，包含 <code>&lt;template&gt;</code>、<code>&lt;script&gt;</code> 和 <code>&lt;style&gt;</code> 三个部分。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- MyComponent.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;my-component&quot;&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123; title &#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;MyComponent&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    title: String,</span><br><span class="line">    content: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.my-component &#123;</span><br><span class="line">  /* 样式定义 */</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-注册组件"><a href="#3-2-注册组件" class="headerlink" title="3.2 注册组件"></a>3.2 注册组件</h4><p><strong>局部注册：</strong></p>
-<p>在使用组件的父组件中导入并注册：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;my-component :title=&quot;title&quot; :content=&quot;content&quot;&gt;&lt;/my-component&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import MyComponent from &#x27;./components/MyComponent.vue&#x27;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    MyComponent</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &#x27;组件标题&#x27;,</span><br><span class="line">      content: &#x27;组件内容&#x27;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>全局注册：</strong></p>
-<p>在 <code>main.js</code> 中注册，全局组件可在任何地方使用。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">MyComponent</span> <span class="keyword">from</span> <span class="string">&#x27;./components/MyComponent.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;MyComponent&#x27;</span>, <span class="title class_">MyComponent</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-组件之间的通信"><a href="#4-组件之间的通信" class="headerlink" title="4. 组件之间的通信"></a>4. 组件之间的通信</h3><h4 id="4-1-父子组件通信"><a href="#4-1-父子组件通信" class="headerlink" title="4.1 父子组件通信"></a>4.1 父子组件通信</h4><ul>
-<li><p><strong>父组件传递数据给子组件</strong>：使用 <code>props</code>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件定义 props --&gt;</span><br><span class="line">props: &#123;</span><br><span class="line">  message: String</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>子组件触发事件通知父组件</strong>：使用 <code>$emit</code>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件中 --&gt;</span><br><span class="line">this.$emit(&#x27;eventName&#x27;, payload);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件中 --&gt;</span><br><span class="line">&lt;child-component @eventName=&quot;handleEvent&quot;&gt;&lt;/child-component&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="4-2-兄弟组件通信"><a href="#4-2-兄弟组件通信" class="headerlink" title="4.2 兄弟组件通信"></a>4.2 兄弟组件通信</h4><ul>
-<li><p><strong>通过父组件中转</strong>：将数据提升到共同的父组件，由父组件管理和传递。</p>
-</li>
-<li><p><strong>事件总线（Event Bus）</strong>：创建一个空的 Vue 实例作为事件总线，但在 Vue 3 中不推荐使用。</p>
-</li>
-<li><p><strong>Vuex 状态管理</strong>：对于复杂的应用，使用 Vuex 统一管理状态。</p>
-</li>
-</ul>
-<h4 id="4-3-跨级组件通信"><a href="#4-3-跨级组件通信" class="headerlink" title="4.3 跨级组件通信"></a>4.3 跨级组件通信</h4><ul>
-<li><p><strong>Provide&#x2F;Inject</strong>：祖先组件提供数据，后代组件注入数据。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 祖先组件</span></span><br><span class="line"><span class="title function_">provide</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">dataKey</span>: <span class="variable language_">this</span>.<span class="property">dataValue</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 后代组件</span></span><br><span class="line"><span class="attr">inject</span>: [<span class="string">&#x27;dataKey&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="5-插槽（Slots）"><a href="#5-插槽（Slots）" class="headerlink" title="5. 插槽（Slots）"></a>5. 插槽（Slots）</h3><p>插槽用于在组件中插入父组件的内容，增强组件的灵活性。</p>
-<h4 id="5-1-默认插槽"><a href="#5-1-默认插槽" class="headerlink" title="5.1 默认插槽"></a>5.1 默认插槽</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component&gt;</span><br><span class="line">  &lt;p&gt;插入的内容&lt;/p&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-2-具名插槽"><a href="#5-2-具名插槽" class="headerlink" title="5.2 具名插槽"></a>5.2 具名插槽</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt; &lt;!-- 默认插槽 --&gt;</span><br><span class="line">    &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component&gt;</span><br><span class="line">  &lt;template v-slot:header&gt;</span><br><span class="line">    &lt;h1&gt;标题内容&lt;/h1&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">  &lt;p&gt;主要内容&lt;/p&gt;</span><br><span class="line">  &lt;template v-slot:footer&gt;</span><br><span class="line">    &lt;p&gt;页脚内容&lt;/p&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-3-作用域插槽"><a href="#5-3-作用域插槽" class="headerlink" title="5.3 作用域插槽"></a>5.3 作用域插槽</h4><p>用于将子组件的数据传递给父组件的插槽内容。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot :user=&quot;userData&quot;&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      userData: &#123; name: &#x27;Alice&#x27;, age: 25 &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component v-slot:default=&quot;slotProps&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; slotProps.user.name &#125;&#125; - &#123;&#123; slotProps.user.age &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-动态组件和异步组件"><a href="#6-动态组件和异步组件" class="headerlink" title="6. 动态组件和异步组件"></a>6. 动态组件和异步组件</h3><h4 id="6-1-动态组件"><a href="#6-1-动态组件" class="headerlink" title="6.1 动态组件"></a>6.1 动态组件</h4><p>使用 <code>&lt;component&gt;</code> 标签和 <code>:is</code> 属性，根据条件渲染不同的组件。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;component :is=&quot;currentComponent&quot;&gt;&lt;/component&gt;</span><br><span class="line">    &lt;button @click=&quot;toggleComponent&quot;&gt;切换组件&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      currentComponent: &#x27;ComponentA&#x27;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    ComponentA,</span><br><span class="line">    ComponentB</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    toggleComponent() &#123;</span><br><span class="line">      this.currentComponent = this.currentComponent === &#x27;ComponentA&#x27; ? &#x27;ComponentB&#x27; : &#x27;ComponentA&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-2-异步组件"><a href="#6-2-异步组件" class="headerlink" title="6.2 异步组件"></a>6.2 异步组件</h4><p>对于大型组件，可以使用异步加载，优化首屏加载速度。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">AsyncComponent</span> = (<span class="params"></span>) =&gt; <span class="keyword">import</span>(<span class="string">&#x27;./components/AsyncComponent.vue&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-组件生命周期"><a href="#7-组件生命周期" class="headerlink" title="7. 组件生命周期"></a>7. 组件生命周期</h3><p>组件在创建、更新、销毁的过程中，会触发一系列的生命周期钩子函数，可以在这些函数中执行相应的逻辑。</p>
-<ul>
-<li><p><strong>常用生命周期钩子：</strong></p>
-<ul>
-<li><code>beforeCreate</code>：实例初始化之后，数据观测和事件配置之前。</li>
-<li><code>created</code>：实例已创建，完成数据观测、属性和方法的运算，尚未挂载。</li>
-<li><code>beforeMount</code>：在挂载开始之前调用。</li>
-<li><code>mounted</code>：实例挂载到 DOM 上后调用。</li>
-<li><code>beforeUpdate</code>：数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。</li>
-<li><code>updated</code>：由于数据更改导致的虚拟 DOM 重新渲染和打补丁之后调用。</li>
-<li><code>beforeDestroy</code>：实例销毁之前调用。</li>
-<li><code>destroyed</code>：实例销毁后调用。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="知识笔记总结"><a href="#知识笔记总结" class="headerlink" title="知识笔记总结"></a>知识笔记总结</h2><h3 id="脚手架（Vue-CLI）"><a href="#脚手架（Vue-CLI）" class="headerlink" title="脚手架（Vue CLI）"></a>脚手架（Vue CLI）</h3><ul>
-<li><strong>安装与创建项目</strong>：<code>npm install -g @vue/cli</code>，<code>vue create project-name</code>。</li>
-<li><strong>项目结构</strong>：了解 Vue CLI 项目的基本目录结构和文件作用。</li>
-<li><strong>配置与插件</strong>：使用 <code>vue.config.js</code> 进行自定义配置，使用插件系统扩展功能。</li>
-<li><strong>命令</strong>：<ul>
-<li><code>npm run serve</code>：启动开发服务器。</li>
-<li><code>npm run build</code>：构建生产环境代码。</li>
-<li><code>npm run test</code>：运行测试。</li>
-</ul>
-</li>
-</ul>
-<h3 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h3><ul>
-<li><strong>组件创建</strong>：使用单文件组件 <code>.vue</code>，包含模板、脚本和样式。</li>
-<li><strong>组件注册</strong>：区分全局注册和局部注册，推荐使用局部注册管理组件。</li>
-<li><strong>组件通信</strong>：<ul>
-<li><strong>父子通信</strong>：<code>props</code> 和 <code>$emit</code>。</li>
-<li><strong>兄弟通信</strong>：通过共同的父组件或状态管理（Vuex）。</li>
-<li><strong>跨级通信</strong>：<code>provide</code> 和 <code>inject</code>。</li>
-</ul>
-</li>
-<li><strong>插槽（Slots）</strong>：使用默认插槽、具名插槽和作用域插槽增强组件的灵活性。</li>
-<li><strong>动态组件</strong>：使用 <code>&lt;component :is=&quot;componentName&quot;&gt;</code> 动态渲染组件。</li>
-<li><strong>生命周期钩子</strong>：理解各个生命周期的作用，合理使用钩子函数。</li>
-</ul>
-<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ul>
-<li><strong>组件命名</strong>：遵循命名规范，使用大驼峰或短横线命名法。</li>
-<li><strong>单一职责</strong>：每个组件只负责完成一个功能，保持组件的高内聚低耦合。</li>
-<li><strong>样式作用域</strong>：使用 <code>scoped</code> 或 CSS Modules，防止样式污染。</li>
-<li><strong>性能优化</strong>：使用异步组件、路由懒加载等手段优化性能。</li>
-<li><strong>代码规范</strong>：遵循 ESLint 规则，保持代码风格一致。</li>
-</ul>
-<hr>
-<p>希望以上内容能帮助你深入理解 Vue.js 中的脚手架和组件化开发。如果你还有其他问题，欢迎继续提问！</p>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>扫雷</title>
-    <url>/posts/saolei/</url>
-    <content><![CDATA[<iframe src="./扫雷.html" width="100%" height="600px"></iframe>
-
-]]></content>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>「新」动计划·编程入门Java</title>
     <url>/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/</url>
-    <content><![CDATA[<h1 id="「新」动计划-·-编程入门"><a href="#「新」动计划-·-编程入门" class="headerlink" title="「新」动计划 · 编程入门"></a><strong>「新」动计划 · 编程入门</strong></h1><h2 id="基础语法-数据类型"><a href="#基础语法-数据类型" class="headerlink" title="基础语法 &amp; 数据类型"></a>基础语法 &amp; 数据类型</h2><h3 id="2235-两整数相加"><a href="#2235-两整数相加" class="headerlink" title="2235. 两整数相加"></a><a href="https://leetcode.cn/problems/add-two-integers/">2235. 两整数相加</a></h3><blockquote>
+    <content><![CDATA[<h1 id="「新」动计划-·-编程入门"><a href="#「新」动计划-·-编程入门" class="headerlink" title="「新」动计划 · 编程入门"></a><strong>「新」动计划 · 编程入门</strong></h1><p><img src="/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/20201004141034_de14c.jpeg" alt="20201004141034_de14c" loading="lazy"></p>
+<h2 id="基础语法-数据类型"><a href="#基础语法-数据类型" class="headerlink" title="基础语法 &amp; 数据类型"></a>基础语法 &amp; 数据类型</h2><h3 id="2235-两整数相加"><a href="#2235-两整数相加" class="headerlink" title="2235. 两整数相加"></a><a href="https://leetcode.cn/problems/add-two-integers/">2235. 两整数相加</a></h3><blockquote>
 <p>给你两个整数 <code>num1</code> 和 <code>num2</code>，返回这两个整数的和。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：num1 = 12, num2 = 5</span><br><span class="line">输出：17</span><br><span class="line">解释：num1 是 12，num2 是<span class="number"> 5 </span>，它们的和是<span class="number"> 12 </span>+<span class="number"> 5 </span>=<span class="number"> 17 </span>，因此返回<span class="number"> 17 </span>。</span><br></pre></td></tr></table></figure>
@@ -1880,7 +1881,255 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkTree</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> root.val==root.left.val+root.right.val?<span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="循环-循环嵌套"><a href="#循环-循环嵌套" class="headerlink" title="循环 &amp; 循环嵌套"></a>循环 &amp; 循环嵌套</h2><h2 id="数据库基础"><a href="#数据库基础" class="headerlink" title="数据库基础"></a>数据库基础</h2><h3 id="584-寻找用户推荐人"><a href="#584-寻找用户推荐人" class="headerlink" title="584. 寻找用户推荐人"></a><a href="https://leetcode.cn/problems/find-customer-referee/">584. 寻找用户推荐人</a></h3><blockquote>
+<h2 id="循环-循环嵌套"><a href="#循环-循环嵌套" class="headerlink" title="循环 &amp; 循环嵌套"></a>循环 &amp; 循环嵌套</h2><h3 id="1486-数组异或操作"><a href="#1486-数组异或操作" class="headerlink" title="1486. 数组异或操作"></a><a href="https://leetcode.cn/problems/xor-operation-in-an-array/">1486. 数组异或操作</a></h3><blockquote>
+<p>给你两个整数，<code>n</code> 和 <code>start</code> 。</p>
+<p>数组 <code>nums</code> 定义为：<code>nums[i] = start + 2*i</code>（下标从 0 开始）且 <code>n == nums.length</code> 。</p>
+<p>请返回 <code>nums</code> 中所有元素按位异或（<strong>XOR</strong>）后得到的结果。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：n = 5, start = 0</span><br><span class="line">输出：8</span><br><span class="line">解释：数组 nums 为 [0, 2, 4, 6, 8]，其中 (0 ^<span class="number"> 2 </span>^<span class="number"> 4 </span>^<span class="number"> 6 </span>^ 8) =<span class="number"> 8 </span>。</span><br><span class="line">     &quot;^&quot; 为按位异或 XOR 运算符。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：n = 4, start = 3</span><br><span class="line">输出：8</span><br><span class="line">解释：数组 nums 为 [3, 5, 7, 9]，其中 (3 ^<span class="number"> 5 </span>^<span class="number"> 7 </span>^ 9) = 8.</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">输入：n = <span class="number">1</span>, <span class="literal">start</span> = <span class="number">7</span></span><br><span class="line">输出：<span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 4：</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">输入：n = <span class="number">10</span>, <span class="literal">start</span> = <span class="number">5</span></span><br><span class="line">输出：<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 1000</code></li>
+<li><code>0 &lt;= start &lt;= 1000</code></li>
+<li><code>n == nums.length</code></li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">xorOperation</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> start)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            x ^= start + <span class="number">2</span> * i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在异或操作中，两个数的对应位进行比较：</p>
+<ul>
+<li><p>如果位相同，则结果为 <code>0</code></p>
+</li>
+<li><p>如果位不同，则结果为 <code>1</code></p>
+<p>示例分析</p>
+<h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><p>输入：<code>n = 5</code>, <code>start = 0</code></p>
+<ol>
+<li><p>生成数组 <code>nums</code>：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">css</span>复制代码nums[<span class="number">0</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">0</span> = <span class="number">0</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">1</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">1</span> = <span class="number">2</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">2</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">2</span> = <span class="number">4</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">3</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">3</span> = <span class="number">6</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">4</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">4</span> = <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>因此，<code>nums = [0, 2, 4, 6, 8]</code>。</p>
+</li>
+<li><p>对所有元素按位异或：</p>
+<figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">复制代码0 ^<span class="number"> 2 </span>= 2</span><br><span class="line">2 ^<span class="number"> 4 </span>= 6</span><br><span class="line">6 ^<span class="number"> 6 </span>= 0</span><br><span class="line">0 ^<span class="number"> 8 </span>= 8</span><br></pre></td></tr></table></figure>
+
+<p>因此，返回的结果是 <code>8</code>。</p>
+</li>
+</ol>
+<h4 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h4><p>输入：<code>n = 4</code>, <code>start = 3</code></p>
+<ol>
+<li><p>生成数组 <code>nums</code>：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">css</span>复制代码nums[<span class="number">0</span>] = <span class="number">3</span> + <span class="number">2</span> * <span class="number">0</span> = <span class="number">3</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">1</span>] = <span class="number">3</span> + <span class="number">2</span> * <span class="number">1</span> = <span class="number">5</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">2</span>] = <span class="number">3</span> + <span class="number">2</span> * <span class="number">2</span> = <span class="number">7</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">3</span>] = <span class="number">3</span> + <span class="number">2</span> * <span class="number">3</span> = <span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<p>因此，<code>nums = [3, 5, 7, 9]</code>。</p>
+</li>
+<li><p>对所有元素按位异或：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">3 </span>^ <span class="number">5</span> = <span class="number">6</span></span><br><span class="line"><span class="symbol">6 </span>^ <span class="number">7</span> = <span class="number">1</span></span><br><span class="line"><span class="symbol">1 </span>^ <span class="number">9</span> = <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>因此，返回的结果是 <code>8</code>。</p>
+</li>
+</ol>
+<h3 id="详细解析："><a href="#详细解析：" class="headerlink" title="详细解析："></a>详细解析：</h3><ol>
+<li><strong>变量定义</strong>：<ul>
+<li><code>x</code>：用于存储当前的异或结果，初始值为 <code>0</code>。</li>
+</ul>
+</li>
+<li><strong>循环</strong>：<ul>
+<li>循环从 <code>i = 0</code> 开始，一直到 <code>i = n-1</code>。每次迭代计算当前元素 <code>start + 2 * i</code>，并将其与 <code>x</code> 进行异或操作。由于异或具有结合律和交换律，我们可以不必担心顺序。</li>
+</ul>
+</li>
+<li><strong>返回结果</strong>：<ul>
+<li>循环结束后，<code>x</code> 存储的就是数组中所有元素的异或结果。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+<h3 id="1512-好数对的数目"><a href="#1512-好数对的数目" class="headerlink" title="1512. 好数对的数目"></a><a href="https://leetcode.cn/problems/number-of-good-pairs/">1512. 好数对的数目</a></h3><blockquote>
+<p>给你一个整数数组 <code>nums</code> 。</p>
+<p>如果一组数字 <code>(i,j)</code> 满足 <code>nums[i]</code> &#x3D;&#x3D; <code>nums[j]</code> 且 <code>i</code> &lt; <code>j</code> ，就可以认为这是一组 <strong>好数对</strong> 。</p>
+<p>返回好数对的数目。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,2,3,1,1,3]</span><br><span class="line">输出：4</span><br><span class="line">解释：有<span class="number"> 4 </span>组好数对，分别是 (0,3), (0,4), (3,4), (2,5) ，下标从<span class="number"> 0 </span>开始</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">输入：nums = [<span class="number">1,1,1,1</span>]</span><br><span class="line">输出：<span class="number">6</span></span><br><span class="line">解释：数组中的每组数字都是好数对</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight fix"><table><tr><td class="code"><pre><span class="line"><span class="attr">输入：nums </span>=<span class="string"> [1,2,3]</span></span><br><span class="line"><span class="string">输出：0</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 100</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 100</code></li>
+</ul>
+</blockquote>
+<p><strong>暴力统计</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numIdenticalPairs</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> n=nums.length,count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;n;++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[j]==nums[i]) count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>组合计数</strong></p>
+<blockquote>
+<p>用哈希表统计每个数在序列中出现的次数，假设数字 k 在序列中出现的次数为 v，那么满足题目中所说的nums[i]&#x3D;nums[j]&#x3D;k(i&lt;j) 的 (i,j) 的数量就是v(v−1)&#x2F;2，即 k 这个数值对答案的贡献是v(v−1)&#x2F;2。我们只需要把所有数值的贡献相加，即可得到答案。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numIdenticalPairs</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">1000</span>];</span><br><span class="line">        <span class="type">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.length;++i) arr[nums[i]]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;arr.length;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]&gt;=<span class="number">2</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                res+=arr[i]*(arr[i]-<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>官方</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numIdenticalPairs</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建一个哈希表，用于存储每个数字出现的次数</span></span><br><span class="line">        Map&lt;Integer, Integer&gt; m = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="comment">// 遍历数组中的每个数字</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num : nums) &#123;</span><br><span class="line">            <span class="comment">// 将数字作为键，出现次数作为值存入哈希表</span></span><br><span class="line">            <span class="comment">// 如果数字已经存在，则将其出现次数加 1</span></span><br><span class="line">            m.put(num, m.getOrDefault(num, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 遍历哈希表中的每个键值对</span></span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : m.entrySet()) &#123;</span><br><span class="line">            <span class="comment">// 获取当前数字的出现次数</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">v</span> <span class="operator">=</span> entry.getValue();</span><br><span class="line">            <span class="comment">// 计算当前数字可以形成的数对数量</span></span><br><span class="line">            <span class="comment">// 公式为 v * (v - 1) / 2，表示从 v 个数字中选出 2 个的组合数</span></span><br><span class="line">            ans += v * (v - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回满足条件的数对数量</span></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="详细解释："><a href="#详细解释：" class="headerlink" title="详细解释："></a>详细解释：</h3><ol>
+<li><strong>创建哈希表</strong>：<ul>
+<li><code>Map&lt;Integer, Integer&gt; m = new HashMap&lt;Integer, Integer&gt;();</code>：创建一个 <code>HashMap</code>，用于存储每个数字出现的次数。键是数字，值是该数字出现的次数。</li>
+</ul>
+</li>
+<li><strong>遍历数组中的每个数字</strong>：<ul>
+<li><code>for (int num : nums)</code>：遍历数组中的每个数字。</li>
+<li><code>m.put(num, m.getOrDefault(num, 0) + 1);</code>：将数字作为键，出现次数作为值存入哈希表。如果数字已经存在，则将其出现次数加 1。<code>m.getOrDefault(num, 0)</code> 表示如果哈希表中没有该数字，则返回默认值 0。</li>
+</ul>
+</li>
+<li><strong>计算数对数量</strong>：<ul>
+<li><code>int ans = 0;</code>：初始化计数器为 0。</li>
+<li><code>for (Map.Entry&lt;Integer, Integer&gt; entry : m.entrySet())</code>：遍历哈希表中的每个键值对。</li>
+<li><code>int v = entry.getValue();</code>：获取当前数字的出现次数。</li>
+<li><code>ans += v * (v - 1) / 2;</code>：计算当前数字可以形成的数对数量。公式 <code>v * (v - 1) / 2</code> 表示从 <code>v</code> 个数字中选出 2 个的组合数。例如，如果有 3 个相同的数字，可以形成的数对数量为 <code>3 * (3 - 1) / 2 = 3</code>。</li>
+</ul>
+</li>
+<li><strong>返回结果</strong>：<ul>
+<li><code>return ans;</code>：返回满足条件的数对数量。<br><code>getOrDefault</code> 和 <code>entrySet</code> 这两个方法。</li>
+</ul>
+</li>
+</ol>
+<h3 id="1-getOrDefault-方法"><a href="#1-getOrDefault-方法" class="headerlink" title="1. getOrDefault 方法"></a>1. <code>getOrDefault</code> 方法</h3><p><code>getOrDefault</code> 是 <code>Map</code> 接口中的一个方法，用于获取指定键的值，如果键不存在，则返回一个默认值。</p>
+<h4 id="方法签名："><a href="#方法签名：" class="headerlink" title="方法签名："></a>方法签名：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">V <span class="title function_">getOrDefault</span><span class="params">(Object key, V defaultValue)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h4><ul>
+<li><code>key</code>：要获取值的键。</li>
+<li><code>defaultValue</code>：如果键不存在时返回的默认值。</li>
+</ul>
+<h4 id="返回值："><a href="#返回值：" class="headerlink" title="返回值："></a>返回值：</h4><ul>
+<li>如果键存在，返回键对应的值。</li>
+<li>如果键不存在，返回指定的默认值。</li>
+</ul>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="number">1</span>, <span class="string">&quot;One&quot;</span>);</span><br><span class="line">map.put(<span class="number">2</span>, <span class="string">&quot;Two&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> map.getOrDefault(<span class="number">3</span>, <span class="string">&quot;Default&quot;</span>);</span><br><span class="line">System.out.println(value);  <span class="comment">// 输出: Default</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li><code>map.getOrDefault(3, &quot;Default&quot;)</code>：尝试获取键 <code>3</code> 对应的值，由于键 <code>3</code> 不存在，返回默认值 <code>&quot;Default&quot;</code>。</li>
+</ul>
+<h3 id="2-entrySet-方法"><a href="#2-entrySet-方法" class="headerlink" title="2. entrySet 方法"></a>2. <code>entrySet</code> 方法</h3><p><code>entrySet</code> 是 <code>Map</code> 接口中的一个方法，用于返回一个包含所有键值对的集合视图。每个键值对都表示为一个 <code>Map.Entry</code> 对象。</p>
+<h4 id="方法签名：-1"><a href="#方法签名：-1" class="headerlink" title="方法签名："></a>方法签名：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet()</span><br></pre></td></tr></table></figure>
+
+<h4 id="返回值：-1"><a href="#返回值：-1" class="headerlink" title="返回值："></a>返回值：</h4><ul>
+<li>返回一个包含所有键值对的 <code>Set</code>，每个元素都是一个 <code>Map.Entry</code> 对象。</li>
+</ul>
+<h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="number">1</span>, <span class="string">&quot;One&quot;</span>);</span><br><span class="line">map.put(<span class="number">2</span>, <span class="string">&quot;Two&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer, String&gt; entry : map.entrySet()) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Key: &quot;</span> + entry.getKey() + <span class="string">&quot;, Value: &quot;</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">Key:</span> <span class="number">1</span><span class="string">,</span> <span class="attr">Value:</span> <span class="string">One</span></span><br><span class="line"><span class="attr">Key:</span> <span class="number">2</span><span class="string">,</span> <span class="attr">Value:</span> <span class="string">Two</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="解释：-1"><a href="#解释：-1" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li><code>map.entrySet()</code>：返回一个包含所有键值对的 <code>Set</code>。</li>
+<li><code>for (Map.Entry&lt;Integer, String&gt; entry : map.entrySet())</code>：遍历 <code>Set</code> 中的每个 <code>Map.Entry</code> 对象。</li>
+<li><code>entry.getKey()</code>：获取当前键值对的键。</li>
+<li><code>entry.getValue()</code>：获取当前键值对的值。</li>
+</ul>
+<ol>
+<li><p><strong><code>getOrDefault</code> 方法</strong>：</p>
+<ul>
+<li><code>m.put(num, m.getOrDefault(num, 0) + 1);</code>：<ul>
+<li><code>m.getOrDefault(num, 0)</code>：获取键 <code>num</code> 对应的值，如果键 <code>num</code> 不存在，返回默认值 <code>0</code>。</li>
+<li><code>m.getOrDefault(num, 0) + 1</code>：将获取到的值加 1。</li>
+<li><code>m.put(num, ...)</code>：将键 <code>num</code> 和更新后的值存入哈希表。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong><code>entrySet</code> 方法</strong>：</p>
+<ul>
+<li><code>for (Map.Entry&lt;Integer, Integer&gt; entry : m.entrySet())</code>：<ul>
+<li><code>m.entrySet()</code>：返回一个包含所有键值对的 <code>Set</code>。</li>
+<li><code>for (Map.Entry&lt;Integer, Integer&gt; entry : ...)</code>：遍历 <code>Set</code> 中的每个 <code>Map.Entry</code> 对象。</li>
+<li><code>int v = entry.getValue();</code>：获取当前键值对的值（即数字出现的次数）。</li>
+<li><code>ans += v * (v - 1) / 2;</code>：计算当前数字可以形成的数对数量，并累加到结果中。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul>
+<li>**<code>getOrDefault</code>**：用于获取指定键的值，如果键不存在，返回默认值。</li>
+<li>**<code>entrySet</code>**：返回一个包含所有键值对的集合视图，方便遍历和操作哈希表中的键值对。</li>
+</ul>
+<p>这两个方法在处理哈希表时非常有用，可以简化代码逻辑，提高代码的可读性和效率。</p>
+</blockquote>
+<h2 id="1534-统计好三元组"><a href="#1534-统计好三元组" class="headerlink" title="1534. 统计好三元组"></a><a href="https://leetcode.cn/problems/count-good-triplets/">1534. 统计好三元组</a></h2><blockquote>
+<p>给你一个整数数组 <code>arr</code> ，以及 <code>a</code>、<code>b</code> 、<code>c</code> 三个整数。请你统计其中好三元组的数量。</p>
+<p>如果三元组 <code>(arr[i], arr[j], arr[k])</code> 满足下列全部条件，则认为它是一个 <strong>好三元组</strong> 。</p>
+<ul>
+<li><code>0 &lt;= i &lt; j &lt; k &lt; arr.length</code></li>
+<li><code>|arr[i] - arr[j]| &lt;= a</code></li>
+<li><code>|arr[j] - arr[k]| &lt;= b</code></li>
+<li><code>|arr[i] - arr[k]| &lt;= c</code></li>
+</ul>
+<p>其中 <code>|x|</code> 表示 <code>x</code> 的绝对值。</p>
+<p>返回 <strong>好三元组的数量</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line">输入：arr = [<span class="number">3</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">9</span>,<span class="number">7</span>], a = <span class="number">7</span>, b = <span class="number">2</span>, c = <span class="number">3</span></span><br><span class="line">输出：<span class="number">4</span></span><br><span class="line">解释：一共有 <span class="number">4</span> 个好三元组：[<span class="comment">(3,0,1)</span>, <span class="comment">(3,0,1)</span>, <span class="comment">(3,1,1)</span>, <span class="comment">(0,1,1)</span>] 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">输入：arr = <span class="selector-attr">[1,1,2,2,3]</span>, <span class="selector-tag">a</span> = <span class="number">0</span>, <span class="selector-tag">b</span> = <span class="number">0</span>, c = <span class="number">1</span></span><br><span class="line">输出：<span class="number">0</span></span><br><span class="line">解释：不存在满足所有条件的三元组。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>3 &lt;= arr.length &lt;= 100</code></li>
+<li><code>0 &lt;= arr[i] &lt;= 1000</code></li>
+<li><code>0 &lt;= a, b, c &lt;= 1000</code></li>
+</ul>
+</blockquote>
+<p><strong>枚举</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">countGoodTriplets</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)</span> &#123;</span><br><span class="line">        <span class="type">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;arr.length-<span class="number">2</span>;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;arr.length-<span class="number">1</span>;++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=j+<span class="number">1</span>;k&lt;arr.length;++k)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(IsRight(arr[i],arr[j],a)&amp;&amp;IsRight(arr[j],arr[k],b)&amp;&amp;IsRight(arr[i],arr[k],c))</span><br><span class="line">                    &#123;</span><br><span class="line">                        count++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">IsRight</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> x)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> res=a-b;</span><br><span class="line">        <span class="keyword">if</span>(res&lt;<span class="number">0</span>) res=-res;</span><br><span class="line">        <span class="keyword">if</span>(res&gt;x) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>优化思路与算法</strong></p>
+<blockquote>
+<h4 id="原始思路"><a href="#原始思路" class="headerlink" title="原始思路"></a>原始思路</h4><p>原始代码使用了三重循环来枚举所有可能的三元组 <code>(i, j, k)</code>，并检查每个三元组是否满足条件 <code>|arr[i] - arr[j]| ≤ a</code>、<code>|arr[j] - arr[k]| ≤ b</code> 和 <code>|arr[i] - arr[k]| ≤ c</code>。这种方法的时间复杂度是 O(n^3)，在数组长度较大时效率较低。</p>
+<h4 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h4><p>我们可以通过减少不必要的枚举来优化算法。具体来说，我们可以先枚举 <code>j</code> 和 <code>k</code>，然后再检查 <code>i</code> 是否满足条件。这样可以减少一些不必要的枚举。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> <span class="title function_">countGoodTriplets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr, <span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.size(), cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> j + <span class="number">1</span>; k &lt; n; ++k) &#123;</span><br><span class="line">                <span class="keyword">if</span> (abs(arr[j] - arr[k]) &lt;= b) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; j; ++i) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (abs(arr[i] - arr[j]) &lt;= a &amp;&amp; abs(arr[i] - arr[k]) &lt;= c) &#123;</span><br><span class="line">                            ++cnt;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="详细解释"><a href="#详细解释" class="headerlink" title="详细解释"></a>详细解释</h3><ol>
+<li><strong>初始化</strong>：<ul>
+<li><code>int n = arr.size(), cnt = 0;</code>：获取数组的长度 <code>n</code>，并初始化计数器 <code>cnt</code> 为 0。</li>
+</ul>
+</li>
+<li>**枚举 <code>j</code> 和 <code>k</code>**：<ul>
+<li><code>for (int j = 0; j &lt; n; ++j)</code>：遍历数组中的每个元素 <code>arr[j]</code>。</li>
+<li><code>for (int k = j + 1; k &lt; n; ++k)</code>：遍历 <code>arr[j]</code> 之后的每个元素 <code>arr[k]</code>。</li>
+<li><code>if (abs(arr[j] - arr[k]) &lt;= b)</code>：检查 <code>|arr[j] - arr[k]| ≤ b</code> 的条件是否满足。</li>
+</ul>
+</li>
+<li><strong>枚举 <code>i</code>（<code>i &lt; j</code>）</strong>：<ul>
+<li><code>for (int i = 0; i &lt; j; ++i)</code>：遍历 <code>arr[j]</code> 之前的每个元素 <code>arr[i]</code>。</li>
+<li><code>if (abs(arr[i] - arr[j]) &lt;= a &amp;&amp; abs(arr[i] - arr[k]) &lt;= c)</code>：检查 <code>|arr[i] - arr[j]| ≤ a</code> 和 <code>|arr[i] - arr[k]| ≤ c</code> 的条件是否满足。</li>
+<li><code>++cnt;</code>：如果满足所有条件，计数器加 1。</li>
+</ul>
+</li>
+<li><strong>返回结果</strong>：<ul>
+<li><code>return cnt;</code>：返回满足条件的三元组数量。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h2 id="数据库基础"><a href="#数据库基础" class="headerlink" title="数据库基础"></a>数据库基础</h2><h3 id="584-寻找用户推荐人"><a href="#584-寻找用户推荐人" class="headerlink" title="584. 寻找用户推荐人"></a><a href="https://leetcode.cn/problems/find-customer-referee/">584. 寻找用户推荐人</a></h3><blockquote>
 <p>表: <code>Customer</code></p>
 <figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="code">+-------------+</span>---------+</span><br><span class="line"><span class="section">| Column Name | Type    |</span></span><br><span class="line"><span class="section">+-------------+---------+</span></span><br><span class="line">| id          | int     |</span><br><span class="line">| name        | varchar |</span><br><span class="line"><span class="section">| referee_id  | int     |</span></span><br><span class="line"><span class="section">+-------------+---------+</span></span><br><span class="line">在 SQL 中，id 是该表的主键列。</span><br><span class="line">该表的每一行表示一个客户的 id、姓名以及推荐他们的客户的 id。</span><br></pre></td></tr></table></figure>
 
@@ -1989,7 +2238,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">addDigits</span><span class="params">(<span class="type">int</span> num)</span> &#123;</span><br><span class="line">        <span class="comment">// 使用数字根公式直接计算结果</span></span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + (num - <span class="number">1</span>) % <span class="number">9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<h3 id="详细解释："><a href="#详细解释：" class="headerlink" title="详细解释："></a>详细解释：</h3><ol>
+<h3 id="详细解释：-1"><a href="#详细解释：-1" class="headerlink" title="详细解释："></a>详细解释：</h3><ol>
 <li><strong>特殊情况处理</strong>：<ul>
 <li>如果 <code>num</code> 为 0，数字根为 0。</li>
 </ul>
@@ -2067,11 +2316,11 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPowerOfTwo</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">// 确保 n 是正数，并且 n 的二进制表示中只有一个 1</span></span><br><span class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> &amp;&amp; (n &amp; (n - <span class="number">1</span>)) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<h3 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h3><ol>
+<h3 id="解释：-2"><a href="#解释：-2" class="headerlink" title="解释："></a>解释：</h3><ol>
 <li>**<code>n &gt; 0</code>**：确保 <code>n</code> 是正数。</li>
 <li>**<code>(n &amp; (n - 1)) == 0</code>**：判断 <code>n</code> 的二进制表示中是否只有一个 1。</li>
 </ol>
-<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><p>假设输入 <code>n</code> 为 536870912，我们来验证这个方法：</p>
+<h3 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h3><p>假设输入 <code>n</code> 为 536870912，我们来验证这个方法：</p>
 <ul>
 <li><code>n = 536870912</code></li>
 <li><code>n - 1 = 536870911</code></li>
@@ -2171,7 +2420,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将一个矩阵进行转置。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> matrix 输入的矩阵</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 转置后的矩阵</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] transpose(<span class="type">int</span>[][] matrix) &#123;</span><br><span class="line">        <span class="comment">// 获取矩阵的行数和列数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> matrix.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="comment">// 创建一个新的矩阵，用于存储转置后的结果</span></span><br><span class="line">        <span class="type">int</span>[][] transposed = <span class="keyword">new</span> <span class="title class_">int</span>[n][m];</span><br><span class="line">        <span class="comment">// 遍历原矩阵的每个元素</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="comment">// 将原矩阵的元素 (i, j) 放到转置矩阵的 (j, i) 位置</span></span><br><span class="line">                transposed[j][i] = matrix[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回转置后的矩阵</span></span><br><span class="line">        <span class="keyword">return</span> transposed;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<h3 id="解释：-1"><a href="#解释：-1" class="headerlink" title="解释："></a>解释：</h3><ol>
+<h3 id="解释：-3"><a href="#解释：-3" class="headerlink" title="解释："></a>解释：</h3><ol>
 <li><p><strong>方法注释</strong>：</p>
 <ul>
 <li><strong>功能</strong>：将一个矩阵进行转置。</li>
@@ -2201,7 +2450,7 @@
 <ul>
 <li><code>return transposed;</code>：返回转置后的矩阵。</li>
 </ul>
-<h3 id="解释：-2"><a href="#解释：-2" class="headerlink" title="解释："></a>解释：</h3><ul>
+<h3 id="解释：-4"><a href="#解释：-4" class="headerlink" title="解释："></a>解释：</h3><ul>
 <li>原矩阵的元素 <code>(0, 0)</code> 为 1，转置后放到 <code>(0, 0)</code> 位置。</li>
 <li>原矩阵的元素 <code>(0, 1)</code> 为 2，转置后放到 <code>(1, 0)</code> 位置。</li>
 <li>原矩阵的元素 <code>(0, 2)</code> 为 3，转置后放到 <code>(2, 0)</code> 位置。</li>
@@ -2330,6 +2579,16 @@
       </tags>
   </entry>
   <entry>
+    <title>魔女之旅</title>
+    <url>/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/</url>
+    <content><![CDATA[<h1 id="请别在意。我是旅人，得继续旅行才行"><a href="#请别在意。我是旅人，得继续旅行才行" class="headerlink" title="请别在意。我是旅人，得继续旅行才行!"></a>请别在意。我是旅人，得继续旅行才行!</h1><p><img src="/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/Elaina.jpg" alt="Elaina" loading="lazy"></p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">《魔女之旅》（日语：魔女の旅々）是由白石定规创作、あずーる插画的一部轻小说，并有Drama <span class="built_in">CD</span>、漫画等衍生作品。</span><br><span class="line"></span><br><span class="line">原作介绍</span><br><span class="line"><span class="number">2014</span>年在Amazon Kindle首次公开，<span class="number">2016</span>年修正后单行本化。</span><br><span class="line"></span><br><span class="line">剧情简介</span><br><span class="line">某个地方有个正在旅行的魔女，她的名字是伊蕾娜。</span><br><span class="line">身为旅人，在很长很长的旅途中，她与形形色色的国家与人们邂逅。</span><br><span class="line"></span><br><span class="line">只允许魔法师入境的国家、</span><br><span class="line">最喜欢肌肉的壮汉、</span><br><span class="line">在死亡深渊等待恋人归来的青年、</span><br><span class="line">独自留守国家早已灭亡的公主…</span><br><span class="line"></span><br><span class="line">最后，还有她身为魔女的至今为止与从今以后。</span><br><span class="line">和莫名其妙、滑稽可笑的人们相遇，接触某人美丽的日常生活，魔女日复一日编织出相逢与离别的故事。</span><br><span class="line"></span><br><span class="line">——《第一卷导语》</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>动漫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>空之境界</title>
     <url>/posts/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/</url>
     <content><![CDATA[<p><img src="/posts/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/d437d1dddb0c30c851e1741af02585236ee8758b.jpg" alt="d437d1dddb0c30c851e1741af02585236ee8758b" loading="lazy"></p>
@@ -2340,16 +2599,6 @@
 <h4 id="三、记忆与遗忘"><a href="#三、记忆与遗忘" class="headerlink" title="三、记忆与遗忘"></a>三、记忆与遗忘</h4><p>记忆与遗忘也是贯穿整个系列的关键主题之一。无论是因为某种原因失去记忆的角色，还是主动选择忘记某些痛苦回忆的人物，都在某种程度上反映了人类对于过去经历的态度。《空之境界》通过对记忆这一概念的独特诠释，引导读者思考记忆对我们塑造自我形象的重要性以及遗忘背后可能隐藏的情感创伤。</p>
 <h4 id="四、哲学思辨与文学艺术"><a href="#四、哲学思辨与文学艺术" class="headerlink" title="四、哲学思辨与文学艺术"></a>四、哲学思辨与文学艺术</h4><p>除了上述提到的内容之外，《空之境界》还包含了大量的哲学讨论和文学引用。例如，“起源”、“无意识”等概念频繁出现于文本之中，显示出作者深厚的哲学功底。同时，书中也不乏对经典文学作品的致敬，如《爱丽丝梦游仙境》中的元素就被巧妙地融入到了故事情节里，为整部作品增添了几分神秘色彩。</p>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>《空之境界》不仅是一部充满奇幻色彩的小说，更是一次深刻的精神之旅。通过细腻的心理描写、复杂的人物关系以及富有哲理性的对话，《空之境界》成功构建了一个既独立又相互联系的世界观体系。它挑战了传统意义上的善恶观念，鼓励人们勇敢地面对内心的黑暗面，并从中找到成长的力量。</p>
-]]></content>
-      <tags>
-        <tag>动漫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>魔女之旅</title>
-    <url>/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/</url>
-    <content><![CDATA[<h1 id="请别在意。我是旅人，得继续旅行才行"><a href="#请别在意。我是旅人，得继续旅行才行" class="headerlink" title="请别在意。我是旅人，得继续旅行才行!"></a>请别在意。我是旅人，得继续旅行才行!</h1><p><img src="/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/Elaina.jpg" alt="Elaina" loading="lazy"></p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">《魔女之旅》（日语：魔女の旅々）是由白石定规创作、あずーる插画的一部轻小说，并有Drama <span class="built_in">CD</span>、漫画等衍生作品。</span><br><span class="line"></span><br><span class="line">原作介绍</span><br><span class="line"><span class="number">2014</span>年在Amazon Kindle首次公开，<span class="number">2016</span>年修正后单行本化。</span><br><span class="line"></span><br><span class="line">剧情简介</span><br><span class="line">某个地方有个正在旅行的魔女，她的名字是伊蕾娜。</span><br><span class="line">身为旅人，在很长很长的旅途中，她与形形色色的国家与人们邂逅。</span><br><span class="line"></span><br><span class="line">只允许魔法师入境的国家、</span><br><span class="line">最喜欢肌肉的壮汉、</span><br><span class="line">在死亡深渊等待恋人归来的青年、</span><br><span class="line">独自留守国家早已灭亡的公主…</span><br><span class="line"></span><br><span class="line">最后，还有她身为魔女的至今为止与从今以后。</span><br><span class="line">和莫名其妙、滑稽可笑的人们相遇，接触某人美丽的日常生活，魔女日复一日编织出相逢与离别的故事。</span><br><span class="line"></span><br><span class="line">——《第一卷导语》</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>动漫</tag>
