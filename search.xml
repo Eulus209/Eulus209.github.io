@@ -1081,6 +1081,19 @@
       </tags>
   </entry>
   <entry>
+    <title>扫雷</title>
+    <url>/posts/saolei/</url>
+    <content><![CDATA[<iframe src="./扫雷.html" width="100%" height="600px"></iframe>
+
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>inori</title>
     <url>/posts/inori/</url>
     <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=31649312&auto=1&height=66"></iframe>
@@ -1884,19 +1897,6 @@
       </categories>
       <tags>
         <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>扫雷</title>
-    <url>/posts/saolei/</url>
-    <content><![CDATA[<iframe src="./扫雷.html" width="100%" height="600px"></iframe>
-
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -2709,36 +2709,84 @@
 <blockquote>
 <p>for(int i&#x3D;0;i&lt;n;++i)cin&gt;&gt;a[i];</p>
 </blockquote>
-<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h3><p>前缀和数组从<code>a[1]</code>开始</p>
-<p>需要开辟一个比原数组的大小大一个内存的数组</p>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h3><p>前缀和（Prefix Sum）是一种常用的算法技巧，主要用于快速计算数组中某个区间的和。通过构建一个前缀和数组，可以将多次求和的时间复杂度从 O(N) 降低到 O(1)。下面将详细讲解前缀和的概念、构建方法以及应用示例。</p>
+<h3 id="1-什么是前缀和？"><a href="#1-什么是前缀和？" class="headerlink" title="1. 什么是前缀和？"></a>1. 什么是前缀和？</h3><p>前缀和数组是一个派生数组，其中每个元素表示原始数组中从开始到当前索引的所有元素的累积和。具体来说，对于一个数组 <code>arr</code>，其前缀和数组 <code>prefix</code> 定义如下：</p>
+<ul>
+<li><code>prefix[0] = 0</code>（为了方便计算）</li>
+<li><code>prefix[i] = arr[0] + arr[1] + ... + arr[i-1]</code>（1-indexed）</li>
+</ul>
+<h3 id="2-如何构建前缀和数组？"><a href="#2-如何构建前缀和数组？" class="headerlink" title="2. 如何构建前缀和数组？"></a>2. 如何构建前缀和数组？</h3><p>构建前缀和数组的步骤如下：</p>
+<ol>
+<li>初始化一个与原数组大小相同的数组 <code>prefix</code>。</li>
+<li>设置 <code>prefix[0] = 0</code>。</li>
+<li>遍历原数组，从 <code>1</code> 到 <code>N</code>，计算每个 <code>prefix[i]</code> 的值。</li>
+</ol>
 <p>它的每一个元素意义是：<strong>前原数组n个元素的总和</strong>。也就是说下标为3的元素，是原来前三个元素的和。（也可以理解为除了自己以外的前面元素的和）</p>
 <blockquote>
 <blockquote>
-<p>公式: sum[i]&#x3D;arr[i−1]+sum[i−1]</p>
+<p>公式: <code>p[i]=p[i-1]+a[i]</code></p>
 </blockquote>
 </blockquote>
 <p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241019233204362.png" alt="image-20241019233204362" loading="lazy"></p>
-<h3 id="二维前缀和"><a href="#二维前缀和" class="headerlink" title="二维前缀和"></a>二维前缀和</h3><p>二维前缀和相对于一维复杂的多，它也需要多开辟空间，不同的是他是在每个维度都要多开辟一个。</p>
-<p>它每个元素的意义是：<strong>下标为(x,y)的求和数组的元素，是原数组下标（0,0）到（x - 1, y - 1）子矩阵内元素的和</strong>。</p>
+<h3 id="二维前缀和"><a href="#二维前缀和" class="headerlink" title="二维前缀和"></a>二维前缀和</h3><p>二维前缀和（2D Prefix Sum）是前缀和的扩展，用于快速计算二维数组中任意矩形区域的和。通过构建一个二维前缀和数组，可以将多次求和的时间复杂度从 O(N*M) 降低到 O(1)。下面将详细讲解二维前缀和的概念、构建方法以及应用示例。</p>
+<h4 id="1-什么是二维前缀和？"><a href="#1-什么是二维前缀和？" class="headerlink" title="1. 什么是二维前缀和？"></a>1. 什么是二维前缀和？</h4><p>二维前缀和数组是一个派生数组，其中每个元素表示原始二维数组中从左上角 (0,0) 到当前坐标 (i,j) 的所有元素的累积和。具体来说，对于一个二维数组 <code>arr</code>，其二维前缀和数组 <code>prefix</code> 定义如下：</p>
+<ul>
+<li><code>prefix[i][j]</code> 表示从 (0,0) 到 (i-1,j-1) 的所有元素的和。</li>
+</ul>
+<h4 id="2-如何构建二维前缀和数组？"><a href="#2-如何构建二维前缀和数组？" class="headerlink" title="2. 如何构建二维前缀和数组？"></a>2. 如何构建二维前缀和数组？</h4><p>构建二维前缀和数组的步骤如下：</p>
+<ol>
+<li>初始化一个与原数组大小相同的二维数组 <code>prefix</code>，其大小为 <code>(rows + 1) x (cols + 1)</code>，以便处理边界情况。</li>
+<li>遍历原数组，计算每个 <code>prefix[i][j]</code> 的值。</li>
+</ol>
+<p>它每个元素的意义是：<strong>下标为(x,y)的求和数组的元素，是原数组下标（0,0）到(x-1,y-1)子矩阵内元素的和</strong>。</p>
 <blockquote>
-<p> 公式: sum[x][y]&#x3D;sum[x−1][y]+sum[x][y−1]−sum[x−1][y−1]+arr[x−1][y−1]</p>
+<p> 公式: <code>p[i][j]=p[i-1][j]+p[i][j-1]-p[i-1][j-1]+a[i][j]</code></p>
 </blockquote>
 <p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241019233012873.png" alt="image-20241019233012873" loading="lazy"></p>
-<h3 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h3><p>差分是一种在算法竞赛中常用的技巧，主要用于处理区间修改和查询问题。差分的核心思想是通过对数组进行预处理，将区间操作转化为单点操作，从而简化问题的复杂度。</p>
-<p>假设我们有一个数组 <code>A</code>，长度为 <code>n</code>，我们定义一个新的数组 <code>D</code>，称为差分数组，其中 <code>D[i]</code> 表示 <code>A[i]</code> 与 <code>A[i-1]</code> 的差值，即：</p>
-<p>D[i]&#x3D;A[i]−A[i−1]</p>
-<p>特别地，我们定义 <code>D[0] = A[0]</code></p>
-<p><strong>差分数组的应用</strong></p>
-<p>差分数组的主要应用在于区间修改操作。假设我们需要对数组 <code>A</code> 的某个区间 <code>[l, r]</code> 中的所有元素加上一个值 <code>x</code>，我们可以通过修改差分数组 <code>D</code> 来实现：</p>
+<h3 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h3><p>差分（Difference Array）是一种用于高效处理区间更新和查询的算法技巧。它通过将更新操作转化为对差分数组的简单操作，从而实现快速的区间更新。下面将详细讲解差分的概念、构建方法、应用示例以及其优缺点。</p>
+<h4 id="1-什么是差分数组？"><a href="#1-什么是差分数组？" class="headerlink" title="1. 什么是差分数组？"></a>1. 什么是差分数组？</h4><p>差分数组是一种辅助数组，用于表示原始数组中相邻元素之间的差值。对于一个给定的数组 <code>arr</code>，其差分数组 <code>diff</code> 定义如下：</p>
+<ul>
+<li><code>diff[i] = arr[i] - arr[i-1]</code>（对于 <code>i &gt; 0</code>）</li>
+<li><code>diff[0] = arr[0]</code>（第一个元素直接赋值）</li>
+</ul>
+<p>通过差分数组，可以在 O(1) 的时间内对原数组的某个区间进行加法更新。</p>
+<h4 id="2-如何构建差分数组？"><a href="#2-如何构建差分数组？" class="headerlink" title="2. 如何构建差分数组？"></a>2. 如何构建差分数组？</h4><p>构建差分数组的步骤如下：</p>
+<ol>
+<li>初始化一个与原数组大小相同的数组 <code>diff</code>。</li>
+<li>计算每个 <code>diff[i]</code> 的值。</li>
+</ol>
+<h4 id="3-区间更新"><a href="#3-区间更新" class="headerlink" title="3. 区间更新"></a>3. 区间更新</h4><p>对于原数组 <code>arr</code> 的区间更新操作，例如将区间 <code>[l, r]</code> 的每个元素加上一个值 <code>x</code>，可以通过以下步骤实现：</p>
+<ol>
+<li>在差分数组中执行 <code>diff[l] += x</code>。</li>
+<li>在差分数组中执行 <code>diff[r + 1] -= x</code>（确保 <code>r + 1</code> 不越界）。</li>
+<li>解释:</li>
+</ol>
 <ul>
 <li>将 <code>D[l]</code> 加上 <code>x</code>，表示从 <code>A[l]</code> 开始的所有元素都加上 <code>x</code>。</li>
 <li>将 <code>D[r+1]</code> 减去 <code>x</code>，表示从 <code>A[r+1]</code> 开始的所有元素都减去 <code>x</code>，从而抵消之前的影响。</li>
 </ul>
-<h3 id="二维差分"><a href="#二维差分" class="headerlink" title="二维差分"></a>二维差分</h3><p>二维差分是一种在处理二维数组区间修改和查询问题时常用的技巧。与一维差分类似，二维差分的核心思想是通过对二维数组进行预处理，将区间操作转化为单点操作，从而简化问题的复杂度。</p>
-<p><strong>基本概念</strong></p>
-<p>假设我们有一个二维数组 <code>A</code>，大小为 <code>n x m</code>，我们定义一个新的二维数组 <code>D</code>，称为差分数组，其中 <code>D[i][j]</code> 表示 <code>A[i][j]</code> 与 <code>A[i-1][j]</code> 和 <code>A[i][j-1]</code> 的差值，即：</p>
-<p><code>D[i][j]=A[i][j]−A[i−1][j]−A[i][j−1]+A[i−1][j−1]</code></p>
-<p>二维差分数组的主要应用在于二维区间修改操作。假设我们需要对二维数组 <code>A</code> 的某个子矩阵 <code>[x1, y1, x2, y2]</code> 中的所有元素加上一个值 <code>x</code>，我们可以通过修改差分数组 <code>D</code> 来实现：</p>
+<h3 id="二维差分"><a href="#二维差分" class="headerlink" title="二维差分"></a>二维差分</h3><p>二维差分（2D Difference Array）是差分数组的扩展，用于高效处理二维数组的区间更新和查询。通过构建一个二维差分数组，可以在 O(1) 的时间内对二维数组的某个矩形区域进行加法更新。下面将详细讲解二维差分的概念、构建方法、应用示例以及其优缺点。</p>
+<h3 id="1-什么是二维差分数组？"><a href="#1-什么是二维差分数组？" class="headerlink" title="1. 什么是二维差分数组？"></a>1. 什么是二维差分数组？</h3><p>二维差分数组是一个辅助数组，用于表示原始二维数组中相邻元素之间的差值。对于一个给定的二维数组 <code>arr</code>，其二维差分数组 <code>diff</code> 定义如下：</p>
+<p><code>diff[i][j]</code>表示原数组<code>arr</code>中的更新值，具体计算如下：</p>
+<ul>
+<li><code>diff[i][j] = arr[i][j] - arr[i-1][j] - arr[i][j-1] + arr[i-1][j-1]</code>（对于 <code>i &gt; 0</code> 和 <code>j &gt; 0</code>）</li>
+<li><code>diff[i][0] = arr[i][0]</code>（第一列直接赋值）</li>
+<li><code>diff[0][j] = arr[0][j]</code>（第一行直接赋值）</li>
+</ul>
+<p>通过二维差分数组，可以在 O(1) 的时间内对原数组的某个矩形区域进行加法更新。</p>
+<h3 id="2-如何构建二维差分数组？"><a href="#2-如何构建二维差分数组？" class="headerlink" title="2. 如何构建二维差分数组？"></a>2. 如何构建二维差分数组？</h3><p>构建二维差分数组的步骤如下：</p>
+<ol>
+<li>初始化一个与原数组大小相同的二维数组 <code>diff</code>，其大小为 <code>(rows + 1) x (cols + 1)</code>，以便处理边界情况。</li>
+<li>计算每个 <code>diff[i][j]</code> 的值。</li>
+</ol>
+<h3 id="3-区间更新-1"><a href="#3-区间更新-1" class="headerlink" title="3. 区间更新"></a>3. 区间更新</h3><p>对于原数组 <code>arr</code> 的区间更新操作，例如将矩形区域 <code>[(x1, y1), (x2, y2)]</code> 的每个元素加上一个值 <code>x</code>，可以通过以下步骤实现：</p>
+<ol>
+<li>在差分数组中执行 <code>diff[x1][y1] += x</code>。</li>
+<li>在差分数组中执行 <code>diff[x1][y2 + 1] -= x</code>（确保 <code>y2 + 1</code> 不越界）。</li>
+<li>在差分数组中执行 <code>diff[x2 + 1][y1] -= x</code>（确保 <code>x2 + 1</code> 不越界）。</li>
+<li>在差分数组中执行 <code>diff[x2 + 1][y2 + 1] += x</code>（确保 <code>x2 + 1</code> 和 <code>y2 + 1</code> 不越界）。</li>
+</ol>
+<p><em>解释</em></p>
 <ul>
 <li>将 <code>D[x1][y1]</code> 加上 <code>x</code>，表示从 <code>A[x1][y1]</code> 开始的所有元素都加上 <code>x</code>。</li>
 <li>将 <code>D[x1][y2+1]</code> 减去 <code>x</code>，表示从 <code>A[x1][y2+1]</code> 开始的所有元素都减去 <code>x</code>。</li>
@@ -3091,12 +3139,357 @@
 <hr>
 <hr>
 <h1 id="第二讲：位运算双指针排序二分"><a href="#第二讲：位运算双指针排序二分" class="headerlink" title="第二讲：位运算双指针排序二分"></a>第二讲：位运算双指针排序二分</h1><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/hoshinoai.png" alt="hoshinoai" loading="lazy"></p>
-<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><h3 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><h2 id="习题二进制中1的个数"><a href="#习题二进制中1的个数" class="headerlink" title="习题二进制中1的个数"></a>习题<em>二进制中1的个数</em></h2><h3 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>给定一个长度为n的整数数组a<em>a</em>，你需要求出每个元素的二进制表示中11的个数。</p>
 </blockquote>
-<h4 id="输入描述-3"><a href="#输入描述-3" class="headerlink" title="输入描述"></a>输入描述</h4><figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">#### 输出描述</span><br><span class="line"></span><br><span class="line">&gt;</span><br><span class="line"></span><br><span class="line">#### 输入样例<span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="输入描述-3"><a href="#输入描述-3" class="headerlink" title="输入描述"></a>输入描述</h4><figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">第一行：一个整数<span class="built_in">n</span>（<span class="number">1</span>≤<span class="built_in">n</span>≤<span class="number">2</span>×<span class="number">10</span>^<span class="number">5</span>）。</span><br><span class="line">第二行：<span class="built_in">n</span>个整数，表示数组a（<span class="number">0</span>≤a_i ≤<span class="number">2</span>×<span class="number">10</span>^<span class="number">9</span> ，其中<span class="number">1</span>≤i≤<span class="built_in">n</span>）。</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### 输出样例<span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 代码</span><br><span class="line"></span><br><span class="line">```cpp</span><br></pre></td></tr></table></figure>
+<h4 id="输出描述-3"><a href="#输出描述-3" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>共一行，输出n个整数，其中第i个数为ai的二进制中1的个数。</p>
+</blockquote>
+<h4 id="输入样例1-3"><a href="#输入样例1-3" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="symbol">4 </span><span class="number">10</span> <span class="number">6</span> </span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-3"><a href="#输出样例1-3" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">1 </span><span class="number">2</span> <span class="number">2</span> </span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span><span class="number">+9</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> n;cin&gt;&gt;n;</span><br><span class="line">    <span class="type">int</span> a[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)cin&gt;&gt;a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(a[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i]&amp;<span class="number">1</span>)count++;<span class="comment">//1是掩码</span></span><br><span class="line">            a[i]&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;count&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="习题-我们需要0"><a href="#习题-我们需要0" class="headerlink" title="习题 我们需要0"></a>习题 <em>我们需要0</em></h2><h3 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>给定一个大小为n的非负整数数组a。</p>
+<p>你可以选定一个<code>非负整数</code>x，并令bi&#x3D;ai⊕x,其中1≤i≤n,请问是否存在x，使得b1⊕b2⊕⋯⊕bn&#x3D;0?</p>
+</blockquote>
+<h4 id="输入描述-4"><a href="#输入描述-4" class="headerlink" title="输入描述"></a>输入描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020220045672.png" alt="image-20241020220045672" loading="lazy"></p>
+<h4 id="输出描述-4"><a href="#输出描述-4" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>对于每个案例：</p>
+<p>若存在这样的x<em>x</em>，则输出x<em>x</em>；否则，输出−1−1。</p>
+</blockquote>
+<h4 id="输入样例1-4"><a href="#输入样例1-4" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">5</span> <span class="number">2</span> </span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="symbol">4 </span><span class="number">5</span> <span class="number">0</span> </span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-4"><a href="#输出样例1-4" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">5</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span><span class="number">+9</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> t;cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n;cin&gt;&gt;n;</span><br><span class="line">        ll ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> x;cin&gt;&gt;x;</span><br><span class="line">            ans^=x;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="习题二进制中1的个数-1"><a href="#习题二进制中1的个数-1" class="headerlink" title="习题二进制中1的个数"></a>习题<em>二进制中1的个数</em></h2><h3 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>给定一个长度为n的整数数组a<em>a</em>，你需要求出每个元素的二进制表示中11的个数。</p>
+</blockquote>
+<h4 id="输入描述-5"><a href="#输入描述-5" class="headerlink" title="输入描述"></a>输入描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020160436526.png" alt="image-20241020160436526" loading="lazy"></p>
+<h4 id="输出描述-5"><a href="#输出描述-5" class="headerlink" title="输出描述"></a>输出描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020160456871.png" alt="image-20241020160456871" loading="lazy"></p>
+<h4 id="输入样例1-5"><a href="#输入样例1-5" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">5</span> <span class="number">2</span> </span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="symbol">4 </span><span class="number">5</span> <span class="number">0</span> </span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-5"><a href="#输出样例1-5" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">5</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span><span class="number">+9</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> t;cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> n;cin&gt;&gt;n;</span><br><span class="line">        ll ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> x;cin&gt;&gt;x;</span><br><span class="line">            ans^=x;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="习题-【模板】排序（1）"><a href="#习题-【模板】排序（1）" class="headerlink" title="习题 【模板】排序（1）"></a>习题 <em>【模板】排序（1）</em></h2><h3 id="题目描述-8"><a href="#题目描述-8" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>给定一个大小为<em>n</em>的整型数组a<em>a</em>，你需要对其按照升序排序并进行去重。</p>
+</blockquote>
+<h4 id="输入描述-6"><a href="#输入描述-6" class="headerlink" title="输入描述"></a>输入描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020220147070.png" alt="image-20241020220147070" loading="lazy"></p>
+<h4 id="输出描述-6"><a href="#输出描述-6" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>共一行，<em>n</em>个整数，表示进行升序排序并进行去重后的数组。</p>
+</blockquote>
+<h4 id="输入样例1-6"><a href="#输入样例1-6" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">8</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">0</span> <span class="number">2</span> <span class="number">3</span> <span class="number">0</span> <span class="number">7</span> <span class="number">1</span> <span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-6"><a href="#输出样例1-6" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">0 </span><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span><span class="number">+9</span>;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; a;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> n;cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> x;cin&gt;&gt;x;</span><br><span class="line">        a.<span class="built_in">push_back</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>());</span><br><span class="line">    a.<span class="built_in">erase</span>(<span class="built_in">unique</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>()),a.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; i:a)cout&lt;&lt;i&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="习题二进制中1的个数-2"><a href="#习题二进制中1的个数-2" class="headerlink" title="习题二进制中1的个数"></a>习题<em>二进制中1的个数</em></h2><h3 id="题目描述-9"><a href="#题目描述-9" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>给定一个长度为n的整数数组a<em>a</em>，你需要求出每个元素的二进制表示中11的个数。</p>
+</blockquote>
+<h4 id="输入描述-7"><a href="#输入描述-7" class="headerlink" title="输入描述"></a>输入描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020161045051.png" alt="image-20241020161045051" loading="lazy"></p>
+<h4 id="输出描述-7"><a href="#输出描述-7" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>共一行,n个整数，表示进行升序排序并进行去重后的数组。</p>
+</blockquote>
+<h4 id="输入样例1-7"><a href="#输入样例1-7" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">8</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">0</span> <span class="number">2</span> <span class="number">3</span> <span class="number">0</span> <span class="number">7</span> <span class="number">1</span> <span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-7"><a href="#输出样例1-7" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">0 </span><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-9"><a href="#代码-9" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span><span class="number">+9</span>;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; a;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> n;cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> x;cin&gt;&gt;x;</span><br><span class="line">        a.<span class="built_in">push_back</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>());</span><br><span class="line">    a.<span class="built_in">erase</span>(<span class="built_in">unique</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>()),a.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; i:a)cout&lt;&lt;i&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="习题【模板】排序（2）"><a href="#习题【模板】排序（2）" class="headerlink" title="习题【模板】排序（2）"></a>习题<em>【模板】排序（2）</em></h2><h3 id="题目描述-10"><a href="#题目描述-10" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>Jakon家里有一堆未整理的书籍，胡乱地摆在书架上。有一天，身为强迫症的他终于看不下去了，于是他决定整理这堆图书，使其变得整齐一些。</p>
+<p>他有n<em>n</em>本高度、厚度、宽度确定的书籍，他决定按照高度、厚度、宽度分别作为第一、第二、第三关键字，把这些书籍降序地排列成一排。</p>
+</blockquote>
+<h4 id="输入描述-8"><a href="#输入描述-8" class="headerlink" title="输入描述"></a>输入描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020163811841.png" alt="image-20241020163811841" loading="lazy"></p>
+<h4 id="输出描述-8"><a href="#输出描述-8" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>共<em>n</em>行，根据题意将所有书籍进行排序后，按照顺序，每行输出一本书籍的高度、厚度、宽度。</p>
+</blockquote>
+<h4 id="输入样例1-8"><a href="#输入样例1-8" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span> <span class="number">7</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span> <span class="number">5</span></span><br><span class="line"><span class="symbol">5 </span><span class="number">5</span> <span class="number">5</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">6</span> <span class="number">7</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">10</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-8"><a href="#输出样例1-8" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">10 </span><span class="number">10</span> <span class="number">10</span></span><br><span class="line"><span class="symbol">5 </span><span class="number">5</span> <span class="number">5</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">6</span> <span class="number">7</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span> <span class="number">7</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-10"><a href="#代码-10" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span><span class="number">+9</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Book</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a,b,c;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> Book &amp;o) <span class="type">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a==o.a&amp;&amp;b==o.b)<span class="keyword">return</span> c&lt;o.c;</span><br><span class="line">        <span class="keyword">if</span>(a==o.a)<span class="keyword">return</span> b&lt;o.b;</span><br><span class="line">        <span class="keyword">return</span> a&lt;o.a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;p[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> n;cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)cin&gt;&gt;p[i].a&gt;&gt;p[i].b&gt;&gt;p[i].c;</span><br><span class="line">    <span class="built_in">sort</span>(p,p+n);</span><br><span class="line">    <span class="built_in">reverse</span>(p,p+n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">        cout&lt;&lt;p[i].a&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;p[i].b&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;p[i].c&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="comment">// for(auto&amp; i:p)cout&lt;&lt;i.a&lt;&lt;&#x27; &#x27;&lt;&lt;i.b&lt;&lt;&#x27; &#x27;&lt;&lt;i.c&lt;&lt;&quot;\n&quot;;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="习题-【模板】排序（3）"><a href="#习题-【模板】排序（3）" class="headerlink" title="习题 【模板】排序（3）"></a>习题 <em>【模板】排序（3）</em></h2><h3 id="题目描述-11"><a href="#题目描述-11" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>给定一个大小为<em>n</em>的整型数组<em>a</em>，你需要对该数组进行升序排序，并输出排序后的结果。</p>
+</blockquote>
+<h4 id="输入描述-9"><a href="#输入描述-9" class="headerlink" title="输入描述"></a>输入描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020192955049.png" alt="image-20241020192955049" loading="lazy"></p>
+<h4 id="输出描述-9"><a href="#输出描述-9" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>共一行，<em>n</em>个整数，表示进行升序排序后的数组。</p>
+</blockquote>
+<h4 id="输入样例1-9"><a href="#输入样例1-9" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="symbol">1000 </span><span class="number">0</span> <span class="number">3</span> <span class="number">1</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-9"><a href="#输出样例1-9" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">0 </span><span class="number">0</span> <span class="number">1</span> <span class="number">3</span> <span class="number">1000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-11"><a href="#代码-11" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="comment">// 定义常量 N，表示数据的最大大小为 2e5 + 9</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span> + <span class="number">9</span>;</span><br><span class="line"><span class="comment">// 定义一个数组 a，用于存储每个数字出现的次数</span></span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 优化输入输出性能</span></span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 读取输入的整数 n，表示接下来有 n 个数字</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="comment">// 读取 n 个数字，并统计每个数字出现的次数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> x;</span><br><span class="line">        cin &gt;&gt; x;</span><br><span class="line">        <span class="comment">// 将数字 x 的出现次数加 1</span></span><br><span class="line">        a[x]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 输出每个数字，按照它们出现的次数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">2e5</span>; i++) &#123;</span><br><span class="line">        <span class="comment">// 对于每个数字 i，输出它出现的次数次</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; a[i]; ++j) &#123;</span><br><span class="line">            cout &lt;&lt; i &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 输出换行符，使输出格式更清晰</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="习题最长连续不重复子序列"><a href="#习题最长连续不重复子序列" class="headerlink" title="习题最长连续不重复子序列"></a>习题<em>最长连续不重复子序列</em></h2><h3 id="题目描述-12"><a href="#题目描述-12" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>本题有<em>T</em>组测试样例，对于每组样例：</p>
+<p>给定一个长度为<em>n</em>的数组，求其中最长的连续且无重复数字的子序列的长度。</p>
+</blockquote>
+<h4 id="输入描述-10"><a href="#输入描述-10" class="headerlink" title="输入描述"></a>输入描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020203309498.png" alt="image-20241020203309498" loading="lazy"></p>
+<h4 id="输出描述-10"><a href="#输出描述-10" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>一个整数表示答案。</p>
+</blockquote>
+<h4 id="输入样例1-10"><a href="#输入样例1-10" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">2</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-10"><a href="#输出样例1-10" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p>解释：[2,3,5]为答案。</p>
+<h4 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2"></a>输入样例2</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">5</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">9</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">2</span> <span class="number">3</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例2"><a href="#输出样例2" class="headerlink" title="输出样例2"></a>输出样例2</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">5</span><br><span class="line">1</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p>解释：[1,5,7,8,9]为答案。</p>
+<h3 id="代码-12"><a href="#代码-12" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span><span class="number">+9</span>;</span><br><span class="line"><span class="type">int</span> a[N],c[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)cin&gt;&gt;a[i];</span><br><span class="line">    <span class="comment">//memset(c,0,sizeof(int)*(n+1));等价于下面的式子</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)c[a[i]]=<span class="number">0</span>;</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,j=<span class="number">0</span>;i&lt;=n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(j&lt;n&amp;&amp;!c[a[j<span class="number">+1</span>]])c[a[++j]]++;</span><br><span class="line">        ans=<span class="built_in">max</span>(ans,j-i<span class="number">+1ll</span>);<span class="comment">//ans为longlong类型</span></span><br><span class="line">        c[a[i]]--;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> _;cin&gt;&gt;_;</span><br><span class="line">    <span class="keyword">while</span>(_--)<span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="习题查找"><a href="#习题查找" class="headerlink" title="习题查找"></a>习题<em>查找</em></h2><h3 id="题目描述-13"><a href="#题目描述-13" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>给定一个大小为<em>n</em>的单调不减的非负整数序列<em>a</em>（下标从1开始），再给出<em>q</em>个询问。</p>
+<p>对于每个询问，给出一个整数<em>x</em>，你需要回答出，<em>x</em>第一次在给定序列<em>a</em>中出现的下标。</p>
+</blockquote>
+<h4 id="输入描述-11"><a href="#输入描述-11" class="headerlink" title="输入描述"></a>输入描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020205225099.png" alt="image-20241020205225099" loading="lazy"></p>
+<h4 id="输出描述-11"><a href="#输出描述-11" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>共一行，<em>q</em>个整数，表示每个询问数字在序列中第一次出现的下标，若不存在，则为−1。</p>
+<p>请注意，每个整数后为空格，而不是换行。</p>
+</blockquote>
+<h4 id="输入样例1-11"><a href="#输入样例1-11" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">7 </span><span class="number">3</span></span><br><span class="line"><span class="symbol">0 </span><span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="number">5</span> <span class="number">7</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">2</span> <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-11"><a href="#输出样例1-11" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">3 </span><span class="number">4</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-13"><a href="#代码-13" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="comment">// 定义常量N，表示数组的最大长度</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span><span class="number">+9</span>;</span><br><span class="line"><span class="comment">// 定义一个全局数组a，用于存储输入的整数序列</span></span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="comment">// 解决问题的函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 读取输入的整数n和q</span></span><br><span class="line">    <span class="type">int</span> n, q;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; q;</span><br><span class="line">    <span class="comment">// 读取n个整数并存储到数组a中</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="comment">// 处理q次查询</span></span><br><span class="line">    <span class="keyword">while</span>(q--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 读取查询的整数x</span></span><br><span class="line">        <span class="type">int</span> x;</span><br><span class="line">        cin &gt;&gt; x;</span><br><span class="line">        <span class="comment">// 初始化二分查找的左右边界</span></span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = n;</span><br><span class="line">        <span class="comment">// 二分查找过程</span></span><br><span class="line">        <span class="keyword">while</span>(l + <span class="number">1</span> != r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 计算中间位置</span></span><br><span class="line">            <span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="comment">// 如果中间位置的值小于x，则将左边界移动到mid</span></span><br><span class="line">            <span class="keyword">if</span>(a[mid] &lt; x)</span><br><span class="line">                l = mid;</span><br><span class="line">            <span class="comment">// 否则将右边界移动到mid</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                r = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 检查最终找到的位置r是否等于x</span></span><br><span class="line">        <span class="keyword">if</span>(a[r] == x)</span><br><span class="line">            cout &lt;&lt; r &lt;&lt; <span class="string">&#x27; &#x27;</span>; <span class="comment">// 如果相等，输出位置r</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            cout &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="string">&#x27; &#x27;</span>; <span class="comment">// 如果不相等，输出-1表示未找到</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 主函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 优化输入输出流</span></span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>), cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 设置默认测试用例数量为1</span></span><br><span class="line">    <span class="type">int</span> _ = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 如果需要，可以读取多个测试用例</span></span><br><span class="line">    <span class="comment">// cin &gt;&gt; _;</span></span><br><span class="line">    <span class="comment">// 循环处理每个测试用例</span></span><br><span class="line">    <span class="keyword">while</span>(_--)</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    <span class="comment">// 返回程序执行成功</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="习题进击的奶牛"><a href="#习题进击的奶牛" class="headerlink" title="习题进击的奶牛"></a>习题<em>进击的奶牛</em></h2><h3 id="题目描述-14"><a href="#题目描述-14" class="headerlink" title="题目描述"></a>题目描述</h3><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241020211327547.png" alt="image-20241020211327547" loading="lazy"></p>
+<h4 id="输入描述-12"><a href="#输入描述-12" class="headerlink" title="输入描述"></a>输入描述</h4><blockquote>
+<p>第 1 行：两个用空格隔开的数字N和<em>C</em>。</p>
+<p>第 2∼<em>N</em>+1 行：每行一个整数，表示每个隔间的坐标。</p>
+</blockquote>
+<h4 id="输出描述-12"><a href="#输出描述-12" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>输出只有一行，即相邻两头牛最大的最近距离。</p>
+</blockquote>
+<h4 id="输入样例1-12"><a href="#输入样例1-12" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">5 </span><span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-12"><a href="#输出样例1-12" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-14"><a href="#代码-14" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="comment">// 定义常量N，表示数组的最大长度</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span><span class="number">+9</span>;</span><br><span class="line"><span class="comment">// 定义全局变量a、n、c</span></span><br><span class="line"><span class="type">int</span> a[N], n, c;</span><br><span class="line"><span class="comment">// 定义函数f，用于计算在给定最小距离mid下，最多能放多少头牛</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(<span class="type">int</span> mid)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>, pre = <span class="number">-1e9</span>; <span class="comment">// res表示当前已放的牛的数量，pre表示上一个放了牛的位置</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 如果当前位置与上一个放牛位置的距离大于等于mid，则可以放牛</span></span><br><span class="line">        <span class="keyword">if</span>(a[i] - pre &gt;= mid)</span><br><span class="line">        &#123;</span><br><span class="line">            res++; <span class="comment">// 放一头牛</span></span><br><span class="line">            pre = a[i]; <span class="comment">// 更新上一个放牛的位置</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res; <span class="comment">// 返回最多能放的牛的数量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 解决问题的函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 读取输入的整数n和c</span></span><br><span class="line">    cin &gt;&gt; n &gt;&gt; c;</span><br><span class="line">    <span class="comment">// 读取n个整数并存储到数组a中</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="comment">// 对数组a进行排序</span></span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>, a + <span class="number">1</span> + n);</span><br><span class="line">    <span class="comment">// 初始化二分查找的左右边界</span></span><br><span class="line">    <span class="type">int</span> l = <span class="number">0</span>, r = <span class="number">1e9</span> + <span class="number">10</span>;</span><br><span class="line">    <span class="comment">// 二分查找过程</span></span><br><span class="line">    <span class="keyword">while</span>(l + <span class="number">1</span> != r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 计算中间位置</span></span><br><span class="line">        <span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果当前mid下能放的牛的数量大于等于c，则尝试更大的mid</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">f</span>(mid) &gt;= c)</span><br><span class="line">            l = mid;</span><br><span class="line">        <span class="comment">// 否则尝试更小的mid</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 输出最终找到的最小距离</span></span><br><span class="line">    cout &lt;&lt; l &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 主函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 优化输入输出流</span></span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>), cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 设置默认测试用例数量为1</span></span><br><span class="line">    <span class="type">int</span> _ = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 循环处理每个测试用例</span></span><br><span class="line">    <span class="keyword">while</span>(_--)</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    <span class="comment">// 返回程序执行成功</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题**"></a>习题**</h2><h3 id="题目描述-15"><a href="#题目描述-15" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+</blockquote>
+<h4 id="输入描述-13"><a href="#输入描述-13" class="headerlink" title="输入描述"></a>输入描述</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出描述-13"><a href="#输出描述-13" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+</blockquote>
+<h4 id="输入样例1-13"><a href="#输入样例1-13" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-13"><a href="#输出样例1-13" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-15"><a href="#代码-15" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="习题-1"><a href="#习题-1" class="headerlink" title="习题**"></a>习题**</h2><h3 id="题目描述-16"><a href="#题目描述-16" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+</blockquote>
+<h4 id="输入描述-14"><a href="#输入描述-14" class="headerlink" title="输入描述"></a>输入描述</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出描述-14"><a href="#输出描述-14" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+</blockquote>
+<h4 id="输入样例1-14"><a href="#输入样例1-14" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例1-14"><a href="#输出样例1-14" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码-16"><a href="#代码-16" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
