@@ -1,6 +1,427 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CPP_STL</title>
+    <url>/posts/CPP-STL/</url>
+    <content><![CDATA[<h1 id="C-STL学习"><a href="#C-STL学习" class="headerlink" title="C++STL学习"></a>C++STL学习</h1><p><img src="/posts/CPP-STL/sakura.jpg" alt="sakura" loading="lazy"></p>
+<h2 id="容器（Containers）"><a href="#容器（Containers）" class="headerlink" title="容器（Containers）"></a>容器（Containers）</h2><p>C++标准模板库（Standard Template Library，STL）提供了一组通用的容器类，这些容器类可以存储各种类型的数据，并且提供了丰富的操作接口。STL容器主要分为以下几类：</p>
+<h3 id="1-序列容器（Sequence-Containers）"><a href="#1-序列容器（Sequence-Containers）" class="headerlink" title="1. 序列容器（Sequence Containers）"></a>1. 序列容器（Sequence Containers）</h3><p>序列容器以线性方式存储元素，并且保持元素的插入顺序。</p>
+<h4 id="1-1-std-vector"><a href="#1-1-std-vector" class="headerlink" title="1.1 std::vector"></a>1.1 <code>std::vector</code></h4><ul>
+<li><strong>特点</strong>：动态数组，支持随机访问。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>push_back(value)</code>：在末尾添加元素。</li>
+<li><code>pop_back()</code>：删除末尾元素。</li>
+<li><code>at(index)</code>：访问指定位置的元素。</li>
+<li><code>size()</code>：返回元素个数。</li>
+<li><code>clear()</code>：清空容器。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-2-std-deque"><a href="#1-2-std-deque" class="headerlink" title="1.2 std::deque"></a>1.2 <code>std::deque</code></h4><ul>
+<li><strong>特点</strong>：双端队列，支持在两端高效插入和删除。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>push_back(value)</code>：在末尾添加元素。</li>
+<li><code>push_front(value)</code>：在开头添加元素。</li>
+<li><code>pop_back()</code>：删除末尾元素。</li>
+<li><code>pop_front()</code>：删除开头元素。</li>
+<li><code>at(index)</code>：访问指定位置的元素。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-3-std-list"><a href="#1-3-std-list" class="headerlink" title="1.3 std::list"></a>1.3 <code>std::list</code></h4><ul>
+<li><strong>特点</strong>：双向链表，支持高效的插入和删除操作。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>push_back(value)</code>：在末尾添加元素。</li>
+<li><code>push_front(value)</code>：在开头添加元素。</li>
+<li><code>pop_back()</code>：删除末尾元素。</li>
+<li><code>pop_front()</code>：删除开头元素。</li>
+<li><code>insert(iterator, value)</code>：在指定位置插入元素。</li>
+<li><code>erase(iterator)</code>：删除指定位置的元素。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-4-std-forward-list"><a href="#1-4-std-forward-list" class="headerlink" title="1.4 std::forward_list"></a>1.4 <code>std::forward_list</code></h4><ul>
+<li><strong>特点</strong>：单向链表，只支持单向遍历。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>push_front(value)</code>：在开头添加元素。</li>
+<li><code>pop_front()</code>：删除开头元素。</li>
+<li><code>insert_after(iterator, value)</code>：在指定位置之后插入元素。</li>
+<li><code>erase_after(iterator)</code>：删除指定位置之后的元素。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-关联容器（Associative-Containers）"><a href="#2-关联容器（Associative-Containers）" class="headerlink" title="2. 关联容器（Associative Containers）"></a>2. 关联容器（Associative Containers）</h3><p>关联容器以键值对的形式存储元素，并且通常以某种排序方式存储。</p>
+<h4 id="2-1-std-set"><a href="#2-1-std-set" class="headerlink" title="2.1 std::set"></a>2.1 <code>std::set</code></h4><ul>
+<li><strong>特点</strong>：存储唯一元素，自动排序。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>insert(value)</code>：插入元素。</li>
+<li><code>erase(value)</code>：删除元素。</li>
+<li><code>find(value)</code>：查找元素。</li>
+<li><code>count(value)</code>：返回元素个数（0或1）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-std-multiset"><a href="#2-2-std-multiset" class="headerlink" title="2.2 std::multiset"></a>2.2 <code>std::multiset</code></h4><ul>
+<li><strong>特点</strong>：存储元素，允许重复，自动排序。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>insert(value)</code>：插入元素。</li>
+<li><code>erase(value)</code>：删除所有等于该值的元素。</li>
+<li><code>find(value)</code>：查找元素。</li>
+<li><code>count(value)</code>：返回元素个数。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-3-std-map"><a href="#2-3-std-map" class="headerlink" title="2.3 std::map"></a>2.3 <code>std::map</code></h4><ul>
+<li><strong>特点</strong>：存储键值对，键唯一，自动排序。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>insert(&#123;key, value&#125;)</code>：插入键值对。</li>
+<li><code>erase(key)</code>：删除指定键的元素。</li>
+<li><code>find(key)</code>：查找指定键的元素。</li>
+<li><code>operator[]</code>：访问或插入指定键的元素。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-4-std-multimap"><a href="#2-4-std-multimap" class="headerlink" title="2.4 std::multimap"></a>2.4 <code>std::multimap</code></h4><ul>
+<li><strong>特点</strong>：存储键值对，键可以重复，自动排序。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>insert(&#123;key, value&#125;)</code>：插入键值对。</li>
+<li><code>erase(key)</code>：删除所有指定键的元素。</li>
+<li><code>find(key)</code>：查找指定键的元素。</li>
+<li><code>count(key)</code>：返回指定键的元素个数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-无序关联容器（Unordered-Associative-Containers）"><a href="#3-无序关联容器（Unordered-Associative-Containers）" class="headerlink" title="3. 无序关联容器（Unordered Associative Containers）"></a>3. 无序关联容器（Unordered Associative Containers）</h3><p>无序关联容器以哈希表的形式存储元素，不保证元素的顺序。</p>
+<h4 id="3-1-std-unordered-set"><a href="#3-1-std-unordered-set" class="headerlink" title="3.1 std::unordered_set"></a>3.1 <code>std::unordered_set</code></h4><ul>
+<li><strong>特点</strong>：存储唯一元素，无序。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>insert(value)</code>：插入元素。</li>
+<li><code>erase(value)</code>：删除元素。</li>
+<li><code>find(value)</code>：查找元素。</li>
+<li><code>count(value)</code>：返回元素个数（0或1）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-std-unordered-multiset"><a href="#3-2-std-unordered-multiset" class="headerlink" title="3.2 std::unordered_multiset"></a>3.2 <code>std::unordered_multiset</code></h4><ul>
+<li><strong>特点</strong>：存储元素，允许重复，无序。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>insert(value)</code>：插入元素。</li>
+<li><code>erase(value)</code>：删除所有等于该值的元素。</li>
+<li><code>find(value)</code>：查找元素。</li>
+<li><code>count(value)</code>：返回元素个数。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-std-unordered-map"><a href="#3-3-std-unordered-map" class="headerlink" title="3.3 std::unordered_map"></a>3.3 <code>std::unordered_map</code></h4><ul>
+<li><strong>特点</strong>：存储键值对，键唯一，无序。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>insert(&#123;key, value&#125;)</code>：插入键值对。</li>
+<li><code>erase(key)</code>：删除指定键的元素。</li>
+<li><code>find(key)</code>：查找指定键的元素。</li>
+<li><code>operator[]</code>：访问或插入指定键的元素。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-4-std-unordered-multimap"><a href="#3-4-std-unordered-multimap" class="headerlink" title="3.4 std::unordered_multimap"></a>3.4 <code>std::unordered_multimap</code></h4><ul>
+<li><strong>特点</strong>：存储键值对，键可以重复，无序。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>insert(&#123;key, value&#125;)</code>：插入键值对。</li>
+<li><code>erase(key)</code>：删除所有指定键的元素。</li>
+<li><code>find(key)</code>：查找指定键的元素。</li>
+<li><code>count(key)</code>：返回指定键的元素个数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-容器适配器（Container-Adapters）"><a href="#4-容器适配器（Container-Adapters）" class="headerlink" title="4. 容器适配器（Container Adapters）"></a>4. 容器适配器（Container Adapters）</h3><p>容器适配器是对基础容器的封装，提供特定的接口。</p>
+<h4 id="4-1-std-stack"><a href="#4-1-std-stack" class="headerlink" title="4.1 std::stack"></a>4.1 <code>std::stack</code></h4><ul>
+<li><strong>特点</strong>：后进先出（LIFO）的数据结构。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>push(value)</code>：压入元素。</li>
+<li><code>pop()</code>：弹出元素。</li>
+<li><code>top()</code>：访问栈顶元素。</li>
+<li><code>empty()</code>：判断栈是否为空。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2-std-queue"><a href="#4-2-std-queue" class="headerlink" title="4.2 std::queue"></a>4.2 <code>std::queue</code></h4><ul>
+<li><strong>特点</strong>：先进先出（FIFO）的数据结构。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>push(value)</code>：入队。</li>
+<li><code>pop()</code>：出队。</li>
+<li><code>front()</code>：访问队首元素。</li>
+<li><code>back()</code>：访问队尾元素。</li>
+<li><code>empty()</code>：判断队列是否为空。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-3-std-priority-queue"><a href="#4-3-std-priority-queue" class="headerlink" title="4.3 std::priority_queue"></a>4.3 <code>std::priority_queue</code></h4><ul>
+<li><strong>特点</strong>：优先队列，元素按优先级排序。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>push(value)</code>：插入元素。</li>
+<li><code>pop()</code>：弹出优先级最高的元素。</li>
+<li><code>top()</code>：访问优先级最高的元素。</li>
+<li><code>empty()</code>：判断队列是否为空。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-其他容器"><a href="#5-其他容器" class="headerlink" title="5. 其他容器"></a>5. 其他容器</h3><h4 id="5-1-std-array"><a href="#5-1-std-array" class="headerlink" title="5.1 std::array"></a>5.1 <code>std::array</code></h4><ul>
+<li><strong>特点</strong>：固定大小的数组，支持随机访问。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>at(index)</code>：访问指定位置的元素。</li>
+<li><code>size()</code>：返回元素个数。</li>
+<li><code>fill(value)</code>：用指定值填充数组。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-2-std-span"><a href="#5-2-std-span" class="headerlink" title="5.2 std::span"></a>5.2 <code>std::span</code></h4><ul>
+<li><strong>特点</strong>：轻量级的非拥有视图，表示一段连续的内存区域。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>size()</code>：返回元素个数。</li>
+<li><code>data()</code>：返回指向内存区域的指针。</li>
+<li><code>subspan(offset, count)</code>：返回子视图。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>STL容器提供了丰富的数据结构和操作接口，能够满足各种不同的需求。选择合适的容器可以显著提高代码的效率和可读性。在使用时，需要根据具体的需求选择合适的容器类型，并注意不同容器的时间复杂度和空间复杂度。</p>
+<h2 id="算法（Algorithms）"><a href="#算法（Algorithms）" class="headerlink" title="算法（Algorithms）"></a>算法（Algorithms）</h2><p>C++标准模板库（STL）不仅提供了丰富的容器类，还提供了一组强大的算法，这些算法可以应用于各种容器，极大地简化了开发者的编程工作。STL算法主要分为以下几类：</p>
+<h3 id="1-非修改序列算法（Non-modifying-Sequence-Operations）"><a href="#1-非修改序列算法（Non-modifying-Sequence-Operations）" class="headerlink" title="1. 非修改序列算法（Non-modifying Sequence Operations）"></a>1. 非修改序列算法（Non-modifying Sequence Operations）</h3><p>这类算法对序列进行操作，但不修改序列的内容。</p>
+<h4 id="1-1-std-find"><a href="#1-1-std-find" class="headerlink" title="1.1 std::find"></a>1.1 <code>std::find</code></h4><ul>
+<li><strong>功能</strong>：在序列中查找指定值。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> it = std::<span class="built_in">find</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line"><span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Found &quot;</span> &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="1-2-std-count"><a href="#1-2-std-count" class="headerlink" title="1.2 std::count"></a>1.2 <code>std::count</code></h4><ul>
+<li><strong>功能</strong>：统计序列中指定值的个数。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">int</span> count = std::<span class="built_in">count</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Count of 3: &quot;</span> &lt;&lt; count &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="1-3-std-for-each"><a href="#1-3-std-for-each" class="headerlink" title="1.3 std::for_each"></a>1.3 <code>std::for_each</code></h4><ul>
+<li><strong>功能</strong>：对序列中的每个元素执行指定操作。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::for_each(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), [](<span class="type">int</span> &amp;n)&#123; n *= <span class="number">2</span>; &#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-修改序列算法（Modifying-Sequence-Operations）"><a href="#2-修改序列算法（Modifying-Sequence-Operations）" class="headerlink" title="2. 修改序列算法（Modifying Sequence Operations）"></a>2. 修改序列算法（Modifying Sequence Operations）</h3><p>这类算法会修改序列的内容。</p>
+<h4 id="2-1-std-copy"><a href="#2-1-std-copy" class="headerlink" title="2.1 std::copy"></a>2.1 <code>std::copy</code></h4><ul>
+<li><strong>功能</strong>：将一个序列的内容复制到另一个序列。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec2</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">std::<span class="built_in">copy</span>(vec<span class="number">1.</span><span class="built_in">begin</span>(), vec<span class="number">1.</span><span class="built_in">end</span>(), vec<span class="number">2.</span><span class="built_in">begin</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-2-std-transform"><a href="#2-2-std-transform" class="headerlink" title="2.2 std::transform"></a>2.2 <code>std::transform</code></h4><ul>
+<li><strong>功能</strong>：对序列中的每个元素执行指定操作，并将结果存储到另一个序列。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec2</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">std::<span class="built_in">transform</span>(vec<span class="number">1.</span><span class="built_in">begin</span>(), vec<span class="number">1.</span><span class="built_in">end</span>(), vec<span class="number">2.</span><span class="built_in">begin</span>(), [](<span class="type">int</span> n)&#123; <span class="keyword">return</span> n * <span class="number">2</span>; &#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-3-std-replace"><a href="#2-3-std-replace" class="headerlink" title="2.3 std::replace"></a>2.3 <code>std::replace</code></h4><ul>
+<li><strong>功能</strong>：将序列中所有等于指定值的元素替换为另一个值。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::<span class="built_in">replace</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-排序和相关算法（Sorting-and-Related-Operations）"><a href="#3-排序和相关算法（Sorting-and-Related-Operations）" class="headerlink" title="3. 排序和相关算法（Sorting and Related Operations）"></a>3. 排序和相关算法（Sorting and Related Operations）</h3><p>这类算法对序列进行排序或相关操作。</p>
+<h4 id="3-1-std-sort"><a href="#3-1-std-sort" class="headerlink" title="3.1 std::sort"></a>3.1 <code>std::sort</code></h4><ul>
+<li><strong>功能</strong>：对序列进行排序。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>&#125;;</span><br><span class="line">std::<span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="3-2-std-stable-sort"><a href="#3-2-std-stable-sort" class="headerlink" title="3.2 std::stable_sort"></a>3.2 <code>std::stable_sort</code></h4><ul>
+<li><strong>功能</strong>：对序列进行稳定排序，保持相等元素的相对顺序。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>&#125;;</span><br><span class="line">std::<span class="built_in">stable_sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="3-3-std-binary-search"><a href="#3-3-std-binary-search" class="headerlink" title="3.3 std::binary_search"></a>3.3 <code>std::binary_search</code></h4><ul>
+<li><strong>功能</strong>：在已排序的序列中查找指定值。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">bool</span> found = std::<span class="built_in">binary_search</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4-数值算法（Numeric-Operations）"><a href="#4-数值算法（Numeric-Operations）" class="headerlink" title="4. 数值算法（Numeric Operations）"></a>4. 数值算法（Numeric Operations）</h3><p>这类算法主要用于数值计算。</p>
+<h4 id="4-1-std-accumulate"><a href="#4-1-std-accumulate" class="headerlink" title="4.1 std::accumulate"></a>4.1 <code>std::accumulate</code></h4><ul>
+<li><strong>功能</strong>：计算序列中元素的累加和。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">int</span> sum = std::<span class="built_in">accumulate</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4-2-std-inner-product"><a href="#4-2-std-inner-product" class="headerlink" title="4.2 std::inner_product"></a>4.2 <code>std::inner_product</code></h4><ul>
+<li><strong>功能</strong>：计算两个序列的内积。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec2 = &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line"><span class="type">int</span> product = std::<span class="built_in">inner_product</span>(vec<span class="number">1.</span><span class="built_in">begin</span>(), vec<span class="number">1.</span><span class="built_in">end</span>(), vec<span class="number">2.</span><span class="built_in">begin</span>(), <span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="5-堆算法（Heap-Operations）"><a href="#5-堆算法（Heap-Operations）" class="headerlink" title="5. 堆算法（Heap Operations）"></a>5. 堆算法（Heap Operations）</h3><p>这类算法用于操作堆结构。</p>
+<h4 id="5-1-std-make-heap"><a href="#5-1-std-make-heap" class="headerlink" title="5.1 std::make_heap"></a>5.1 <code>std::make_heap</code></h4><ul>
+<li><strong>功能</strong>：将序列转换为堆。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line">std::<span class="built_in">make_heap</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="5-2-std-pop-heap"><a href="#5-2-std-pop-heap" class="headerlink" title="5.2 std::pop_heap"></a>5.2 <code>std::pop_heap</code></h4><ul>
+<li><strong>功能</strong>：从堆中弹出最大元素。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::<span class="built_in">pop_heap</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">vec.<span class="built_in">pop_back</span>();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="5-3-std-push-heap"><a href="#5-3-std-push-heap" class="headerlink" title="5.3 std::push_heap"></a>5.3 <code>std::push_heap</code></h4><ul>
+<li><strong>功能</strong>：将新元素插入堆中。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>&#125;;</span><br><span class="line">vec.<span class="built_in">push_back</span>(<span class="number">6</span>);</span><br><span class="line">std::<span class="built_in">push_heap</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="6-最小-最大算法（Minimum-Maximum-Operations）"><a href="#6-最小-最大算法（Minimum-Maximum-Operations）" class="headerlink" title="6. 最小&#x2F;最大算法（Minimum&#x2F;Maximum Operations）"></a>6. 最小&#x2F;最大算法（Minimum&#x2F;Maximum Operations）</h3><p>这类算法用于查找序列中的最小值或最大值。</p>
+<h4 id="6-1-std-min-element"><a href="#6-1-std-min-element" class="headerlink" title="6.1 std::min_element"></a>6.1 <code>std::min_element</code></h4><ul>
+<li><strong>功能</strong>：查找序列中的最小元素。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> min_it = std::<span class="built_in">min_element</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="6-2-std-max-element"><a href="#6-2-std-max-element" class="headerlink" title="6.2 std::max_element"></a>6.2 <code>std::max_element</code></h4><ul>
+<li><strong>功能</strong>：查找序列中的最大元素。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> max_it = std::<span class="built_in">max_element</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="7-其他算法"><a href="#7-其他算法" class="headerlink" title="7. 其他算法"></a>7. 其他算法</h3><h4 id="7-1-std-reverse"><a href="#7-1-std-reverse" class="headerlink" title="7.1 std::reverse"></a>7.1 <code>std::reverse</code></h4><ul>
+<li><strong>功能</strong>：反转序列中的元素。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::<span class="built_in">reverse</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="7-2-std-unique"><a href="#7-2-std-unique" class="headerlink" title="7.2 std::unique"></a>7.2 <code>std::unique</code></h4><ul>
+<li><strong>功能</strong>：移除序列中的连续重复元素。</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> last = std::<span class="built_in">unique</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">vec.<span class="built_in">erase</span>(last, vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>STL算法提供了丰富的功能，涵盖了从简单的查找、排序到复杂的数值计算和堆操作。这些算法通常具有较高的效率，并且可以与各种容器配合使用，极大地提高了C++程序的开发效率和代码质量。在使用时，需要根据具体的需求选择合适的算法，并注意算法的复杂度和适用条件。</p>
+<h2 id="迭代器（Iterators）"><a href="#迭代器（Iterators）" class="headerlink" title="迭代器（Iterators）"></a>迭代器（Iterators）</h2><p>C++标准模板库（STL）中的迭代器（Iterators）是一种类似于指针的对象，用于遍历容器中的元素。迭代器提供了一种统一的方式来访问和操作容器中的数据，而不需要关心容器的具体实现细节。迭代器的主要作用是解耦算法和容器，使得算法可以独立于容器类型进行设计和实现。</p>
+<h3 id="迭代器的分类"><a href="#迭代器的分类" class="headerlink" title="迭代器的分类"></a>迭代器的分类</h3><p>根据功能和使用场景，迭代器可以分为以下几类：</p>
+<h4 id="1-输入迭代器（Input-Iterator）"><a href="#1-输入迭代器（Input-Iterator）" class="headerlink" title="1. 输入迭代器（Input Iterator）"></a>1. 输入迭代器（Input Iterator）</h4><ul>
+<li><strong>特点</strong>：只读，单向移动，每次只能读取一次。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>operator*</code>：解引用，获取当前元素。</li>
+<li><code>operator++</code>：前移迭代器。</li>
+<li><code>operator==</code> 和 <code>operator!=</code>：比较两个迭代器是否相等。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">std::istream_iterator&lt;<span class="type">int</span>&gt; <span class="title">input</span><span class="params">(std::cin)</span></span>;</span><br><span class="line">std::istream_iterator&lt;<span class="type">int</span>&gt; end;</span><br><span class="line"><span class="keyword">while</span> (input != end) &#123;</span><br><span class="line">    std::cout &lt;&lt; *input &lt;&lt; std::endl;</span><br><span class="line">    ++input;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-输出迭代器（Output-Iterator）"><a href="#2-输出迭代器（Output-Iterator）" class="headerlink" title="2. 输出迭代器（Output Iterator）"></a>2. 输出迭代器（Output Iterator）</h4><ul>
+<li><strong>特点</strong>：只写，单向移动，每次只能写入一次。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>operator*</code>：解引用，用于写入数据。</li>
+<li><code>operator++</code>：前移迭代器。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="function">std::ostream_iterator&lt;<span class="type">int</span>&gt; <span class="title">output</span><span class="params">(std::cout, <span class="string">&quot; &quot;</span>)</span></span>;</span><br><span class="line">std::<span class="built_in">copy</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), output);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="3-前向迭代器（Forward-Iterator）"><a href="#3-前向迭代器（Forward-Iterator）" class="headerlink" title="3. 前向迭代器（Forward Iterator）"></a>3. 前向迭代器（Forward Iterator）</h4><ul>
+<li><strong>特点</strong>：可读可写，单向移动，支持多次读写。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>operator*</code>：解引用，获取或设置当前元素。</li>
+<li><code>operator++</code>：前移迭代器。</li>
+<li><code>operator==</code> 和 <code>operator!=</code>：比较两个迭代器是否相等。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::forward_list&lt;<span class="type">int</span>&gt; flist = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::forward_list&lt;<span class="type">int</span>&gt;::iterator it = flist.<span class="built_in">begin</span>();</span><br><span class="line"><span class="keyword">while</span> (it != flist.<span class="built_in">end</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">    ++it;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4-双向迭代器（Bidirectional-Iterator）"><a href="#4-双向迭代器（Bidirectional-Iterator）" class="headerlink" title="4. 双向迭代器（Bidirectional Iterator）"></a>4. 双向迭代器（Bidirectional Iterator）</h4><ul>
+<li><strong>特点</strong>：可读可写，双向移动，支持多次读写。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>operator*</code>：解引用，获取或设置当前元素。</li>
+<li><code>operator++</code>：前移迭代器。</li>
+<li><code>operator--</code>：后移迭代器。</li>
+<li><code>operator==</code> 和 <code>operator!=</code>：比较两个迭代器是否相等。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::list&lt;<span class="type">int</span>&gt; lst = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::list&lt;<span class="type">int</span>&gt;::iterator it = lst.<span class="built_in">begin</span>();</span><br><span class="line"><span class="keyword">while</span> (it != lst.<span class="built_in">end</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">    ++it;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="5-随机访问迭代器（Random-Access-Iterator）"><a href="#5-随机访问迭代器（Random-Access-Iterator）" class="headerlink" title="5. 随机访问迭代器（Random Access Iterator）"></a>5. 随机访问迭代器（Random Access Iterator）</h4><ul>
+<li><strong>特点</strong>：可读可写，支持随机访问，支持多次读写。</li>
+<li><strong>操作</strong>：<ul>
+<li><code>operator*</code>：解引用，获取或设置当前元素。</li>
+<li><code>operator++</code> 和 <code>operator--</code>：前移和后移迭代器。</li>
+<li><code>operator+</code> 和 <code>operator-</code>：迭代器加减整数。</li>
+<li><code>operator+=</code> 和 <code>operator-=</code>：迭代器加减等于整数。</li>
+<li><code>operator[]</code>：随机访问元素。</li>
+<li><code>operator&lt;</code>、<code>operator&gt;</code>、<code>operator&lt;=</code>、<code>operator&gt;=</code>：比较两个迭代器。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt;::iterator it = vec.<span class="built_in">begin</span>();</span><br><span class="line">std::cout &lt;&lt; *(it + <span class="number">1</span>) &lt;&lt; std::endl; <span class="comment">// 输出 2</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="迭代器的使用"><a href="#迭代器的使用" class="headerlink" title="迭代器的使用"></a>迭代器的使用</h3><p>迭代器通常用于以下场景：</p>
+<h4 id="1-遍历容器"><a href="#1-遍历容器" class="headerlink" title="1. 遍历容器"></a>1. 遍历容器</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (std::vector&lt;<span class="type">int</span>&gt;::iterator it = vec.<span class="built_in">begin</span>(); it != vec.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-算法操作"><a href="#2-算法操作" class="headerlink" title="2. 算法操作"></a>2. 算法操作</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::<span class="built_in">transform</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), vec.<span class="built_in">begin</span>(), [](<span class="type">int</span> n)&#123; <span class="keyword">return</span> n * <span class="number">2</span>; &#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-插入和删除元素"><a href="#3-插入和删除元素" class="headerlink" title="3. 插入和删除元素"></a>3. 插入和删除元素</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::list&lt;<span class="type">int</span>&gt; lst = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::list&lt;<span class="type">int</span>&gt;::iterator it = lst.<span class="built_in">begin</span>();</span><br><span class="line">++it; <span class="comment">// 移动到第二个元素</span></span><br><span class="line">lst.<span class="built_in">insert</span>(it, <span class="number">10</span>); <span class="comment">// 在第二个元素前插入10</span></span><br><span class="line">lst.<span class="built_in">erase</span>(it); <span class="comment">// 删除第二个元素</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="迭代器的失效"><a href="#迭代器的失效" class="headerlink" title="迭代器的失效"></a>迭代器的失效</h3><p>在使用迭代器时，需要注意迭代器可能会失效的情况，特别是在插入或删除元素后。不同的容器和操作可能导致迭代器失效的情况不同。</p>
+<h4 id="1-std-vector"><a href="#1-std-vector" class="headerlink" title="1. std::vector"></a>1. <code>std::vector</code></h4><ul>
+<li><strong>插入元素</strong>：在插入元素后，插入点之后的所有迭代器失效。</li>
+<li><strong>删除元素</strong>：被删除元素的迭代器失效。</li>
+</ul>
+<h4 id="2-std-list"><a href="#2-std-list" class="headerlink" title="2. std::list"></a>2. <code>std::list</code></h4><ul>
+<li><strong>插入元素</strong>：插入操作不会使任何迭代器失效。</li>
+<li><strong>删除元素</strong>：只有被删除元素的迭代器失效。</li>
+</ul>
+<h4 id="3-std-map-和-std-set"><a href="#3-std-map-和-std-set" class="headerlink" title="3. std::map 和 std::set"></a>3. <code>std::map</code> 和 <code>std::set</code></h4><ul>
+<li><strong>插入元素</strong>：插入操作不会使任何迭代器失效。</li>
+<li><strong>删除元素</strong>：只有被删除元素的迭代器失效。</li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>迭代器是STL中非常重要的概念，它提供了一种统一的方式来访问和操作容器中的数据。通过使用迭代器，算法可以独立于容器类型进行设计和实现，从而提高了代码的复用性和可维护性。在使用迭代器时，需要注意迭代器的分类、操作和可能的失效情况，以确保代码的正确性和效率。</p>
+<h2 id="函数对象（Function-Objects）"><a href="#函数对象（Function-Objects）" class="headerlink" title="函数对象（Function Objects）"></a>函数对象（Function Objects）</h2><p>C++标准模板库（STL）中的函数对象（Function Objects），也称为仿函数（Functors），是一种可以像函数一样被调用的对象。函数对象通常是重载了函数调用运算符 <code>operator()</code> 的类对象。STL中的许多算法和容器都支持使用函数对象作为参数，从而提供了极大的灵活性和可扩展性。</p>
+<h3 id="函数对象的基本概念"><a href="#函数对象的基本概念" class="headerlink" title="函数对象的基本概念"></a>函数对象的基本概念</h3><p>函数对象的核心思想是通过重载 <code>operator()</code> 来实现一个可以像函数一样被调用的对象。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyFunctor</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">int</span> x)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x * x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    MyFunctor square;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">square</span>(<span class="number">5</span>) &lt;&lt; std::endl; <span class="comment">// 输出 25</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>MyFunctor</code> 是一个函数对象，它重载了 <code>operator()</code>，使得 <code>square(5)</code> 可以像函数调用一样使用。</p>
+<h3 id="函数对象的优势"><a href="#函数对象的优势" class="headerlink" title="函数对象的优势"></a>函数对象的优势</h3><p>函数对象相比于普通函数有以下优势：</p>
+<ol>
+<li><strong>状态保持</strong>：函数对象可以保存状态，而普通函数不能。</li>
+<li><strong>类型安全</strong>：函数对象可以利用C++的类型系统，提供更强的类型检查。</li>
+<li><strong>灵活性</strong>：函数对象可以被继承和扩展，从而提供更多的功能。</li>
+</ol>
+<h3 id="STL中的函数对象"><a href="#STL中的函数对象" class="headerlink" title="STL中的函数对象"></a>STL中的函数对象</h3><p>STL提供了一些预定义的函数对象，这些函数对象通常用于算法的参数。这些函数对象定义在 <code>&lt;functional&gt;</code> 头文件中。</p>
+<h4 id="1-算术函数对象"><a href="#1-算术函数对象" class="headerlink" title="1. 算术函数对象"></a>1. 算术函数对象</h4><ul>
+<li><code>std::plus&lt;T&gt;</code>：执行加法操作。</li>
+<li><code>std::minus&lt;T&gt;</code>：执行减法操作。</li>
+<li><code>std::multiplies&lt;T&gt;</code>：执行乘法操作。</li>
+<li><code>std::divides&lt;T&gt;</code>：执行除法操作。</li>
+<li><code>std::modulus&lt;T&gt;</code>：执行取模操作。</li>
+<li><code>std::negate&lt;T&gt;</code>：执行取反操作。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::plus&lt;<span class="type">int</span>&gt; add;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">add</span>(<span class="number">3</span>, <span class="number">4</span>) &lt;&lt; std::endl; <span class="comment">// 输出 7</span></span><br><span class="line"></span><br><span class="line">    std::multiplies&lt;<span class="type">int</span>&gt; multiply;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">multiply</span>(<span class="number">3</span>, <span class="number">4</span>) &lt;&lt; std::endl; <span class="comment">// 输出 12</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-比较函数对象"><a href="#2-比较函数对象" class="headerlink" title="2. 比较函数对象"></a>2. 比较函数对象</h4><ul>
+<li><code>std::equal_to&lt;T&gt;</code>：判断两个值是否相等。</li>
+<li><code>std::not_equal_to&lt;T&gt;</code>：判断两个值是否不相等。</li>
+<li><code>std::greater&lt;T&gt;</code>：判断第一个值是否大于第二个值。</li>
+<li><code>std::less&lt;T&gt;</code>：判断第一个值是否小于第二个值。</li>
+<li><code>std::greater_equal&lt;T&gt;</code>：判断第一个值是否大于或等于第二个值。</li>
+<li><code>std::less_equal&lt;T&gt;</code>：判断第一个值是否小于或等于第二个值。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::greater&lt;<span class="type">int</span>&gt; greater;</span><br><span class="line">    std::cout &lt;&lt; std::boolalpha &lt;&lt; <span class="built_in">greater</span>(<span class="number">4</span>, <span class="number">3</span>) &lt;&lt; std::endl; <span class="comment">// 输出 true</span></span><br><span class="line"></span><br><span class="line">    std::less&lt;<span class="type">int</span>&gt; less;</span><br><span class="line">    std::cout &lt;&lt; std::boolalpha &lt;&lt; <span class="built_in">less</span>(<span class="number">4</span>, <span class="number">3</span>) &lt;&lt; std::endl; <span class="comment">// 输出 false</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-逻辑函数对象"><a href="#3-逻辑函数对象" class="headerlink" title="3. 逻辑函数对象"></a>3. 逻辑函数对象</h4><ul>
+<li><code>std::logical_and&lt;T&gt;</code>：执行逻辑与操作。</li>
+<li><code>std::logical_or&lt;T&gt;</code>：执行逻辑或操作。</li>
+<li><code>std::logical_not&lt;T&gt;</code>：执行逻辑非操作。</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::logical_and&lt;<span class="type">bool</span>&gt; logical_and;</span><br><span class="line">    std::cout &lt;&lt; std::boolalpha &lt;&lt; <span class="built_in">logical_and</span>(<span class="literal">true</span>, <span class="literal">false</span>) &lt;&lt; std::endl; <span class="comment">// 输出 false</span></span><br><span class="line"></span><br><span class="line">    std::logical_or&lt;<span class="type">bool</span>&gt; logical_or;</span><br><span class="line">    std::cout &lt;&lt; std::boolalpha &lt;&lt; <span class="built_in">logical_or</span>(<span class="literal">true</span>, <span class="literal">false</span>) &lt;&lt; std::endl; <span class="comment">// 输出 true</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义函数对象"><a href="#自定义函数对象" class="headerlink" title="自定义函数对象"></a>自定义函数对象</h3><p>除了使用STL提供的预定义函数对象，开发者还可以自定义函数对象。自定义函数对象通常需要重载 <code>operator()</code>，并且可以根据需要添加成员变量来保存状态。</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GreaterThan</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">GreaterThan</span>(<span class="type">int</span> threshold) : <span class="built_in">threshold_</span>(threshold) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">int</span> value)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value &gt; threshold_;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> threshold_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="function">GreaterThan <span class="title">greater_than_3</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> it = std::<span class="built_in">find_if</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), greater_than_3);</span><br><span class="line">    <span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Found: &quot;</span> &lt;&lt; *it &lt;&lt; std::endl; <span class="comment">// 输出 Found: 4</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>GreaterThan</code> 是一个自定义的函数对象，它保存了一个阈值 <code>threshold_</code>，并在 <code>operator()</code> 中判断传入的值是否大于该阈值。</p>
+<h3 id="函数对象适配器"><a href="#函数对象适配器" class="headerlink" title="函数对象适配器"></a>函数对象适配器</h3><p>STL还提供了一些函数对象适配器（Function Object Adapters），用于修改或组合现有的函数对象。常用的适配器包括：</p>
+<h4 id="1-std-bind"><a href="#1-std-bind" class="headerlink" title="1. std::bind"></a>1. <code>std::bind</code></h4><p><code>std::bind</code> 用于将函数或函数对象绑定到特定的参数上，生成一个新的函数对象。</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print_sum</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; a + b &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> print_5_plus = std::<span class="built_in">bind</span>(print_sum, <span class="number">5</span>, std::placeholders::_1);</span><br><span class="line">    <span class="built_in">print_5_plus</span>(<span class="number">3</span>); <span class="comment">// 输出 8</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>std::bind</code> 将 <code>print_sum</code> 函数绑定到第一个参数 <code>5</code> 上，生成一个新的函数对象 <code>print_5_plus</code>，该函数对象只需要一个参数。</p>
+<h4 id="2-std-mem-fn"><a href="#2-std-mem-fn" class="headerlink" title="2. std::mem_fn"></a>2. <code>std::mem_fn</code></h4><p><code>std::mem_fn</code> 用于将成员函数转换为函数对象。</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    MyClass obj;</span><br><span class="line">    <span class="keyword">auto</span> print_func = std::<span class="built_in">mem_fn</span>(&amp;MyClass::print);</span><br><span class="line">    <span class="built_in">print_func</span>(obj); <span class="comment">// 输出 Hello, World!</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>std::mem_fn</code> 将 <code>MyClass</code> 的成员函数 <code>print</code> 转换为一个函数对象 <code>print_func</code>，该函数对象可以接受 <code>MyClass</code> 对象作为参数。</p>
+<h4 id="3-std-not1-和-std-not2"><a href="#3-std-not1-和-std-not2" class="headerlink" title="3. std::not1 和 std::not2"></a>3. <code>std::not1</code> 和 <code>std::not2</code></h4><p><code>std::not1</code> 和 <code>std::not2</code> 用于对一元和二元函数对象取反。</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    std::less&lt;<span class="type">int</span>&gt; less;</span><br><span class="line">    <span class="keyword">auto</span> greater_or_equal = std::<span class="built_in">not1</span>(std::<span class="built_in">bind2nd</span>(less, <span class="number">3</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> it = std::<span class="built_in">find_if</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), greater_or_equal);</span><br><span class="line">    <span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Found: &quot;</span> &lt;&lt; *it &lt;&lt; std::endl; <span class="comment">// 输出 Found: 1</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>std::not1</code> 对 <code>std::less&lt;int&gt;</code> 取反，生成一个新的函数对象 <code>greater_or_equal</code>，用于查找第一个小于等于 3 的元素。</p>
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>函数对象是STL中非常重要的概念，它提供了一种灵活的方式来扩展和定制算法和容器的行为。通过使用函数对象，开发者可以实现状态保持、类型安全和灵活性等优势。STL提供了丰富的预定义函数对象和适配器，同时也支持自定义函数对象，从而满足各种不同的需求。在使用函数对象时，需要注意其特性和适用场景，以确保代码的正确性和效率。</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>贪吃蛇</title>
+    <url>/posts/Game/</url>
+    <content><![CDATA[<iframe src="./Game.html" width="100%" height="600px"></iframe>
+
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++基础与进阶</title>
     <url>/posts/C_PLUS-%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/</url>
     <content><![CDATA[<p><img src="/posts/C_PLUS-%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/elaina1.jpg" alt="elaina1" loading="lazy"></p>
@@ -370,19 +791,6 @@
       </categories>
       <tags>
         <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>贪吃蛇</title>
-    <url>/posts/Game/</url>
-    <content><![CDATA[<iframe src="./Game.html" width="100%" height="600px"></iframe>
-
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -836,270 +1244,6 @@
       </categories>
       <tags>
         <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue学习笔记</title>
-    <url>/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="vue核心语法"><a href="#vue核心语法" class="headerlink" title="vue核心语法"></a>vue核心语法</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx.png" alt="7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx" loading="lazy"></p>
-<h2 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a>样例代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Vue.js Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 插值表达式 --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- computed不用加() --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- 4.指令 --&gt;</span><br><span class="line">         &lt;!-- 内容指令   --&gt;&lt;!-- text,html都会覆盖原始内容 --&gt;</span><br><span class="line">         &lt;p v-text=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p v-html=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         </span><br><span class="line">          &lt;!-- 渲染指令 --&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in 3&quot;&gt;Elaina&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in arr&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;(item,key,index) in obj&quot;&gt;&#123;&#123;item&#125;&#125;&amp;nbsp;&#123;&#123;key&#125;&#125;&amp;nbsp;&#123;&#123;index&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-if=&quot;&quot;&gt;1017&lt;/p&gt;</span><br><span class="line">        &lt;p v-show=&quot;&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 属性指令 --&gt;</span><br><span class="line">         &lt;p v-bind:title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p :title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">            &lt;!-- v-bind可以简写成: --&gt;</span><br><span class="line"></span><br><span class="line">         &lt;!-- 事件指令 --&gt;</span><br><span class="line">          &lt;button v-on:click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;button @click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;!-- v-on简写成@ --&gt;</span><br><span class="line"></span><br><span class="line">          &lt;!-- 表单指令 --&gt;</span><br><span class="line">          &lt;hr&gt; </span><br><span class="line">          &lt;p&gt;表单指令&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model=&quot;inputValue&quot;&gt;</span><br><span class="line">           &lt;p v-text=&quot;inputValue&quot;&gt;&lt;/p&gt;</span><br><span class="line">            &lt;hr&gt;</span><br><span class="line">           &lt;!-- 5.修饰符 --&gt;</span><br><span class="line">            &lt;p&gt;修饰符&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model.trim=&quot;inputValue&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        // 1. 响应式数据与插值表达式</span><br><span class="line">        const vm = new Vue(&#123;</span><br><span class="line">            el: &#x27;#app&#x27;,</span><br><span class="line">            data() &#123;</span><br><span class="line">                return &#123;</span><br><span class="line">                    title: &#x27;这是文本&#x27;,</span><br><span class="line">                    content: &#x27;这是内容&#x27;,</span><br><span class="line">                    htmlContent: &#x27;&lt;h1&gt;这是html内容&lt;/h1&gt;&#x27;,</span><br><span class="line">                    arr:[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;],</span><br><span class="line">                    obj:&#123;a:1,b:2,c:3&#125;,</span><br><span class="line">                    inputValue:&#x27;默认内容&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //1.3函数methods属性</span><br><span class="line">            methods: &#123;</span><br><span class="line">                output()&#123;</span><br><span class="line">                    console.log(&quot;output&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //2计算属性computed属性:具有缓存性质，只有当计算属性的值发生变化时，才会重新计算</span><br><span class="line">            computed: &#123;</span><br><span class="line">                outputCon()&#123;</span><br><span class="line">                    console.log(&quot;computed&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //3.侦听器watch属性:监听数据的变化，并执行相应的函数</span><br><span class="line">            watch: &#123;</span><br><span class="line">                title(newVal, oldVal)&#123;</span><br><span class="line">                    console.log(&quot;title changed&quot;, newVal, oldVal);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在 Vue.js 中，响应式数据、插值表达式、计算属性、侦听器和指令是关键概念。以下是详细讲解和知识笔记：</p>
-<h2 id="1-响应式数据-Reactive-Data"><a href="#1-响应式数据-Reactive-Data" class="headerlink" title="1. 响应式数据 (Reactive Data)"></a>1. 响应式数据 (Reactive Data)</h2><p>Vue.js 中的数据对象是响应式的，即当数据发生变化时，视图会自动更新。通过 <code>data</code> 定义的数据是响应式的，Vue.js 使用<strong>依赖追踪</strong>来检测数据的变化并更新 DOM。</p>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">data</span>: &#123;</span><br><span class="line">  <span class="attr">title</span>: <span class="string">&#x27;这是标题&#x27;</span>,</span><br><span class="line">  <span class="attr">content</span>: <span class="string">&#x27;这是内容&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在模板中使用 <code>&#123;&#123; title &#125;&#125;</code>，当 <code>title</code> 变化时，DOM 会自动更新。</p>
-<h2 id="2-插值表达式-Interpolation"><a href="#2-插值表达式-Interpolation" class="headerlink" title="2. 插值表达式 (Interpolation)"></a>2. 插值表达式 (Interpolation)</h2><p>插值表达式用于将数据绑定到 HTML 中。使用 <code>&#123;&#123; &#125;&#125;</code> 可以直接在模板中显示数据。</p>
-<p>示例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  <span class="comment">&lt;!-- 显示 title 的值 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-计算属性-Computed-Properties"><a href="#3-计算属性-Computed-Properties" class="headerlink" title="3. 计算属性 (Computed Properties)"></a>3. 计算属性 (Computed Properties)</h2><p>计算属性是依赖其他数据计算得到的值，具有<strong>缓存</strong>的功能，只有相关依赖变化时才会重新计算。和方法不同，计算属性不会重复执行，除非依赖的数据改变。</p>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  <span class="title function_">outputCon</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Test &quot;</span> + <span class="variable language_">this</span>.<span class="property">title</span> + <span class="variable language_">this</span>.<span class="property">content</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当 <code>title</code> 或 <code>content</code> 变化时，<code>outputCon</code> 会被重新计算，否则将直接返回缓存的值。</p>
-<h2 id="4-侦听器-Watchers"><a href="#4-侦听器-Watchers" class="headerlink" title="4. 侦听器 (Watchers)"></a>4. 侦听器 (Watchers)</h2><p>侦听器用于监听数据的变化，并在数据变化时执行特定操作，常用于异步任务或需要手动执行额外逻辑时。</p>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">watch</span>: &#123;</span><br><span class="line">  <span class="title function_">title</span>(<span class="params">newVal, oldVal</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Title changed from&#x27;</span>, oldVal, <span class="string">&#x27;to&#x27;</span>, newVal);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>每当 <code>title</code> 改变时，侦听器会记录新旧值。</p>
-<h2 id="5-指令-Directives"><a href="#5-指令-Directives" class="headerlink" title="5. 指令 (Directives)"></a>5. 指令 (Directives)</h2><p>Vue 提供了很多指令来操作 DOM，常见的有 <code>v-text</code>, <code>v-html</code>, <code>v-if</code>, <code>v-show</code>, <code>v-for</code>, <code>v-bind</code>, <code>v-on</code> 等。</p>
-<h3 id="内容指令"><a href="#内容指令" class="headerlink" title="内容指令"></a>内容指令</h3><ul>
-<li><code>v-text</code>：替换元素的文本内容。</li>
-<li><code>v-html</code>：将数据作为 HTML 插入，允许解析 HTML 标签。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="渲染指令"><a href="#渲染指令" class="headerlink" title="渲染指令"></a>渲染指令</h3><ul>
-<li><code>v-for</code>：循环渲染列表。</li>
-<li><code>v-if</code>：根据条件渲染元素，元素不存在于 DOM 中。</li>
-<li><code>v-show</code>：根据条件显示&#x2F;隐藏元素，元素仍然存在于 DOM 中。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;item in arr&quot;</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;showItem&quot;</span>&gt;</span>显示内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">&quot;showItem&quot;</span>&gt;</span>显示或隐藏<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="属性指令"><a href="#属性指令" class="headerlink" title="属性指令"></a>属性指令</h3><ul>
-<li><code>v-bind</code>：动态绑定元素的属性，可以简写为 <code>:</code>。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> <span class="comment">&lt;!-- 简写 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h3><ul>
-<li><code>v-on</code>：绑定事件监听器，可以简写为 <code>@</code>。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 简写 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="表单指令"><a href="#表单指令" class="headerlink" title="表单指令"></a>表单指令</h3><ul>
-<li><code>v-model</code>：双向绑定表单元素的数据。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; inputValue &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="6-修饰符-Modifiers"><a href="#6-修饰符-Modifiers" class="headerlink" title="6. 修饰符 (Modifiers)"></a>6. 修饰符 (Modifiers)</h2><p>修饰符是对指令的附加操作，常见于事件处理和表单输入中。例如：</p>
-<ul>
-<li><code>.trim</code>：去除输入框两端的空白。</li>
-<li><code>.lazy</code>：在 <code>input</code> 失焦时更新数据，而不是在每次输入时更新。</li>
-</ul>
-<p>示例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.trim</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span>  <span class="comment">&lt;!-- 输入时自动去除两端空格 --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="知识笔记总结："><a href="#知识笔记总结：" class="headerlink" title="知识笔记总结："></a>知识笔记总结：</h2><ol>
-<li><strong>响应式数据</strong>让 Vue.js 能够自动追踪数据变化并更新 DOM。</li>
-<li><strong>插值表达式</strong>用于将数据直接显示在 HTML 中。</li>
-<li><strong>计算属性</strong>具有缓存功能，用于处理复杂的逻辑计算。</li>
-<li><strong>侦听器</strong>适合监听数据变化并执行额外逻辑，尤其是异步任务。</li>
-<li><strong>指令</strong>提供了强大的模板功能，如条件渲染、列表渲染、事件处理等。</li>
-<li><strong>修饰符</strong>为指令增加额外的功能，如去除空白字符、事件捕获等。</li>
-</ol>
-<p>希望这能帮助你更深入了解 Vue.js 的响应式数据与核心功能。如果有其他问题，欢迎随时讨论！</p>
-<h1 id="脚手架与组件化开发"><a href="#脚手架与组件化开发" class="headerlink" title="脚手架与组件化开发"></a>脚手架与组件化开发</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/WXS7VQMlCQOoZYm.jpeg" alt="WXS7VQMlCQOoZYm" loading="lazy"></p>
-<hr>
-<h2 id="一、脚手架（Vue-CLI）"><a href="#一、脚手架（Vue-CLI）" class="headerlink" title="一、脚手架（Vue CLI）"></a>一、脚手架（Vue CLI）</h2><h3 id="1-什么是脚手架？"><a href="#1-什么是脚手架？" class="headerlink" title="1. 什么是脚手架？"></a>1. 什么是脚手架？</h3><p><strong>脚手架</strong>（Scaffolding）是指用于快速搭建项目基础结构的工具。在 Vue.js 中，官方提供了 <strong>Vue CLI</strong>（Command Line Interface），它是一个基于 Node.js 的命令行工具，用于快速创建 Vue.js 项目，集成了现代前端开发所需的各种功能和配置。</p>
-<h3 id="2-Vue-CLI-的功能和优势"><a href="#2-Vue-CLI-的功能和优势" class="headerlink" title="2. Vue CLI 的功能和优势"></a>2. Vue CLI 的功能和优势</h3><ul>
-<li><strong>快速搭建项目</strong>：通过简单的命令即可生成一个带有预设配置的 Vue.js 项目。</li>
-<li><strong>可定制化</strong>：支持自定义配置，满足不同项目的特殊需求。</li>
-<li><strong>插件系统</strong>：提供了丰富的官方和社区插件，如路由（Vue Router）、状态管理（Vuex）、TypeScript 支持等。</li>
-<li><strong>热重载</strong>：内置开发服务器，支持模块热替换（HMR），提高开发效率。</li>
-<li><strong>优化的生产构建</strong>：自动进行代码分割、压缩、优化，提升应用性能。</li>
-<li><strong>单元测试和端到端测试</strong>：集成了 Jest、Mocha 等测试框架，支持编写测试用例。</li>
-</ul>
-<h3 id="3-安装和使用-Vue-CLI"><a href="#3-安装和使用-Vue-CLI" class="headerlink" title="3. 安装和使用 Vue CLI"></a>3. 安装和使用 Vue CLI</h3><h4 id="3-1-安装-Vue-CLI"><a href="#3-1-安装-Vue-CLI" class="headerlink" title="3.1 安装 Vue CLI"></a>3.1 安装 Vue CLI</h4><p>确保已安装 Node.js 和 npm，然后在命令行中全局安装 Vue CLI：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，可以使用以下命令查看版本，验证安装是否成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-创建新项目"><a href="#3-2-创建新项目" class="headerlink" title="3.2 创建新项目"></a>3.2 创建新项目</h4><p>使用 <code>vue create</code> 命令创建新项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
-
-<p>系统会提示选择预设配置：</p>
-<ul>
-<li><strong>默认预设</strong>：包含 Babel、ESLint 等基本配置。</li>
-<li><strong>手动选择特性</strong>：可以根据需要添加路由、Vuex、CSS 预处理器等。</li>
-</ul>
-<h4 id="3-3-运行项目"><a href="#3-3-运行项目" class="headerlink" title="3.3 运行项目"></a>3.3 运行项目</h4><p>进入项目目录，启动开发服务器：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
-
-<p>默认情况下，开发服务器运行在 <code>http://localhost:8080</code>。</p>
-<h3 id="4-Vue-CLI-项目结构"><a href="#4-Vue-CLI-项目结构" class="headerlink" title="4. Vue CLI 项目结构"></a>4. Vue CLI 项目结构</h3><p>Vue CLI 生成的项目结构通常如下：</p>
-<ul>
-<li><code>public/</code>：公共静态资源目录，存放未被 Webpack 处理的文件。</li>
-<li><code>src/</code>：源代码目录。<ul>
-<li><code>main.js</code>：应用的入口文件。</li>
-<li><code>App.vue</code>：根组件。</li>
-<li><code>assets/</code>：资源文件夹，存放图片、字体等。</li>
-<li><code>components/</code>：存放全局或通用组件。</li>
-</ul>
-</li>
-<li><code>babel.config.js</code>：Babel 配置文件。</li>
-<li><code>package.json</code>：项目元数据和依赖项。</li>
-<li><code>vue.config.js</code>：可选的 Vue CLI 配置文件，用于修改默认设置。</li>
-</ul>
-<h3 id="5-配置和自定义"><a href="#5-配置和自定义" class="headerlink" title="5. 配置和自定义"></a>5. 配置和自定义</h3><p>可以在 <code>vue.config.js</code> 中对项目进行自定义配置，如修改端口、配置代理、添加别名等。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="attr">port</span>: <span class="number">8081</span>, <span class="comment">// 修改端口</span></span><br><span class="line">    <span class="attr">proxy</span>: <span class="string">&#x27;http://api.example.com&#x27;</span> <span class="comment">// 配置代理</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">      <span class="attr">alias</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;@&#x27;</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;src/&#x27;</span>) <span class="comment">// 添加路径别名</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-使用插件"><a href="#6-使用插件" class="headerlink" title="6. 使用插件"></a>6. 使用插件</h3><p>Vue CLI 提供了插件系统，可以在创建项目时或之后添加插件。</p>
-<p><strong>添加插件示例：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add router</span><br><span class="line">vue add vuex</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="二、组件化开发"><a href="#二、组件化开发" class="headerlink" title="二、组件化开发"></a>二、组件化开发</h2><h3 id="1-什么是组件化？"><a href="#1-什么是组件化？" class="headerlink" title="1. 什么是组件化？"></a>1. 什么是组件化？</h3><p><strong>组件化</strong>是将界面划分为独立、可复用的组件，每个组件包含自己的模板、逻辑和样式。Vue.js 强烈鼓励组件化开发，以提高代码的可维护性和复用性。</p>
-<h3 id="2-组件的基本概念"><a href="#2-组件的基本概念" class="headerlink" title="2. 组件的基本概念"></a>2. 组件的基本概念</h3><ul>
-<li><strong>组件实例</strong>：每个组件都是一个 Vue 实例，拥有自己的数据、方法、生命周期等。</li>
-<li><strong>父子关系</strong>：组件可以嵌套，父组件可以传递数据给子组件。</li>
-<li><strong>封装性</strong>：组件内部的实现细节对外部是透明的。</li>
-</ul>
-<h3 id="3-创建组件"><a href="#3-创建组件" class="headerlink" title="3. 创建组件"></a>3. 创建组件</h3><h4 id="3-1-单文件组件（-vue-文件）"><a href="#3-1-单文件组件（-vue-文件）" class="headerlink" title="3.1 单文件组件（.vue 文件）"></a>3.1 单文件组件（.vue 文件）</h4><p>这是 Vue.js 推荐的组件书写方式，包含 <code>&lt;template&gt;</code>、<code>&lt;script&gt;</code> 和 <code>&lt;style&gt;</code> 三个部分。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- MyComponent.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;my-component&quot;&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123; title &#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;MyComponent&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    title: String,</span><br><span class="line">    content: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.my-component &#123;</span><br><span class="line">  /* 样式定义 */</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-注册组件"><a href="#3-2-注册组件" class="headerlink" title="3.2 注册组件"></a>3.2 注册组件</h4><p><strong>局部注册：</strong></p>
-<p>在使用组件的父组件中导入并注册：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;my-component :title=&quot;title&quot; :content=&quot;content&quot;&gt;&lt;/my-component&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import MyComponent from &#x27;./components/MyComponent.vue&#x27;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    MyComponent</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &#x27;组件标题&#x27;,</span><br><span class="line">      content: &#x27;组件内容&#x27;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>全局注册：</strong></p>
-<p>在 <code>main.js</code> 中注册，全局组件可在任何地方使用。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">MyComponent</span> <span class="keyword">from</span> <span class="string">&#x27;./components/MyComponent.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;MyComponent&#x27;</span>, <span class="title class_">MyComponent</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-组件之间的通信"><a href="#4-组件之间的通信" class="headerlink" title="4. 组件之间的通信"></a>4. 组件之间的通信</h3><h4 id="4-1-父子组件通信"><a href="#4-1-父子组件通信" class="headerlink" title="4.1 父子组件通信"></a>4.1 父子组件通信</h4><ul>
-<li><p><strong>父组件传递数据给子组件</strong>：使用 <code>props</code>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件定义 props --&gt;</span><br><span class="line">props: &#123;</span><br><span class="line">  message: String</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>子组件触发事件通知父组件</strong>：使用 <code>$emit</code>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件中 --&gt;</span><br><span class="line">this.$emit(&#x27;eventName&#x27;, payload);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件中 --&gt;</span><br><span class="line">&lt;child-component @eventName=&quot;handleEvent&quot;&gt;&lt;/child-component&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="4-2-兄弟组件通信"><a href="#4-2-兄弟组件通信" class="headerlink" title="4.2 兄弟组件通信"></a>4.2 兄弟组件通信</h4><ul>
-<li><p><strong>通过父组件中转</strong>：将数据提升到共同的父组件，由父组件管理和传递。</p>
-</li>
-<li><p><strong>事件总线（Event Bus）</strong>：创建一个空的 Vue 实例作为事件总线，但在 Vue 3 中不推荐使用。</p>
-</li>
-<li><p><strong>Vuex 状态管理</strong>：对于复杂的应用，使用 Vuex 统一管理状态。</p>
-</li>
-</ul>
-<h4 id="4-3-跨级组件通信"><a href="#4-3-跨级组件通信" class="headerlink" title="4.3 跨级组件通信"></a>4.3 跨级组件通信</h4><ul>
-<li><p><strong>Provide&#x2F;Inject</strong>：祖先组件提供数据，后代组件注入数据。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 祖先组件</span></span><br><span class="line"><span class="title function_">provide</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">dataKey</span>: <span class="variable language_">this</span>.<span class="property">dataValue</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 后代组件</span></span><br><span class="line"><span class="attr">inject</span>: [<span class="string">&#x27;dataKey&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="5-插槽（Slots）"><a href="#5-插槽（Slots）" class="headerlink" title="5. 插槽（Slots）"></a>5. 插槽（Slots）</h3><p>插槽用于在组件中插入父组件的内容，增强组件的灵活性。</p>
-<h4 id="5-1-默认插槽"><a href="#5-1-默认插槽" class="headerlink" title="5.1 默认插槽"></a>5.1 默认插槽</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component&gt;</span><br><span class="line">  &lt;p&gt;插入的内容&lt;/p&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-2-具名插槽"><a href="#5-2-具名插槽" class="headerlink" title="5.2 具名插槽"></a>5.2 具名插槽</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt; &lt;!-- 默认插槽 --&gt;</span><br><span class="line">    &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component&gt;</span><br><span class="line">  &lt;template v-slot:header&gt;</span><br><span class="line">    &lt;h1&gt;标题内容&lt;/h1&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">  &lt;p&gt;主要内容&lt;/p&gt;</span><br><span class="line">  &lt;template v-slot:footer&gt;</span><br><span class="line">    &lt;p&gt;页脚内容&lt;/p&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-3-作用域插槽"><a href="#5-3-作用域插槽" class="headerlink" title="5.3 作用域插槽"></a>5.3 作用域插槽</h4><p>用于将子组件的数据传递给父组件的插槽内容。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot :user=&quot;userData&quot;&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      userData: &#123; name: &#x27;Alice&#x27;, age: 25 &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component v-slot:default=&quot;slotProps&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; slotProps.user.name &#125;&#125; - &#123;&#123; slotProps.user.age &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-动态组件和异步组件"><a href="#6-动态组件和异步组件" class="headerlink" title="6. 动态组件和异步组件"></a>6. 动态组件和异步组件</h3><h4 id="6-1-动态组件"><a href="#6-1-动态组件" class="headerlink" title="6.1 动态组件"></a>6.1 动态组件</h4><p>使用 <code>&lt;component&gt;</code> 标签和 <code>:is</code> 属性，根据条件渲染不同的组件。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;component :is=&quot;currentComponent&quot;&gt;&lt;/component&gt;</span><br><span class="line">    &lt;button @click=&quot;toggleComponent&quot;&gt;切换组件&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      currentComponent: &#x27;ComponentA&#x27;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    ComponentA,</span><br><span class="line">    ComponentB</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    toggleComponent() &#123;</span><br><span class="line">      this.currentComponent = this.currentComponent === &#x27;ComponentA&#x27; ? &#x27;ComponentB&#x27; : &#x27;ComponentA&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-2-异步组件"><a href="#6-2-异步组件" class="headerlink" title="6.2 异步组件"></a>6.2 异步组件</h4><p>对于大型组件，可以使用异步加载，优化首屏加载速度。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">AsyncComponent</span> = (<span class="params"></span>) =&gt; <span class="keyword">import</span>(<span class="string">&#x27;./components/AsyncComponent.vue&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="7-组件生命周期"><a href="#7-组件生命周期" class="headerlink" title="7. 组件生命周期"></a>7. 组件生命周期</h3><p>组件在创建、更新、销毁的过程中，会触发一系列的生命周期钩子函数，可以在这些函数中执行相应的逻辑。</p>
-<ul>
-<li><p><strong>常用生命周期钩子：</strong></p>
-<ul>
-<li><code>beforeCreate</code>：实例初始化之后，数据观测和事件配置之前。</li>
-<li><code>created</code>：实例已创建，完成数据观测、属性和方法的运算，尚未挂载。</li>
-<li><code>beforeMount</code>：在挂载开始之前调用。</li>
-<li><code>mounted</code>：实例挂载到 DOM 上后调用。</li>
-<li><code>beforeUpdate</code>：数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。</li>
-<li><code>updated</code>：由于数据更改导致的虚拟 DOM 重新渲染和打补丁之后调用。</li>
-<li><code>beforeDestroy</code>：实例销毁之前调用。</li>
-<li><code>destroyed</code>：实例销毁后调用。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="知识笔记总结"><a href="#知识笔记总结" class="headerlink" title="知识笔记总结"></a>知识笔记总结</h2><h3 id="脚手架（Vue-CLI）"><a href="#脚手架（Vue-CLI）" class="headerlink" title="脚手架（Vue CLI）"></a>脚手架（Vue CLI）</h3><ul>
-<li><strong>安装与创建项目</strong>：<code>npm install -g @vue/cli</code>，<code>vue create project-name</code>。</li>
-<li><strong>项目结构</strong>：了解 Vue CLI 项目的基本目录结构和文件作用。</li>
-<li><strong>配置与插件</strong>：使用 <code>vue.config.js</code> 进行自定义配置，使用插件系统扩展功能。</li>
-<li><strong>命令</strong>：<ul>
-<li><code>npm run serve</code>：启动开发服务器。</li>
-<li><code>npm run build</code>：构建生产环境代码。</li>
-<li><code>npm run test</code>：运行测试。</li>
-</ul>
-</li>
-</ul>
-<h3 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h3><ul>
-<li><strong>组件创建</strong>：使用单文件组件 <code>.vue</code>，包含模板、脚本和样式。</li>
-<li><strong>组件注册</strong>：区分全局注册和局部注册，推荐使用局部注册管理组件。</li>
-<li><strong>组件通信</strong>：<ul>
-<li><strong>父子通信</strong>：<code>props</code> 和 <code>$emit</code>。</li>
-<li><strong>兄弟通信</strong>：通过共同的父组件或状态管理（Vuex）。</li>
-<li><strong>跨级通信</strong>：<code>provide</code> 和 <code>inject</code>。</li>
-</ul>
-</li>
-<li><strong>插槽（Slots）</strong>：使用默认插槽、具名插槽和作用域插槽增强组件的灵活性。</li>
-<li><strong>动态组件</strong>：使用 <code>&lt;component :is=&quot;componentName&quot;&gt;</code> 动态渲染组件。</li>
-<li><strong>生命周期钩子</strong>：理解各个生命周期的作用，合理使用钩子函数。</li>
-</ul>
-<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ul>
-<li><strong>组件命名</strong>：遵循命名规范，使用大驼峰或短横线命名法。</li>
-<li><strong>单一职责</strong>：每个组件只负责完成一个功能，保持组件的高内聚低耦合。</li>
-<li><strong>样式作用域</strong>：使用 <code>scoped</code> 或 CSS Modules，防止样式污染。</li>
-<li><strong>性能优化</strong>：使用异步组件、路由懒加载等手段优化性能。</li>
-<li><strong>代码规范</strong>：遵循 ESLint 规则，保持代码风格一致。</li>
-</ul>
-<hr>
-<p>希望以上内容能帮助你深入理解 Vue.js 中的脚手架和组件化开发。如果你还有其他问题，欢迎继续提问！</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>扫雷</title>
-    <url>/posts/saolei/</url>
-    <content><![CDATA[<iframe src="./扫雷.html" width="100%" height="600px"></iframe>
-
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>inori</title>
-    <url>/posts/inori/</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=31649312&auto=1&height=66"></iframe>
-]]></content>
-      <tags>
-        <tag>动漫</tag>
       </tags>
   </entry>
   <entry>
@@ -1900,6 +2044,404 @@
       </tags>
   </entry>
   <entry>
+    <title>inori</title>
+    <url>/posts/inori/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=31649312&auto=1&height=66"></iframe>
+]]></content>
+      <tags>
+        <tag>动漫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue学习笔记</title>
+    <url>/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="vue核心语法"><a href="#vue核心语法" class="headerlink" title="vue核心语法"></a>vue核心语法</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx.png" alt="7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx" loading="lazy"></p>
+<h2 id="样例代码"><a href="#样例代码" class="headerlink" title="样例代码"></a>样例代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Vue.js Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;!-- 插值表达式 --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; title &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; output() &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- computed不用加() --&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123; outputCon &#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;!-- 4.指令 --&gt;</span><br><span class="line">         &lt;!-- 内容指令   --&gt;&lt;!-- text,html都会覆盖原始内容 --&gt;</span><br><span class="line">         &lt;p v-text=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p v-html=&quot;htmlContent&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         </span><br><span class="line">          &lt;!-- 渲染指令 --&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in 3&quot;&gt;Elaina&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;item in arr&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-for=&quot;(item,key,index) in obj&quot;&gt;&#123;&#123;item&#125;&#125;&amp;nbsp;&#123;&#123;key&#125;&#125;&amp;nbsp;&#123;&#123;index&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p v-if=&quot;&quot;&gt;1017&lt;/p&gt;</span><br><span class="line">        &lt;p v-show=&quot;&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 属性指令 --&gt;</span><br><span class="line">         &lt;p v-bind:title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">         &lt;p :title=&quot;title&quot;&gt;123&lt;/p&gt;</span><br><span class="line">            &lt;!-- v-bind可以简写成: --&gt;</span><br><span class="line"></span><br><span class="line">         &lt;!-- 事件指令 --&gt;</span><br><span class="line">          &lt;button v-on:click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;button @click=&quot;output&quot;&gt;点击&lt;/button&gt;</span><br><span class="line">          &lt;!-- v-on简写成@ --&gt;</span><br><span class="line"></span><br><span class="line">          &lt;!-- 表单指令 --&gt;</span><br><span class="line">          &lt;hr&gt; </span><br><span class="line">          &lt;p&gt;表单指令&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model=&quot;inputValue&quot;&gt;</span><br><span class="line">           &lt;p v-text=&quot;inputValue&quot;&gt;&lt;/p&gt;</span><br><span class="line">            &lt;hr&gt;</span><br><span class="line">           &lt;!-- 5.修饰符 --&gt;</span><br><span class="line">            &lt;p&gt;修饰符&lt;/p&gt;</span><br><span class="line">           &lt;input type=&quot;text&quot; v-model.trim=&quot;inputValue&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        // 1. 响应式数据与插值表达式</span><br><span class="line">        const vm = new Vue(&#123;</span><br><span class="line">            el: &#x27;#app&#x27;,</span><br><span class="line">            data() &#123;</span><br><span class="line">                return &#123;</span><br><span class="line">                    title: &#x27;这是文本&#x27;,</span><br><span class="line">                    content: &#x27;这是内容&#x27;,</span><br><span class="line">                    htmlContent: &#x27;&lt;h1&gt;这是html内容&lt;/h1&gt;&#x27;,</span><br><span class="line">                    arr:[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;],</span><br><span class="line">                    obj:&#123;a:1,b:2,c:3&#125;,</span><br><span class="line">                    inputValue:&#x27;默认内容&#x27;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //1.3函数methods属性</span><br><span class="line">            methods: &#123;</span><br><span class="line">                output()&#123;</span><br><span class="line">                    console.log(&quot;output&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //2计算属性computed属性:具有缓存性质，只有当计算属性的值发生变化时，才会重新计算</span><br><span class="line">            computed: &#123;</span><br><span class="line">                outputCon()&#123;</span><br><span class="line">                    console.log(&quot;computed&quot;);</span><br><span class="line">                    return &quot;Test&quot;+this.title + this.content;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            //3.侦听器watch属性:监听数据的变化，并执行相应的函数</span><br><span class="line">            watch: &#123;</span><br><span class="line">                title(newVal, oldVal)&#123;</span><br><span class="line">                    console.log(&quot;title changed&quot;, newVal, oldVal);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在 Vue.js 中，响应式数据、插值表达式、计算属性、侦听器和指令是关键概念。以下是详细讲解和知识笔记：</p>
+<h2 id="1-响应式数据-Reactive-Data"><a href="#1-响应式数据-Reactive-Data" class="headerlink" title="1. 响应式数据 (Reactive Data)"></a>1. 响应式数据 (Reactive Data)</h2><p>Vue.js 中的数据对象是响应式的，即当数据发生变化时，视图会自动更新。通过 <code>data</code> 定义的数据是响应式的，Vue.js 使用<strong>依赖追踪</strong>来检测数据的变化并更新 DOM。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">data</span>: &#123;</span><br><span class="line">  <span class="attr">title</span>: <span class="string">&#x27;这是标题&#x27;</span>,</span><br><span class="line">  <span class="attr">content</span>: <span class="string">&#x27;这是内容&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在模板中使用 <code>&#123;&#123; title &#125;&#125;</code>，当 <code>title</code> 变化时，DOM 会自动更新。</p>
+<h2 id="2-插值表达式-Interpolation"><a href="#2-插值表达式-Interpolation" class="headerlink" title="2. 插值表达式 (Interpolation)"></a>2. 插值表达式 (Interpolation)</h2><p>插值表达式用于将数据绑定到 HTML 中。使用 <code>&#123;&#123; &#125;&#125;</code> 可以直接在模板中显示数据。</p>
+<p>示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  <span class="comment">&lt;!-- 显示 title 的值 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-计算属性-Computed-Properties"><a href="#3-计算属性-Computed-Properties" class="headerlink" title="3. 计算属性 (Computed Properties)"></a>3. 计算属性 (Computed Properties)</h2><p>计算属性是依赖其他数据计算得到的值，具有<strong>缓存</strong>的功能，只有相关依赖变化时才会重新计算。和方法不同，计算属性不会重复执行，除非依赖的数据改变。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  <span class="title function_">outputCon</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Test &quot;</span> + <span class="variable language_">this</span>.<span class="property">title</span> + <span class="variable language_">this</span>.<span class="property">content</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当 <code>title</code> 或 <code>content</code> 变化时，<code>outputCon</code> 会被重新计算，否则将直接返回缓存的值。</p>
+<h2 id="4-侦听器-Watchers"><a href="#4-侦听器-Watchers" class="headerlink" title="4. 侦听器 (Watchers)"></a>4. 侦听器 (Watchers)</h2><p>侦听器用于监听数据的变化，并在数据变化时执行特定操作，常用于异步任务或需要手动执行额外逻辑时。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">watch</span>: &#123;</span><br><span class="line">  <span class="title function_">title</span>(<span class="params">newVal, oldVal</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Title changed from&#x27;</span>, oldVal, <span class="string">&#x27;to&#x27;</span>, newVal);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>每当 <code>title</code> 改变时，侦听器会记录新旧值。</p>
+<h2 id="5-指令-Directives"><a href="#5-指令-Directives" class="headerlink" title="5. 指令 (Directives)"></a>5. 指令 (Directives)</h2><p>Vue 提供了很多指令来操作 DOM，常见的有 <code>v-text</code>, <code>v-html</code>, <code>v-if</code>, <code>v-show</code>, <code>v-for</code>, <code>v-bind</code>, <code>v-on</code> 等。</p>
+<h3 id="内容指令"><a href="#内容指令" class="headerlink" title="内容指令"></a>内容指令</h3><ul>
+<li><code>v-text</code>：替换元素的文本内容。</li>
+<li><code>v-html</code>：将数据作为 HTML 插入，允许解析 HTML 标签。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">&quot;htmlContent&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="渲染指令"><a href="#渲染指令" class="headerlink" title="渲染指令"></a>渲染指令</h3><ul>
+<li><code>v-for</code>：循环渲染列表。</li>
+<li><code>v-if</code>：根据条件渲染元素，元素不存在于 DOM 中。</li>
+<li><code>v-show</code>：根据条件显示&#x2F;隐藏元素，元素仍然存在于 DOM 中。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;item in arr&quot;</span>&gt;</span>&#123;&#123; item &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;showItem&quot;</span>&gt;</span>显示内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-show</span>=<span class="string">&quot;showItem&quot;</span>&gt;</span>显示或隐藏<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="属性指令"><a href="#属性指令" class="headerlink" title="属性指令"></a>属性指令</h3><ul>
+<li><code>v-bind</code>：动态绑定元素的属性，可以简写为 <code>:</code>。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> <span class="comment">&lt;!-- 简写 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h3><ul>
+<li><code>v-on</code>：绑定事件监听器，可以简写为 <code>@</code>。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!-- 简写 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="表单指令"><a href="#表单指令" class="headerlink" title="表单指令"></a>表单指令</h3><ul>
+<li><code>v-model</code>：双向绑定表单元素的数据。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; inputValue &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-修饰符-Modifiers"><a href="#6-修饰符-Modifiers" class="headerlink" title="6. 修饰符 (Modifiers)"></a>6. 修饰符 (Modifiers)</h2><p>修饰符是对指令的附加操作，常见于事件处理和表单输入中。例如：</p>
+<ul>
+<li><code>.trim</code>：去除输入框两端的空白。</li>
+<li><code>.lazy</code>：在 <code>input</code> 失焦时更新数据，而不是在每次输入时更新。</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.trim</span>=<span class="string">&quot;inputValue&quot;</span>&gt;</span>  <span class="comment">&lt;!-- 输入时自动去除两端空格 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="知识笔记总结："><a href="#知识笔记总结：" class="headerlink" title="知识笔记总结："></a>知识笔记总结：</h2><ol>
+<li><strong>响应式数据</strong>让 Vue.js 能够自动追踪数据变化并更新 DOM。</li>
+<li><strong>插值表达式</strong>用于将数据直接显示在 HTML 中。</li>
+<li><strong>计算属性</strong>具有缓存功能，用于处理复杂的逻辑计算。</li>
+<li><strong>侦听器</strong>适合监听数据变化并执行额外逻辑，尤其是异步任务。</li>
+<li><strong>指令</strong>提供了强大的模板功能，如条件渲染、列表渲染、事件处理等。</li>
+<li><strong>修饰符</strong>为指令增加额外的功能，如去除空白字符、事件捕获等。</li>
+</ol>
+<p>希望这能帮助你更深入了解 Vue.js 的响应式数据与核心功能。如果有其他问题，欢迎随时讨论！</p>
+<h1 id="脚手架与组件化开发"><a href="#脚手架与组件化开发" class="headerlink" title="脚手架与组件化开发"></a>脚手架与组件化开发</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/WXS7VQMlCQOoZYm.jpeg" alt="WXS7VQMlCQOoZYm" loading="lazy"></p>
+<hr>
+<h2 id="一、脚手架（Vue-CLI）"><a href="#一、脚手架（Vue-CLI）" class="headerlink" title="一、脚手架（Vue CLI）"></a>一、脚手架（Vue CLI）</h2><h3 id="1-什么是脚手架？"><a href="#1-什么是脚手架？" class="headerlink" title="1. 什么是脚手架？"></a>1. 什么是脚手架？</h3><p><strong>脚手架</strong>（Scaffolding）是指用于快速搭建项目基础结构的工具。在 Vue.js 中，官方提供了 <strong>Vue CLI</strong>（Command Line Interface），它是一个基于 Node.js 的命令行工具，用于快速创建 Vue.js 项目，集成了现代前端开发所需的各种功能和配置。</p>
+<h3 id="2-Vue-CLI-的功能和优势"><a href="#2-Vue-CLI-的功能和优势" class="headerlink" title="2. Vue CLI 的功能和优势"></a>2. Vue CLI 的功能和优势</h3><ul>
+<li><strong>快速搭建项目</strong>：通过简单的命令即可生成一个带有预设配置的 Vue.js 项目。</li>
+<li><strong>可定制化</strong>：支持自定义配置，满足不同项目的特殊需求。</li>
+<li><strong>插件系统</strong>：提供了丰富的官方和社区插件，如路由（Vue Router）、状态管理（Vuex）、TypeScript 支持等。</li>
+<li><strong>热重载</strong>：内置开发服务器，支持模块热替换（HMR），提高开发效率。</li>
+<li><strong>优化的生产构建</strong>：自动进行代码分割、压缩、优化，提升应用性能。</li>
+<li><strong>单元测试和端到端测试</strong>：集成了 Jest、Mocha 等测试框架，支持编写测试用例。</li>
+</ul>
+<h3 id="3-安装和使用-Vue-CLI"><a href="#3-安装和使用-Vue-CLI" class="headerlink" title="3. 安装和使用 Vue CLI"></a>3. 安装和使用 Vue CLI</h3><h4 id="3-1-安装-Vue-CLI"><a href="#3-1-安装-Vue-CLI" class="headerlink" title="3.1 安装 Vue CLI"></a>3.1 安装 Vue CLI</h4><p>确保已安装 Node.js 和 npm，然后在命令行中全局安装 Vue CLI：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，可以使用以下命令查看版本，验证安装是否成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-创建新项目"><a href="#3-2-创建新项目" class="headerlink" title="3.2 创建新项目"></a>3.2 创建新项目</h4><p>使用 <code>vue create</code> 命令创建新项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
+
+<p>系统会提示选择预设配置：</p>
+<ul>
+<li><strong>默认预设</strong>：包含 Babel、ESLint 等基本配置。</li>
+<li><strong>手动选择特性</strong>：可以根据需要添加路由、Vuex、CSS 预处理器等。</li>
+</ul>
+<h4 id="3-3-运行项目"><a href="#3-3-运行项目" class="headerlink" title="3.3 运行项目"></a>3.3 运行项目</h4><p>进入项目目录，启动开发服务器：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，开发服务器运行在 <code>http://localhost:8080</code>。</p>
+<h3 id="4-Vue-CLI-项目结构"><a href="#4-Vue-CLI-项目结构" class="headerlink" title="4. Vue CLI 项目结构"></a>4. Vue CLI 项目结构</h3><p>Vue CLI 生成的项目结构通常如下：</p>
+<ul>
+<li><code>public/</code>：公共静态资源目录，存放未被 Webpack 处理的文件。</li>
+<li><code>src/</code>：源代码目录。<ul>
+<li><code>main.js</code>：应用的入口文件。</li>
+<li><code>App.vue</code>：根组件。</li>
+<li><code>assets/</code>：资源文件夹，存放图片、字体等。</li>
+<li><code>components/</code>：存放全局或通用组件。</li>
+</ul>
+</li>
+<li><code>babel.config.js</code>：Babel 配置文件。</li>
+<li><code>package.json</code>：项目元数据和依赖项。</li>
+<li><code>vue.config.js</code>：可选的 Vue CLI 配置文件，用于修改默认设置。</li>
+</ul>
+<h3 id="5-配置和自定义"><a href="#5-配置和自定义" class="headerlink" title="5. 配置和自定义"></a>5. 配置和自定义</h3><p>可以在 <code>vue.config.js</code> 中对项目进行自定义配置，如修改端口、配置代理、添加别名等。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="attr">port</span>: <span class="number">8081</span>, <span class="comment">// 修改端口</span></span><br><span class="line">    <span class="attr">proxy</span>: <span class="string">&#x27;http://api.example.com&#x27;</span> <span class="comment">// 配置代理</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">      <span class="attr">alias</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;@&#x27;</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;src/&#x27;</span>) <span class="comment">// 添加路径别名</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-使用插件"><a href="#6-使用插件" class="headerlink" title="6. 使用插件"></a>6. 使用插件</h3><p>Vue CLI 提供了插件系统，可以在创建项目时或之后添加插件。</p>
+<p><strong>添加插件示例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add router</span><br><span class="line">vue add vuex</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二、组件化开发"><a href="#二、组件化开发" class="headerlink" title="二、组件化开发"></a>二、组件化开发</h2><h3 id="1-什么是组件化？"><a href="#1-什么是组件化？" class="headerlink" title="1. 什么是组件化？"></a>1. 什么是组件化？</h3><p><strong>组件化</strong>是将界面划分为独立、可复用的组件，每个组件包含自己的模板、逻辑和样式。Vue.js 强烈鼓励组件化开发，以提高代码的可维护性和复用性。</p>
+<h3 id="2-组件的基本概念"><a href="#2-组件的基本概念" class="headerlink" title="2. 组件的基本概念"></a>2. 组件的基本概念</h3><ul>
+<li><strong>组件实例</strong>：每个组件都是一个 Vue 实例，拥有自己的数据、方法、生命周期等。</li>
+<li><strong>父子关系</strong>：组件可以嵌套，父组件可以传递数据给子组件。</li>
+<li><strong>封装性</strong>：组件内部的实现细节对外部是透明的。</li>
+</ul>
+<h3 id="3-创建组件"><a href="#3-创建组件" class="headerlink" title="3. 创建组件"></a>3. 创建组件</h3><h4 id="3-1-单文件组件（-vue-文件）"><a href="#3-1-单文件组件（-vue-文件）" class="headerlink" title="3.1 单文件组件（.vue 文件）"></a>3.1 单文件组件（.vue 文件）</h4><p>这是 Vue.js 推荐的组件书写方式，包含 <code>&lt;template&gt;</code>、<code>&lt;script&gt;</code> 和 <code>&lt;style&gt;</code> 三个部分。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- MyComponent.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;my-component&quot;&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123; title &#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123; content &#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;MyComponent&#x27;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    title: String,</span><br><span class="line">    content: String</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.my-component &#123;</span><br><span class="line">  /* 样式定义 */</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-注册组件"><a href="#3-2-注册组件" class="headerlink" title="3.2 注册组件"></a>3.2 注册组件</h4><p><strong>局部注册：</strong></p>
+<p>在使用组件的父组件中导入并注册：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;my-component :title=&quot;title&quot; :content=&quot;content&quot;&gt;&lt;/my-component&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import MyComponent from &#x27;./components/MyComponent.vue&#x27;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    MyComponent</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &#x27;组件标题&#x27;,</span><br><span class="line">      content: &#x27;组件内容&#x27;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>全局注册：</strong></p>
+<p>在 <code>main.js</code> 中注册，全局组件可在任何地方使用。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">MyComponent</span> <span class="keyword">from</span> <span class="string">&#x27;./components/MyComponent.vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;MyComponent&#x27;</span>, <span class="title class_">MyComponent</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-组件之间的通信"><a href="#4-组件之间的通信" class="headerlink" title="4. 组件之间的通信"></a>4. 组件之间的通信</h3><h4 id="4-1-父子组件通信"><a href="#4-1-父子组件通信" class="headerlink" title="4.1 父子组件通信"></a>4.1 父子组件通信</h4><ul>
+<li><p><strong>父组件传递数据给子组件</strong>：使用 <code>props</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件定义 props --&gt;</span><br><span class="line">props: &#123;</span><br><span class="line">  message: String</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>子组件触发事件通知父组件</strong>：使用 <code>$emit</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件中 --&gt;</span><br><span class="line">this.$emit(&#x27;eventName&#x27;, payload);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件中 --&gt;</span><br><span class="line">&lt;child-component @eventName=&quot;handleEvent&quot;&gt;&lt;/child-component&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4-2-兄弟组件通信"><a href="#4-2-兄弟组件通信" class="headerlink" title="4.2 兄弟组件通信"></a>4.2 兄弟组件通信</h4><ul>
+<li><p><strong>通过父组件中转</strong>：将数据提升到共同的父组件，由父组件管理和传递。</p>
+</li>
+<li><p><strong>事件总线（Event Bus）</strong>：创建一个空的 Vue 实例作为事件总线，但在 Vue 3 中不推荐使用。</p>
+</li>
+<li><p><strong>Vuex 状态管理</strong>：对于复杂的应用，使用 Vuex 统一管理状态。</p>
+</li>
+</ul>
+<h4 id="4-3-跨级组件通信"><a href="#4-3-跨级组件通信" class="headerlink" title="4.3 跨级组件通信"></a>4.3 跨级组件通信</h4><ul>
+<li><p><strong>Provide&#x2F;Inject</strong>：祖先组件提供数据，后代组件注入数据。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 祖先组件</span></span><br><span class="line"><span class="title function_">provide</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">dataKey</span>: <span class="variable language_">this</span>.<span class="property">dataValue</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 后代组件</span></span><br><span class="line"><span class="attr">inject</span>: [<span class="string">&#x27;dataKey&#x27;</span>]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="5-插槽（Slots）"><a href="#5-插槽（Slots）" class="headerlink" title="5. 插槽（Slots）"></a>5. 插槽（Slots）</h3><p>插槽用于在组件中插入父组件的内容，增强组件的灵活性。</p>
+<h4 id="5-1-默认插槽"><a href="#5-1-默认插槽" class="headerlink" title="5.1 默认插槽"></a>5.1 默认插槽</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component&gt;</span><br><span class="line">  &lt;p&gt;插入的内容&lt;/p&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-2-具名插槽"><a href="#5-2-具名插槽" class="headerlink" title="5.2 具名插槽"></a>5.2 具名插槽</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt; &lt;!-- 默认插槽 --&gt;</span><br><span class="line">    &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component&gt;</span><br><span class="line">  &lt;template v-slot:header&gt;</span><br><span class="line">    &lt;h1&gt;标题内容&lt;/h1&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">  &lt;p&gt;主要内容&lt;/p&gt;</span><br><span class="line">  &lt;template v-slot:footer&gt;</span><br><span class="line">    &lt;p&gt;页脚内容&lt;/p&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-3-作用域插槽"><a href="#5-3-作用域插槽" class="headerlink" title="5.3 作用域插槽"></a>5.3 作用域插槽</h4><p>用于将子组件的数据传递给父组件的插槽内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot :user=&quot;userData&quot;&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      userData: &#123; name: &#x27;Alice&#x27;, age: 25 &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child-component v-slot:default=&quot;slotProps&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; slotProps.user.name &#125;&#125; - &#123;&#123; slotProps.user.age &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/child-component&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-动态组件和异步组件"><a href="#6-动态组件和异步组件" class="headerlink" title="6. 动态组件和异步组件"></a>6. 动态组件和异步组件</h3><h4 id="6-1-动态组件"><a href="#6-1-动态组件" class="headerlink" title="6.1 动态组件"></a>6.1 动态组件</h4><p>使用 <code>&lt;component&gt;</code> 标签和 <code>:is</code> 属性，根据条件渲染不同的组件。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;component :is=&quot;currentComponent&quot;&gt;&lt;/component&gt;</span><br><span class="line">    &lt;button @click=&quot;toggleComponent&quot;&gt;切换组件&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      currentComponent: &#x27;ComponentA&#x27;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    ComponentA,</span><br><span class="line">    ComponentB</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    toggleComponent() &#123;</span><br><span class="line">      this.currentComponent = this.currentComponent === &#x27;ComponentA&#x27; ? &#x27;ComponentB&#x27; : &#x27;ComponentA&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-2-异步组件"><a href="#6-2-异步组件" class="headerlink" title="6.2 异步组件"></a>6.2 异步组件</h4><p>对于大型组件，可以使用异步加载，优化首屏加载速度。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">AsyncComponent</span> = (<span class="params"></span>) =&gt; <span class="keyword">import</span>(<span class="string">&#x27;./components/AsyncComponent.vue&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-组件生命周期"><a href="#7-组件生命周期" class="headerlink" title="7. 组件生命周期"></a>7. 组件生命周期</h3><p>组件在创建、更新、销毁的过程中，会触发一系列的生命周期钩子函数，可以在这些函数中执行相应的逻辑。</p>
+<ul>
+<li><p><strong>常用生命周期钩子：</strong></p>
+<ul>
+<li><code>beforeCreate</code>：实例初始化之后，数据观测和事件配置之前。</li>
+<li><code>created</code>：实例已创建，完成数据观测、属性和方法的运算，尚未挂载。</li>
+<li><code>beforeMount</code>：在挂载开始之前调用。</li>
+<li><code>mounted</code>：实例挂载到 DOM 上后调用。</li>
+<li><code>beforeUpdate</code>：数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。</li>
+<li><code>updated</code>：由于数据更改导致的虚拟 DOM 重新渲染和打补丁之后调用。</li>
+<li><code>beforeDestroy</code>：实例销毁之前调用。</li>
+<li><code>destroyed</code>：实例销毁后调用。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="知识笔记总结"><a href="#知识笔记总结" class="headerlink" title="知识笔记总结"></a>知识笔记总结</h2><h3 id="脚手架（Vue-CLI）"><a href="#脚手架（Vue-CLI）" class="headerlink" title="脚手架（Vue CLI）"></a>脚手架（Vue CLI）</h3><ul>
+<li><strong>安装与创建项目</strong>：<code>npm install -g @vue/cli</code>，<code>vue create project-name</code>。</li>
+<li><strong>项目结构</strong>：了解 Vue CLI 项目的基本目录结构和文件作用。</li>
+<li><strong>配置与插件</strong>：使用 <code>vue.config.js</code> 进行自定义配置，使用插件系统扩展功能。</li>
+<li><strong>命令</strong>：<ul>
+<li><code>npm run serve</code>：启动开发服务器。</li>
+<li><code>npm run build</code>：构建生产环境代码。</li>
+<li><code>npm run test</code>：运行测试。</li>
+</ul>
+</li>
+</ul>
+<h3 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h3><ul>
+<li><strong>组件创建</strong>：使用单文件组件 <code>.vue</code>，包含模板、脚本和样式。</li>
+<li><strong>组件注册</strong>：区分全局注册和局部注册，推荐使用局部注册管理组件。</li>
+<li><strong>组件通信</strong>：<ul>
+<li><strong>父子通信</strong>：<code>props</code> 和 <code>$emit</code>。</li>
+<li><strong>兄弟通信</strong>：通过共同的父组件或状态管理（Vuex）。</li>
+<li><strong>跨级通信</strong>：<code>provide</code> 和 <code>inject</code>。</li>
+</ul>
+</li>
+<li><strong>插槽（Slots）</strong>：使用默认插槽、具名插槽和作用域插槽增强组件的灵活性。</li>
+<li><strong>动态组件</strong>：使用 <code>&lt;component :is=&quot;componentName&quot;&gt;</code> 动态渲染组件。</li>
+<li><strong>生命周期钩子</strong>：理解各个生命周期的作用，合理使用钩子函数。</li>
+</ul>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ul>
+<li><strong>组件命名</strong>：遵循命名规范，使用大驼峰或短横线命名法。</li>
+<li><strong>单一职责</strong>：每个组件只负责完成一个功能，保持组件的高内聚低耦合。</li>
+<li><strong>样式作用域</strong>：使用 <code>scoped</code> 或 CSS Modules，防止样式污染。</li>
+<li><strong>性能优化</strong>：使用异步组件、路由懒加载等手段优化性能。</li>
+<li><strong>代码规范</strong>：遵循 ESLint 规则，保持代码风格一致。</li>
+</ul>
+<hr>
+<p>希望以上内容能帮助你深入理解 Vue.js 中的脚手架和组件化开发。如果你还有其他问题，欢迎继续提问！</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>空之境界</title>
+    <url>/posts/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/</url>
+    <content><![CDATA[<p><img src="/posts/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/d437d1dddb0c30c851e1741af02585236ee8758b.jpg" alt="d437d1dddb0c30c851e1741af02585236ee8758b" loading="lazy"></p>
+<p>《空之境界》是由日本作家奈须蘑菇所著的一系列轻小说，原作是奈须蘑菇在1998年至1999年间于个人主页上连载的同人小说。后来由武内崇负责插画，并且被Type-Moon正式出版。这部作品以其深刻的主题、复杂的叙事结构以及丰富的象征意义而闻名，在读者中拥有很高的评价。</p>
+<h3 id="故事概要"><a href="#故事概要" class="headerlink" title="故事概要"></a>故事概要</h3><p>《空之境界》的故事围绕着两仪家的继承者——两仪式（Ryougi Shiki）展开。故事开始时，式刚刚从长达两年的昏迷中醒来，她发现自己拥有了可以看到事物“死相”的能力。随着故事的发展，式与她的青梅竹马黑桐干也（Kokutou Mikiya）以及其他角色一起经历了一系列超自然事件，这些事件揭示了关于生命、死亡、自我认知等深层次的主题。</p>
+<h3 id="深度分析"><a href="#深度分析" class="headerlink" title="深度分析"></a>深度分析</h3><h4 id="一、生死观与存在主义"><a href="#一、生死观与存在主义" class="headerlink" title="一、生死观与存在主义"></a>一、生死观与存在主义</h4><p>《空之境界》深入探讨了生死的意义。通过两仪式的眼睛，我们可以看到一个不同于常人的世界：每个物体都有其“线”，即生命的轨迹；当这些线断裂时，则意味着死亡的到来。这种设定不仅仅是一种视觉上的创新，更重要的是它反映了作者对于生死界限模糊化的一种思考方式。同时，《空之境界》也涉及到了个体如何面对自身存在的问题，特别是当主角们面临选择生存还是牺牲的时候，他们对自我价值的认知成为了推动剧情发展的重要因素之一。</p>
+<h4 id="二、双重人格与身份认同"><a href="#二、双重人格与身份认同" class="headerlink" title="二、双重人格与身份认同"></a>二、双重人格与身份认同</h4><p>另一个值得关注的主题是关于身份认同和个人成长。两仪式拥有两个截然不同的人格：“男性”的冷静理性面和“女性”的温柔感性面。这两种性格之间的冲突及最终融合过程象征着一个人内心深处不同方面之间的斗争与和谐。此外，其他角色如荒耶宗莲等人也在探索自己真正的自我过程中扮演了重要角色，体现了寻找真实自我的艰难旅程。</p>
+<h4 id="三、记忆与遗忘"><a href="#三、记忆与遗忘" class="headerlink" title="三、记忆与遗忘"></a>三、记忆与遗忘</h4><p>记忆与遗忘也是贯穿整个系列的关键主题之一。无论是因为某种原因失去记忆的角色，还是主动选择忘记某些痛苦回忆的人物，都在某种程度上反映了人类对于过去经历的态度。《空之境界》通过对记忆这一概念的独特诠释，引导读者思考记忆对我们塑造自我形象的重要性以及遗忘背后可能隐藏的情感创伤。</p>
+<h4 id="四、哲学思辨与文学艺术"><a href="#四、哲学思辨与文学艺术" class="headerlink" title="四、哲学思辨与文学艺术"></a>四、哲学思辨与文学艺术</h4><p>除了上述提到的内容之外，《空之境界》还包含了大量的哲学讨论和文学引用。例如，“起源”、“无意识”等概念频繁出现于文本之中，显示出作者深厚的哲学功底。同时，书中也不乏对经典文学作品的致敬，如《爱丽丝梦游仙境》中的元素就被巧妙地融入到了故事情节里，为整部作品增添了几分神秘色彩。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>《空之境界》不仅是一部充满奇幻色彩的小说，更是一次深刻的精神之旅。通过细腻的心理描写、复杂的人物关系以及富有哲理性的对话，《空之境界》成功构建了一个既独立又相互联系的世界观体系。它挑战了传统意义上的善恶观念，鼓励人们勇敢地面对内心的黑暗面，并从中找到成长的力量。</p>
+]]></content>
+      <categories>
+        <category>动漫</category>
+      </categories>
+      <tags>
+        <tag>动漫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>扫雷</title>
+    <url>/posts/saolei/</url>
+    <content><![CDATA[<iframe src="./扫雷.html" width="100%" height="600px"></iframe>
+
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>魔女之旅</title>
+    <url>/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/</url>
+    <content><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Audio Player with Play Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+    .audio-container {
+      text-align: center;
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .audio-container img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      transition: transform 0.5s ease-in-out;
+    }
+    .rotating {
+      animation: rotate 5s linear infinite; /* 图片旋转动画 */
+    }
+    audio {
+      display: none; /* 隐藏原生播放器 */
+    }
+    .play-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: grey; /* 按钮灰色 */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .play-btn:focus {
+      outline: none;
+    }
+    /* 定义旋转动画 */
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="audio-container">
+    <img src="/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/elaina01.jpg" alt="Album Art" id="albumArt" loading="lazy">
+    <button class="play-btn" id="playBtn">开始</button>
+    <audio id="audioPlayer">
+      <source src="/audio/OP.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const albumArt = document.getElementById('albumArt');
+    const playBtn = document.getElementById('playBtn');
+    let isPlaying = false;
+
+    // 点击按钮播放或暂停音频
+    playBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audioPlayer.pause();
+        playBtn.textContent = '开始';
+        albumArt.classList.remove('rotating'); // 停止旋转
+      } else {
+        audioPlayer.play();
+        playBtn.textContent = '停止';
+        albumArt.classList.add('rotating'); // 开始旋转
+      }
+    });
+    
+    // 音频播放/暂停时同步按钮状态
+    audioPlayer.onplay = () => {
+      isPlaying = true;
+    };
+    
+    audioPlayer.onpause = () => {
+      isPlaying = false;
+    };
+  </script>
+</body>
+</html>
+
+
+
+<h1 id="请别在意。我是旅人，得继续旅行才行"><a href="#请别在意。我是旅人，得继续旅行才行" class="headerlink" title="请别在意。我是旅人，得继续旅行才行!"></a>请别在意。我是旅人，得继续旅行才行!</h1><p><img src="/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/Elaina.jpg" alt="Elaina" loading="lazy"></p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">《魔女之旅》（日语：魔女の旅々）是由白石定规创作、あずーる插画的一部轻小说，并有Drama <span class="built_in">CD</span>、漫画等衍生作品。</span><br><span class="line"></span><br><span class="line">原作介绍</span><br><span class="line"><span class="number">2014</span>年在Amazon Kindle首次公开，<span class="number">2016</span>年修正后单行本化。</span><br><span class="line"></span><br><span class="line">剧情简介</span><br><span class="line">某个地方有个正在旅行的魔女，她的名字是伊蕾娜。</span><br><span class="line">身为旅人，在很长很长的旅途中，她与形形色色的国家与人们邂逅。</span><br><span class="line"></span><br><span class="line">只允许魔法师入境的国家、</span><br><span class="line">最喜欢肌肉的壮汉、</span><br><span class="line">在死亡深渊等待恋人归来的青年、</span><br><span class="line">独自留守国家早已灭亡的公主…</span><br><span class="line"></span><br><span class="line">最后，还有她身为魔女的至今为止与从今以后。</span><br><span class="line">和莫名其妙、滑稽可笑的人们相遇，接触某人美丽的日常生活，魔女日复一日编织出相逢与离别的故事。</span><br><span class="line"></span><br><span class="line">——《第一卷导语》</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>动漫</category>
+      </categories>
+      <tags>
+        <tag>动漫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>「新」动计划·编程入门Java</title>
     <url>/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/</url>
     <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=22826401&auto=1&height=66"></iframe>
@@ -2662,25 +3204,6 @@
       </tags>
   </entry>
   <entry>
-    <title>空之境界</title>
-    <url>/posts/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/</url>
-    <content><![CDATA[<p><img src="/posts/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/d437d1dddb0c30c851e1741af02585236ee8758b.jpg" alt="d437d1dddb0c30c851e1741af02585236ee8758b" loading="lazy"></p>
-<p>《空之境界》是由日本作家奈须蘑菇所著的一系列轻小说，原作是奈须蘑菇在1998年至1999年间于个人主页上连载的同人小说。后来由武内崇负责插画，并且被Type-Moon正式出版。这部作品以其深刻的主题、复杂的叙事结构以及丰富的象征意义而闻名，在读者中拥有很高的评价。</p>
-<h3 id="故事概要"><a href="#故事概要" class="headerlink" title="故事概要"></a>故事概要</h3><p>《空之境界》的故事围绕着两仪家的继承者——两仪式（Ryougi Shiki）展开。故事开始时，式刚刚从长达两年的昏迷中醒来，她发现自己拥有了可以看到事物“死相”的能力。随着故事的发展，式与她的青梅竹马黑桐干也（Kokutou Mikiya）以及其他角色一起经历了一系列超自然事件，这些事件揭示了关于生命、死亡、自我认知等深层次的主题。</p>
-<h3 id="深度分析"><a href="#深度分析" class="headerlink" title="深度分析"></a>深度分析</h3><h4 id="一、生死观与存在主义"><a href="#一、生死观与存在主义" class="headerlink" title="一、生死观与存在主义"></a>一、生死观与存在主义</h4><p>《空之境界》深入探讨了生死的意义。通过两仪式的眼睛，我们可以看到一个不同于常人的世界：每个物体都有其“线”，即生命的轨迹；当这些线断裂时，则意味着死亡的到来。这种设定不仅仅是一种视觉上的创新，更重要的是它反映了作者对于生死界限模糊化的一种思考方式。同时，《空之境界》也涉及到了个体如何面对自身存在的问题，特别是当主角们面临选择生存还是牺牲的时候，他们对自我价值的认知成为了推动剧情发展的重要因素之一。</p>
-<h4 id="二、双重人格与身份认同"><a href="#二、双重人格与身份认同" class="headerlink" title="二、双重人格与身份认同"></a>二、双重人格与身份认同</h4><p>另一个值得关注的主题是关于身份认同和个人成长。两仪式拥有两个截然不同的人格：“男性”的冷静理性面和“女性”的温柔感性面。这两种性格之间的冲突及最终融合过程象征着一个人内心深处不同方面之间的斗争与和谐。此外，其他角色如荒耶宗莲等人也在探索自己真正的自我过程中扮演了重要角色，体现了寻找真实自我的艰难旅程。</p>
-<h4 id="三、记忆与遗忘"><a href="#三、记忆与遗忘" class="headerlink" title="三、记忆与遗忘"></a>三、记忆与遗忘</h4><p>记忆与遗忘也是贯穿整个系列的关键主题之一。无论是因为某种原因失去记忆的角色，还是主动选择忘记某些痛苦回忆的人物，都在某种程度上反映了人类对于过去经历的态度。《空之境界》通过对记忆这一概念的独特诠释，引导读者思考记忆对我们塑造自我形象的重要性以及遗忘背后可能隐藏的情感创伤。</p>
-<h4 id="四、哲学思辨与文学艺术"><a href="#四、哲学思辨与文学艺术" class="headerlink" title="四、哲学思辨与文学艺术"></a>四、哲学思辨与文学艺术</h4><p>除了上述提到的内容之外，《空之境界》还包含了大量的哲学讨论和文学引用。例如，“起源”、“无意识”等概念频繁出现于文本之中，显示出作者深厚的哲学功底。同时，书中也不乏对经典文学作品的致敬，如《爱丽丝梦游仙境》中的元素就被巧妙地融入到了故事情节里，为整部作品增添了几分神秘色彩。</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>《空之境界》不仅是一部充满奇幻色彩的小说，更是一次深刻的精神之旅。通过细腻的心理描写、复杂的人物关系以及富有哲理性的对话，《空之境界》成功构建了一个既独立又相互联系的世界观体系。它挑战了传统意义上的善恶观念，鼓励人们勇敢地面对内心的黑暗面，并从中找到成长的力量。</p>
-]]></content>
-      <categories>
-        <category>动漫</category>
-      </categories>
-      <tags>
-        <tag>动漫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++算法基础</title>
     <url>/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/</url>
     <content><![CDATA[<h1 id="算法基础课"><a href="#算法基础课" class="headerlink" title="算法基础课"></a>算法基础课</h1><h1 id="第一讲：前缀和与差分"><a href="#第一讲：前缀和与差分" class="headerlink" title="第一讲：前缀和与差分"></a>第一讲：前缀和与差分</h1><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/kotomi.webp" alt="kotomi" loading="lazy"></p>
@@ -3301,21 +3824,20 @@
 
 <h3 id="代码-14"><a href="#代码-14" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="comment">// 定义常量N，表示数组的最大长度</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span><span class="number">+9</span>;</span><br><span class="line"><span class="comment">// 定义全局变量a、n、c</span></span><br><span class="line"><span class="type">int</span> a[N], n, c;</span><br><span class="line"><span class="comment">// 定义函数f，用于计算在给定最小距离mid下，最多能放多少头牛</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(<span class="type">int</span> mid)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>, pre = <span class="number">-1e9</span>; <span class="comment">// res表示当前已放的牛的数量，pre表示上一个放了牛的位置</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 如果当前位置与上一个放牛位置的距离大于等于mid，则可以放牛</span></span><br><span class="line">        <span class="keyword">if</span>(a[i] - pre &gt;= mid)</span><br><span class="line">        &#123;</span><br><span class="line">            res++; <span class="comment">// 放一头牛</span></span><br><span class="line">            pre = a[i]; <span class="comment">// 更新上一个放牛的位置</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res; <span class="comment">// 返回最多能放的牛的数量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 解决问题的函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 读取输入的整数n和c</span></span><br><span class="line">    cin &gt;&gt; n &gt;&gt; c;</span><br><span class="line">    <span class="comment">// 读取n个整数并存储到数组a中</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="comment">// 对数组a进行排序</span></span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>, a + <span class="number">1</span> + n);</span><br><span class="line">    <span class="comment">// 初始化二分查找的左右边界</span></span><br><span class="line">    <span class="type">int</span> l = <span class="number">0</span>, r = <span class="number">1e9</span> + <span class="number">10</span>;</span><br><span class="line">    <span class="comment">// 二分查找过程</span></span><br><span class="line">    <span class="keyword">while</span>(l + <span class="number">1</span> != r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 计算中间位置</span></span><br><span class="line">        <span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果当前mid下能放的牛的数量大于等于c，则尝试更大的mid</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">f</span>(mid) &gt;= c)</span><br><span class="line">            l = mid;</span><br><span class="line">        <span class="comment">// 否则尝试更小的mid</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 输出最终找到的最小距离</span></span><br><span class="line">    cout &lt;&lt; l &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 主函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 优化输入输出流</span></span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>), cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 设置默认测试用例数量为1</span></span><br><span class="line">    <span class="type">int</span> _ = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 循环处理每个测试用例</span></span><br><span class="line">    <span class="keyword">while</span>(_--)</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    <span class="comment">// 返回程序执行成功</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="习题"><a href="#习题" class="headerlink" title="习题**"></a>习题**</h2><h3 id="题目描述-15"><a href="#题目描述-15" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
-</blockquote>
-<h4 id="输入描述-13"><a href="#输入描述-13" class="headerlink" title="输入描述"></a>输入描述</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
+<h2 id="习题Mex-and-Xor"><a href="#习题Mex-and-Xor" class="headerlink" title="习题Mex and Xor"></a>习题<em>Mex and Xor</em></h2><h3 id="题目描述-15"><a href="#题目描述-15" class="headerlink" title="题目描述"></a>题目描述</h3><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241021100326320.png" alt="image-20241021100326320" loading="lazy"></p>
+<h4 id="输入描述-13"><a href="#输入描述-13" class="headerlink" title="输入描述"></a>输入描述</h4><p><img src="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/image-20241021100338624.png" alt="image-20241021100338624" loading="lazy"></p>
 <h4 id="输出描述-13"><a href="#输出描述-13" class="headerlink" title="输出描述"></a>输出描述</h4><blockquote>
+<p>共t<em>t</em>行：第i<em>i</em>行为第i<em>i</em>个测试用例的答案。</p>
 </blockquote>
-<h4 id="输入样例1-13"><a href="#输入样例1-13" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="输入样例1-13"><a href="#输入样例1-13" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">1</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">1</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">0</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">10000</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">10000</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="输出样例1-13"><a href="#输出样例1-13" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1-13"><a href="#输出样例1-13" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
 
-<h3 id="代码-15"><a href="#代码-15" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="代码-15"><a href="#代码-15" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span> <span class="comment">// 引入所有标准库</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std; <span class="comment">// 使用标准命名空间</span></span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>; <span class="comment">// 定义 ll 为 long long 的别名</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span><span class="number">+9</span>; <span class="comment">// 定义常量 N，表示数组的大小</span></span><br><span class="line"><span class="type">int</span> prexor[N]; <span class="comment">// 声明一个整型数组 prexor，用于存储前缀异或值</span></span><br><span class="line"><span class="comment">// 解决函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b; <span class="comment">// 声明两个整型变量 a 和 b</span></span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b; <span class="comment">// 从输入中读取 a 和 b 的值</span></span><br><span class="line">    <span class="comment">// 计算 prexor[a-1] 和 b 的异或值</span></span><br><span class="line">    <span class="type">int</span> y = prexor[a<span class="number">-1</span>] ^ b; </span><br><span class="line">    <span class="comment">// 根据 y 的值进行不同的输出</span></span><br><span class="line">    <span class="keyword">if</span> (y == a) <span class="comment">// 如果 y 等于 a</span></span><br><span class="line">        cout &lt;&lt; a + <span class="number">2</span> &lt;&lt; <span class="string">&#x27;\n&#x27;</span>; <span class="comment">// 输出 a + 2</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (y == <span class="number">0</span>) <span class="comment">// 如果 y 等于 0</span></span><br><span class="line">        cout &lt;&lt; a &lt;&lt; <span class="string">&#x27;\n&#x27;</span>; <span class="comment">// 输出 a</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">// 其他情况</span></span><br><span class="line">        cout &lt;&lt; a + <span class="number">1</span> &lt;&lt; <span class="string">&#x27;\n&#x27;</span>; <span class="comment">// 输出 a + 1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>); <span class="comment">// 提高输入输出效率</span></span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>); <span class="comment">// 解除 cin 和 cout 的绑定</span></span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>); <span class="comment">// 解除 cout 和 cin 的绑定</span></span><br><span class="line">    <span class="comment">// 计算前缀异或值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2e5</span>; ++i)</span><br><span class="line">        prexor[i] = prexor[i - <span class="number">1</span>] ^ i; <span class="comment">// prexor[i] 存储从 1 到 i 的异或值</span></span><br><span class="line">    <span class="type">int</span> _; <span class="comment">// 声明整型变量 _</span></span><br><span class="line">    cin &gt;&gt; _; <span class="comment">// 从输入中读取测试用例的数量</span></span><br><span class="line">    <span class="keyword">while</span> (_) <span class="comment">// 当还有测试用例时</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">solve</span>(); <span class="comment">// 调用 solve 函数处理每个测试用例</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 返回 0，表示程序正常结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="习题-1"><a href="#习题-1" class="headerlink" title="习题**"></a>习题**</h2><h3 id="题目描述-16"><a href="#题目描述-16" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<h1 id="第三讲-栈、优先队列、map、set、bitset"><a href="#第三讲-栈、优先队列、map、set、bitset" class="headerlink" title="第三讲:栈、优先队列、map、set、bitset"></a>第三讲:栈、优先队列、map、set、bitset</h1><h2 id="习题"><a href="#习题" class="headerlink" title="习题**"></a>习题**</h2><h3 id="题目描述-16"><a href="#题目描述-16" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
 </blockquote>
 <h4 id="输入描述-14"><a href="#输入描述-14" class="headerlink" title="输入描述"></a>输入描述</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -3586,121 +4108,6 @@
 ]]></content>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>魔女之旅</title>
-    <url>/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/</url>
-    <content><![CDATA[<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Audio Player with Play Button</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
-      margin: 0;
-    }
-    .audio-container {
-      text-align: center;
-      background-color: #fff;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .audio-container img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      transition: transform 0.5s ease-in-out;
-    }
-    .rotating {
-      animation: rotate 5s linear infinite; /* 图片旋转动画 */
-    }
-    audio {
-      display: none; /* 隐藏原生播放器 */
-    }
-    .play-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: grey; /* 按钮灰色 */
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-    .play-btn:focus {
-      outline: none;
-    }
-    /* 定义旋转动画 */
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="audio-container">
-    <img src="/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/elaina01.jpg" alt="Album Art" id="albumArt" loading="lazy">
-    <button class="play-btn" id="playBtn">开始</button>
-    <audio id="audioPlayer">
-      <source src="/audio/OP.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-
-  <script>
-    const audioPlayer = document.getElementById('audioPlayer');
-    const albumArt = document.getElementById('albumArt');
-    const playBtn = document.getElementById('playBtn');
-    let isPlaying = false;
-
-    // 点击按钮播放或暂停音频
-    playBtn.addEventListener('click', () => {
-      if (isPlaying) {
-        audioPlayer.pause();
-        playBtn.textContent = '开始';
-        albumArt.classList.remove('rotating'); // 停止旋转
-      } else {
-        audioPlayer.play();
-        playBtn.textContent = '停止';
-        albumArt.classList.add('rotating'); // 开始旋转
-      }
-    });
-    
-    // 音频播放/暂停时同步按钮状态
-    audioPlayer.onplay = () => {
-      isPlaying = true;
-    };
-    
-    audioPlayer.onpause = () => {
-      isPlaying = false;
-    };
-  </script>
-</body>
-</html>
-
-
-
-<h1 id="请别在意。我是旅人，得继续旅行才行"><a href="#请别在意。我是旅人，得继续旅行才行" class="headerlink" title="请别在意。我是旅人，得继续旅行才行!"></a>请别在意。我是旅人，得继续旅行才行!</h1><p><img src="/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/Elaina.jpg" alt="Elaina" loading="lazy"></p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">《魔女之旅》（日语：魔女の旅々）是由白石定规创作、あずーる插画的一部轻小说，并有Drama <span class="built_in">CD</span>、漫画等衍生作品。</span><br><span class="line"></span><br><span class="line">原作介绍</span><br><span class="line"><span class="number">2014</span>年在Amazon Kindle首次公开，<span class="number">2016</span>年修正后单行本化。</span><br><span class="line"></span><br><span class="line">剧情简介</span><br><span class="line">某个地方有个正在旅行的魔女，她的名字是伊蕾娜。</span><br><span class="line">身为旅人，在很长很长的旅途中，她与形形色色的国家与人们邂逅。</span><br><span class="line"></span><br><span class="line">只允许魔法师入境的国家、</span><br><span class="line">最喜欢肌肉的壮汉、</span><br><span class="line">在死亡深渊等待恋人归来的青年、</span><br><span class="line">独自留守国家早已灭亡的公主…</span><br><span class="line"></span><br><span class="line">最后，还有她身为魔女的至今为止与从今以后。</span><br><span class="line">和莫名其妙、滑稽可笑的人们相遇，接触某人美丽的日常生活，魔女日复一日编织出相逢与离别的故事。</span><br><span class="line"></span><br><span class="line">——《第一卷导语》</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>动漫</category>
-      </categories>
-      <tags>
-        <tag>动漫</tag>
       </tags>
   </entry>
 </search>
