@@ -8,12 +8,12 @@ document.addEventListener("pjax:success", initScrollReveal);
 </script><link rel="icon" type="image/png" href="/favicon.ico"><link rel="mask-icon" href="/favicon.ico" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
     window.Yun = {}
     window.CONFIG = {"hostname":"elaina-1017.xyz","root":"/","title":"魔女之旅","version":"1.10.11","mode":"light","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"local_search":{"path":"/search.xml"},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
-  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="Git常用语法详解 Git是一款功能强大的分布式版本控制系统，其丰富的命令和灵活的语法可以满足各种版本管理需求。熟练掌握Git的常用语法，有助于提高开发效率和团队协作能力。下面将详细介绍Git的常用命令和语法，帮助您深入理解并应用Git。  目录 Git基础命令 初始化仓库：git init 克隆仓库：git clone 查看状态：git status 添加到暂存区：git add 提交更改：gi">
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="Git常用语法详解  Git是一款功能强大的分布式版本控制系统，其丰富的命令和灵活的语法可以满足各种版本管理需求。熟练掌握Git的常用语法，有助于提高开发效率和团队协作能力。下面将详细介绍Git的常用命令和语法，帮助您深入理解并应用Git。  目录  Git基础命令  初始化仓库：git init 克隆仓库：git clone 查看状态：git status 添加到暂存区：git add 提交更改">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git常用语法">
 <meta property="og:url" content="http://elaina-1017.xyz/posts/Git%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.html">
 <meta property="og:site_name" content="Eulus&#39;s Blog">
-<meta property="og:description" content="Git常用语法详解 Git是一款功能强大的分布式版本控制系统，其丰富的命令和灵活的语法可以满足各种版本管理需求。熟练掌握Git的常用语法，有助于提高开发效率和团队协作能力。下面将详细介绍Git的常用命令和语法，帮助您深入理解并应用Git。  目录 Git基础命令 初始化仓库：git init 克隆仓库：git clone 查看状态：git status 添加到暂存区：git add 提交更改：gi">
+<meta property="og:description" content="Git常用语法详解  Git是一款功能强大的分布式版本控制系统，其丰富的命令和灵活的语法可以满足各种版本管理需求。熟练掌握Git的常用语法，有助于提高开发效率和团队协作能力。下面将详细介绍Git的常用命令和语法，帮助您深入理解并应用Git。  目录  Git基础命令  初始化仓库：git init 克隆仓库：git clone 查看状态：git status 添加到暂存区：git add 提交更改">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://elaina-1017.xyz/posts/Git%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/368420dac41817f3d3aab08cc2293d2aac0c9dee.jpg">
 <meta property="og:image" content="http://elaina-1017.xyz/posts/Git%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/2018080251901_yFiXE.jpeg">
@@ -39,11 +39,14 @@ IconifyProviders = {
     // Wait for 1 second before switching API hosts
     rotate: 1000,
   },
-};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Eulus"><img width="96" loading="lazy" src="/./images/elaina.jpg" alt="Eulus"></a><div class="site-author-name"><a href="/about/">Eulus</a></div><span class="site-name">Eulus's Blog</span><sub class="site-subtitle"></sub><div class="site-description">天若有情天亦老，人间正道是沧桑!</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">13</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://mzh.moegirl.org.cn/%E4%BC%8A%E8%95%BE%E5%A8%9C" title="伊蕾娜"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://space.bilibili.com/382479581?spm_id_from=333.1365.0.0" title="哔哩哔哩" style="color:#FF8EB3"><span class="icon iconify" data-icon="ri:bilibili-line"></span></a><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://github.com/Eulus209" title="github" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">Git常用语法详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">1. Git基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93%EF%BC%9Agit-init"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.1 初始化仓库：git init</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93%EF%BC%9Agit-clone"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2 克隆仓库：git clone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%EF%BC%9Agit-status"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.3 查看状态：git status</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA%EF%BC%9Agit-add"><span class="toc-number">1.2.4.</span> <span class="toc-text">1.4 添加到暂存区：git add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9%EF%BC%9Agit-commit"><span class="toc-number">1.2.5.</span> <span class="toc-text">1.5 提交更改：git commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2%EF%BC%9Agit-log"><span class="toc-number">1.2.6.</span> <span class="toc-text">1.6 查看提交历史：git log</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">2. 分支操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF%EF%BC%9Agit-branch"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1 查看分支：git branch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF%EF%BC%9Agit-branch"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.2 创建分支：git branch &lt;branch-name&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%9Agit-checkout"><span class="toc-number">1.3.3.</span> <span class="toc-text">2.3 切换分支：git checkout &lt;branch-name&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%9Agit-checkout-b"><span class="toc-number">1.3.4.</span> <span class="toc-text">2.4 创建并切换分支：git checkout -b &lt;branch-name&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF%EF%BC%9Agit-merge"><span class="toc-number">1.3.5.</span> <span class="toc-text">2.5 合并分支：git merge &lt;branch-name&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF%EF%BC%9Agit-branch-d"><span class="toc-number">1.3.6.</span> <span class="toc-text">2.6 删除分支：git branch -d &lt;branch-name&gt;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.</span> <span class="toc-text">3. 远程仓库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%9Agit-remote-v"><span class="toc-number">1.4.1.</span> <span class="toc-text">3.1 查看远程仓库：git remote -v</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%9Agit-remote-add"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.2 添加远程仓库：git remote add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%9Agit-push"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.3 推送到远程仓库：git push</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8B%89%E5%8F%96%EF%BC%9Agit-pull"><span class="toc-number">1.4.4.</span> <span class="toc-text">3.4 从远程仓库拉取：git pull</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E8%8E%B7%E5%8F%96%E8%BF%9C%E7%A8%8B%E6%9B%B4%E6%96%B0%EF%BC%9Agit-fetch"><span class="toc-number">1.4.5.</span> <span class="toc-text">3.5 获取远程更新：git fetch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%92%A4%E9%94%80%E4%B8%8E%E5%9B%9E%E6%BB%9A"><span class="toc-number">1.5.</span> <span class="toc-text">4. 撤销与回滚</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9%EF%BC%9Agit-checkout"><span class="toc-number">1.5.1.</span> <span class="toc-text">4.1 撤销修改：git checkout --</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%8F%96%E6%B6%88%E6%9A%82%E5%AD%98%EF%BC%9Agit-reset-HEAD"><span class="toc-number">1.5.2.</span> <span class="toc-text">4.2 取消暂存：git reset HEAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%9B%9E%E6%BB%9A%E6%8F%90%E4%BA%A4%EF%BC%9Agit-revert"><span class="toc-number">1.5.3.</span> <span class="toc-text">4.3 回滚提交：git revert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E9%87%8D%E7%BD%AE%E4%BB%93%E5%BA%93%EF%BC%9Agit-reset-hard"><span class="toc-number">1.5.4.</span> <span class="toc-text">4.4 重置仓库：git reset --hard</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86"><span class="toc-number">1.6.</span> <span class="toc-text">5. 标签管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE%EF%BC%9Agit-tag"><span class="toc-number">1.6.1.</span> <span class="toc-text">5.1 创建标签：git tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%9F%A5%E7%9C%8B%E6%A0%87%E7%AD%BE%EF%BC%9Agit-tag"><span class="toc-number">1.6.2.</span> <span class="toc-text">5.2 查看标签：git tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E6%8E%A8%E9%80%81%E6%A0%87%E7%AD%BE%EF%BC%9Agit-push-origin"><span class="toc-number">1.6.3.</span> <span class="toc-text">5.3 推送标签：git push origin</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%AD%98%E5%82%A8%E4%B8%8E%E5%BA%94%E7%94%A8%E5%8F%98%E6%9B%B4"><span class="toc-number">1.7.</span> <span class="toc-text">6. 存储与应用变更</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E5%AD%98%E5%82%A8%E5%BD%93%E5%89%8D%E4%BF%AE%E6%94%B9%EF%BC%9Agit-stash"><span class="toc-number">1.7.1.</span> <span class="toc-text">6.1 存储当前修改：git stash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E6%9F%A5%E7%9C%8B%E5%AD%98%E5%82%A8%E5%88%97%E8%A1%A8%EF%BC%9Agit-stash-list"><span class="toc-number">1.7.2.</span> <span class="toc-text">6.2 查看存储列表：git stash list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E5%BA%94%E7%94%A8%E6%9C%80%E6%96%B0%E5%AD%98%E5%82%A8%EF%BC%9Agit-stash-apply"><span class="toc-number">1.7.3.</span> <span class="toc-text">6.3 应用最新存储：git stash apply</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E5%88%A0%E9%99%A4%E5%AD%98%E5%82%A8%EF%BC%9Agit-stash-drop"><span class="toc-number">1.7.4.</span> <span class="toc-text">6.4 删除存储：git stash drop</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%8A%A0%EF%BC%9A%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.8.</span> <span class="toc-text">附加：其他常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%AE%E5%BC%82%EF%BC%9Agit-diff"><span class="toc-number">1.8.1.</span> <span class="toc-text">查看差异：git diff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D%EF%BC%9Agit-config"><span class="toc-number">1.8.2.</span> <span class="toc-text">配置别名：git config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%97%A5%E5%BF%97%EF%BC%9Agit-log-graph"><span class="toc-number">1.8.3.</span> <span class="toc-text">显示图形化日志：git log --graph</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE"><span class="toc-number">1.9.1.</span> <span class="toc-text">建议</span></a></li></ol></li></ol></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/C/" style="font-size: 21px; color: #4d89c0">C++</a> <a href="/tags/vue/" style="font-size: 21px; color: #4d89c0">vue</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 30px; color: #0078e7">动漫</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 12px; color: #999">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12px; color: #999">数据库</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://elaina-1017.xyz/posts/Git%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Eulus"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Eulus's Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Git常用语法</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <span class="post-meta-icon-text">发表于</span> <time title="创建时间：2024-10-13 18:36:17" itemprop="dateCreated datePublished" datetime="2024-10-13T18:36:17+08:00">2024-10-13</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">2.6k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">11m</span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown" itemprop="url" rel="index"><span itemprop="text">学习</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E7%AC%94%E8%AE%B0/" style="--text-color:#0078e7"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">笔记</span></a></span></div><div class="post-author"><span class="author-name">Eulus</span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h1 id="Git常用语法详解"><a href="#Git常用语法详解" class="headerlink" title="Git常用语法详解"></a>Git常用语法详解</h1><p><img src="/posts/Git%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/368420dac41817f3d3aab08cc2293d2aac0c9dee.jpg" alt="368420dac41817f3d3aab08cc2293d2aac0c9dee" loading="lazy"></p>
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Eulus"><img width="96" loading="lazy" src="/./images/elaina.jpg" alt="Eulus"></a><div class="site-author-name"><a href="/about/">Eulus</a></div><span class="site-name">Eulus's Blog</span><sub class="site-subtitle"></sub><div class="site-description">天若有情天亦老，人间正道是沧桑!</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">14</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://mzh.moegirl.org.cn/%E4%BC%8A%E8%95%BE%E5%A8%9C" title="伊蕾娜"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://space.bilibili.com/382479581?spm_id_from=333.1365.0.0" title="哔哩哔哩" style="color:#FF8EB3"><span class="icon iconify" data-icon="ri:bilibili-line"></span></a><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://github.com/Eulus209" title="github" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Git常用语法详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">1. Git基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93%EF%BC%9Agit-init"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.1 初始化仓库：git init</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93%EF%BC%9Agit-clone"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2 克隆仓库：git clone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%EF%BC%9Agit-status"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.3 查看状态：git status</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA%EF%BC%9Agit-add"><span class="toc-number">1.2.4.</span> <span class="toc-text">1.4 添加到暂存区：git add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9%EF%BC%9Agit-commit"><span class="toc-number">1.2.5.</span> <span class="toc-text">1.5 提交更改：git commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2%EF%BC%9Agit-log"><span class="toc-number">1.2.6.</span> <span class="toc-text">1.6 查看提交历史：git log</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">2. 分支操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF%EF%BC%9Agit-branch"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1 查看分支：git branch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF%EF%BC%9Agit-branch-branch-name"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.2 创建分支：git branch &lt;branch-name&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%9Agit-checkout-branch-name"><span class="toc-number">1.3.3.</span> <span class="toc-text">2.3 切换分支：git checkout &lt;branch-name&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%EF%BC%9Agit-checkout-b-branch-name"><span class="toc-number">1.3.4.</span> <span class="toc-text">2.4 创建并切换分支：git checkout -b &lt;branch-name&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF%EF%BC%9Agit-merge-branch-name"><span class="toc-number">1.3.5.</span> <span class="toc-text">2.5 合并分支：git merge &lt;branch-name&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF%EF%BC%9Agit-branch-d-branch-name"><span class="toc-number">1.3.6.</span> <span class="toc-text">2.6 删除分支：git branch -d &lt;branch-name&gt;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.</span> <span class="toc-text">3. 远程仓库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%9Agit-remote-v"><span class="toc-number">1.4.1.</span> <span class="toc-text">3.1 查看远程仓库：git remote -v</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%9Agit-remote-add"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.2 添加远程仓库：git remote add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%9Agit-push"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.3 推送到远程仓库：git push</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8B%89%E5%8F%96%EF%BC%9Agit-pull"><span class="toc-number">1.4.4.</span> <span class="toc-text">3.4 从远程仓库拉取：git pull</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E8%8E%B7%E5%8F%96%E8%BF%9C%E7%A8%8B%E6%9B%B4%E6%96%B0%EF%BC%9Agit-fetch"><span class="toc-number">1.4.5.</span> <span class="toc-text">3.5 获取远程更新：git fetch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%92%A4%E9%94%80%E4%B8%8E%E5%9B%9E%E6%BB%9A"><span class="toc-number">1.5.</span> <span class="toc-text">4. 撤销与回滚</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9%EF%BC%9Agit-checkout"><span class="toc-number">1.5.1.</span> <span class="toc-text">4.1 撤销修改：git checkout --</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%8F%96%E6%B6%88%E6%9A%82%E5%AD%98%EF%BC%9Agit-reset-HEAD"><span class="toc-number">1.5.2.</span> <span class="toc-text">4.2 取消暂存：git reset HEAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%9B%9E%E6%BB%9A%E6%8F%90%E4%BA%A4%EF%BC%9Agit-revert"><span class="toc-number">1.5.3.</span> <span class="toc-text">4.3 回滚提交：git revert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E9%87%8D%E7%BD%AE%E4%BB%93%E5%BA%93%EF%BC%9Agit-reset-hard"><span class="toc-number">1.5.4.</span> <span class="toc-text">4.4 重置仓库：git reset --hard</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86"><span class="toc-number">1.6.</span> <span class="toc-text">5. 标签管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE%EF%BC%9Agit-tag"><span class="toc-number">1.6.1.</span> <span class="toc-text">5.1 创建标签：git tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%9F%A5%E7%9C%8B%E6%A0%87%E7%AD%BE%EF%BC%9Agit-tag"><span class="toc-number">1.6.2.</span> <span class="toc-text">5.2 查看标签：git tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E6%8E%A8%E9%80%81%E6%A0%87%E7%AD%BE%EF%BC%9Agit-push-origin"><span class="toc-number">1.6.3.</span> <span class="toc-text">5.3 推送标签：git push origin</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%AD%98%E5%82%A8%E4%B8%8E%E5%BA%94%E7%94%A8%E5%8F%98%E6%9B%B4"><span class="toc-number">1.7.</span> <span class="toc-text">6. 存储与应用变更</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E5%AD%98%E5%82%A8%E5%BD%93%E5%89%8D%E4%BF%AE%E6%94%B9%EF%BC%9Agit-stash"><span class="toc-number">1.7.1.</span> <span class="toc-text">6.1 存储当前修改：git stash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E6%9F%A5%E7%9C%8B%E5%AD%98%E5%82%A8%E5%88%97%E8%A1%A8%EF%BC%9Agit-stash-list"><span class="toc-number">1.7.2.</span> <span class="toc-text">6.2 查看存储列表：git stash list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E5%BA%94%E7%94%A8%E6%9C%80%E6%96%B0%E5%AD%98%E5%82%A8%EF%BC%9Agit-stash-apply"><span class="toc-number">1.7.3.</span> <span class="toc-text">6.3 应用最新存储：git stash apply</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E5%88%A0%E9%99%A4%E5%AD%98%E5%82%A8%EF%BC%9Agit-stash-drop"><span class="toc-number">1.7.4.</span> <span class="toc-text">6.4 删除存储：git stash drop</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%8A%A0%EF%BC%9A%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.8.</span> <span class="toc-text">附加：其他常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%AE%E5%BC%82%EF%BC%9Agit-diff"><span class="toc-number">1.8.1.</span> <span class="toc-text">查看差异：git diff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D%EF%BC%9Agit-config"><span class="toc-number">1.8.2.</span> <span class="toc-text">配置别名：git config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%97%A5%E5%BF%97%EF%BC%9Agit-log-graph"><span class="toc-number">1.8.3.</span> <span class="toc-text">显示图形化日志：git log --graph</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE"><span class="toc-number">1.9.1.</span> <span class="toc-text">建议</span></a></li></ol></li></ol></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/C/" style="font-size: 21px; color: #4d89c0">C++</a> <a href="/tags/vue/" style="font-size: 21px; color: #4d89c0">vue</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 30px; color: #0078e7">动漫</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 12px; color: #999">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12px; color: #999">数据库</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://elaina-1017.xyz/posts/Git%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Eulus"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Eulus's Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Git常用语法</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <span class="post-meta-icon-text">发表于</span> <time title="创建时间：2024-10-13 18:36:17" itemprop="dateCreated datePublished" datetime="2024-10-13T18:36:17+08:00">2024-10-13</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">2.6k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">11m</span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%AD%A6%E4%B9%A0/" style="--text-color:saddlebrown" itemprop="url" rel="index"><span itemprop="text">学习</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E7%AC%94%E8%AE%B0/" style="--text-color:#0078e7"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">笔记</span></a></span></div><div class="post-author"><span class="author-name">Eulus</span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h1>Git常用语法详解</h1>
+<p><img src="/posts/Git%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/368420dac41817f3d3aab08cc2293d2aac0c9dee.jpg" alt="368420dac41817f3d3aab08cc2293d2aac0c9dee" loading="lazy"></p>
 <p>Git是一款功能强大的分布式版本控制系统，其丰富的命令和灵活的语法可以满足各种版本管理需求。熟练掌握Git的常用语法，有助于提高开发效率和团队协作能力。下面将详细介绍Git的常用命令和语法，帮助您深入理解并应用Git。</p>
 <hr>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
-<li>Git基础命令<ul>
+<h2 id="目录">目录</h2>
+<ol>
+<li>Git基础命令
+<ul>
 <li>初始化仓库：<code>git init</code></li>
 <li>克隆仓库：<code>git clone</code></li>
 <li>查看状态：<code>git status</code></li>
@@ -52,7 +55,8 @@ IconifyProviders = {
 <li>查看提交历史：<code>git log</code></li>
 </ul>
 </li>
-<li>分支操作<ul>
+<li>分支操作
+<ul>
 <li>查看分支：<code>git branch</code></li>
 <li>创建分支：<code>git branch &lt;branch-name&gt;</code></li>
 <li>切换分支：<code>git checkout &lt;branch-name&gt;</code></li>
@@ -61,7 +65,8 @@ IconifyProviders = {
 <li>删除分支：<code>git branch -d &lt;branch-name&gt;</code></li>
 </ul>
 </li>
-<li>远程仓库操作<ul>
+<li>远程仓库操作
+<ul>
 <li>查看远程仓库：<code>git remote -v</code></li>
 <li>添加远程仓库：<code>git remote add &lt;name&gt; &lt;url&gt;</code></li>
 <li>推送到远程仓库：<code>git push</code></li>
@@ -69,20 +74,23 @@ IconifyProviders = {
 <li>获取远程更新：<code>git fetch</code></li>
 </ul>
 </li>
-<li>撤销与回滚<ul>
+<li>撤销与回滚
+<ul>
 <li>撤销修改：<code>git checkout -- &lt;file&gt;</code></li>
 <li>取消暂存：<code>git reset HEAD &lt;file&gt;</code></li>
 <li>回滚提交：<code>git revert &lt;commit&gt;</code></li>
 <li>重置仓库：<code>git reset --hard &lt;commit&gt;</code></li>
 </ul>
 </li>
-<li>标签管理<ul>
+<li>标签管理
+<ul>
 <li>创建标签：<code>git tag &lt;tag-name&gt;</code></li>
 <li>查看标签：<code>git tag</code></li>
 <li>推送标签：<code>git push origin &lt;tag-name&gt;</code></li>
 </ul>
 </li>
-<li>存储与应用变更<ul>
+<li>存储与应用变更
+<ul>
 <li>存储当前修改：<code>git stash</code></li>
 <li>查看存储列表：<code>git stash list</code></li>
 <li>应用最新存储：<code>git stash apply</code></li>
@@ -91,33 +99,31 @@ IconifyProviders = {
 </li>
 </ol>
 <hr>
-<h2 id="1-Git基础命令"><a href="#1-Git基础命令" class="headerlink" title="1. Git基础命令"></a>1. Git基础命令</h2><h3 id="1-1-初始化仓库：git-init"><a href="#1-1-初始化仓库：git-init" class="headerlink" title="1.1 初始化仓库：git init"></a>1.1 初始化仓库：<code>git init</code></h3><p><strong>语法：</strong></p>
+<h2 id="1-Git基础命令">1. Git基础命令</h2>
+<h3 id="1-1-初始化仓库：git-init">1.1 初始化仓库：<code>git init</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>在当前目录下初始化一个新的Git仓库，会创建一个<code>.git</code>目录，用于存储Git的管理信息。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> my-project</span><br><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-克隆仓库：git-clone"><a href="#1-2-克隆仓库：git-clone" class="headerlink" title="1.2 克隆仓库：git clone"></a>1.2 克隆仓库：<code>git clone</code></h3><p><strong>语法：</strong></p>
+<h3 id="1-2-克隆仓库：git-clone">1.2 克隆仓库：<code>git clone</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> &lt;repository-url&gt; [destination-directory]</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>从远程仓库克隆代码到本地。<code>destination-directory</code>为可选参数，指定克隆后的目录名。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/user/repo.git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/user/repo.git my-repo</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-查看状态：git-status"><a href="#1-3-查看状态：git-status" class="headerlink" title="1.3 查看状态：git status"></a>1.3 查看状态：<code>git status</code></h3><p><strong>语法：</strong></p>
+<h3 id="1-3-查看状态：git-status">1.3 查看状态：<code>git status</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>显示工作目录和暂存区的状态，提示哪些文件发生了修改、哪些文件处于暂存状态等。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-添加到暂存区：git-add"><a href="#1-4-添加到暂存区：git-add" class="headerlink" title="1.4 添加到暂存区：git add"></a>1.4 添加到暂存区：<code>git add</code></h3><p><strong>语法：</strong></p>
+<h3 id="1-4-添加到暂存区：git-add">1.4 添加到暂存区：<code>git add</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add &lt;file&gt;</span><br><span class="line">git add .</span><br><span class="line">git add -A</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将修改的文件添加到暂存区，以便在下一次提交时包含这些更改。</p>
 <ul>
@@ -127,18 +133,16 @@ IconifyProviders = {
 </ul>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add README.md</span><br><span class="line">git add src/</span><br><span class="line">git add .</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-5-提交更改：git-commit"><a href="#1-5-提交更改：git-commit" class="headerlink" title="1.5 提交更改：git commit"></a>1.5 提交更改：<code>git commit</code></h3><p><strong>语法：</strong></p>
+<h3 id="1-5-提交更改：git-commit">1.5 提交更改：<code>git commit</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;commit message&quot;</span></span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将暂存区的更改提交到本地仓库。<code>-m</code>参数用于直接在命令行中填写提交信息。如果不加<code>-m</code>，Git会打开默认的编辑器让你输入提交信息。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;Add new feature&quot;</span></span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-6-查看提交历史：git-log"><a href="#1-6-查看提交历史：git-log" class="headerlink" title="1.6 查看提交历史：git log"></a>1.6 查看提交历史：<code>git log</code></h3><p><strong>语法：</strong></p>
+<h3 id="1-6-查看提交历史：git-log">1.6 查看提交历史：<code>git log</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br><span class="line">git <span class="built_in">log</span> --oneline</span><br><span class="line">git <span class="built_in">log</span> --graph</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>显示提交历史记录。</p>
 <ul>
@@ -148,11 +152,11 @@ IconifyProviders = {
 </ul>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br><span class="line">git <span class="built_in">log</span> --oneline --graph</span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="2-分支操作"><a href="#2-分支操作" class="headerlink" title="2. 分支操作"></a>2. 分支操作</h2><h3 id="2-1-查看分支：git-branch"><a href="#2-1-查看分支：git-branch" class="headerlink" title="2.1 查看分支：git branch"></a>2.1 查看分支：<code>git branch</code></h3><p><strong>语法：</strong></p>
+<h2 id="2-分支操作">2. 分支操作</h2>
+<h3 id="2-1-查看分支：git-branch">2.1 查看分支：<code>git branch</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch</span><br><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <ul>
 <li><code>git branch</code>：列出本地所有分支，当前所在分支会有<code>*</code>标记。</li>
@@ -160,42 +164,37 @@ IconifyProviders = {
 </ul>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch</span><br><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2-创建分支：git-branch"><a href="#2-2-创建分支：git-branch" class="headerlink" title="2.2 创建分支：git branch &lt;branch-name&gt;"></a>2.2 创建分支：<code>git branch &lt;branch-name&gt;</code></h3><p><strong>语法：</strong></p>
+<h3 id="2-2-创建分支：git-branch-branch-name">2.2 创建分支：<code>git branch &lt;branch-name&gt;</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>基于当前分支创建一个新分支，分支名为<code>&lt;branch-name&gt;</code>。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch feature/login</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-切换分支：git-checkout"><a href="#2-3-切换分支：git-checkout" class="headerlink" title="2.3 切换分支：git checkout &lt;branch-name&gt;"></a>2.3 切换分支：<code>git checkout &lt;branch-name&gt;</code></h3><p><strong>语法：</strong></p>
+<h3 id="2-3-切换分支：git-checkout-branch-name">2.3 切换分支：<code>git checkout &lt;branch-name&gt;</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>切换到指定的分支，使之成为当前分支。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout feature/login</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-创建并切换分支：git-checkout-b"><a href="#2-4-创建并切换分支：git-checkout-b" class="headerlink" title="2.4 创建并切换分支：git checkout -b &lt;branch-name&gt;"></a>2.4 创建并切换分支：<code>git checkout -b &lt;branch-name&gt;</code></h3><p><strong>语法：</strong></p>
+<h3 id="2-4-创建并切换分支：git-checkout-b-branch-name">2.4 创建并切换分支：<code>git checkout -b &lt;branch-name&gt;</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>创建一个新分支并立即切换到该分支。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b feature/signup</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-5-合并分支：git-merge"><a href="#2-5-合并分支：git-merge" class="headerlink" title="2.5 合并分支：git merge &lt;branch-name&gt;"></a>2.5 合并分支：<code>git merge &lt;branch-name&gt;</code></h3><p><strong>语法：</strong></p>
+<h3 id="2-5-合并分支：git-merge-branch-name">2.5 合并分支：<code>git merge &lt;branch-name&gt;</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git merge &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将<code>&lt;branch-name&gt;</code>分支的修改合并到当前分支。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git merge feature/login</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-6-删除分支：git-branch-d"><a href="#2-6-删除分支：git-branch-d" class="headerlink" title="2.6 删除分支：git branch -d &lt;branch-name&gt;"></a>2.6 删除分支：<code>git branch -d &lt;branch-name&gt;</code></h3><p><strong>语法：</strong></p>
+<h3 id="2-6-删除分支：git-branch-d-branch-name">2.6 删除分支：<code>git branch -d &lt;branch-name&gt;</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch -d &lt;branch-name&gt;</span><br><span class="line">git branch -D &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <ul>
 <li><code>git branch -d</code>：删除指定的分支，只有当该分支的修改已经被合并到当前分支或其他分支时才能删除。</li>
@@ -203,27 +202,25 @@ IconifyProviders = {
 </ul>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch -d feature/login</span><br><span class="line">git branch -D feature/old-feature</span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="3-远程仓库操作"><a href="#3-远程仓库操作" class="headerlink" title="3. 远程仓库操作"></a>3. 远程仓库操作</h2><h3 id="3-1-查看远程仓库：git-remote-v"><a href="#3-1-查看远程仓库：git-remote-v" class="headerlink" title="3.1 查看远程仓库：git remote -v"></a>3.1 查看远程仓库：<code>git remote -v</code></h3><p><strong>语法：</strong></p>
+<h2 id="3-远程仓库操作">3. 远程仓库操作</h2>
+<h3 id="3-1-查看远程仓库：git-remote-v">3.1 查看远程仓库：<code>git remote -v</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>显示所有远程仓库的名称和URL。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-添加远程仓库：git-remote-add"><a href="#3-2-添加远程仓库：git-remote-add" class="headerlink" title="3.2 添加远程仓库：git remote add"></a>3.2 添加远程仓库：<code>git remote add</code></h3><p><strong>语法：</strong></p>
+<h3 id="3-2-添加远程仓库：git-remote-add">3.2 添加远程仓库：<code>git remote add</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add &lt;name&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>为当前本地仓库添加一个远程仓库，<code>&lt;name&gt;</code>通常为<code>origin</code>。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin https://github.com/user/repo.git</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-推送到远程仓库：git-push"><a href="#3-3-推送到远程仓库：git-push" class="headerlink" title="3.3 推送到远程仓库：git push"></a>3.3 推送到远程仓库：<code>git push</code></h3><p><strong>语法：</strong></p>
+<h3 id="3-3-推送到远程仓库：git-push">3.3 推送到远程仓库：<code>git push</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push &lt;remote&gt; &lt;branch&gt;</span><br><span class="line">git push -u &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将当前分支的提交推送到远程仓库的指定分支。</p>
 <ul>
@@ -232,110 +229,100 @@ IconifyProviders = {
 </ul>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin main</span><br><span class="line">git push -u origin feature/login</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-从远程仓库拉取：git-pull"><a href="#3-4-从远程仓库拉取：git-pull" class="headerlink" title="3.4 从远程仓库拉取：git pull"></a>3.4 从远程仓库拉取：<code>git pull</code></h3><p><strong>语法：</strong></p>
+<h3 id="3-4-从远程仓库拉取：git-pull">3.4 从远程仓库拉取：<code>git pull</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>从远程仓库拉取指定分支的更新并与当前分支合并。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull origin main</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-5-获取远程更新：git-fetch"><a href="#3-5-获取远程更新：git-fetch" class="headerlink" title="3.5 获取远程更新：git fetch"></a>3.5 获取远程更新：<code>git fetch</code></h3><p><strong>语法：</strong></p>
+<h3 id="3-5-获取远程更新：git-fetch">3.5 获取远程更新：<code>git fetch</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch &lt;remote&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>从远程仓库获取更新，但不自动合并，需要手动合并。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="4-撤销与回滚"><a href="#4-撤销与回滚" class="headerlink" title="4. 撤销与回滚"></a>4. 撤销与回滚</h2><h3 id="4-1-撤销修改：git-checkout"><a href="#4-1-撤销修改：git-checkout" class="headerlink" title="4.1 撤销修改：git checkout --"></a>4.1 撤销修改：<code>git checkout --</code></h3><p><strong>语法：</strong></p>
+<h2 id="4-撤销与回滚">4. 撤销与回滚</h2>
+<h3 id="4-1-撤销修改：git-checkout">4.1 撤销修改：<code>git checkout --</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将工作区的指定文件恢复到最近一次提交的状态，丢弃在工作区的修改。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -- README.md</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-取消暂存：git-reset-HEAD"><a href="#4-2-取消暂存：git-reset-HEAD" class="headerlink" title="4.2 取消暂存：git reset HEAD"></a>4.2 取消暂存：<code>git reset HEAD</code></h3><p><strong>语法：</strong></p>
+<h3 id="4-2-取消暂存：git-reset-HEAD">4.2 取消暂存：<code>git reset HEAD</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将指定的文件从暂存区移除，但保留工作区的修改。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD src/main.py</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-回滚提交：git-revert"><a href="#4-3-回滚提交：git-revert" class="headerlink" title="4.3 回滚提交：git revert"></a>4.3 回滚提交：<code>git revert</code></h3><p><strong>语法：</strong></p>
+<h3 id="4-3-回滚提交：git-revert">4.3 回滚提交：<code>git revert</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git revert &lt;commit&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>创建一个新的提交，用于撤销指定的提交，但保留提交历史。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git revert 1a2b3c4d</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-4-重置仓库：git-reset-hard"><a href="#4-4-重置仓库：git-reset-hard" class="headerlink" title="4.4 重置仓库：git reset --hard"></a>4.4 重置仓库：<code>git reset --hard</code></h3><p><strong>语法：</strong></p>
+<h3 id="4-4-重置仓库：git-reset-hard">4.4 重置仓库：<code>git reset --hard</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --hard &lt;commit&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将当前分支的HEAD指向指定的<code>&lt;commit&gt;</code>，并重置暂存区和工作区，丢弃之后的所有更改。</p>
 <p><strong>注意：此操作不可逆，慎用！</strong></p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --hard 1a2b3c4d</span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="5-标签管理"><a href="#5-标签管理" class="headerlink" title="5. 标签管理"></a>5. 标签管理</h2><h3 id="5-1-创建标签：git-tag"><a href="#5-1-创建标签：git-tag" class="headerlink" title="5.1 创建标签：git tag"></a>5.1 创建标签：<code>git tag</code></h3><p><strong>语法：</strong></p>
+<h2 id="5-标签管理">5. 标签管理</h2>
+<h3 id="5-1-创建标签：git-tag">5.1 创建标签：<code>git tag</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag &lt;tag-name&gt;</span><br><span class="line">git tag -a &lt;tag-name&gt; -m <span class="string">&quot;message&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>为当前提交创建标签，<code>-a</code>参数创建带有注释的标签。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.0</span><br><span class="line">git tag -a v1.1 -m <span class="string">&quot;Release version 1.1&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-查看标签：git-tag"><a href="#5-2-查看标签：git-tag" class="headerlink" title="5.2 查看标签：git tag"></a>5.2 查看标签：<code>git tag</code></h3><p><strong>语法：</strong></p>
+<h3 id="5-2-查看标签：git-tag">5.2 查看标签：<code>git tag</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>列出所有标签。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-3-推送标签：git-push-origin"><a href="#5-3-推送标签：git-push-origin" class="headerlink" title="5.3 推送标签：git push origin"></a>5.3 推送标签：<code>git push origin</code></h3><p><strong>语法：</strong></p>
+<h3 id="5-3-推送标签：git-push-origin">5.3 推送标签：<code>git push origin</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin &lt;tag-name&gt;</span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将指定标签或所有标签推送到远程仓库。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin v1.1</span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="6-存储与应用变更"><a href="#6-存储与应用变更" class="headerlink" title="6. 存储与应用变更"></a>6. 存储与应用变更</h2><h3 id="6-1-存储当前修改：git-stash"><a href="#6-1-存储当前修改：git-stash" class="headerlink" title="6.1 存储当前修改：git stash"></a>6.1 存储当前修改：<code>git stash</code></h3><p><strong>语法：</strong></p>
+<h2 id="6-存储与应用变更">6. 存储与应用变更</h2>
+<h3 id="6-1-存储当前修改：git-stash">6.1 存储当前修改：<code>git stash</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash save <span class="string">&quot;message&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将当前工作区和暂存区的修改保存起来，清空工作区，方便切换分支或执行其他操作。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash save <span class="string">&quot;WIP: Implement new feature&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="6-2-查看存储列表：git-stash-list"><a href="#6-2-查看存储列表：git-stash-list" class="headerlink" title="6.2 查看存储列表：git stash list"></a>6.2 查看存储列表：<code>git stash list</code></h3><p><strong>语法：</strong></p>
+<h3 id="6-2-查看存储列表：git-stash-list">6.2 查看存储列表：<code>git stash list</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>显示所有存储的修改列表。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-3-应用最新存储：git-stash-apply"><a href="#6-3-应用最新存储：git-stash-apply" class="headerlink" title="6.3 应用最新存储：git stash apply"></a>6.3 应用最新存储：<code>git stash apply</code></h3><p><strong>语法：</strong></p>
+<h3 id="6-3-应用最新存储：git-stash-apply">6.3 应用最新存储：<code>git stash apply</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply [stash@&#123;n&#125;]</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>将指定的存储应用到当前工作区，<code>stash@&#123;n&#125;</code>是存储的索引号，默认是最新的。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash apply</span><br><span class="line">git stash apply stash@&#123;1&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-4-删除存储：git-stash-drop"><a href="#6-4-删除存储：git-stash-drop" class="headerlink" title="6.4 删除存储：git stash drop"></a>6.4 删除存储：<code>git stash drop</code></h3><p><strong>语法：</strong></p>
+<h3 id="6-4-删除存储：git-stash-drop">6.4 删除存储：<code>git stash drop</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash drop [stash@&#123;n&#125;]</span><br><span class="line">git stash clear</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <ul>
 <li><code>git stash drop</code>：删除指定的存储。</li>
@@ -343,39 +330,37 @@ IconifyProviders = {
 </ul>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash drop</span><br><span class="line">git stash drop stash@&#123;1&#125;</span><br><span class="line">git stash clear</span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="附加：其他常用命令"><a href="#附加：其他常用命令" class="headerlink" title="附加：其他常用命令"></a>附加：其他常用命令</h2><h3 id="查看差异：git-diff"><a href="#查看差异：git-diff" class="headerlink" title="查看差异：git diff"></a>查看差异：<code>git diff</code></h3><p><strong>语法：</strong></p>
+<h2 id="附加：其他常用命令">附加：其他常用命令</h2>
+<h3 id="查看差异：git-diff">查看差异：<code>git diff</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff</span><br><span class="line">git diff &lt;commit&gt;</span><br><span class="line">git diff &lt;commit1&gt; &lt;commit2&gt;</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>显示工作区、暂存区或两个提交之间的差异。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff                  <span class="comment"># 工作区与暂存区的差异</span></span><br><span class="line">git diff --staged         <span class="comment"># 暂存区与最新提交的差异</span></span><br><span class="line">git diff 1a2b3c4d         <span class="comment"># 工作区与指定提交的差异</span></span><br><span class="line">git diff 1a2b3c4d 5e6f7g8h  <span class="comment"># 两个提交之间的差异</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="配置别名：git-config"><a href="#配置别名：git-config" class="headerlink" title="配置别名：git config"></a>配置别名：<code>git config</code></h3><p><strong>语法：</strong></p>
+<h3 id="配置别名：git-config">配置别名：<code>git config</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global <span class="built_in">alias</span>.&lt;alias-name&gt; <span class="string">&#x27;&lt;git-command&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>为Git命令创建别名，简化日常操作。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global alias.st status</span><br><span class="line">git config --global alias.co checkout</span><br><span class="line">git config --global alias.br branch</span><br><span class="line">git config --global alias.cm <span class="string">&#x27;commit -m&#x27;</span></span><br></pre></td></tr></table></figure>
-
 <p>使用别名：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git st      <span class="comment"># 等同于 git status</span></span><br><span class="line">git co main <span class="comment"># 等同于 git checkout main</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="显示图形化日志：git-log-graph"><a href="#显示图形化日志：git-log-graph" class="headerlink" title="显示图形化日志：git log --graph"></a>显示图形化日志：<code>git log --graph</code></h3><p><strong>语法：</strong></p>
+<h3 id="显示图形化日志：git-log-graph">显示图形化日志：<code>git log --graph</code></h3>
+<p><strong>语法：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --graph --oneline --all</span><br></pre></td></tr></table></figure>
-
 <p><strong>作用：</strong></p>
 <p>以图形方式显示提交历史，包含所有分支，简洁明了。</p>
 <p><strong>示例：</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --graph --oneline --all</span><br></pre></td></tr></table></figure>
-
 <hr>
 <p><img src="/posts/Git%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/2018080251901_yFiXE.jpeg" alt="2018080251901_yFiXE" loading="lazy"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>熟练掌握Git的常用命令和语法，可以大大提高日常开发和协作的效率。本文详细介绍了Git的基础命令、分支操作、远程仓库操作、撤销与回滚、标签管理、存储变更等方面的常用语法。建议在实际工作中多加练习，结合具体场景灵活运用。</p>
-<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><ul>
+<h2 id="总结">总结</h2>
+<p>熟练掌握Git的常用命令和语法，可以大大提高日常开发和协作的效率。本文详细介绍了Git的基础命令、分支操作、远程仓库操作、撤销与回滚、标签管理、存储变更等方面的常用语法。建议在实际工作中多加练习，结合具体场景灵活运用。</p>
+<h3 id="建议">建议</h3>
+<ul>
 <li><strong>多练习</strong>：在实际项目中尝试使用不同的Git命令，加深理解。</li>
 <li><strong>参考帮助文档</strong>：使用<code>git help &lt;command&gt;</code>查看命令的详细说明。</li>
 <li><strong>善用别名</strong>：为常用命令配置别名，提高操作速度。</li>
