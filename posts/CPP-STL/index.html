@@ -8,12 +8,12 @@ document.addEventListener("pjax:success", initScrollReveal);
 </script><link rel="icon" type="image/png" href="/favicon.ico"><link rel="mask-icon" href="/favicon.ico" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
     window.Yun = {}
     window.CONFIG = {"hostname":"elaina-1017.xyz","root":"/","title":"魔女之旅","version":"1.10.11","mode":"light","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"local_search":{"path":"/search.xml"},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
-  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="C++STL学习  容器（Containers） C++标准模板库（Standard Template Library，STL）提供了一组通用的容器类，这些容器类可以存储各种类型的数据，并且提供了丰富的操作接口。STL容器主要分为以下几类： 1. 序列容器（Sequence Containers） 序列容器以线性方式存储元素，并且保持元素的插入顺序。 1.1 std::vector  特点：动态数">
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="C++STL学习 容器（Containers）C++标准模板库（Standard Template Library，STL）提供了一组通用的容器类，这些容器类可以存储各种类型的数据，并且提供了丰富的操作接口。STL容器主要分为以下几类： 1. 序列容器（Sequence Containers）序列容器以线性方式存储元素，并且保持元素的插入顺序。 1.1 std::vector 特点：动态数组，支持">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CPP_STL">
 <meta property="og:url" content="http://elaina-1017.xyz/posts/CPP-STL/index.html">
 <meta property="og:site_name" content="Eulus&#39;s Blog">
-<meta property="og:description" content="C++STL学习  容器（Containers） C++标准模板库（Standard Template Library，STL）提供了一组通用的容器类，这些容器类可以存储各种类型的数据，并且提供了丰富的操作接口。STL容器主要分为以下几类： 1. 序列容器（Sequence Containers） 序列容器以线性方式存储元素，并且保持元素的插入顺序。 1.1 std::vector  特点：动态数">
+<meta property="og:description" content="C++STL学习 容器（Containers）C++标准模板库（Standard Template Library，STL）提供了一组通用的容器类，这些容器类可以存储各种类型的数据，并且提供了丰富的操作接口。STL容器主要分为以下几类： 1. 序列容器（Sequence Containers）序列容器以线性方式存储元素，并且保持元素的插入顺序。 1.1 std::vector 特点：动态数组，支持">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://elaina-1017.xyz/posts/CPP-STL/sakura.jpg">
 <meta property="article:published_time" content="2024-10-21T03:59:06.000Z">
@@ -38,17 +38,12 @@ IconifyProviders = {
     // Wait for 1 second before switching API hosts
     rotate: 1000,
   },
-};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Eulus"><img width="96" loading="lazy" src="/./images/elaina.jpg" alt="Eulus"></a><div class="site-author-name"><a href="/about/">Eulus</a></div><span class="site-name">Eulus's Blog</span><sub class="site-subtitle"></sub><div class="site-description">天若有情天亦老，人间正道是沧桑!</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">14</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://mzh.moegirl.org.cn/%E4%BC%8A%E8%95%BE%E5%A8%9C" title="伊蕾娜"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://space.bilibili.com/382479581?spm_id_from=333.1365.0.0" title="哔哩哔哩" style="color:#FF8EB3"><span class="icon iconify" data-icon="ri:bilibili-line"></span></a><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://github.com/Eulus209" title="github" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">C++STL学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%EF%BC%88Containers%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">容器（Containers）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%EF%BC%88Sequence-Containers%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 序列容器（Sequence Containers）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-std-vector"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.1 std::vector</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-std-deque"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">1.2 std::deque</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-std-list"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">1.3 std::list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-std-forward-list"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">1.4 std::forward_list</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%EF%BC%88Associative-Containers%EF%BC%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 关联容器（Associative Containers）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-std-set"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">2.1 std::set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-std-multiset"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2.2 std::multiset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-std-map"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">2.3 std::map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-std-multimap"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">2.4 std::multimap</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%EF%BC%88Unordered-Associative-Containers%EF%BC%89"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 无序关联容器（Unordered Associative Containers）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-std-unordered-set"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">3.1 std::unordered_set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-std-unordered-multiset"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">3.2 std::unordered_multiset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-std-unordered-map"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">3.3 std::unordered_map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-std-unordered-multimap"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">3.4 std::unordered_multimap</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%EF%BC%88Container-Adapters%EF%BC%89"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 容器适配器（Container Adapters）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-std-stack"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">4.1 std::stack</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-std-queue"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">4.2 std::queue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-std-priority-queue"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">4.3 std::priority_queue</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%85%B6%E4%BB%96%E5%AE%B9%E5%99%A8"><span class="toc-number">1.1.5.</span> <span class="toc-text">5. 其他容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-std-array"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">5.1 std::array</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-std-span"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">5.2 std::span</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%EF%BC%88Algorithms%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">算法（Algorithms）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9D%9E%E4%BF%AE%E6%94%B9%E5%BA%8F%E5%88%97%E7%AE%97%E6%B3%95%EF%BC%88Non-modifying-Sequence-Operations%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 非修改序列算法（Non-modifying Sequence Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-std-find"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.1 std::find</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-std-count"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">1.2 std::count</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-std-for-each"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">1.3 std::for_each</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E5%BA%8F%E5%88%97%E7%AE%97%E6%B3%95%EF%BC%88Modifying-Sequence-Operations%EF%BC%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 修改序列算法（Modifying Sequence Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-std-copy"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.1 std::copy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-std-transform"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2 std::transform</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-std-replace"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.3 std::replace</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8E%92%E5%BA%8F%E5%92%8C%E7%9B%B8%E5%85%B3%E7%AE%97%E6%B3%95%EF%BC%88Sorting-and-Related-Operations%EF%BC%89"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 排序和相关算法（Sorting and Related Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-std-sort"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">3.1 std::sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-std-stable-sort"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">3.2 std::stable_sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-std-binary-search"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">3.3 std::binary_search</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E5%80%BC%E7%AE%97%E6%B3%95%EF%BC%88Numeric-Operations%EF%BC%89"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 数值算法（Numeric Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-std-accumulate"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">4.1 std::accumulate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-std-inner-product"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">4.2 std::inner_product</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%A0%86%E7%AE%97%E6%B3%95%EF%BC%88Heap-Operations%EF%BC%89"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 堆算法（Heap Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-std-make-heap"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">5.1 std::make_heap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-std-pop-heap"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">5.2 std::pop_heap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-std-push-heap"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">5.3 std::push_heap</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%9C%80%E5%B0%8F-%E6%9C%80%E5%A4%A7%E7%AE%97%E6%B3%95%EF%BC%88Minimum-Maximum-Operations%EF%BC%89"><span class="toc-number">1.2.6.</span> <span class="toc-text">6. 最小&#x2F;最大算法（Minimum&#x2F;Maximum Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-std-min-element"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">6.1 std::min_element</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-std-max-element"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">6.2 std::max_element</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%85%B6%E4%BB%96%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.7.</span> <span class="toc-text">7. 其他算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-std-reverse"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">7.1 std::reverse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-std-unique"><span class="toc-number">1.2.7.2.</span> <span class="toc-text">7.2 std::unique</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-number">1.2.8.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Iterators%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">迭代器（Iterators）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.1.</span> <span class="toc-text">迭代器的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Input-Iterator%EF%BC%89"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">1. 输入迭代器（Input Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%BE%93%E5%87%BA%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Output-Iterator%EF%BC%89"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">2. 输出迭代器（Output Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%89%8D%E5%90%91%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Forward-Iterator%EF%BC%89"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">3. 前向迭代器（Forward Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%8F%8C%E5%90%91%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Bidirectional-Iterator%EF%BC%89"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">4. 双向迭代器（Bidirectional Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Random-Access-Iterator%EF%BC%89"><span class="toc-number">1.3.1.5.</span> <span class="toc-text">5. 随机访问迭代器（Random Access Iterator）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.2.</span> <span class="toc-text">迭代器的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%81%8D%E5%8E%86%E5%AE%B9%E5%99%A8"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">1. 遍历容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%AE%97%E6%B3%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">2. 算法操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">3. 插入和删除元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E5%A4%B1%E6%95%88"><span class="toc-number">1.3.3.</span> <span class="toc-text">迭代器的失效</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-std-vector"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">1. std::vector</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-std-list"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">2. std::list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-std-map-%E5%92%8C-std-set"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">3. std::map 和 std::set</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.3.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%88Function-Objects%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">函数对象（Function Objects）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.4.1.</span> <span class="toc-text">函数对象的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">1.4.2.</span> <span class="toc-text">函数对象的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STL%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.3.</span> <span class="toc-text">STL中的函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%AE%97%E6%9C%AF%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">1. 算术函数对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%AF%94%E8%BE%83%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">2. 比较函数对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">3. 逻辑函数对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.4.</span> <span class="toc-text">自定义函数对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-number">1.4.5.</span> <span class="toc-text">函数对象适配器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-std-bind"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">1. std::bind</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-std-mem-fn"><span class="toc-number">1.4.5.2.</span> <span class="toc-text">2. std::mem_fn</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-std-not1-%E5%92%8C-std-not2"><span class="toc-number">1.4.5.3.</span> <span class="toc-text">3. std::not1 和 std::not2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-4"><span class="toc-number">1.4.6.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/C/" style="font-size: 21px; color: #4d89c0">C++</a> <a href="/tags/vue/" style="font-size: 21px; color: #4d89c0">vue</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 30px; color: #0078e7">动漫</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 12px; color: #999">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12px; color: #999">数据库</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://elaina-1017.xyz/posts/CPP-STL/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Eulus"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Eulus's Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">CPP_STL</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <span class="post-meta-icon-text">发表于</span> <time title="创建时间：2024-10-21 11:59:06" itemprop="dateCreated datePublished" datetime="2024-10-21T11:59:06+08:00">2024-10-21</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">5.1k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">21m</span></span></span><div class="post-classify"><span class="post-tag"><a class="tag-item" href="/tags/C/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">C++</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h1>C++STL学习</h1>
-<p><img src="/posts/CPP-STL/sakura.jpg" alt="sakura" loading="lazy"></p>
-<h2 id="容器（Containers）">容器（Containers）</h2>
-<p>C++标准模板库（Standard Template Library，STL）提供了一组通用的容器类，这些容器类可以存储各种类型的数据，并且提供了丰富的操作接口。STL容器主要分为以下几类：</p>
-<h3 id="1-序列容器（Sequence-Containers）">1. 序列容器（Sequence Containers）</h3>
-<p>序列容器以线性方式存储元素，并且保持元素的插入顺序。</p>
-<h4 id="1-1-std-vector">1.1 <code>std::vector</code></h4>
-<ul>
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Eulus"><img width="96" loading="lazy" src="/./images/elaina.jpg" alt="Eulus"></a><div class="site-author-name"><a href="/about/">Eulus</a></div><span class="site-name">Eulus's Blog</span><sub class="site-subtitle"></sub><div class="site-description">天若有情天亦老，人间正道是沧桑!</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">14</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://mzh.moegirl.org.cn/%E4%BC%8A%E8%95%BE%E5%A8%9C" title="伊蕾娜"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://space.bilibili.com/382479581?spm_id_from=333.1365.0.0" title="哔哩哔哩" style="color:#FF8EB3"><span class="icon iconify" data-icon="ri:bilibili-line"></span></a><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://github.com/Eulus209" title="github" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-STL%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">C++STL学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%EF%BC%88Containers%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">容器（Containers）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%EF%BC%88Sequence-Containers%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 序列容器（Sequence Containers）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-std-vector"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.1 std::vector</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-std-deque"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">1.2 std::deque</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-std-list"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">1.3 std::list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-std-forward-list"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">1.4 std::forward_list</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%EF%BC%88Associative-Containers%EF%BC%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 关联容器（Associative Containers）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-std-set"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">2.1 std::set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-std-multiset"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2.2 std::multiset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-std-map"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">2.3 std::map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-std-multimap"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">2.4 std::multimap</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%EF%BC%88Unordered-Associative-Containers%EF%BC%89"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 无序关联容器（Unordered Associative Containers）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-std-unordered-set"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">3.1 std::unordered_set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-std-unordered-multiset"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">3.2 std::unordered_multiset</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-std-unordered-map"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">3.3 std::unordered_map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-std-unordered-multimap"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">3.4 std::unordered_multimap</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%EF%BC%88Container-Adapters%EF%BC%89"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 容器适配器（Container Adapters）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-std-stack"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">4.1 std::stack</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-std-queue"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">4.2 std::queue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-std-priority-queue"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">4.3 std::priority_queue</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%85%B6%E4%BB%96%E5%AE%B9%E5%99%A8"><span class="toc-number">1.1.5.</span> <span class="toc-text">5. 其他容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-std-array"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">5.1 std::array</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-std-span"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">5.2 std::span</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%EF%BC%88Algorithms%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">算法（Algorithms）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9D%9E%E4%BF%AE%E6%94%B9%E5%BA%8F%E5%88%97%E7%AE%97%E6%B3%95%EF%BC%88Non-modifying-Sequence-Operations%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 非修改序列算法（Non-modifying Sequence Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-std-find"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.1 std::find</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-std-count"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">1.2 std::count</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-std-for-each"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">1.3 std::for_each</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E5%BA%8F%E5%88%97%E7%AE%97%E6%B3%95%EF%BC%88Modifying-Sequence-Operations%EF%BC%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 修改序列算法（Modifying Sequence Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-std-copy"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.1 std::copy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-std-transform"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2 std::transform</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-std-replace"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.3 std::replace</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8E%92%E5%BA%8F%E5%92%8C%E7%9B%B8%E5%85%B3%E7%AE%97%E6%B3%95%EF%BC%88Sorting-and-Related-Operations%EF%BC%89"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 排序和相关算法（Sorting and Related Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-std-sort"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">3.1 std::sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-std-stable-sort"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">3.2 std::stable_sort</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-std-binary-search"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">3.3 std::binary_search</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E5%80%BC%E7%AE%97%E6%B3%95%EF%BC%88Numeric-Operations%EF%BC%89"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 数值算法（Numeric Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-std-accumulate"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">4.1 std::accumulate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-std-inner-product"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">4.2 std::inner_product</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%A0%86%E7%AE%97%E6%B3%95%EF%BC%88Heap-Operations%EF%BC%89"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 堆算法（Heap Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-std-make-heap"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">5.1 std::make_heap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-std-pop-heap"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">5.2 std::pop_heap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-std-push-heap"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">5.3 std::push_heap</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%9C%80%E5%B0%8F-%E6%9C%80%E5%A4%A7%E7%AE%97%E6%B3%95%EF%BC%88Minimum-Maximum-Operations%EF%BC%89"><span class="toc-number">1.2.6.</span> <span class="toc-text">6. 最小&#x2F;最大算法（Minimum&#x2F;Maximum Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-std-min-element"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">6.1 std::min_element</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-std-max-element"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">6.2 std::max_element</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%85%B6%E4%BB%96%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.7.</span> <span class="toc-text">7. 其他算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-std-reverse"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">7.1 std::reverse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-std-unique"><span class="toc-number">1.2.7.2.</span> <span class="toc-text">7.2 std::unique</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">1.2.8.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Iterators%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">迭代器（Iterators）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.1.</span> <span class="toc-text">迭代器的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Input-Iterator%EF%BC%89"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">1. 输入迭代器（Input Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%BE%93%E5%87%BA%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Output-Iterator%EF%BC%89"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">2. 输出迭代器（Output Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%89%8D%E5%90%91%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Forward-Iterator%EF%BC%89"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">3. 前向迭代器（Forward Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%8F%8C%E5%90%91%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Bidirectional-Iterator%EF%BC%89"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">4. 双向迭代器（Bidirectional Iterator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%88Random-Access-Iterator%EF%BC%89"><span class="toc-number">1.3.1.5.</span> <span class="toc-text">5. 随机访问迭代器（Random Access Iterator）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.2.</span> <span class="toc-text">迭代器的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%81%8D%E5%8E%86%E5%AE%B9%E5%99%A8"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">1. 遍历容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%AE%97%E6%B3%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">2. 算法操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">3. 插入和删除元素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E5%A4%B1%E6%95%88"><span class="toc-number">1.3.3.</span> <span class="toc-text">迭代器的失效</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-std-vector"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">1. std::vector</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-std-list"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">2. std::list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-std-map-%E5%92%8C-std-set"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">3. std::map 和 std::set</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-number">1.3.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%88Function-Objects%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">函数对象（Function Objects）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.4.1.</span> <span class="toc-text">函数对象的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">1.4.2.</span> <span class="toc-text">函数对象的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STL%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.3.</span> <span class="toc-text">STL中的函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%AE%97%E6%9C%AF%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">1. 算术函数对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%AF%94%E8%BE%83%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">2. 比较函数对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">3. 逻辑函数对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.4.</span> <span class="toc-text">自定义函数对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E9%80%82%E9%85%8D%E5%99%A8"><span class="toc-number">1.4.5.</span> <span class="toc-text">函数对象适配器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-std-bind"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">1. std::bind</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-std-mem-fn"><span class="toc-number">1.4.5.2.</span> <span class="toc-text">2. std::mem_fn</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-std-not1-%E5%92%8C-std-not2"><span class="toc-number">1.4.5.3.</span> <span class="toc-text">3. std::not1 和 std::not2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.4.6.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/C/" style="font-size: 21px; color: #4d89c0">C++</a> <a href="/tags/vue/" style="font-size: 21px; color: #4d89c0">vue</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 30px; color: #0078e7">动漫</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 12px; color: #999">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12px; color: #999">数据库</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://elaina-1017.xyz/posts/CPP-STL/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Eulus"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Eulus's Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">CPP_STL</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <span class="post-meta-icon-text">发表于</span> <time title="创建时间：2024-10-21 11:59:06" itemprop="dateCreated datePublished" datetime="2024-10-21T11:59:06+08:00">2024-10-21</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">5.1k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">21m</span></span></span><div class="post-classify"><span class="post-tag"><a class="tag-item" href="/tags/C/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">C++</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h1 id="C-STL学习"><a href="#C-STL学习" class="headerlink" title="C++STL学习"></a>C++STL学习</h1><p><img src="/posts/CPP-STL/sakura.jpg" alt="sakura" loading="lazy"></p>
+<h2 id="容器（Containers）"><a href="#容器（Containers）" class="headerlink" title="容器（Containers）"></a>容器（Containers）</h2><p>C++标准模板库（Standard Template Library，STL）提供了一组通用的容器类，这些容器类可以存储各种类型的数据，并且提供了丰富的操作接口。STL容器主要分为以下几类：</p>
+<h3 id="1-序列容器（Sequence-Containers）"><a href="#1-序列容器（Sequence-Containers）" class="headerlink" title="1. 序列容器（Sequence Containers）"></a>1. 序列容器（Sequence Containers）</h3><p>序列容器以线性方式存储元素，并且保持元素的插入顺序。</p>
+<h4 id="1-1-std-vector"><a href="#1-1-std-vector" class="headerlink" title="1.1 std::vector"></a>1.1 <code>std::vector</code></h4><ul>
 <li><strong>特点</strong>：动态数组，支持随机访问。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>push_back(value)</code>：在末尾添加元素。</li>
 <li><code>pop_back()</code>：删除末尾元素。</li>
 <li><code>at(index)</code>：访问指定位置的元素。</li>
@@ -57,11 +52,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="1-2-std-deque">1.2 <code>std::deque</code></h4>
-<ul>
+<h4 id="1-2-std-deque"><a href="#1-2-std-deque" class="headerlink" title="1.2 std::deque"></a>1.2 <code>std::deque</code></h4><ul>
 <li><strong>特点</strong>：双端队列，支持在两端高效插入和删除。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>push_back(value)</code>：在末尾添加元素。</li>
 <li><code>push_front(value)</code>：在开头添加元素。</li>
 <li><code>pop_back()</code>：删除末尾元素。</li>
@@ -70,11 +63,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="1-3-std-list">1.3 <code>std::list</code></h4>
-<ul>
+<h4 id="1-3-std-list"><a href="#1-3-std-list" class="headerlink" title="1.3 std::list"></a>1.3 <code>std::list</code></h4><ul>
 <li><strong>特点</strong>：双向链表，支持高效的插入和删除操作。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>push_back(value)</code>：在末尾添加元素。</li>
 <li><code>push_front(value)</code>：在开头添加元素。</li>
 <li><code>pop_back()</code>：删除末尾元素。</li>
@@ -84,11 +75,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="1-4-std-forward-list">1.4 <code>std::forward_list</code></h4>
-<ul>
+<h4 id="1-4-std-forward-list"><a href="#1-4-std-forward-list" class="headerlink" title="1.4 std::forward_list"></a>1.4 <code>std::forward_list</code></h4><ul>
 <li><strong>特点</strong>：单向链表，只支持单向遍历。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>push_front(value)</code>：在开头添加元素。</li>
 <li><code>pop_front()</code>：删除开头元素。</li>
 <li><code>insert_after(iterator, value)</code>：在指定位置之后插入元素。</li>
@@ -96,13 +85,10 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h3 id="2-关联容器（Associative-Containers）">2. 关联容器（Associative Containers）</h3>
-<p>关联容器以键值对的形式存储元素，并且通常以某种排序方式存储。</p>
-<h4 id="2-1-std-set">2.1 <code>std::set</code></h4>
-<ul>
+<h3 id="2-关联容器（Associative-Containers）"><a href="#2-关联容器（Associative-Containers）" class="headerlink" title="2. 关联容器（Associative Containers）"></a>2. 关联容器（Associative Containers）</h3><p>关联容器以键值对的形式存储元素，并且通常以某种排序方式存储。</p>
+<h4 id="2-1-std-set"><a href="#2-1-std-set" class="headerlink" title="2.1 std::set"></a>2.1 <code>std::set</code></h4><ul>
 <li><strong>特点</strong>：存储唯一元素，自动排序。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>insert(value)</code>：插入元素。</li>
 <li><code>erase(value)</code>：删除元素。</li>
 <li><code>find(value)</code>：查找元素。</li>
@@ -110,11 +96,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="2-2-std-multiset">2.2 <code>std::multiset</code></h4>
-<ul>
+<h4 id="2-2-std-multiset"><a href="#2-2-std-multiset" class="headerlink" title="2.2 std::multiset"></a>2.2 <code>std::multiset</code></h4><ul>
 <li><strong>特点</strong>：存储元素，允许重复，自动排序。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>insert(value)</code>：插入元素。</li>
 <li><code>erase(value)</code>：删除所有等于该值的元素。</li>
 <li><code>find(value)</code>：查找元素。</li>
@@ -122,11 +106,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="2-3-std-map">2.3 <code>std::map</code></h4>
-<ul>
+<h4 id="2-3-std-map"><a href="#2-3-std-map" class="headerlink" title="2.3 std::map"></a>2.3 <code>std::map</code></h4><ul>
 <li><strong>特点</strong>：存储键值对，键唯一，自动排序。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>insert(&#123;key, value&#125;)</code>：插入键值对。</li>
 <li><code>erase(key)</code>：删除指定键的元素。</li>
 <li><code>find(key)</code>：查找指定键的元素。</li>
@@ -134,11 +116,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="2-4-std-multimap">2.4 <code>std::multimap</code></h4>
-<ul>
+<h4 id="2-4-std-multimap"><a href="#2-4-std-multimap" class="headerlink" title="2.4 std::multimap"></a>2.4 <code>std::multimap</code></h4><ul>
 <li><strong>特点</strong>：存储键值对，键可以重复，自动排序。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>insert(&#123;key, value&#125;)</code>：插入键值对。</li>
 <li><code>erase(key)</code>：删除所有指定键的元素。</li>
 <li><code>find(key)</code>：查找指定键的元素。</li>
@@ -146,13 +126,10 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h3 id="3-无序关联容器（Unordered-Associative-Containers）">3. 无序关联容器（Unordered Associative Containers）</h3>
-<p>无序关联容器以哈希表的形式存储元素，不保证元素的顺序。</p>
-<h4 id="3-1-std-unordered-set">3.1 <code>std::unordered_set</code></h4>
-<ul>
+<h3 id="3-无序关联容器（Unordered-Associative-Containers）"><a href="#3-无序关联容器（Unordered-Associative-Containers）" class="headerlink" title="3. 无序关联容器（Unordered Associative Containers）"></a>3. 无序关联容器（Unordered Associative Containers）</h3><p>无序关联容器以哈希表的形式存储元素，不保证元素的顺序。</p>
+<h4 id="3-1-std-unordered-set"><a href="#3-1-std-unordered-set" class="headerlink" title="3.1 std::unordered_set"></a>3.1 <code>std::unordered_set</code></h4><ul>
 <li><strong>特点</strong>：存储唯一元素，无序。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>insert(value)</code>：插入元素。</li>
 <li><code>erase(value)</code>：删除元素。</li>
 <li><code>find(value)</code>：查找元素。</li>
@@ -160,11 +137,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="3-2-std-unordered-multiset">3.2 <code>std::unordered_multiset</code></h4>
-<ul>
+<h4 id="3-2-std-unordered-multiset"><a href="#3-2-std-unordered-multiset" class="headerlink" title="3.2 std::unordered_multiset"></a>3.2 <code>std::unordered_multiset</code></h4><ul>
 <li><strong>特点</strong>：存储元素，允许重复，无序。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>insert(value)</code>：插入元素。</li>
 <li><code>erase(value)</code>：删除所有等于该值的元素。</li>
 <li><code>find(value)</code>：查找元素。</li>
@@ -172,11 +147,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="3-3-std-unordered-map">3.3 <code>std::unordered_map</code></h4>
-<ul>
+<h4 id="3-3-std-unordered-map"><a href="#3-3-std-unordered-map" class="headerlink" title="3.3 std::unordered_map"></a>3.3 <code>std::unordered_map</code></h4><ul>
 <li><strong>特点</strong>：存储键值对，键唯一，无序。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>insert(&#123;key, value&#125;)</code>：插入键值对。</li>
 <li><code>erase(key)</code>：删除指定键的元素。</li>
 <li><code>find(key)</code>：查找指定键的元素。</li>
@@ -184,11 +157,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="3-4-std-unordered-multimap">3.4 <code>std::unordered_multimap</code></h4>
-<ul>
+<h4 id="3-4-std-unordered-multimap"><a href="#3-4-std-unordered-multimap" class="headerlink" title="3.4 std::unordered_multimap"></a>3.4 <code>std::unordered_multimap</code></h4><ul>
 <li><strong>特点</strong>：存储键值对，键可以重复，无序。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>insert(&#123;key, value&#125;)</code>：插入键值对。</li>
 <li><code>erase(key)</code>：删除所有指定键的元素。</li>
 <li><code>find(key)</code>：查找指定键的元素。</li>
@@ -196,13 +167,10 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h3 id="4-容器适配器（Container-Adapters）">4. 容器适配器（Container Adapters）</h3>
-<p>容器适配器是对基础容器的封装，提供特定的接口。</p>
-<h4 id="4-1-std-stack">4.1 <code>std::stack</code></h4>
-<ul>
+<h3 id="4-容器适配器（Container-Adapters）"><a href="#4-容器适配器（Container-Adapters）" class="headerlink" title="4. 容器适配器（Container Adapters）"></a>4. 容器适配器（Container Adapters）</h3><p>容器适配器是对基础容器的封装，提供特定的接口。</p>
+<h4 id="4-1-std-stack"><a href="#4-1-std-stack" class="headerlink" title="4.1 std::stack"></a>4.1 <code>std::stack</code></h4><ul>
 <li><strong>特点</strong>：后进先出（LIFO）的数据结构。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>push(value)</code>：压入元素。</li>
 <li><code>pop()</code>：弹出元素。</li>
 <li><code>top()</code>：访问栈顶元素。</li>
@@ -210,11 +178,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="4-2-std-queue">4.2 <code>std::queue</code></h4>
-<ul>
+<h4 id="4-2-std-queue"><a href="#4-2-std-queue" class="headerlink" title="4.2 std::queue"></a>4.2 <code>std::queue</code></h4><ul>
 <li><strong>特点</strong>：先进先出（FIFO）的数据结构。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>push(value)</code>：入队。</li>
 <li><code>pop()</code>：出队。</li>
 <li><code>front()</code>：访问队首元素。</li>
@@ -223,11 +189,9 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h4 id="4-3-std-priority-queue">4.3 <code>std::priority_queue</code></h4>
-<ul>
+<h4 id="4-3-std-priority-queue"><a href="#4-3-std-priority-queue" class="headerlink" title="4.3 std::priority_queue"></a>4.3 <code>std::priority_queue</code></h4><ul>
 <li><strong>特点</strong>：优先队列，元素按优先级排序。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>push(value)</code>：插入元素。</li>
 <li><code>pop()</code>：弹出优先级最高的元素。</li>
 <li><code>top()</code>：访问优先级最高的元素。</li>
@@ -235,217 +199,150 @@ IconifyProviders = {
 </ul>
 </li>
 </ul>
-<h3 id="5-其他容器">5. 其他容器</h3>
-<h4 id="5-1-std-array">5.1 <code>std::array</code></h4>
-<ul>
+<h3 id="5-其他容器"><a href="#5-其他容器" class="headerlink" title="5. 其他容器"></a>5. 其他容器</h3><h4 id="5-1-std-array"><a href="#5-1-std-array" class="headerlink" title="5.1 std::array"></a>5.1 <code>std::array</code></h4><ul>
 <li><strong>特点</strong>：固定大小的数组，支持随机访问。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>at(index)</code>：访问指定位置的元素。</li>
 <li><code>size()</code>：返回元素个数。</li>
 <li><code>fill(value)</code>：用指定值填充数组。</li>
 </ul>
 </li>
 </ul>
-<h4 id="5-2-std-span">5.2 <code>std::span</code></h4>
-<ul>
+<h4 id="5-2-std-span"><a href="#5-2-std-span" class="headerlink" title="5.2 std::span"></a>5.2 <code>std::span</code></h4><ul>
 <li><strong>特点</strong>：轻量级的非拥有视图，表示一段连续的内存区域。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>size()</code>：返回元素个数。</li>
 <li><code>data()</code>：返回指向内存区域的指针。</li>
 <li><code>subspan(offset, count)</code>：返回子视图。</li>
 </ul>
 </li>
 </ul>
-<h3 id="总结">总结</h3>
-<p>STL容器提供了丰富的数据结构和操作接口，能够满足各种不同的需求。选择合适的容器可以显著提高代码的效率和可读性。在使用时，需要根据具体的需求选择合适的容器类型，并注意不同容器的时间复杂度和空间复杂度。</p>
-<h2 id="算法（Algorithms）">算法（Algorithms）</h2>
-<p>C++标准模板库（STL）不仅提供了丰富的容器类，还提供了一组强大的算法，这些算法可以应用于各种容器，极大地简化了开发者的编程工作。STL算法主要分为以下几类：</p>
-<h3 id="1-非修改序列算法（Non-modifying-Sequence-Operations）">1. 非修改序列算法（Non-modifying Sequence Operations）</h3>
-<p>这类算法对序列进行操作，但不修改序列的内容。</p>
-<h4 id="1-1-std-find">1.1 <code>std::find</code></h4>
-<ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>STL容器提供了丰富的数据结构和操作接口，能够满足各种不同的需求。选择合适的容器可以显著提高代码的效率和可读性。在使用时，需要根据具体的需求选择合适的容器类型，并注意不同容器的时间复杂度和空间复杂度。</p>
+<h2 id="算法（Algorithms）"><a href="#算法（Algorithms）" class="headerlink" title="算法（Algorithms）"></a>算法（Algorithms）</h2><p>C++标准模板库（STL）不仅提供了丰富的容器类，还提供了一组强大的算法，这些算法可以应用于各种容器，极大地简化了开发者的编程工作。STL算法主要分为以下几类：</p>
+<h3 id="1-非修改序列算法（Non-modifying-Sequence-Operations）"><a href="#1-非修改序列算法（Non-modifying-Sequence-Operations）" class="headerlink" title="1. 非修改序列算法（Non-modifying Sequence Operations）"></a>1. 非修改序列算法（Non-modifying Sequence Operations）</h3><p>这类算法对序列进行操作，但不修改序列的内容。</p>
+<h4 id="1-1-std-find"><a href="#1-1-std-find" class="headerlink" title="1.1 std::find"></a>1.1 <code>std::find</code></h4><ul>
 <li><strong>功能</strong>：在序列中查找指定值。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> it = std::<span class="built_in">find</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line"><span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Found &quot;</span> &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> it = std::<span class="built_in">find</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line"><span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Found &quot;</span> &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="1-2-std-count">1.2 <code>std::count</code></h4>
-<ul>
+<h4 id="1-2-std-count"><a href="#1-2-std-count" class="headerlink" title="1.2 std::count"></a>1.2 <code>std::count</code></h4><ul>
 <li><strong>功能</strong>：统计序列中指定值的个数。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">int</span> count = std::<span class="built_in">count</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Count of 3: &quot;</span> &lt;&lt; count &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">int</span> count = std::<span class="built_in">count</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Count of 3: &quot;</span> &lt;&lt; count &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="1-3-std-for-each">1.3 <code>std::for_each</code></h4>
-<ul>
+<h4 id="1-3-std-for-each"><a href="#1-3-std-for-each" class="headerlink" title="1.3 std::for_each"></a>1.3 <code>std::for_each</code></h4><ul>
 <li><strong>功能</strong>：对序列中的每个元素执行指定操作。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::for_each(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), [](<span class="type">int</span> &amp;n)&#123; n *= <span class="number">2</span>; &#125;);</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::for_each(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), [](<span class="type">int</span> &amp;n)&#123; n *= <span class="number">2</span>; &#125;);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="2-修改序列算法（Modifying-Sequence-Operations）">2. 修改序列算法（Modifying Sequence Operations）</h3>
-<p>这类算法会修改序列的内容。</p>
-<h4 id="2-1-std-copy">2.1 <code>std::copy</code></h4>
-<ul>
+<h3 id="2-修改序列算法（Modifying-Sequence-Operations）"><a href="#2-修改序列算法（Modifying-Sequence-Operations）" class="headerlink" title="2. 修改序列算法（Modifying Sequence Operations）"></a>2. 修改序列算法（Modifying Sequence Operations）</h3><p>这类算法会修改序列的内容。</p>
+<h4 id="2-1-std-copy"><a href="#2-1-std-copy" class="headerlink" title="2.1 std::copy"></a>2.1 <code>std::copy</code></h4><ul>
 <li><strong>功能</strong>：将一个序列的内容复制到另一个序列。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec2</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">std::<span class="built_in">copy</span>(vec<span class="number">1.</span><span class="built_in">begin</span>(), vec<span class="number">1.</span><span class="built_in">end</span>(), vec<span class="number">2.</span><span class="built_in">begin</span>());</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec2</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">std::<span class="built_in">copy</span>(vec<span class="number">1.</span><span class="built_in">begin</span>(), vec<span class="number">1.</span><span class="built_in">end</span>(), vec<span class="number">2.</span><span class="built_in">begin</span>());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="2-2-std-transform">2.2 <code>std::transform</code></h4>
-<ul>
+<h4 id="2-2-std-transform"><a href="#2-2-std-transform" class="headerlink" title="2.2 std::transform"></a>2.2 <code>std::transform</code></h4><ul>
 <li><strong>功能</strong>：对序列中的每个元素执行指定操作，并将结果存储到另一个序列。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec2</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">std::<span class="built_in">transform</span>(vec<span class="number">1.</span><span class="built_in">begin</span>(), vec<span class="number">1.</span><span class="built_in">end</span>(), vec<span class="number">2.</span><span class="built_in">begin</span>(), [](<span class="type">int</span> n)&#123; <span class="keyword">return</span> n * <span class="number">2</span>; &#125;);</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec2</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">std::<span class="built_in">transform</span>(vec<span class="number">1.</span><span class="built_in">begin</span>(), vec<span class="number">1.</span><span class="built_in">end</span>(), vec<span class="number">2.</span><span class="built_in">begin</span>(), [](<span class="type">int</span> n)&#123; <span class="keyword">return</span> n * <span class="number">2</span>; &#125;);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="2-3-std-replace">2.3 <code>std::replace</code></h4>
-<ul>
+<h4 id="2-3-std-replace"><a href="#2-3-std-replace" class="headerlink" title="2.3 std::replace"></a>2.3 <code>std::replace</code></h4><ul>
 <li><strong>功能</strong>：将序列中所有等于指定值的元素替换为另一个值。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::<span class="built_in">replace</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::<span class="built_in">replace</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="3-排序和相关算法（Sorting-and-Related-Operations）">3. 排序和相关算法（Sorting and Related Operations）</h3>
-<p>这类算法对序列进行排序或相关操作。</p>
-<h4 id="3-1-std-sort">3.1 <code>std::sort</code></h4>
-<ul>
+<h3 id="3-排序和相关算法（Sorting-and-Related-Operations）"><a href="#3-排序和相关算法（Sorting-and-Related-Operations）" class="headerlink" title="3. 排序和相关算法（Sorting and Related Operations）"></a>3. 排序和相关算法（Sorting and Related Operations）</h3><p>这类算法对序列进行排序或相关操作。</p>
+<h4 id="3-1-std-sort"><a href="#3-1-std-sort" class="headerlink" title="3.1 std::sort"></a>3.1 <code>std::sort</code></h4><ul>
 <li><strong>功能</strong>：对序列进行排序。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>&#125;;</span><br><span class="line">std::<span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>&#125;;</span><br><span class="line">std::<span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="3-2-std-stable-sort">3.2 <code>std::stable_sort</code></h4>
-<ul>
+<h4 id="3-2-std-stable-sort"><a href="#3-2-std-stable-sort" class="headerlink" title="3.2 std::stable_sort"></a>3.2 <code>std::stable_sort</code></h4><ul>
 <li><strong>功能</strong>：对序列进行稳定排序，保持相等元素的相对顺序。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>&#125;;</span><br><span class="line">std::<span class="built_in">stable_sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>&#125;;</span><br><span class="line">std::<span class="built_in">stable_sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="3-3-std-binary-search">3.3 <code>std::binary_search</code></h4>
-<ul>
+<h4 id="3-3-std-binary-search"><a href="#3-3-std-binary-search" class="headerlink" title="3.3 std::binary_search"></a>3.3 <code>std::binary_search</code></h4><ul>
 <li><strong>功能</strong>：在已排序的序列中查找指定值。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">bool</span> found = std::<span class="built_in">binary_search</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">bool</span> found = std::<span class="built_in">binary_search</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="4-数值算法（Numeric-Operations）">4. 数值算法（Numeric Operations）</h3>
-<p>这类算法主要用于数值计算。</p>
-<h4 id="4-1-std-accumulate">4.1 <code>std::accumulate</code></h4>
-<ul>
+<h3 id="4-数值算法（Numeric-Operations）"><a href="#4-数值算法（Numeric-Operations）" class="headerlink" title="4. 数值算法（Numeric Operations）"></a>4. 数值算法（Numeric Operations）</h3><p>这类算法主要用于数值计算。</p>
+<h4 id="4-1-std-accumulate"><a href="#4-1-std-accumulate" class="headerlink" title="4.1 std::accumulate"></a>4.1 <code>std::accumulate</code></h4><ul>
 <li><strong>功能</strong>：计算序列中元素的累加和。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">int</span> sum = std::<span class="built_in">accumulate</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">int</span> sum = std::<span class="built_in">accumulate</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="4-2-std-inner-product">4.2 <code>std::inner_product</code></h4>
-<ul>
+<h4 id="4-2-std-inner-product"><a href="#4-2-std-inner-product" class="headerlink" title="4.2 std::inner_product"></a>4.2 <code>std::inner_product</code></h4><ul>
 <li><strong>功能</strong>：计算两个序列的内积。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec2 = &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line"><span class="type">int</span> product = std::<span class="built_in">inner_product</span>(vec<span class="number">1.</span><span class="built_in">begin</span>(), vec<span class="number">1.</span><span class="built_in">end</span>(), vec<span class="number">2.</span><span class="built_in">begin</span>(), <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec2 = &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line"><span class="type">int</span> product = std::<span class="built_in">inner_product</span>(vec<span class="number">1.</span><span class="built_in">begin</span>(), vec<span class="number">1.</span><span class="built_in">end</span>(), vec<span class="number">2.</span><span class="built_in">begin</span>(), <span class="number">0</span>);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="5-堆算法（Heap-Operations）">5. 堆算法（Heap Operations）</h3>
-<p>这类算法用于操作堆结构。</p>
-<h4 id="5-1-std-make-heap">5.1 <code>std::make_heap</code></h4>
-<ul>
+<h3 id="5-堆算法（Heap-Operations）"><a href="#5-堆算法（Heap-Operations）" class="headerlink" title="5. 堆算法（Heap Operations）"></a>5. 堆算法（Heap Operations）</h3><p>这类算法用于操作堆结构。</p>
+<h4 id="5-1-std-make-heap"><a href="#5-1-std-make-heap" class="headerlink" title="5.1 std::make_heap"></a>5.1 <code>std::make_heap</code></h4><ul>
 <li><strong>功能</strong>：将序列转换为堆。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line">std::<span class="built_in">make_heap</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line">std::<span class="built_in">make_heap</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="5-2-std-pop-heap">5.2 <code>std::pop_heap</code></h4>
-<ul>
+<h4 id="5-2-std-pop-heap"><a href="#5-2-std-pop-heap" class="headerlink" title="5.2 std::pop_heap"></a>5.2 <code>std::pop_heap</code></h4><ul>
 <li><strong>功能</strong>：从堆中弹出最大元素。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::<span class="built_in">pop_heap</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">vec.<span class="built_in">pop_back</span>();</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::<span class="built_in">pop_heap</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">vec.<span class="built_in">pop_back</span>();</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="5-3-std-push-heap">5.3 <code>std::push_heap</code></h4>
-<ul>
+<h4 id="5-3-std-push-heap"><a href="#5-3-std-push-heap" class="headerlink" title="5.3 std::push_heap"></a>5.3 <code>std::push_heap</code></h4><ul>
 <li><strong>功能</strong>：将新元素插入堆中。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>&#125;;</span><br><span class="line">vec.<span class="built_in">push_back</span>(<span class="number">6</span>);</span><br><span class="line">std::<span class="built_in">push_heap</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>&#125;;</span><br><span class="line">vec.<span class="built_in">push_back</span>(<span class="number">6</span>);</span><br><span class="line">std::<span class="built_in">push_heap</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="6-最小-最大算法（Minimum-Maximum-Operations）">6. 最小/最大算法（Minimum/Maximum Operations）</h3>
-<p>这类算法用于查找序列中的最小值或最大值。</p>
-<h4 id="6-1-std-min-element">6.1 <code>std::min_element</code></h4>
-<ul>
+<h3 id="6-最小-最大算法（Minimum-Maximum-Operations）"><a href="#6-最小-最大算法（Minimum-Maximum-Operations）" class="headerlink" title="6. 最小&#x2F;最大算法（Minimum&#x2F;Maximum Operations）"></a>6. 最小&#x2F;最大算法（Minimum&#x2F;Maximum Operations）</h3><p>这类算法用于查找序列中的最小值或最大值。</p>
+<h4 id="6-1-std-min-element"><a href="#6-1-std-min-element" class="headerlink" title="6.1 std::min_element"></a>6.1 <code>std::min_element</code></h4><ul>
 <li><strong>功能</strong>：查找序列中的最小元素。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> min_it = std::<span class="built_in">min_element</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> min_it = std::<span class="built_in">min_element</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="6-2-std-max-element">6.2 <code>std::max_element</code></h4>
-<ul>
+<h4 id="6-2-std-max-element"><a href="#6-2-std-max-element" class="headerlink" title="6.2 std::max_element"></a>6.2 <code>std::max_element</code></h4><ul>
 <li><strong>功能</strong>：查找序列中的最大元素。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> max_it = std::<span class="built_in">max_element</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> max_it = std::<span class="built_in">max_element</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="7-其他算法">7. 其他算法</h3>
-<h4 id="7-1-std-reverse">7.1 <code>std::reverse</code></h4>
-<ul>
+<h3 id="7-其他算法"><a href="#7-其他算法" class="headerlink" title="7. 其他算法"></a>7. 其他算法</h3><h4 id="7-1-std-reverse"><a href="#7-1-std-reverse" class="headerlink" title="7.1 std::reverse"></a>7.1 <code>std::reverse</code></h4><ul>
 <li><strong>功能</strong>：反转序列中的元素。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::<span class="built_in">reverse</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::<span class="built_in">reverse</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="7-2-std-unique">7.2 <code>std::unique</code></h4>
-<ul>
+<h4 id="7-2-std-unique"><a href="#7-2-std-unique" class="headerlink" title="7.2 std::unique"></a>7.2 <code>std::unique</code></h4><ul>
 <li><strong>功能</strong>：移除序列中的连续重复元素。</li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> last = std::<span class="built_in">unique</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">vec.<span class="built_in">erase</span>(last, vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> last = std::<span class="built_in">unique</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">vec.<span class="built_in">erase</span>(last, vec.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="总结-2">总结</h3>
-<p>STL算法提供了丰富的功能，涵盖了从简单的查找、排序到复杂的数值计算和堆操作。这些算法通常具有较高的效率，并且可以与各种容器配合使用，极大地提高了C++程序的开发效率和代码质量。在使用时，需要根据具体的需求选择合适的算法，并注意算法的复杂度和适用条件。</p>
-<h2 id="迭代器（Iterators）">迭代器（Iterators）</h2>
-<p>C++标准模板库（STL）中的迭代器（Iterators）是一种类似于指针的对象，用于遍历容器中的元素。迭代器提供了一种统一的方式来访问和操作容器中的数据，而不需要关心容器的具体实现细节。迭代器的主要作用是解耦算法和容器，使得算法可以独立于容器类型进行设计和实现。</p>
-<h3 id="迭代器的分类">迭代器的分类</h3>
-<p>根据功能和使用场景，迭代器可以分为以下几类：</p>
-<h4 id="1-输入迭代器（Input-Iterator）">1. 输入迭代器（Input Iterator）</h4>
-<ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>STL算法提供了丰富的功能，涵盖了从简单的查找、排序到复杂的数值计算和堆操作。这些算法通常具有较高的效率，并且可以与各种容器配合使用，极大地提高了C++程序的开发效率和代码质量。在使用时，需要根据具体的需求选择合适的算法，并注意算法的复杂度和适用条件。</p>
+<h2 id="迭代器（Iterators）"><a href="#迭代器（Iterators）" class="headerlink" title="迭代器（Iterators）"></a>迭代器（Iterators）</h2><p>C++标准模板库（STL）中的迭代器（Iterators）是一种类似于指针的对象，用于遍历容器中的元素。迭代器提供了一种统一的方式来访问和操作容器中的数据，而不需要关心容器的具体实现细节。迭代器的主要作用是解耦算法和容器，使得算法可以独立于容器类型进行设计和实现。</p>
+<h3 id="迭代器的分类"><a href="#迭代器的分类" class="headerlink" title="迭代器的分类"></a>迭代器的分类</h3><p>根据功能和使用场景，迭代器可以分为以下几类：</p>
+<h4 id="1-输入迭代器（Input-Iterator）"><a href="#1-输入迭代器（Input-Iterator）" class="headerlink" title="1. 输入迭代器（Input Iterator）"></a>1. 输入迭代器（Input Iterator）</h4><ul>
 <li><strong>特点</strong>：只读，单向移动，每次只能读取一次。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>operator*</code>：解引用，获取当前元素。</li>
 <li><code>operator++</code>：前移迭代器。</li>
 <li><code>operator==</code> 和 <code>operator!=</code>：比较两个迭代器是否相等。</li>
 </ul>
 </li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">std::istream_iterator&lt;<span class="type">int</span>&gt; <span class="title">input</span><span class="params">(std::cin)</span></span>;</span><br><span class="line">std::istream_iterator&lt;<span class="type">int</span>&gt; end;</span><br><span class="line"><span class="keyword">while</span> (input != end) &#123;</span><br><span class="line">    std::cout &lt;&lt; *input &lt;&lt; std::endl;</span><br><span class="line">    ++input;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">std::istream_iterator&lt;<span class="type">int</span>&gt; <span class="title">input</span><span class="params">(std::cin)</span></span>;</span><br><span class="line">std::istream_iterator&lt;<span class="type">int</span>&gt; end;</span><br><span class="line"><span class="keyword">while</span> (input != end) &#123;</span><br><span class="line">    std::cout &lt;&lt; *input &lt;&lt; std::endl;</span><br><span class="line">    ++input;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="2-输出迭代器（Output-Iterator）">2. 输出迭代器（Output Iterator）</h4>
-<ul>
+<h4 id="2-输出迭代器（Output-Iterator）"><a href="#2-输出迭代器（Output-Iterator）" class="headerlink" title="2. 输出迭代器（Output Iterator）"></a>2. 输出迭代器（Output Iterator）</h4><ul>
 <li><strong>特点</strong>：只写，单向移动，每次只能写入一次。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>operator*</code>：解引用，用于写入数据。</li>
 <li><code>operator++</code>：前移迭代器。</li>
 </ul>
 </li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="function">std::ostream_iterator&lt;<span class="type">int</span>&gt; <span class="title">output</span><span class="params">(std::cout, <span class="string">&quot; &quot;</span>)</span></span>;</span><br><span class="line">std::<span class="built_in">copy</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), output);</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="function">std::ostream_iterator&lt;<span class="type">int</span>&gt; <span class="title">output</span><span class="params">(std::cout, <span class="string">&quot; &quot;</span>)</span></span>;</span><br><span class="line">std::<span class="built_in">copy</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), output);</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="3-前向迭代器（Forward-Iterator）">3. 前向迭代器（Forward Iterator）</h4>
-<ul>
+<h4 id="3-前向迭代器（Forward-Iterator）"><a href="#3-前向迭代器（Forward-Iterator）" class="headerlink" title="3. 前向迭代器（Forward Iterator）"></a>3. 前向迭代器（Forward Iterator）</h4><ul>
 <li><strong>特点</strong>：可读可写，单向移动，支持多次读写。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>operator*</code>：解引用，获取或设置当前元素。</li>
 <li><code>operator++</code>：前移迭代器。</li>
 <li><code>operator==</code> 和 <code>operator!=</code>：比较两个迭代器是否相等。</li>
 </ul>
 </li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::forward_list&lt;<span class="type">int</span>&gt; flist = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::forward_list&lt;<span class="type">int</span>&gt;::iterator it = flist.<span class="built_in">begin</span>();</span><br><span class="line"><span class="keyword">while</span> (it != flist.<span class="built_in">end</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">    ++it;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::forward_list&lt;<span class="type">int</span>&gt; flist = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::forward_list&lt;<span class="type">int</span>&gt;::iterator it = flist.<span class="built_in">begin</span>();</span><br><span class="line"><span class="keyword">while</span> (it != flist.<span class="built_in">end</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">    ++it;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="4-双向迭代器（Bidirectional-Iterator）">4. 双向迭代器（Bidirectional Iterator）</h4>
-<ul>
+<h4 id="4-双向迭代器（Bidirectional-Iterator）"><a href="#4-双向迭代器（Bidirectional-Iterator）" class="headerlink" title="4. 双向迭代器（Bidirectional Iterator）"></a>4. 双向迭代器（Bidirectional Iterator）</h4><ul>
 <li><strong>特点</strong>：可读可写，双向移动，支持多次读写。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>operator*</code>：解引用，获取或设置当前元素。</li>
 <li><code>operator++</code>：前移迭代器。</li>
 <li><code>operator--</code>：后移迭代器。</li>
 <li><code>operator==</code> 和 <code>operator!=</code>：比较两个迭代器是否相等。</li>
 </ul>
 </li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::list&lt;<span class="type">int</span>&gt; lst = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::list&lt;<span class="type">int</span>&gt;::iterator it = lst.<span class="built_in">begin</span>();</span><br><span class="line"><span class="keyword">while</span> (it != lst.<span class="built_in">end</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">    ++it;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::list&lt;<span class="type">int</span>&gt; lst = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::list&lt;<span class="type">int</span>&gt;::iterator it = lst.<span class="built_in">begin</span>();</span><br><span class="line"><span class="keyword">while</span> (it != lst.<span class="built_in">end</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">    ++it;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="5-随机访问迭代器（Random-Access-Iterator）">5. 随机访问迭代器（Random Access Iterator）</h4>
-<ul>
+<h4 id="5-随机访问迭代器（Random-Access-Iterator）"><a href="#5-随机访问迭代器（Random-Access-Iterator）" class="headerlink" title="5. 随机访问迭代器（Random Access Iterator）"></a>5. 随机访问迭代器（Random Access Iterator）</h4><ul>
 <li><strong>特点</strong>：可读可写，支持随机访问，支持多次读写。</li>
-<li><strong>操作</strong>：
-<ul>
+<li><strong>操作</strong>：<ul>
 <li><code>operator*</code>：解引用，获取或设置当前元素。</li>
 <li><code>operator++</code> 和 <code>operator--</code>：前移和后移迭代器。</li>
 <li><code>operator+</code> 和 <code>operator-</code>：迭代器加减整数。</li>
@@ -454,53 +351,42 @@ IconifyProviders = {
 <li><code>operator&lt;</code>、<code>operator&gt;</code>、<code>operator&lt;=</code>、<code>operator&gt;=</code>：比较两个迭代器。</li>
 </ul>
 </li>
-<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt;::iterator it = vec.<span class="built_in">begin</span>();</span><br><span class="line">std::cout &lt;&lt; *(it + <span class="number">1</span>) &lt;&lt; std::endl; <span class="comment">// 输出 2</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>示例</strong>：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt;::iterator it = vec.<span class="built_in">begin</span>();</span><br><span class="line">std::cout &lt;&lt; *(it + <span class="number">1</span>) &lt;&lt; std::endl; <span class="comment">// 输出 2</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="迭代器的使用">迭代器的使用</h3>
-<p>迭代器通常用于以下场景：</p>
-<h4 id="1-遍历容器">1. 遍历容器</h4>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (std::vector&lt;<span class="type">int</span>&gt;::iterator it = vec.<span class="built_in">begin</span>(); it != vec.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-算法操作">2. 算法操作</h4>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::<span class="built_in">transform</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), vec.<span class="built_in">begin</span>(), [](<span class="type">int</span> n)&#123; <span class="keyword">return</span> n * <span class="number">2</span>; &#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="3-插入和删除元素">3. 插入和删除元素</h4>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::list&lt;<span class="type">int</span>&gt; lst = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::list&lt;<span class="type">int</span>&gt;::iterator it = lst.<span class="built_in">begin</span>();</span><br><span class="line">++it; <span class="comment">// 移动到第二个元素</span></span><br><span class="line">lst.<span class="built_in">insert</span>(it, <span class="number">10</span>); <span class="comment">// 在第二个元素前插入10</span></span><br><span class="line">lst.<span class="built_in">erase</span>(it); <span class="comment">// 删除第二个元素</span></span><br></pre></td></tr></table></figure>
-<h3 id="迭代器的失效">迭代器的失效</h3>
-<p>在使用迭代器时，需要注意迭代器可能会失效的情况，特别是在插入或删除元素后。不同的容器和操作可能导致迭代器失效的情况不同。</p>
-<h4 id="1-std-vector">1. <code>std::vector</code></h4>
-<ul>
+<h3 id="迭代器的使用"><a href="#迭代器的使用" class="headerlink" title="迭代器的使用"></a>迭代器的使用</h3><p>迭代器通常用于以下场景：</p>
+<h4 id="1-遍历容器"><a href="#1-遍历容器" class="headerlink" title="1. 遍历容器"></a>1. 遍历容器</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (std::vector&lt;<span class="type">int</span>&gt;::iterator it = vec.<span class="built_in">begin</span>(); it != vec.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-算法操作"><a href="#2-算法操作" class="headerlink" title="2. 算法操作"></a>2. 算法操作</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">std::<span class="built_in">transform</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), vec.<span class="built_in">begin</span>(), [](<span class="type">int</span> n)&#123; <span class="keyword">return</span> n * <span class="number">2</span>; &#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-插入和删除元素"><a href="#3-插入和删除元素" class="headerlink" title="3. 插入和删除元素"></a>3. 插入和删除元素</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::list&lt;<span class="type">int</span>&gt; lst = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::list&lt;<span class="type">int</span>&gt;::iterator it = lst.<span class="built_in">begin</span>();</span><br><span class="line">++it; <span class="comment">// 移动到第二个元素</span></span><br><span class="line">lst.<span class="built_in">insert</span>(it, <span class="number">10</span>); <span class="comment">// 在第二个元素前插入10</span></span><br><span class="line">lst.<span class="built_in">erase</span>(it); <span class="comment">// 删除第二个元素</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="迭代器的失效"><a href="#迭代器的失效" class="headerlink" title="迭代器的失效"></a>迭代器的失效</h3><p>在使用迭代器时，需要注意迭代器可能会失效的情况，特别是在插入或删除元素后。不同的容器和操作可能导致迭代器失效的情况不同。</p>
+<h4 id="1-std-vector"><a href="#1-std-vector" class="headerlink" title="1. std::vector"></a>1. <code>std::vector</code></h4><ul>
 <li><strong>插入元素</strong>：在插入元素后，插入点之后的所有迭代器失效。</li>
 <li><strong>删除元素</strong>：被删除元素的迭代器失效。</li>
 </ul>
-<h4 id="2-std-list">2. <code>std::list</code></h4>
-<ul>
+<h4 id="2-std-list"><a href="#2-std-list" class="headerlink" title="2. std::list"></a>2. <code>std::list</code></h4><ul>
 <li><strong>插入元素</strong>：插入操作不会使任何迭代器失效。</li>
 <li><strong>删除元素</strong>：只有被删除元素的迭代器失效。</li>
 </ul>
-<h4 id="3-std-map-和-std-set">3. <code>std::map</code> 和 <code>std::set</code></h4>
-<ul>
+<h4 id="3-std-map-和-std-set"><a href="#3-std-map-和-std-set" class="headerlink" title="3. std::map 和 std::set"></a>3. <code>std::map</code> 和 <code>std::set</code></h4><ul>
 <li><strong>插入元素</strong>：插入操作不会使任何迭代器失效。</li>
 <li><strong>删除元素</strong>：只有被删除元素的迭代器失效。</li>
 </ul>
-<h3 id="总结-3">总结</h3>
-<p>迭代器是STL中非常重要的概念，它提供了一种统一的方式来访问和操作容器中的数据。通过使用迭代器，算法可以独立于容器类型进行设计和实现，从而提高了代码的复用性和可维护性。在使用迭代器时，需要注意迭代器的分类、操作和可能的失效情况，以确保代码的正确性和效率。</p>
-<h2 id="函数对象（Function-Objects）">函数对象（Function Objects）</h2>
-<p>C++标准模板库（STL）中的函数对象（Function Objects），也称为仿函数（Functors），是一种可以像函数一样被调用的对象。函数对象通常是重载了函数调用运算符 <code>operator()</code> 的类对象。STL中的许多算法和容器都支持使用函数对象作为参数，从而提供了极大的灵活性和可扩展性。</p>
-<h3 id="函数对象的基本概念">函数对象的基本概念</h3>
-<p>函数对象的核心思想是通过重载 <code>operator()</code> 来实现一个可以像函数一样被调用的对象。例如：</p>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>迭代器是STL中非常重要的概念，它提供了一种统一的方式来访问和操作容器中的数据。通过使用迭代器，算法可以独立于容器类型进行设计和实现，从而提高了代码的复用性和可维护性。在使用迭代器时，需要注意迭代器的分类、操作和可能的失效情况，以确保代码的正确性和效率。</p>
+<h2 id="函数对象（Function-Objects）"><a href="#函数对象（Function-Objects）" class="headerlink" title="函数对象（Function Objects）"></a>函数对象（Function Objects）</h2><p>C++标准模板库（STL）中的函数对象（Function Objects），也称为仿函数（Functors），是一种可以像函数一样被调用的对象。函数对象通常是重载了函数调用运算符 <code>operator()</code> 的类对象。STL中的许多算法和容器都支持使用函数对象作为参数，从而提供了极大的灵活性和可扩展性。</p>
+<h3 id="函数对象的基本概念"><a href="#函数对象的基本概念" class="headerlink" title="函数对象的基本概念"></a>函数对象的基本概念</h3><p>函数对象的核心思想是通过重载 <code>operator()</code> 来实现一个可以像函数一样被调用的对象。例如：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyFunctor</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">int</span> x)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x * x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    MyFunctor square;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">square</span>(<span class="number">5</span>) &lt;&lt; std::endl; <span class="comment">// 输出 25</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在这个例子中，<code>MyFunctor</code> 是一个函数对象，它重载了 <code>operator()</code>，使得 <code>square(5)</code> 可以像函数调用一样使用。</p>
-<h3 id="函数对象的优势">函数对象的优势</h3>
-<p>函数对象相比于普通函数有以下优势：</p>
+<h3 id="函数对象的优势"><a href="#函数对象的优势" class="headerlink" title="函数对象的优势"></a>函数对象的优势</h3><p>函数对象相比于普通函数有以下优势：</p>
 <ol>
 <li><strong>状态保持</strong>：函数对象可以保存状态，而普通函数不能。</li>
 <li><strong>类型安全</strong>：函数对象可以利用C++的类型系统，提供更强的类型检查。</li>
 <li><strong>灵活性</strong>：函数对象可以被继承和扩展，从而提供更多的功能。</li>
 </ol>
-<h3 id="STL中的函数对象">STL中的函数对象</h3>
-<p>STL提供了一些预定义的函数对象，这些函数对象通常用于算法的参数。这些函数对象定义在 <code>&lt;functional&gt;</code> 头文件中。</p>
-<h4 id="1-算术函数对象">1. 算术函数对象</h4>
-<ul>
+<h3 id="STL中的函数对象"><a href="#STL中的函数对象" class="headerlink" title="STL中的函数对象"></a>STL中的函数对象</h3><p>STL提供了一些预定义的函数对象，这些函数对象通常用于算法的参数。这些函数对象定义在 <code>&lt;functional&gt;</code> 头文件中。</p>
+<h4 id="1-算术函数对象"><a href="#1-算术函数对象" class="headerlink" title="1. 算术函数对象"></a>1. 算术函数对象</h4><ul>
 <li><code>std::plus&lt;T&gt;</code>：执行加法操作。</li>
 <li><code>std::minus&lt;T&gt;</code>：执行减法操作。</li>
 <li><code>std::multiplies&lt;T&gt;</code>：执行乘法操作。</li>
@@ -510,8 +396,8 @@ IconifyProviders = {
 </ul>
 <p><strong>示例</strong>：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::plus&lt;<span class="type">int</span>&gt; add;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">add</span>(<span class="number">3</span>, <span class="number">4</span>) &lt;&lt; std::endl; <span class="comment">// 输出 7</span></span><br><span class="line"></span><br><span class="line">    std::multiplies&lt;<span class="type">int</span>&gt; multiply;</span><br><span class="line">    std::cout &lt;&lt; <span class="built_in">multiply</span>(<span class="number">3</span>, <span class="number">4</span>) &lt;&lt; std::endl; <span class="comment">// 输出 12</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-比较函数对象">2. 比较函数对象</h4>
-<ul>
+
+<h4 id="2-比较函数对象"><a href="#2-比较函数对象" class="headerlink" title="2. 比较函数对象"></a>2. 比较函数对象</h4><ul>
 <li><code>std::equal_to&lt;T&gt;</code>：判断两个值是否相等。</li>
 <li><code>std::not_equal_to&lt;T&gt;</code>：判断两个值是否不相等。</li>
 <li><code>std::greater&lt;T&gt;</code>：判断第一个值是否大于第二个值。</li>
@@ -521,39 +407,38 @@ IconifyProviders = {
 </ul>
 <p><strong>示例</strong>：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::greater&lt;<span class="type">int</span>&gt; greater;</span><br><span class="line">    std::cout &lt;&lt; std::boolalpha &lt;&lt; <span class="built_in">greater</span>(<span class="number">4</span>, <span class="number">3</span>) &lt;&lt; std::endl; <span class="comment">// 输出 true</span></span><br><span class="line"></span><br><span class="line">    std::less&lt;<span class="type">int</span>&gt; less;</span><br><span class="line">    std::cout &lt;&lt; std::boolalpha &lt;&lt; <span class="built_in">less</span>(<span class="number">4</span>, <span class="number">3</span>) &lt;&lt; std::endl; <span class="comment">// 输出 false</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-逻辑函数对象">3. 逻辑函数对象</h4>
-<ul>
+
+<h4 id="3-逻辑函数对象"><a href="#3-逻辑函数对象" class="headerlink" title="3. 逻辑函数对象"></a>3. 逻辑函数对象</h4><ul>
 <li><code>std::logical_and&lt;T&gt;</code>：执行逻辑与操作。</li>
 <li><code>std::logical_or&lt;T&gt;</code>：执行逻辑或操作。</li>
 <li><code>std::logical_not&lt;T&gt;</code>：执行逻辑非操作。</li>
 </ul>
 <p><strong>示例</strong>：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::logical_and&lt;<span class="type">bool</span>&gt; logical_and;</span><br><span class="line">    std::cout &lt;&lt; std::boolalpha &lt;&lt; <span class="built_in">logical_and</span>(<span class="literal">true</span>, <span class="literal">false</span>) &lt;&lt; std::endl; <span class="comment">// 输出 false</span></span><br><span class="line"></span><br><span class="line">    std::logical_or&lt;<span class="type">bool</span>&gt; logical_or;</span><br><span class="line">    std::cout &lt;&lt; std::boolalpha &lt;&lt; <span class="built_in">logical_or</span>(<span class="literal">true</span>, <span class="literal">false</span>) &lt;&lt; std::endl; <span class="comment">// 输出 true</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="自定义函数对象">自定义函数对象</h3>
-<p>除了使用STL提供的预定义函数对象，开发者还可以自定义函数对象。自定义函数对象通常需要重载 <code>operator()</code>，并且可以根据需要添加成员变量来保存状态。</p>
+
+<h3 id="自定义函数对象"><a href="#自定义函数对象" class="headerlink" title="自定义函数对象"></a>自定义函数对象</h3><p>除了使用STL提供的预定义函数对象，开发者还可以自定义函数对象。自定义函数对象通常需要重载 <code>operator()</code>，并且可以根据需要添加成员变量来保存状态。</p>
 <p><strong>示例</strong>：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GreaterThan</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">GreaterThan</span>(<span class="type">int</span> threshold) : <span class="built_in">threshold_</span>(threshold) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">int</span> value)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value &gt; threshold_;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> threshold_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="function">GreaterThan <span class="title">greater_than_3</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> it = std::<span class="built_in">find_if</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), greater_than_3);</span><br><span class="line">    <span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Found: &quot;</span> &lt;&lt; *it &lt;&lt; std::endl; <span class="comment">// 输出 Found: 4</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在这个例子中，<code>GreaterThan</code> 是一个自定义的函数对象，它保存了一个阈值 <code>threshold_</code>，并在 <code>operator()</code> 中判断传入的值是否大于该阈值。</p>
-<h3 id="函数对象适配器">函数对象适配器</h3>
-<p>STL还提供了一些函数对象适配器（Function Object Adapters），用于修改或组合现有的函数对象。常用的适配器包括：</p>
-<h4 id="1-std-bind">1. <code>std::bind</code></h4>
-<p><code>std::bind</code> 用于将函数或函数对象绑定到特定的参数上，生成一个新的函数对象。</p>
+<h3 id="函数对象适配器"><a href="#函数对象适配器" class="headerlink" title="函数对象适配器"></a>函数对象适配器</h3><p>STL还提供了一些函数对象适配器（Function Object Adapters），用于修改或组合现有的函数对象。常用的适配器包括：</p>
+<h4 id="1-std-bind"><a href="#1-std-bind" class="headerlink" title="1. std::bind"></a>1. <code>std::bind</code></h4><p><code>std::bind</code> 用于将函数或函数对象绑定到特定的参数上，生成一个新的函数对象。</p>
 <p><strong>示例</strong>：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print_sum</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; a + b &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> print_5_plus = std::<span class="built_in">bind</span>(print_sum, <span class="number">5</span>, std::placeholders::_1);</span><br><span class="line">    <span class="built_in">print_5_plus</span>(<span class="number">3</span>); <span class="comment">// 输出 8</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在这个例子中，<code>std::bind</code> 将 <code>print_sum</code> 函数绑定到第一个参数 <code>5</code> 上，生成一个新的函数对象 <code>print_5_plus</code>，该函数对象只需要一个参数。</p>
-<h4 id="2-std-mem-fn">2. <code>std::mem_fn</code></h4>
-<p><code>std::mem_fn</code> 用于将成员函数转换为函数对象。</p>
+<h4 id="2-std-mem-fn"><a href="#2-std-mem-fn" class="headerlink" title="2. std::mem_fn"></a>2. <code>std::mem_fn</code></h4><p><code>std::mem_fn</code> 用于将成员函数转换为函数对象。</p>
 <p><strong>示例</strong>：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    MyClass obj;</span><br><span class="line">    <span class="keyword">auto</span> print_func = std::<span class="built_in">mem_fn</span>(&amp;MyClass::print);</span><br><span class="line">    <span class="built_in">print_func</span>(obj); <span class="comment">// 输出 Hello, World!</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在这个例子中，<code>std::mem_fn</code> 将 <code>MyClass</code> 的成员函数 <code>print</code> 转换为一个函数对象 <code>print_func</code>，该函数对象可以接受 <code>MyClass</code> 对象作为参数。</p>
-<h4 id="3-std-not1-和-std-not2">3. <code>std::not1</code> 和 <code>std::not2</code></h4>
-<p><code>std::not1</code> 和 <code>std::not2</code> 用于对一元和二元函数对象取反。</p>
+<h4 id="3-std-not1-和-std-not2"><a href="#3-std-not1-和-std-not2" class="headerlink" title="3. std::not1 和 std::not2"></a>3. <code>std::not1</code> 和 <code>std::not2</code></h4><p><code>std::not1</code> 和 <code>std::not2</code> 用于对一元和二元函数对象取反。</p>
 <p><strong>示例</strong>：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    std::less&lt;<span class="type">int</span>&gt; less;</span><br><span class="line">    <span class="keyword">auto</span> greater_or_equal = std::<span class="built_in">not1</span>(std::<span class="built_in">bind2nd</span>(less, <span class="number">3</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> it = std::<span class="built_in">find_if</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), greater_or_equal);</span><br><span class="line">    <span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Found: &quot;</span> &lt;&lt; *it &lt;&lt; std::endl; <span class="comment">// 输出 Found: 1</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在这个例子中，<code>std::not1</code> 对 <code>std::less&lt;int&gt;</code> 取反，生成一个新的函数对象 <code>greater_or_equal</code>，用于查找第一个小于等于 3 的元素。</p>
-<h3 id="总结-4">总结</h3>
-<p>函数对象是STL中非常重要的概念，它提供了一种灵活的方式来扩展和定制算法和容器的行为。通过使用函数对象，开发者可以实现状态保持、类型安全和灵活性等优势。STL提供了丰富的预定义函数对象和适配器，同时也支持自定义函数对象，从而满足各种不同的需求。在使用函数对象时，需要注意其特性和适用场景，以确保代码的正确性和效率。</p>
-</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>Eulus</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://elaina-1017.xyz/posts/CPP-STL/" title="CPP_STL">http://elaina-1017.xyz/posts/CPP-STL/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/posts/AI-Chat/" rel="prev" title="AI-Chat"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">AI-Chat</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/" rel="next" title="魔女之旅"><span class="post-nav-text">魔女之旅</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2024 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> Eulus</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>函数对象是STL中非常重要的概念，它提供了一种灵活的方式来扩展和定制算法和容器的行为。通过使用函数对象，开发者可以实现状态保持、类型安全和灵活性等优势。STL提供了丰富的预定义函数对象和适配器，同时也支持自定义函数对象，从而满足各种不同的需求。在使用函数对象时，需要注意其特性和适用场景，以确保代码的正确性和效率。</p>
+</div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>Eulus</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://elaina-1017.xyz/posts/CPP-STL/" title="CPP_STL">http://elaina-1017.xyz/posts/CPP-STL/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/posts/AI-Chat/" rel="prev" title="AI-Chat"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">AI-Chat</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/posts/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/" rel="next" title="C++算法基础"><span class="post-nav-text">C++算法基础</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2024 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> Eulus</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2024-10-11T10:17:00');
   const now = new Date();

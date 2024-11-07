@@ -8,12 +8,12 @@ document.addEventListener("pjax:success", initScrollReveal);
 </script><link rel="icon" type="image/png" href="/favicon.ico"><link rel="mask-icon" href="/favicon.ico" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
     window.Yun = {}
     window.CONFIG = {"hostname":"elaina-1017.xyz","root":"/","title":"魔女之旅","version":"1.10.11","mode":"light","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"local_search":{"path":"/search.xml"},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
-  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="「新」动计划 · 编程入门  基础语法 &amp; 数据类型 2235. 两整数相加  给你两个整数 num1 和 num2，返回这两个整数的和。 示例 1： 输入：num1 &#x3D; 12, num2 &#x3D; 5输出：17解释：num1 是 12，num2 是 5 ，它们的和是 12 + 5 &#x3D; 17 ，因此返回 17 。 示例 2： 输入：num1 &#x3D; -10, num2 &#x3D; 4输出：-6解释：num">
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="「新」动计划 · 编程入门 基础语法 &amp; 数据类型2235. 两整数相加 给你两个整数 num1 和 num2，返回这两个整数的和。 示例 1： 输入：num1 &#x3D; 12, num2 &#x3D; 5输出：17解释：num1 是 12，num2 是 5 ，它们的和是 12 + 5 &#x3D; 17 ，因此返回 17 。  示例 2： 输入：num1 &#x3D; -10, num2 &#x3D; 4输出：-6解释：num1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「新」动计划·编程入门Java">
 <meta property="og:url" content="http://elaina-1017.xyz/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/index.html">
 <meta property="og:site_name" content="Eulus&#39;s Blog">
-<meta property="og:description" content="「新」动计划 · 编程入门  基础语法 &amp; 数据类型 2235. 两整数相加  给你两个整数 num1 和 num2，返回这两个整数的和。 示例 1： 输入：num1 &#x3D; 12, num2 &#x3D; 5输出：17解释：num1 是 12，num2 是 5 ，它们的和是 12 + 5 &#x3D; 17 ，因此返回 17 。 示例 2： 输入：num1 &#x3D; -10, num2 &#x3D; 4输出：-6解释：num">
+<meta property="og:description" content="「新」动计划 · 编程入门 基础语法 &amp; 数据类型2235. 两整数相加 给你两个整数 num1 和 num2，返回这两个整数的和。 示例 1： 输入：num1 &#x3D; 12, num2 &#x3D; 5输出：17解释：num1 是 12，num2 是 5 ，它们的和是 12 + 5 &#x3D; 17 ，因此返回 17 。  示例 2： 输入：num1 &#x3D; -10, num2 &#x3D; 4输出：-6解释：num1">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://elaina-1017.xyz/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/20201004141034_de14c.jpeg">
 <meta property="og:image" content="http://elaina-1017.xyz/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/graph3drawio.png">
@@ -41,28 +41,28 @@ IconifyProviders = {
     // Wait for 1 second before switching API hosts
     rotate: 1000,
   },
-};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Eulus"><img width="96" loading="lazy" src="/./images/elaina.jpg" alt="Eulus"></a><div class="site-author-name"><a href="/about/">Eulus</a></div><span class="site-name">Eulus's Blog</span><sub class="site-subtitle"></sub><div class="site-description">天若有情天亦老，人间正道是沧桑!</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">14</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://mzh.moegirl.org.cn/%E4%BC%8A%E8%95%BE%E5%A8%9C" title="伊蕾娜"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://space.bilibili.com/382479581?spm_id_from=333.1365.0.0" title="哔哩哔哩" style="color:#FF8EB3"><span class="icon iconify" data-icon="ri:bilibili-line"></span></a><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://github.com/Eulus209" title="github" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">「新」动计划 · 编程入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">基础语法 &amp; 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2235-%E4%B8%A4%E6%95%B4%E6%95%B0%E7%9B%B8%E5%8A%A0"><span class="toc-number">1.1.1.</span> <span class="toc-text">2235. 两整数相加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2469-%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.2.</span> <span class="toc-text">2469. 温度转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="toc-number">1.2.</span> <span class="toc-text">条件判断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2413-%E6%9C%80%E5%B0%8F%E5%81%B6%E5%80%8D%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">2413. 最小偶倍数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2236-%E5%88%A4%E6%96%AD%E6%A0%B9%E7%BB%93%E7%82%B9%E6%98%AF%E5%90%A6%E7%AD%89%E4%BA%8E%E5%AD%90%E7%BB%93%E7%82%B9%E4%B9%8B%E5%92%8C"><span class="toc-number">1.2.2.</span> <span class="toc-text">2236. 判断根结点是否等于子结点之和</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF-%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97"><span class="toc-number">1.3.</span> <span class="toc-text">循环 &amp; 循环嵌套</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1486-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.1.</span> <span class="toc-text">1486. 数组异或操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1%EF%BC%9A"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2%EF%BC%9A"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">示例 2：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90%EF%BC%9A"><span class="toc-number">1.3.2.</span> <span class="toc-text">详细解析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1512-%E5%A5%BD%E6%95%B0%E5%AF%B9%E7%9A%84%E6%95%B0%E7%9B%AE"><span class="toc-number">1.3.3.</span> <span class="toc-text">1512. 好数对的数目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="toc-number">1.3.4.</span> <span class="toc-text">详细解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-getOrDefault-%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">1. getOrDefault 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%AD%BE%E5%90%8D%EF%BC%9A"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">方法签名：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-number">1.3.5.2.</span> <span class="toc-text">参数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%9A"><span class="toc-number">1.3.5.3.</span> <span class="toc-text">返回值：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="toc-number">1.3.5.4.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="toc-number">1.3.5.5.</span> <span class="toc-text">解释：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-entrySet-%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.6.</span> <span class="toc-text">2. entrySet 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%AD%BE%E5%90%8D%EF%BC%9A-2"><span class="toc-number">1.3.6.1.</span> <span class="toc-text">方法签名：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%9A-2"><span class="toc-number">1.3.6.2.</span> <span class="toc-text">返回值：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A-2"><span class="toc-number">1.3.6.3.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-number">1.3.6.4.</span> <span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-2"><span class="toc-number">1.3.6.5.</span> <span class="toc-text">解释：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.3.7.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1534-%E7%BB%9F%E8%AE%A1%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84"><span class="toc-number">1.4.</span> <span class="toc-text">1534. 统计好三元组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%A7%8B%E6%80%9D%E8%B7%AF"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">原始思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">优化思路</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A"><span class="toc-number">1.4.1.</span> <span class="toc-text">详细解释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80"><span class="toc-number">1.5.</span> <span class="toc-text">数据库基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#584-%E5%AF%BB%E6%89%BE%E7%94%A8%E6%88%B7%E6%8E%A8%E8%8D%90%E4%BA%BA"><span class="toc-number">1.5.1.</span> <span class="toc-text">584. 寻找用户推荐人</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1757-%E5%8F%AF%E5%9B%9E%E6%94%B6%E4%B8%94%E4%BD%8E%E8%84%82%E7%9A%84%E4%BA%A7%E5%93%81"><span class="toc-number">1.5.2.</span> <span class="toc-text">1757. 可回收且低脂的产品</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%EF%BC%9BASCII-%E7%A0%81"><span class="toc-number">1.6.</span> <span class="toc-text">位运算；ASCII 码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#709-%E8%BD%AC%E6%8D%A2%E6%88%90%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D"><span class="toc-number">1.6.1.</span> <span class="toc-text">709. 转换成小写字母</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.6.2.</span> <span class="toc-text">主要方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">1.6.3.</span> <span class="toc-text">优点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="toc-number">1.6.4.</span> <span class="toc-text">使用场景：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%EF%BC%9A%E5%8F%96%E4%BD%99"><span class="toc-number">1.7.</span> <span class="toc-text">数学：取余</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#258-%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0"><span class="toc-number">1.7.1.</span> <span class="toc-text">258. 各位相加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E6%A0%B9%E5%85%AC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.7.2.</span> <span class="toc-text">数字根公式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A%EF%BC%9A-2"><span class="toc-number">1.7.3.</span> <span class="toc-text">详细解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1281-%E6%95%B4%E6%95%B0%E7%9A%84%E5%90%84%E4%BD%8D%E7%A7%AF%E5%92%8C%E4%B9%8B%E5%B7%AE"><span class="toc-number">1.7.4.</span> <span class="toc-text">1281. 整数的各位积和之差</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%EF%BC%9A%E5%9B%A0%E6%95%B0%E4%B8%8E%E5%80%8D%E6%95%B0"><span class="toc-number">1.8.</span> <span class="toc-text">数学：因数与倍数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#231-2-%E7%9A%84%E5%B9%82"><span class="toc-number">1.8.1.</span> <span class="toc-text">231. 2 的幂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%EF%BC%9A"><span class="toc-number">1.8.2.</span> <span class="toc-text">问题分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="toc-number">1.8.3.</span> <span class="toc-text">解决方案：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.8.4.</span> <span class="toc-text">位运算方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-3"><span class="toc-number">1.8.5.</span> <span class="toc-text">解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A-3"><span class="toc-number">1.8.6.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#326-3-%E7%9A%84%E5%B9%82"><span class="toc-number">1.8.7.</span> <span class="toc-text">326. 3 的幂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#263-%E4%B8%91%E6%95%B0"><span class="toc-number">1.8.8.</span> <span class="toc-text">263. 丑数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84-%E7%9F%A9%E9%98%B5"><span class="toc-number">1.9.</span> <span class="toc-text">数组 &amp; 矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1470-%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84"><span class="toc-number">1.9.1.</span> <span class="toc-text">1470. 重新排列数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#867-%E8%BD%AC%E7%BD%AE%E7%9F%A9%E9%98%B5"><span class="toc-number">1.9.2.</span> <span class="toc-text">867. 转置矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-4"><span class="toc-number">1.9.3.</span> <span class="toc-text">解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-5"><span class="toc-number">1.9.4.</span> <span class="toc-text">解释：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.10.</span> <span class="toc-text">数组 &amp; 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1422-%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BE%97%E5%88%86"><span class="toc-number">1.10.1.</span> <span class="toc-text">1422. 分割字符串的最大得分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2586-%E7%BB%9F%E8%AE%A1%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0"><span class="toc-number">1.10.2.</span> <span class="toc-text">2586. 统计范围内的元音字符串数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="toc-number">1.10.3.</span> <span class="toc-text">代码思路：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#852-%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E7%9A%84%E5%B3%B0%E9%A1%B6%E7%B4%A2%E5%BC%95"><span class="toc-number">1.10.4.</span> <span class="toc-text">852. 山脉数组的峰顶索引</span></a></li></ol></li></ol></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/C/" style="font-size: 21px; color: #4d89c0">C++</a> <a href="/tags/vue/" style="font-size: 21px; color: #4d89c0">vue</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 30px; color: #0078e7">动漫</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 12px; color: #999">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12px; color: #999">数据库</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://elaina-1017.xyz/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Eulus"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Eulus's Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">「新」动计划·编程入门Java</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <span class="post-meta-icon-text">发表于</span> <time title="创建时间：2024-10-15 17:16:17" itemprop="dateCreated datePublished" datetime="2024-10-15T17:16:17+08:00">2024-10-15</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">9.7k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">42m</span></span></span><div class="post-classify"><span class="post-tag"><a class="tag-item" href="/tags/%E7%AE%97%E6%B3%95/" style="--text-color:#8892BF"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">算法</span></a></span></div><div class="post-author"><span class="author-name">Eulus</span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=22826401&auto=1&height=66"></iframe>
-<h1><strong>「新」动计划 · 编程入门</strong></h1>
-<p><img src="/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/20201004141034_de14c.jpeg" alt="20201004141034_de14c" loading="lazy"></p>
-<h2 id="基础语法-数据类型">基础语法 &amp; 数据类型</h2>
-<h3 id="2235-两整数相加"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-two-integers/">2235. 两整数相加</a></h3>
-<blockquote>
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Eulus"><img width="96" loading="lazy" src="/./images/elaina.jpg" alt="Eulus"></a><div class="site-author-name"><a href="/about/">Eulus</a></div><span class="site-name">Eulus's Blog</span><sub class="site-subtitle"></sub><div class="site-description">天若有情天亦老，人间正道是沧桑!</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">14</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">8</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://mzh.moegirl.org.cn/%E4%BC%8A%E8%95%BE%E5%A8%9C" title="伊蕾娜"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://space.bilibili.com/382479581?spm_id_from=333.1365.0.0" title="哔哩哔哩" style="color:#FF8EB3"><span class="icon iconify" data-icon="ri:bilibili-line"></span></a><a class="links-item hty-icon-button" target="_blank" rel="noopener" href="https://github.com/Eulus209" title="github" style="color:#181717"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92-%C2%B7-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">「新」动计划 · 编程入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">基础语法 &amp; 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2235-%E4%B8%A4%E6%95%B4%E6%95%B0%E7%9B%B8%E5%8A%A0"><span class="toc-number">1.1.1.</span> <span class="toc-text">2235. 两整数相加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2469-%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.2.</span> <span class="toc-text">2469. 温度转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="toc-number">1.2.</span> <span class="toc-text">条件判断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2413-%E6%9C%80%E5%B0%8F%E5%81%B6%E5%80%8D%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">2413. 最小偶倍数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2236-%E5%88%A4%E6%96%AD%E6%A0%B9%E7%BB%93%E7%82%B9%E6%98%AF%E5%90%A6%E7%AD%89%E4%BA%8E%E5%AD%90%E7%BB%93%E7%82%B9%E4%B9%8B%E5%92%8C"><span class="toc-number">1.2.2.</span> <span class="toc-text">2236. 判断根结点是否等于子结点之和</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF-%E5%BE%AA%E7%8E%AF%E5%B5%8C%E5%A5%97"><span class="toc-number">1.3.</span> <span class="toc-text">循环 &amp; 循环嵌套</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1486-%E6%95%B0%E7%BB%84%E5%BC%82%E6%88%96%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.1.</span> <span class="toc-text">1486. 数组异或操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1%EF%BC%9A"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">示例 1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2%EF%BC%9A"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">示例 2：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90%EF%BC%9A"><span class="toc-number">1.3.2.</span> <span class="toc-text">详细解析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1512-%E5%A5%BD%E6%95%B0%E5%AF%B9%E7%9A%84%E6%95%B0%E7%9B%AE"><span class="toc-number">1.3.3.</span> <span class="toc-text">1512. 好数对的数目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="toc-number">1.3.4.</span> <span class="toc-text">详细解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-getOrDefault-%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">1. getOrDefault 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%AD%BE%E5%90%8D%EF%BC%9A"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">方法签名：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-number">1.3.5.2.</span> <span class="toc-text">参数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%9A"><span class="toc-number">1.3.5.3.</span> <span class="toc-text">返回值：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="toc-number">1.3.5.4.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="toc-number">1.3.5.5.</span> <span class="toc-text">解释：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-entrySet-%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.6.</span> <span class="toc-text">2. entrySet 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%AD%BE%E5%90%8D%EF%BC%9A-1"><span class="toc-number">1.3.6.1.</span> <span class="toc-text">方法签名：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%9A-1"><span class="toc-number">1.3.6.2.</span> <span class="toc-text">返回值：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A-1"><span class="toc-number">1.3.6.3.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-number">1.3.6.4.</span> <span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-1"><span class="toc-number">1.3.6.5.</span> <span class="toc-text">解释：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.3.7.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1534-%E7%BB%9F%E8%AE%A1%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84"><span class="toc-number">1.4.</span> <span class="toc-text">1534. 统计好三元组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%A7%8B%E6%80%9D%E8%B7%AF"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">原始思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">优化思路</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A"><span class="toc-number">1.4.1.</span> <span class="toc-text">详细解释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80"><span class="toc-number">1.5.</span> <span class="toc-text">数据库基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#584-%E5%AF%BB%E6%89%BE%E7%94%A8%E6%88%B7%E6%8E%A8%E8%8D%90%E4%BA%BA"><span class="toc-number">1.5.1.</span> <span class="toc-text">584. 寻找用户推荐人</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1757-%E5%8F%AF%E5%9B%9E%E6%94%B6%E4%B8%94%E4%BD%8E%E8%84%82%E7%9A%84%E4%BA%A7%E5%93%81"><span class="toc-number">1.5.2.</span> <span class="toc-text">1757. 可回收且低脂的产品</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%EF%BC%9BASCII-%E7%A0%81"><span class="toc-number">1.6.</span> <span class="toc-text">位运算；ASCII 码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#709-%E8%BD%AC%E6%8D%A2%E6%88%90%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D"><span class="toc-number">1.6.1.</span> <span class="toc-text">709. 转换成小写字母</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.6.2.</span> <span class="toc-text">主要方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">1.6.3.</span> <span class="toc-text">优点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="toc-number">1.6.4.</span> <span class="toc-text">使用场景：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%EF%BC%9A%E5%8F%96%E4%BD%99"><span class="toc-number">1.7.</span> <span class="toc-text">数学：取余</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#258-%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0"><span class="toc-number">1.7.1.</span> <span class="toc-text">258. 各位相加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E6%A0%B9%E5%85%AC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.7.2.</span> <span class="toc-text">数字根公式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A%EF%BC%9A-1"><span class="toc-number">1.7.3.</span> <span class="toc-text">详细解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1281-%E6%95%B4%E6%95%B0%E7%9A%84%E5%90%84%E4%BD%8D%E7%A7%AF%E5%92%8C%E4%B9%8B%E5%B7%AE"><span class="toc-number">1.7.4.</span> <span class="toc-text">1281. 整数的各位积和之差</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%EF%BC%9A%E5%9B%A0%E6%95%B0%E4%B8%8E%E5%80%8D%E6%95%B0"><span class="toc-number">1.8.</span> <span class="toc-text">数学：因数与倍数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#231-2-%E7%9A%84%E5%B9%82"><span class="toc-number">1.8.1.</span> <span class="toc-text">231. 2 的幂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%EF%BC%9A"><span class="toc-number">1.8.2.</span> <span class="toc-text">问题分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="toc-number">1.8.3.</span> <span class="toc-text">解决方案：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.8.4.</span> <span class="toc-text">位运算方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-2"><span class="toc-number">1.8.5.</span> <span class="toc-text">解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A-2"><span class="toc-number">1.8.6.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#326-3-%E7%9A%84%E5%B9%82"><span class="toc-number">1.8.7.</span> <span class="toc-text">326. 3 的幂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#263-%E4%B8%91%E6%95%B0"><span class="toc-number">1.8.8.</span> <span class="toc-text">263. 丑数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84-%E7%9F%A9%E9%98%B5"><span class="toc-number">1.9.</span> <span class="toc-text">数组 &amp; 矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1470-%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97%E6%95%B0%E7%BB%84"><span class="toc-number">1.9.1.</span> <span class="toc-text">1470. 重新排列数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#867-%E8%BD%AC%E7%BD%AE%E7%9F%A9%E9%98%B5"><span class="toc-number">1.9.2.</span> <span class="toc-text">867. 转置矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-3"><span class="toc-number">1.9.3.</span> <span class="toc-text">解释：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-4"><span class="toc-number">1.9.4.</span> <span class="toc-text">解释：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.10.</span> <span class="toc-text">数组 &amp; 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1422-%E5%88%86%E5%89%B2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BE%97%E5%88%86"><span class="toc-number">1.10.1.</span> <span class="toc-text">1422. 分割字符串的最大得分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2586-%E7%BB%9F%E8%AE%A1%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0"><span class="toc-number">1.10.2.</span> <span class="toc-text">2586. 统计范围内的元音字符串数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="toc-number">1.10.3.</span> <span class="toc-text">代码思路：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#852-%E5%B1%B1%E8%84%89%E6%95%B0%E7%BB%84%E7%9A%84%E5%B3%B0%E9%A1%B6%E7%B4%A2%E5%BC%95"><span class="toc-number">1.10.4.</span> <span class="toc-text">852. 山脉数组的峰顶索引</span></a></li></ol></li></ol></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/C/" style="font-size: 21px; color: #4d89c0">C++</a> <a href="/tags/vue/" style="font-size: 21px; color: #4d89c0">vue</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 30px; color: #0078e7">动漫</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 12px; color: #999">学习</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12px; color: #999">数据库</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://elaina-1017.xyz/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Eulus"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Eulus's Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">「新」动计划·编程入门Java</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <span class="post-meta-icon-text">发表于</span> <time title="创建时间：2024-10-15 17:16:17" itemprop="dateCreated datePublished" datetime="2024-10-15T17:16:17+08:00">2024-10-15</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">9.7k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">43m</span></span></span><div class="post-classify"><span class="post-tag"><a class="tag-item" href="/tags/%E7%AE%97%E6%B3%95/" style="--text-color:#8892BF"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">算法</span></a></span></div><div class="post-author"><span class="author-name">Eulus</span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=22826401&auto=1&height=66"></iframe>
+
+<h1 id="「新」动计划-·-编程入门"><a href="#「新」动计划-·-编程入门" class="headerlink" title="「新」动计划 · 编程入门"></a><strong>「新」动计划 · 编程入门</strong></h1><p><img src="/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/20201004141034_de14c.jpeg" alt="20201004141034_de14c" loading="lazy"></p>
+<h2 id="基础语法-数据类型"><a href="#基础语法-数据类型" class="headerlink" title="基础语法 &amp; 数据类型"></a>基础语法 &amp; 数据类型</h2><h3 id="2235-两整数相加"><a href="#2235-两整数相加" class="headerlink" title="2235. 两整数相加"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-two-integers/">2235. 两整数相加</a></h3><blockquote>
 <p>给你两个整数 <code>num1</code> 和 <code>num2</code>，返回这两个整数的和。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：num1 = 12, num2 = 5</span><br><span class="line">输出：17</span><br><span class="line">解释：num1 是 12，num2 是<span class="number"> 5 </span>，它们的和是<span class="number"> 12 </span>+<span class="number"> 5 </span>=<span class="number"> 17 </span>，因此返回<span class="number"> 17 </span>。</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line">输入：<span class="symbol">num1</span> = <span class="number">-10</span>, <span class="symbol">num2</span> = <span class="number">4</span></span><br><span class="line">输出：<span class="number">-6</span></span><br><span class="line">解释：<span class="symbol">num1</span> + <span class="symbol">num2</span> = <span class="number">-6</span> ，因此返回 <span class="number">-6</span> 。</span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>-100 &lt;= num1, num2 &lt;= 100</code></li>
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> num1, <span class="type">int</span> num2)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> num1+num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2469-温度转换"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-the-temperature/">2469. 温度转换</a></h3>
-<blockquote>
+
+<h3 id="2469-温度转换"><a href="#2469-温度转换" class="headerlink" title="2469. 温度转换"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-the-temperature/">2469. 温度转换</a></h3><blockquote>
 <p>给你一个四舍五入到两位小数的非负浮点数 <code>celsius</code> 来表示温度，以 <strong>摄氏度</strong>（<strong>Celsius</strong>）为单位。</p>
 <p>你需要将摄氏度转换为 <strong>开氏度</strong>（<strong>Kelvin</strong>）和 <strong>华氏度</strong>（<strong>Fahrenheit</strong>），并以数组 <code>ans = [kelvin, fahrenheit]</code> 的形式返回结果。</p>
-<p>返回数组 <em><code>ans</code></em> 。与实际答案误差不超过 <code>10-5</code> 的会视为正确答案**。**</p>
+<p>返回数组 <em><code>ans</code></em> 。与实际答案误差不超过 <code>10-5</code> 的会视为正确答案<strong>。</strong></p>
 <p><strong>注意：</strong></p>
 <ul>
 <li><code>开氏度 = 摄氏度 + 273.15</code></li>
@@ -70,28 +70,31 @@ IconifyProviders = {
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span>[] convertTemperature(<span class="type">double</span> celsius) &#123;</span><br><span class="line">        <span class="type">double</span>[] ans=<span class="keyword">new</span> <span class="title class_">double</span>[<span class="number">2</span>];</span><br><span class="line">        ans[<span class="number">0</span>]=celsius+<span class="number">273.15</span>;</span><br><span class="line">        ans[<span class="number">1</span>]=celsius*<span class="number">1.80</span>+<span class="number">32.00</span>;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="条件判断">条件判断</h2>
-<h3 id="2413-最小偶倍数"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-even-multiple/">2413. 最小偶倍数</a></h3>
-<p>给你一个正整数 <code>n</code> ，返回 <code>2</code> 和 <code>n</code> 的最小公倍数（正整数）。</p>
+
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><h3 id="2413-最小偶倍数"><a href="#2413-最小偶倍数" class="headerlink" title="2413. 最小偶倍数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-even-multiple/">2413. 最小偶倍数</a></h3><p>给你一个正整数 <code>n</code> ，返回 <code>2</code> 和 <code>n</code> 的最小公倍数（正整数）。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：n = 5</span><br><span class="line">输出：10</span><br><span class="line">解释：5 和<span class="number"> 2 </span>的最小公倍数是<span class="number"> 10 </span>。</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：n = 6</span><br><span class="line">输出：6</span><br><span class="line">解释：6 和<span class="number"> 2 </span>的最小公倍数是<span class="number"> 6 </span>。注意数字会是它自身的倍数。</span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= n &lt;= 150</code></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">smallestEvenMultiple</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>*n; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2236-判断根结点是否等于子结点之和"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/root-equals-sum-of-children/">2236. 判断根结点是否等于子结点之和</a></h3>
-<blockquote>
+
+<h3 id="2236-判断根结点是否等于子结点之和"><a href="#2236-判断根结点是否等于子结点之和" class="headerlink" title="2236. 判断根结点是否等于子结点之和"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/root-equals-sum-of-children/">2236. 判断根结点是否等于子结点之和</a></h3><blockquote>
 <p>给你一个 <strong>二叉树</strong> 的根结点 <code>root</code>，该二叉树由恰好 <code>3</code> 个结点组成：根结点、左子结点和右子结点。</p>
 <p>如果根结点值等于两个子结点值之和，返回 <code>true</code> ，否则返回 <code>false</code> 。</p>
 <p><strong>示例 1：</strong></p>
 <p><img src="/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/graph3drawio.png" alt="img" loading="lazy"></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：root = [10,4,6]</span><br><span class="line">输出：true</span><br><span class="line">解释：根结点、左子结点和右子结点的值分别是<span class="number"> 10 </span>、4 和<span class="number"> 6 </span>。</span><br><span class="line">由于<span class="number"> 10 </span>等于<span class="number"> 4 </span>+<span class="number"> 6 </span>，因此返回 true 。</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <p><img src="/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/graph3drawio-1.png" alt="img" loading="lazy"></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：root = [5,3,1]</span><br><span class="line">输出：false</span><br><span class="line">解释：根结点、左子结点和右子结点的值分别是<span class="number"> 5 </span>、3 和<span class="number"> 1 </span>。</span><br><span class="line">由于<span class="number"> 5 </span>不等于<span class="number"> 3 </span>+<span class="number"> 1 </span>，因此返回 false 。</span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li>树只包含根结点、左子结点和右子结点</li>
@@ -99,20 +102,23 @@ IconifyProviders = {
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkTree</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> root.val==root.left.val+root.right.val?<span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="循环-循环嵌套">循环 &amp; 循环嵌套</h2>
-<h3 id="1486-数组异或操作"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/xor-operation-in-an-array/">1486. 数组异或操作</a></h3>
-<blockquote>
+
+<h2 id="循环-循环嵌套"><a href="#循环-循环嵌套" class="headerlink" title="循环 &amp; 循环嵌套"></a>循环 &amp; 循环嵌套</h2><h3 id="1486-数组异或操作"><a href="#1486-数组异或操作" class="headerlink" title="1486. 数组异或操作"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/xor-operation-in-an-array/">1486. 数组异或操作</a></h3><blockquote>
 <p>给你两个整数，<code>n</code> 和 <code>start</code> 。</p>
 <p>数组 <code>nums</code> 定义为：<code>nums[i] = start + 2*i</code>（下标从 0 开始）且 <code>n == nums.length</code> 。</p>
 <p>请返回 <code>nums</code> 中所有元素按位异或（<strong>XOR</strong>）后得到的结果。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：n = 5, start = 0</span><br><span class="line">输出：8</span><br><span class="line">解释：数组 nums 为 [0, 2, 4, 6, 8]，其中 (0 ^<span class="number"> 2 </span>^<span class="number"> 4 </span>^<span class="number"> 6 </span>^ 8) =<span class="number"> 8 </span>。</span><br><span class="line">     &quot;^&quot; 为按位异或 XOR 运算符。</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：n = 4, start = 3</span><br><span class="line">输出：8</span><br><span class="line">解释：数组 nums 为 [3, 5, 7, 9]，其中 (3 ^<span class="number"> 5 </span>^<span class="number"> 7 </span>^ 9) = 8.</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 3：</strong></p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">输入：n = <span class="number">1</span>, <span class="literal">start</span> = <span class="number">7</span></span><br><span class="line">输出：<span class="number">7</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 4：</strong></p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">输入：n = <span class="number">10</span>, <span class="literal">start</span> = <span class="number">5</span></span><br><span class="line">输出：<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= n &lt;= 1000</code></li>
@@ -121,57 +127,50 @@ IconifyProviders = {
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">xorOperation</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> start)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            x ^= start + <span class="number">2</span> * i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>在异或操作中，两个数的对应位进行比较：</p>
 <ul>
-<li>
-<p>如果位相同，则结果为 <code>0</code></p>
+<li><p>如果位相同，则结果为 <code>0</code></p>
 </li>
-<li>
-<p>如果位不同，则结果为 <code>1</code></p>
+<li><p>如果位不同，则结果为 <code>1</code></p>
 <p>示例分析</p>
-<h4 id="示例-1：">示例 1：</h4>
-<p>输入：<code>n = 5</code>, <code>start = 0</code></p>
+<h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><p>输入：<code>n = 5</code>, <code>start = 0</code></p>
 <ol>
-<li>
-<p>生成数组 <code>nums</code>：</p>
+<li><p>生成数组 <code>nums</code>：</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">css</span>复制代码nums[<span class="number">0</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">0</span> = <span class="number">0</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">1</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">1</span> = <span class="number">2</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">2</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">2</span> = <span class="number">4</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">3</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">3</span> = <span class="number">6</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">4</span>] = <span class="number">0</span> + <span class="number">2</span> * <span class="number">4</span> = <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
 <p>因此，<code>nums = [0, 2, 4, 6, 8]</code>。</p>
 </li>
-<li>
-<p>对所有元素按位异或：</p>
+<li><p>对所有元素按位异或：</p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">复制代码0 ^<span class="number"> 2 </span>= 2</span><br><span class="line">2 ^<span class="number"> 4 </span>= 6</span><br><span class="line">6 ^<span class="number"> 6 </span>= 0</span><br><span class="line">0 ^<span class="number"> 8 </span>= 8</span><br></pre></td></tr></table></figure>
+
 <p>因此，返回的结果是 <code>8</code>。</p>
 </li>
 </ol>
-<h4 id="示例-2：">示例 2：</h4>
-<p>输入：<code>n = 4</code>, <code>start = 3</code></p>
+<h4 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h4><p>输入：<code>n = 4</code>, <code>start = 3</code></p>
 <ol>
-<li>
-<p>生成数组 <code>nums</code>：</p>
+<li><p>生成数组 <code>nums</code>：</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">css</span>复制代码nums[<span class="number">0</span>] = <span class="number">3</span> + <span class="number">2</span> * <span class="number">0</span> = <span class="number">3</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">1</span>] = <span class="number">3</span> + <span class="number">2</span> * <span class="number">1</span> = <span class="number">5</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">2</span>] = <span class="number">3</span> + <span class="number">2</span> * <span class="number">2</span> = <span class="number">7</span></span><br><span class="line"><span class="attribute">nums</span>[<span class="number">3</span>] = <span class="number">3</span> + <span class="number">2</span> * <span class="number">3</span> = <span class="number">9</span></span><br></pre></td></tr></table></figure>
+
 <p>因此，<code>nums = [3, 5, 7, 9]</code>。</p>
 </li>
-<li>
-<p>对所有元素按位异或：</p>
+<li><p>对所有元素按位异或：</p>
 <figure class="highlight basic"><table><tr><td class="code"><pre><span class="line"><span class="symbol">3 </span>^ <span class="number">5</span> = <span class="number">6</span></span><br><span class="line"><span class="symbol">6 </span>^ <span class="number">7</span> = <span class="number">1</span></span><br><span class="line"><span class="symbol">1 </span>^ <span class="number">9</span> = <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
 <p>因此，返回的结果是 <code>8</code>。</p>
 </li>
 </ol>
-<h3 id="详细解析：">详细解析：</h3>
-<ol>
-<li><strong>变量定义</strong>：
-<ul>
+<h3 id="详细解析："><a href="#详细解析：" class="headerlink" title="详细解析："></a>详细解析：</h3><ol>
+<li><strong>变量定义</strong>：<ul>
 <li><code>x</code>：用于存储当前的异或结果，初始值为 <code>0</code>。</li>
 </ul>
 </li>
-<li><strong>循环</strong>：
-<ul>
+<li><strong>循环</strong>：<ul>
 <li>循环从 <code>i = 0</code> 开始，一直到 <code>i = n-1</code>。每次迭代计算当前元素 <code>start + 2 * i</code>，并将其与 <code>x</code> 进行异或操作。由于异或具有结合律和交换律，我们可以不必担心顺序。</li>
 </ul>
 </li>
-<li><strong>返回结果</strong>：
-<ul>
+<li><strong>返回结果</strong>：<ul>
 <li>循环结束后，<code>x</code> 存储的就是数组中所有元素的异或结果。</li>
 </ul>
 </li>
@@ -179,17 +178,19 @@ IconifyProviders = {
 </li>
 </ul>
 </blockquote>
-<h3 id="1512-好数对的数目"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-good-pairs/">1512. 好数对的数目</a></h3>
-<blockquote>
+<h3 id="1512-好数对的数目"><a href="#1512-好数对的数目" class="headerlink" title="1512. 好数对的数目"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-good-pairs/">1512. 好数对的数目</a></h3><blockquote>
 <p>给你一个整数数组 <code>nums</code> 。</p>
-<p>如果一组数字 <code>(i,j)</code> 满足 <code>nums[i]</code> == <code>nums[j]</code> 且 <code>i</code> &lt; <code>j</code> ，就可以认为这是一组 <strong>好数对</strong> 。</p>
+<p>如果一组数字 <code>(i,j)</code> 满足 <code>nums[i]</code> &#x3D;&#x3D; <code>nums[j]</code> 且 <code>i</code> &lt; <code>j</code> ，就可以认为这是一组 <strong>好数对</strong> 。</p>
 <p>返回好数对的数目。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,2,3,1,1,3]</span><br><span class="line">输出：4</span><br><span class="line">解释：有<span class="number"> 4 </span>组好数对，分别是 (0,3), (0,4), (3,4), (2,5) ，下标从<span class="number"> 0 </span>开始</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">输入：nums = [<span class="number">1,1,1,1</span>]</span><br><span class="line">输出：<span class="number">6</span></span><br><span class="line">解释：数组中的每组数字都是好数对</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 3：</strong></p>
 <figure class="highlight fix"><table><tr><td class="code"><pre><span class="line"><span class="attr">输入：nums </span>=<span class="string"> [1,2,3]</span></span><br><span class="line"><span class="string">输出：0</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= nums.length &lt;= 100</code></li>
@@ -198,87 +199,75 @@ IconifyProviders = {
 </blockquote>
 <p><strong>暴力统计</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numIdenticalPairs</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> n=nums.length,count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;n;++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[j]==nums[i]) count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>组合计数</strong></p>
 <blockquote>
-<p>用哈希表统计每个数在序列中出现的次数，假设数字 k 在序列中出现的次数为 v，那么满足题目中所说的nums[i]=nums[j]=k(i&lt;j) 的 (i,j) 的数量就是v(v−1)/2，即 k 这个数值对答案的贡献是v(v−1)/2。我们只需要把所有数值的贡献相加，即可得到答案。</p>
+<p>用哈希表统计每个数在序列中出现的次数，假设数字 k 在序列中出现的次数为 v，那么满足题目中所说的nums[i]&#x3D;nums[j]&#x3D;k(i&lt;j) 的 (i,j) 的数量就是v(v−1)&#x2F;2，即 k 这个数值对答案的贡献是v(v−1)&#x2F;2。我们只需要把所有数值的贡献相加，即可得到答案。</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numIdenticalPairs</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">1000</span>];</span><br><span class="line">        <span class="type">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.length;++i) arr[nums[i]]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;arr.length;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]&gt;=<span class="number">2</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                res+=arr[i]*(arr[i]-<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>官方</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numIdenticalPairs</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建一个哈希表，用于存储每个数字出现的次数</span></span><br><span class="line">        Map&lt;Integer, Integer&gt; m = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="comment">// 遍历数组中的每个数字</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num : nums) &#123;</span><br><span class="line">            <span class="comment">// 将数字作为键，出现次数作为值存入哈希表</span></span><br><span class="line">            <span class="comment">// 如果数字已经存在，则将其出现次数加 1</span></span><br><span class="line">            m.put(num, m.getOrDefault(num, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 遍历哈希表中的每个键值对</span></span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : m.entrySet()) &#123;</span><br><span class="line">            <span class="comment">// 获取当前数字的出现次数</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">v</span> <span class="operator">=</span> entry.getValue();</span><br><span class="line">            <span class="comment">// 计算当前数字可以形成的数对数量</span></span><br><span class="line">            <span class="comment">// 公式为 v * (v - 1) / 2，表示从 v 个数字中选出 2 个的组合数</span></span><br><span class="line">            ans += v * (v - <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回满足条件的数对数量</span></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<h3 id="详细解释：">详细解释：</h3>
-<ol>
-<li><strong>创建哈希表</strong>：
-<ul>
+<h3 id="详细解释："><a href="#详细解释：" class="headerlink" title="详细解释："></a>详细解释：</h3><ol>
+<li><strong>创建哈希表</strong>：<ul>
 <li><code>Map&lt;Integer, Integer&gt; m = new HashMap&lt;Integer, Integer&gt;();</code>：创建一个 <code>HashMap</code>，用于存储每个数字出现的次数。键是数字，值是该数字出现的次数。</li>
 </ul>
 </li>
-<li><strong>遍历数组中的每个数字</strong>：
-<ul>
+<li><strong>遍历数组中的每个数字</strong>：<ul>
 <li><code>for (int num : nums)</code>：遍历数组中的每个数字。</li>
 <li><code>m.put(num, m.getOrDefault(num, 0) + 1);</code>：将数字作为键，出现次数作为值存入哈希表。如果数字已经存在，则将其出现次数加 1。<code>m.getOrDefault(num, 0)</code> 表示如果哈希表中没有该数字，则返回默认值 0。</li>
 </ul>
 </li>
-<li><strong>计算数对数量</strong>：
-<ul>
+<li><strong>计算数对数量</strong>：<ul>
 <li><code>int ans = 0;</code>：初始化计数器为 0。</li>
 <li><code>for (Map.Entry&lt;Integer, Integer&gt; entry : m.entrySet())</code>：遍历哈希表中的每个键值对。</li>
 <li><code>int v = entry.getValue();</code>：获取当前数字的出现次数。</li>
 <li><code>ans += v * (v - 1) / 2;</code>：计算当前数字可以形成的数对数量。公式 <code>v * (v - 1) / 2</code> 表示从 <code>v</code> 个数字中选出 2 个的组合数。例如，如果有 3 个相同的数字，可以形成的数对数量为 <code>3 * (3 - 1) / 2 = 3</code>。</li>
 </ul>
 </li>
-<li><strong>返回结果</strong>：
-<ul>
-<li><code>return ans;</code>：返回满足条件的数对数量。<br>
-<code>getOrDefault</code> 和 <code>entrySet</code> 这两个方法。</li>
+<li><strong>返回结果</strong>：<ul>
+<li><code>return ans;</code>：返回满足条件的数对数量。<br><code>getOrDefault</code> 和 <code>entrySet</code> 这两个方法。</li>
 </ul>
 </li>
 </ol>
-<h3 id="1-getOrDefault-方法">1. <code>getOrDefault</code> 方法</h3>
-<p><code>getOrDefault</code> 是 <code>Map</code> 接口中的一个方法，用于获取指定键的值，如果键不存在，则返回一个默认值。</p>
-<h4 id="方法签名：">方法签名：</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">V <span class="title function_">getOrDefault</span><span class="params">(Object key, V defaultValue)</span></span><br></pre></td></tr></table></figure>
-<h4 id="参数：">参数：</h4>
-<ul>
+<h3 id="1-getOrDefault-方法"><a href="#1-getOrDefault-方法" class="headerlink" title="1. getOrDefault 方法"></a>1. <code>getOrDefault</code> 方法</h3><p><code>getOrDefault</code> 是 <code>Map</code> 接口中的一个方法，用于获取指定键的值，如果键不存在，则返回一个默认值。</p>
+<h4 id="方法签名："><a href="#方法签名：" class="headerlink" title="方法签名："></a>方法签名：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">V <span class="title function_">getOrDefault</span><span class="params">(Object key, V defaultValue)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h4><ul>
 <li><code>key</code>：要获取值的键。</li>
 <li><code>defaultValue</code>：如果键不存在时返回的默认值。</li>
 </ul>
-<h4 id="返回值：">返回值：</h4>
-<ul>
+<h4 id="返回值："><a href="#返回值：" class="headerlink" title="返回值："></a>返回值：</h4><ul>
 <li>如果键存在，返回键对应的值。</li>
 <li>如果键不存在，返回指定的默认值。</li>
 </ul>
-<h4 id="示例：">示例：</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="number">1</span>, <span class="string">&quot;One&quot;</span>);</span><br><span class="line">map.put(<span class="number">2</span>, <span class="string">&quot;Two&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> map.getOrDefault(<span class="number">3</span>, <span class="string">&quot;Default&quot;</span>);</span><br><span class="line">System.out.println(value);  <span class="comment">// 输出: Default</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释：">解释：</h4>
-<ul>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="number">1</span>, <span class="string">&quot;One&quot;</span>);</span><br><span class="line">map.put(<span class="number">2</span>, <span class="string">&quot;Two&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> map.getOrDefault(<span class="number">3</span>, <span class="string">&quot;Default&quot;</span>);</span><br><span class="line">System.out.println(value);  <span class="comment">// 输出: Default</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h4><ul>
 <li><code>map.getOrDefault(3, &quot;Default&quot;)</code>：尝试获取键 <code>3</code> 对应的值，由于键 <code>3</code> 不存在，返回默认值 <code>&quot;Default&quot;</code>。</li>
 </ul>
-<h3 id="2-entrySet-方法">2. <code>entrySet</code> 方法</h3>
-<p><code>entrySet</code> 是 <code>Map</code> 接口中的一个方法，用于返回一个包含所有键值对的集合视图。每个键值对都表示为一个 <code>Map.Entry</code> 对象。</p>
-<h4 id="方法签名：-2">方法签名：</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet()</span><br></pre></td></tr></table></figure>
-<h4 id="返回值：-2">返回值：</h4>
-<ul>
+<h3 id="2-entrySet-方法"><a href="#2-entrySet-方法" class="headerlink" title="2. entrySet 方法"></a>2. <code>entrySet</code> 方法</h3><p><code>entrySet</code> 是 <code>Map</code> 接口中的一个方法，用于返回一个包含所有键值对的集合视图。每个键值对都表示为一个 <code>Map.Entry</code> 对象。</p>
+<h4 id="方法签名：-1"><a href="#方法签名：-1" class="headerlink" title="方法签名："></a>方法签名：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet()</span><br></pre></td></tr></table></figure>
+
+<h4 id="返回值：-1"><a href="#返回值：-1" class="headerlink" title="返回值："></a>返回值：</h4><ul>
 <li>返回一个包含所有键值对的 <code>Set</code>，每个元素都是一个 <code>Map.Entry</code> 对象。</li>
 </ul>
-<h4 id="示例：-2">示例：</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="number">1</span>, <span class="string">&quot;One&quot;</span>);</span><br><span class="line">map.put(<span class="number">2</span>, <span class="string">&quot;Two&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer, String&gt; entry : map.entrySet()) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Key: &quot;</span> + entry.getKey() + <span class="string">&quot;, Value: &quot;</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="输出：">输出：</h4>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">Key:</span> <span class="number">1</span><span class="string">,</span> <span class="attr">Value:</span> <span class="string">One</span></span><br><span class="line"><span class="attr">Key:</span> <span class="number">2</span><span class="string">,</span> <span class="attr">Value:</span> <span class="string">Two</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释：-2">解释：</h4>
-<ul>
+<h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">map.put(<span class="number">1</span>, <span class="string">&quot;One&quot;</span>);</span><br><span class="line">map.put(<span class="number">2</span>, <span class="string">&quot;Two&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer, String&gt; entry : map.entrySet()) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Key: &quot;</span> + entry.getKey() + <span class="string">&quot;, Value: &quot;</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">Key:</span> <span class="number">1</span><span class="string">,</span> <span class="attr">Value:</span> <span class="string">One</span></span><br><span class="line"><span class="attr">Key:</span> <span class="number">2</span><span class="string">,</span> <span class="attr">Value:</span> <span class="string">Two</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="解释：-1"><a href="#解释：-1" class="headerlink" title="解释："></a>解释：</h4><ul>
 <li><code>map.entrySet()</code>：返回一个包含所有键值对的 <code>Set</code>。</li>
 <li><code>for (Map.Entry&lt;Integer, String&gt; entry : map.entrySet())</code>：遍历 <code>Set</code> 中的每个 <code>Map.Entry</code> 对象。</li>
 <li><code>entry.getKey()</code>：获取当前键值对的键。</li>
 <li><code>entry.getValue()</code>：获取当前键值对的值。</li>
 </ul>
 <ol>
-<li>
-<p><strong><code>getOrDefault</code> 方法</strong>：</p>
+<li><p><strong><code>getOrDefault</code> 方法</strong>：</p>
 <ul>
-<li><code>m.put(num, m.getOrDefault(num, 0) + 1);</code>：
-<ul>
+<li><code>m.put(num, m.getOrDefault(num, 0) + 1);</code>：<ul>
 <li><code>m.getOrDefault(num, 0)</code>：获取键 <code>num</code> 对应的值，如果键 <code>num</code> 不存在，返回默认值 <code>0</code>。</li>
 <li><code>m.getOrDefault(num, 0) + 1</code>：将获取到的值加 1。</li>
 <li><code>m.put(num, ...)</code>：将键 <code>num</code> 和更新后的值存入哈希表。</li>
@@ -286,11 +275,9 @@ IconifyProviders = {
 </li>
 </ul>
 </li>
-<li>
-<p><strong><code>entrySet</code> 方法</strong>：</p>
+<li><p><strong><code>entrySet</code> 方法</strong>：</p>
 <ul>
-<li><code>for (Map.Entry&lt;Integer, Integer&gt; entry : m.entrySet())</code>：
-<ul>
+<li><code>for (Map.Entry&lt;Integer, Integer&gt; entry : m.entrySet())</code>：<ul>
 <li><code>m.entrySet()</code>：返回一个包含所有键值对的 <code>Set</code>。</li>
 <li><code>for (Map.Entry&lt;Integer, Integer&gt; entry : ...)</code>：遍历 <code>Set</code> 中的每个 <code>Map.Entry</code> 对象。</li>
 <li><code>int v = entry.getValue();</code>：获取当前键值对的值（即数字出现的次数）。</li>
@@ -300,15 +287,13 @@ IconifyProviders = {
 </ul>
 </li>
 </ol>
-<h3 id="总结：">总结：</h3>
-<ul>
-<li><strong><code>getOrDefault</code></strong>：用于获取指定键的值，如果键不存在，返回默认值。</li>
-<li><strong><code>entrySet</code></strong>：返回一个包含所有键值对的集合视图，方便遍历和操作哈希表中的键值对。</li>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul>
+<li>**<code>getOrDefault</code>**：用于获取指定键的值，如果键不存在，返回默认值。</li>
+<li>**<code>entrySet</code>**：返回一个包含所有键值对的集合视图，方便遍历和操作哈希表中的键值对。</li>
 </ul>
 <p>这两个方法在处理哈希表时非常有用，可以简化代码逻辑，提高代码的可读性和效率。</p>
 </blockquote>
-<h2 id="1534-统计好三元组"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-good-triplets/">1534. 统计好三元组</a></h2>
-<blockquote>
+<h2 id="1534-统计好三元组"><a href="#1534-统计好三元组" class="headerlink" title="1534. 统计好三元组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-good-triplets/">1534. 统计好三元组</a></h2><blockquote>
 <p>给你一个整数数组 <code>arr</code> ，以及 <code>a</code>、<code>b</code> 、<code>c</code> 三个整数。请你统计其中好三元组的数量。</p>
 <p>如果三元组 <code>(arr[i], arr[j], arr[k])</code> 满足下列全部条件，则认为它是一个 <strong>好三元组</strong> 。</p>
 <ul>
@@ -321,8 +306,10 @@ IconifyProviders = {
 <p>返回 <strong>好三元组的数量</strong> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line">输入：arr = [<span class="number">3</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">9</span>,<span class="number">7</span>], a = <span class="number">7</span>, b = <span class="number">2</span>, c = <span class="number">3</span></span><br><span class="line">输出：<span class="number">4</span></span><br><span class="line">解释：一共有 <span class="number">4</span> 个好三元组：[<span class="comment">(3,0,1)</span>, <span class="comment">(3,0,1)</span>, <span class="comment">(3,1,1)</span>, <span class="comment">(0,1,1)</span>] 。</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">输入：arr = <span class="selector-attr">[1,1,2,2,3]</span>, <span class="selector-tag">a</span> = <span class="number">0</span>, <span class="selector-tag">b</span> = <span class="number">0</span>, c = <span class="number">1</span></span><br><span class="line">输出：<span class="number">0</span></span><br><span class="line">解释：不存在满足所有条件的三元组。</span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>3 &lt;= arr.length &lt;= 100</code></li>
@@ -332,48 +319,42 @@ IconifyProviders = {
 </blockquote>
 <p><strong>枚举</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">countGoodTriplets</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)</span> &#123;</span><br><span class="line">        <span class="type">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;arr.length-<span class="number">2</span>;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;arr.length-<span class="number">1</span>;++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=j+<span class="number">1</span>;k&lt;arr.length;++k)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(IsRight(arr[i],arr[j],a)&amp;&amp;IsRight(arr[j],arr[k],b)&amp;&amp;IsRight(arr[i],arr[k],c))</span><br><span class="line">                    &#123;</span><br><span class="line">                        count++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">IsRight</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> x)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> res=a-b;</span><br><span class="line">        <span class="keyword">if</span>(res&lt;<span class="number">0</span>) res=-res;</span><br><span class="line">        <span class="keyword">if</span>(res&gt;x) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>优化思路与算法</strong></p>
 <blockquote>
-<h4 id="原始思路">原始思路</h4>
-<p>原始代码使用了三重循环来枚举所有可能的三元组 <code>(i, j, k)</code>，并检查每个三元组是否满足条件 <code>|arr[i] - arr[j]| ≤ a</code>、<code>|arr[j] - arr[k]| ≤ b</code> 和 <code>|arr[i] - arr[k]| ≤ c</code>。这种方法的时间复杂度是 O(n^3)，在数组长度较大时效率较低。</p>
-<h4 id="优化思路">优化思路</h4>
-<p>我们可以通过减少不必要的枚举来优化算法。具体来说，我们可以先枚举 <code>j</code> 和 <code>k</code>，然后再检查 <code>i</code> 是否满足条件。这样可以减少一些不必要的枚举。</p>
+<h4 id="原始思路"><a href="#原始思路" class="headerlink" title="原始思路"></a>原始思路</h4><p>原始代码使用了三重循环来枚举所有可能的三元组 <code>(i, j, k)</code>，并检查每个三元组是否满足条件 <code>|arr[i] - arr[j]| ≤ a</code>、<code>|arr[j] - arr[k]| ≤ b</code> 和 <code>|arr[i] - arr[k]| ≤ c</code>。这种方法的时间复杂度是 O(n^3)，在数组长度较大时效率较低。</p>
+<h4 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h4><p>我们可以通过减少不必要的枚举来优化算法。具体来说，我们可以先枚举 <code>j</code> 和 <code>k</code>，然后再检查 <code>i</code> 是否满足条件。这样可以减少一些不必要的枚举。</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> <span class="title function_">countGoodTriplets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; arr, <span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.size(), cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> j + <span class="number">1</span>; k &lt; n; ++k) &#123;</span><br><span class="line">                <span class="keyword">if</span> (abs(arr[j] - arr[k]) &lt;= b) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; j; ++i) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (abs(arr[i] - arr[j]) &lt;= a &amp;&amp; abs(arr[i] - arr[k]) &lt;= c) &#123;</span><br><span class="line">                            ++cnt;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<h3 id="详细解释">详细解释</h3>
-<ol>
-<li><strong>初始化</strong>：
-<ul>
+<h3 id="详细解释"><a href="#详细解释" class="headerlink" title="详细解释"></a>详细解释</h3><ol>
+<li><strong>初始化</strong>：<ul>
 <li><code>int n = arr.size(), cnt = 0;</code>：获取数组的长度 <code>n</code>，并初始化计数器 <code>cnt</code> 为 0。</li>
 </ul>
 </li>
-<li><strong>枚举 <code>j</code> 和 <code>k</code></strong>：
-<ul>
+<li>**枚举 <code>j</code> 和 <code>k</code>**：<ul>
 <li><code>for (int j = 0; j &lt; n; ++j)</code>：遍历数组中的每个元素 <code>arr[j]</code>。</li>
 <li><code>for (int k = j + 1; k &lt; n; ++k)</code>：遍历 <code>arr[j]</code> 之后的每个元素 <code>arr[k]</code>。</li>
 <li><code>if (abs(arr[j] - arr[k]) &lt;= b)</code>：检查 <code>|arr[j] - arr[k]| ≤ b</code> 的条件是否满足。</li>
 </ul>
 </li>
-<li><strong>枚举 <code>i</code>（<code>i &lt; j</code>）</strong>：
-<ul>
+<li><strong>枚举 <code>i</code>（<code>i &lt; j</code>）</strong>：<ul>
 <li><code>for (int i = 0; i &lt; j; ++i)</code>：遍历 <code>arr[j]</code> 之前的每个元素 <code>arr[i]</code>。</li>
 <li><code>if (abs(arr[i] - arr[j]) &lt;= a &amp;&amp; abs(arr[i] - arr[k]) &lt;= c)</code>：检查 <code>|arr[i] - arr[j]| ≤ a</code> 和 <code>|arr[i] - arr[k]| ≤ c</code> 的条件是否满足。</li>
 <li><code>++cnt;</code>：如果满足所有条件，计数器加 1。</li>
 </ul>
 </li>
-<li><strong>返回结果</strong>：
-<ul>
+<li><strong>返回结果</strong>：<ul>
 <li><code>return cnt;</code>：返回满足条件的三元组数量。</li>
 </ul>
 </li>
 </ol>
 </blockquote>
-<h2 id="数据库基础">数据库基础</h2>
-<h3 id="584-寻找用户推荐人"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-customer-referee/">584. 寻找用户推荐人</a></h3>
-<blockquote>
+<h2 id="数据库基础"><a href="#数据库基础" class="headerlink" title="数据库基础"></a>数据库基础</h2><h3 id="584-寻找用户推荐人"><a href="#584-寻找用户推荐人" class="headerlink" title="584. 寻找用户推荐人"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-customer-referee/">584. 寻找用户推荐人</a></h3><blockquote>
 <p>表: <code>Customer</code></p>
 <figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="code">+-------------+</span>---------+</span><br><span class="line"><span class="section">| Column Name | Type    |</span></span><br><span class="line"><span class="section">+-------------+---------+</span></span><br><span class="line">| id          | int     |</span><br><span class="line">| name        | varchar |</span><br><span class="line"><span class="section">| referee_id  | int     |</span></span><br><span class="line"><span class="section">+-------------+---------+</span></span><br><span class="line">在 SQL 中，id 是该表的主键列。</span><br><span class="line">该表的每一行表示一个客户的 id、姓名以及推荐他们的客户的 id。</span><br></pre></td></tr></table></figure>
+
 <p>找出那些 <strong>没有被</strong> <code>id = 2</code> 的客户 <strong>推荐</strong> 的客户的姓名。</p>
 <p>以 <strong>任意顺序</strong> 返回结果表。</p>
 <p>结果格式如下所示。</p>
@@ -381,11 +362,12 @@ IconifyProviders = {
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入： </span><br><span class="line">Customer 表:</span><br><span class="line">+----+------+------------+</span><br><span class="line">| id | name | referee_id |</span><br><span class="line">+----+------+------------+</span><br><span class="line">| 1  | Will | null       |</span><br><span class="line">| 2  | Jane | null       |</span><br><span class="line">| 3  | Alex | 2          |</span><br><span class="line">| 4  | Bill | null       |</span><br><span class="line">| 5  | Zack | 1          |</span><br><span class="line">| 6  | Mark | 2          |</span><br><span class="line">+----+------+------------+</span><br><span class="line">输出：</span><br><span class="line">+------+</span><br><span class="line">| name |</span><br><span class="line">+------+</span><br><span class="line">| Will |</span><br><span class="line">| Jane |</span><br><span class="line">| Bill |</span><br><span class="line">| Zack |</span><br><span class="line">+------+</span><br></pre></td></tr></table></figure>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">SELECT name</span><br><span class="line">FROM Customer</span><br><span class="line">where referee_id != 2 OR referee_id is null;</span><br></pre></td></tr></table></figure>
+
 <p><strong>在SQL中，<code>&lt;&gt;</code> 和 <code>!=</code> 都可以用来表示“不等于”，它们在大多数情况下是等价的，但在某些数据库系统中可能会有细微的差异。通常情况下，两者可以互换使用。</strong></p>
-<h3 id="1757-可回收且低脂的产品"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/recyclable-and-low-fat-products/">1757. 可回收且低脂的产品</a></h3>
-<blockquote>
+<h3 id="1757-可回收且低脂的产品"><a href="#1757-可回收且低脂的产品" class="headerlink" title="1757. 可回收且低脂的产品"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/recyclable-and-low-fat-products/">1757. 可回收且低脂的产品</a></h3><blockquote>
 <p>表：<code>Products</code></p>
 <figure class="highlight smalltalk"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| <span class="type">Column</span> <span class="type">Name</span> | <span class="type">Type</span>    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| product_id  | int     |</span><br><span class="line">| low_fats    | enum    |</span><br><span class="line">| recyclable  | enum    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">product_id 是该表的主键（具有唯一值的列）。</span><br><span class="line">low_fats 是枚举类型，取值为以下两种 (<span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;N&#x27;</span>)，其中 <span class="string">&#x27;Y&#x27;</span> 表示该产品是低脂产品，<span class="string">&#x27;N&#x27;</span> 表示不是低脂产品。</span><br><span class="line">recyclable 是枚举类型，取值为以下两种 (<span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;N&#x27;</span>)，其中 <span class="string">&#x27;Y&#x27;</span> 表示该产品可回收，而 <span class="string">&#x27;N&#x27;</span> 表示不可回收。</span><br></pre></td></tr></table></figure>
+
 <p>编写解决方案找出既是低脂又是可回收的产品编号。</p>
 <p>返回结果 <strong>无顺序要求</strong> 。</p>
 <p>返回结果格式如下例所示：</p>
@@ -393,16 +375,20 @@ IconifyProviders = {
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">Products 表：</span><br><span class="line">+-------------+----------+------------+</span><br><span class="line">| product_id  | low_fats | recyclable |</span><br><span class="line">+-------------+----------+------------+</span><br><span class="line">| 0           | Y        | N          |</span><br><span class="line">| 1           | Y        | Y          |</span><br><span class="line">| 2           | N        | Y          |</span><br><span class="line">| 3           | Y        | Y          |</span><br><span class="line">| 4           | N        | N          |</span><br><span class="line">+-------------+----------+------------+</span><br><span class="line">输出：</span><br><span class="line">+-------------+</span><br><span class="line">| product_id  |</span><br><span class="line">+-------------+</span><br><span class="line">| 1           |</span><br><span class="line">| 3           |</span><br><span class="line">+-------------+</span><br><span class="line">解释：</span><br><span class="line">只有产品 id 为 1 和 3 的产品，既是低脂又是可回收的产品。</span><br></pre></td></tr></table></figure>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">SELECT product_id</span><br><span class="line">FROM Products</span><br><span class="line">WHERE low_fats=&#x27;Y&#x27; AND recyclable=&#x27;Y&#x27;;</span><br></pre></td></tr></table></figure>
-<h2 id="位运算；ASCII-码">位运算；ASCII 码</h2>
-<h3 id="709-转换成小写字母"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/to-lower-case/">709. 转换成小写字母</a></h3>
-<blockquote>
+
+
+
+<h2 id="位运算；ASCII-码"><a href="#位运算；ASCII-码" class="headerlink" title="位运算；ASCII 码"></a>位运算；ASCII 码</h2><h3 id="709-转换成小写字母"><a href="#709-转换成小写字母" class="headerlink" title="709. 转换成小写字母"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/to-lower-case/">709. 转换成小写字母</a></h3><blockquote>
 <p>给你一个字符串 <code>s</code> ，将该字符串中的大写字母转换成相同的小写字母，返回新的字符串。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">输入：s <span class="operator">=</span> <span class="string">&quot;Hello&quot;</span></span><br><span class="line">输出：<span class="string">&quot;hello&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">输入：s <span class="operator">=</span> <span class="string">&quot;here&quot;</span></span><br><span class="line">输出：<span class="string">&quot;here&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 3：</strong></p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">输入：s <span class="operator">=</span> <span class="string">&quot;LOVELY&quot;</span></span><br><span class="line">输出：<span class="string">&quot;lovely&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= s.length &lt;= 100</code></li>
@@ -411,25 +397,24 @@ IconifyProviders = {
 </blockquote>
 <p><em>方法一</em></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">   <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> String <span class="title function_">toLowerCase</span><span class="params">(String s)</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> s.toLowerCase();</span><br><span class="line">   	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><code>toLowerCase()</code> 是 Java 中 <code>String</code> 类的一个方法，用于将字符串中的所有大写字母转换为小写字母。这个方法不会修改原始字符串，而是返回一个新的字符串，其中所有的大写字母都被转换为小写字母。</p>
 </blockquote>
 <p><em>方法二</em></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toLowerCase</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建一个可变的字符串缓冲区来存储结果</span></span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">result</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 遍历输入字符串中的每个字符</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">ch</span> <span class="operator">=</span> s.charAt(i);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 如果字符是大写字母，将其转换为小写字母</span></span><br><span class="line">            <span class="keyword">if</span> (ch &gt;= <span class="string">&#x27;A&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;Z&#x27;</span>) &#123;</span><br><span class="line">                ch = (<span class="type">char</span>) (ch + (<span class="string">&#x27;a&#x27;</span> - <span class="string">&#x27;A&#x27;</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 将字符添加到结果缓冲区</span></span><br><span class="line">            result.append(ch);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 返回转换后的字符串</span></span><br><span class="line">        <span class="keyword">return</span> result.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><code>StringBuilder</code> 是 Java 中的一个类，用于处理可变的字符序列。与 <code>String</code> 类不同，<code>StringBuilder</code> 对象的内容可以被修改，而不需要创建新的对象。这使得 <code>StringBuilder</code> 在处理大量字符串拼接和修改时非常高效。</p>
-<h3 id="主要方法：">主要方法：</h3>
-<ol>
-<li>
-<p><strong>构造方法</strong>：</p>
+<h3 id="主要方法："><a href="#主要方法：" class="headerlink" title="主要方法："></a>主要方法：</h3><ol>
+<li><p><strong>构造方法</strong>：</p>
 <ul>
 <li><code>StringBuilder()</code>: 创建一个空的 <code>StringBuilder</code> 对象。</li>
 <li><code>StringBuilder(int capacity)</code>: 创建一个指定初始容量的 <code>StringBuilder</code> 对象。</li>
 <li><code>StringBuilder(String str)</code>: 创建一个包含指定字符串内容的 <code>StringBuilder</code> 对象。</li>
 </ul>
 </li>
-<li>
-<p><strong>常用方法</strong>：</p>
+<li><p><strong>常用方法</strong>：</p>
 <ul>
 <li><code>append(String str)</code>: 将指定的字符串追加到当前 <code>StringBuilder</code> 对象的末尾。</li>
 <li><code>insert(int offset, String str)</code>: 在指定位置插入指定的字符串。</li>
@@ -438,13 +423,11 @@ IconifyProviders = {
 <li><code>reverse()</code>: 反转 <code>StringBuilder</code> 对象中的字符序列。</li>
 <li><code>toString()</code>: 将 <code>StringBuilder</code> 对象转换为 <code>String</code> 对象。</li>
 </ul>
-<h3 id="优点：">优点：</h3>
-<ul>
+<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
 <li><strong>高效性</strong>：<code>StringBuilder</code> 在处理大量字符串拼接和修改时比 <code>String</code> 更高效，因为它避免了创建多个中间字符串对象。</li>
 <li><strong>可变性</strong>：<code>StringBuilder</code> 对象的内容可以被修改，而不需要创建新的对象，这使得它在处理动态字符串时非常方便。</li>
 </ul>
-<h3 id="使用场景：">使用场景：</h3>
-<ul>
+<h3 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h3><ul>
 <li><strong>字符串拼接</strong>：在需要频繁拼接字符串的场景中，使用 <code>StringBuilder</code> 可以提高性能。</li>
 <li><strong>动态字符串处理</strong>：在需要动态修改字符串内容的场景中，使用 <code>StringBuilder</code> 可以简化代码。</li>
 <li><strong>性能优化</strong>：在处理大量字符串操作时，使用 <code>StringBuilder</code> 可以显著提高程序的性能。</li>
@@ -452,39 +435,37 @@ IconifyProviders = {
 </li>
 </ol>
 </blockquote>
-<h2 id="数学：取余">数学：取余</h2>
-<h3 id="258-各位相加"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-digits/">258. 各位相加</a></h3>
-<blockquote>
+<h2 id="数学：取余"><a href="#数学：取余" class="headerlink" title="数学：取余"></a>数学：取余</h2><h3 id="258-各位相加"><a href="#258-各位相加" class="headerlink" title="258. 各位相加"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-digits/">258. 各位相加</a></h3><blockquote>
 <p>给定一个非负整数 <code>num</code>，反复将各个位上的数字相加，直到结果为一位数。返回这个结果。</p>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入: num = 38</span><br><span class="line">输出:<span class="number"> 2 </span></span><br><span class="line">解释: 各位相加的过程为：</span><br><span class="line">38 --&gt;<span class="number"> 3 </span>+<span class="number"> 8 </span>--&gt; 11</span><br><span class="line">11 --&gt;<span class="number"> 1 </span>+<span class="number"> 1 </span>--&gt; 2</span><br><span class="line">由于<span class="number"> 2 </span>是一位数，所以返回 2。</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2:</strong></p>
 <figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">输入: num = 0</span></span><br><span class="line"><span class="section">输出: 0</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>0 &lt;= num &lt;= 231 - 1</code></li>
 </ul>
-<p>**进阶：**你可以不使用循环或者递归，在 <code>O(1)</code> 时间复杂度内解决这个问题吗？</p>
+<p><strong>进阶：</strong>你可以不使用循环或者递归，在 <code>O(1)</code> 时间复杂度内解决这个问题吗？</p>
 </blockquote>
 <p><em>方法一</em></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将一个非负整数的各位数字相加，直到结果为一位数。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> num 输入的非负整数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 最终的一位数结果</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">addDigits</span><span class="params">(<span class="type">int</span> num)</span> &#123;</span><br><span class="line">        <span class="comment">// 当 num 大于等于 10 时，继续循环</span></span><br><span class="line">        <span class="keyword">while</span> (num &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="comment">// 调用 Sum 方法计算 num 的各位数字之和，并将结果赋值给 num</span></span><br><span class="line">            num = Sum(num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回最终的一位数结果</span></span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 计算一个非负整数的各位数字之和。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> num 输入的非负整数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 各位数字之和</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">Sum</span><span class="params">(<span class="type">int</span> num)</span> &#123;</span><br><span class="line">        <span class="comment">// 初始化结果为 0</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 当 num 大于 0 时，继续循环</span></span><br><span class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 将 num 的最后一位数字加到 result 中</span></span><br><span class="line">            result = num % <span class="number">10</span> + result;</span><br><span class="line">            <span class="comment">// 去掉 num 的最后一位数字</span></span><br><span class="line">            num /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回各位数字之和</span></span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><em>方法二</em></p>
 <blockquote>
-<h3 id="数字根公式：">数字根公式：</h3>
-<p>对于一个非负整数 <code>num</code>，其数字根可以通过以下公式计算：</p>
-<p>digital root(num)=1+(num−1)%9</p>
+<h3 id="数字根公式："><a href="#数字根公式：" class="headerlink" title="数字根公式："></a>数字根公式：</h3><p>对于一个非负整数 <code>num</code>，其数字根可以通过以下公式计算：</p>
+<p>digital root(num)&#x3D;1+(num−1)%9</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">addDigits</span><span class="params">(<span class="type">int</span> num)</span> &#123;</span><br><span class="line">        <span class="comment">// 使用数字根公式直接计算结果</span></span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + (num - <span class="number">1</span>) % <span class="number">9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<h3 id="详细解释：-2">详细解释：</h3>
-<ol>
-<li><strong>特殊情况处理</strong>：
-<ul>
+<h3 id="详细解释：-1"><a href="#详细解释：-1" class="headerlink" title="详细解释："></a>详细解释：</h3><ol>
+<li><strong>特殊情况处理</strong>：<ul>
 <li>如果 <code>num</code> 为 0，数字根为 0。</li>
 </ul>
 </li>
-<li><strong>一般情况处理</strong>：
-<ul>
+<li><strong>一般情况处理</strong>：<ul>
 <li>对于 <code>num</code> 不是 0 的情况，使用公式 <code>1 + (num - 1) % 9</code> 计算数字根。</li>
 <li><code>(num - 1) % 9</code> 的结果在 <code>-1</code> 到 <code>8</code> 之间。</li>
 <li>加上 1 后，结果在 <code>0</code> 到 <code>9</code> 之间。</li>
@@ -493,53 +474,56 @@ IconifyProviders = {
 </li>
 </ol>
 </blockquote>
-<h3 id="1281-整数的各位积和之差"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subtract-the-product-and-sum-of-digits-of-an-integer/">1281. 整数的各位积和之差</a></h3>
-<blockquote>
+<h3 id="1281-整数的各位积和之差"><a href="#1281-整数的各位积和之差" class="headerlink" title="1281. 整数的各位积和之差"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subtract-the-product-and-sum-of-digits-of-an-integer/">1281. 整数的各位积和之差</a></h3><blockquote>
 <p>给你一个整数 <code>n</code>，请你帮忙计算并返回该整数「各位数字之积」与「各位数字之和」的差。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：n = 234</span><br><span class="line">输出：15 </span><br><span class="line">解释：</span><br><span class="line">各位数之积 =<span class="number"> 2 </span>*<span class="number"> 3 </span>*<span class="number"> 4 </span>=<span class="number"> 24 </span></span><br><span class="line">各位数之和 =<span class="number"> 2 </span>+<span class="number"> 3 </span>+<span class="number"> 4 </span>=<span class="number"> 9 </span></span><br><span class="line">结果 =<span class="number"> 24 </span>-<span class="number"> 9 </span>= 15</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：n = 4421</span><br><span class="line">输出：21</span><br><span class="line">解释： </span><br><span class="line">各位数之积 =<span class="number"> 4 </span>*<span class="number"> 4 </span>*<span class="number"> 2 </span>*<span class="number"> 1 </span>=<span class="number"> 32 </span></span><br><span class="line">各位数之和 =<span class="number"> 4 </span>+<span class="number"> 4 </span>+<span class="number"> 2 </span>+<span class="number"> 1 </span>=<span class="number"> 11 </span></span><br><span class="line">结果 =<span class="number"> 32 </span>-<span class="number"> 11 </span>= 21</span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= n &lt;= 10^5</code></li>
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 计算一个整数的各位数字的乘积与各位数字的和的差值。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 输入的整数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 各位数字的乘积与各位数字的和的差值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">subtractProductAndSum</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">// 计算各位数字的乘积</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">product</span> <span class="operator">=</span> Product(n);</span><br><span class="line">        <span class="comment">// 计算各位数字的和</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> Sum(n);</span><br><span class="line">        <span class="comment">// 返回乘积与和的差值</span></span><br><span class="line">        <span class="keyword">return</span> product - sum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 计算一个整数的各位数字的乘积。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 输入的整数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 各位数字的乘积</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">Product</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">// 初始化乘积为 1</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 当 n 大于 0 时，继续循环</span></span><br><span class="line">        <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 将 n 的最后一位数字乘到 res 中</span></span><br><span class="line">            res *= n % <span class="number">10</span>;</span><br><span class="line">            <span class="comment">// 去掉 n 的最后一位数字</span></span><br><span class="line">            n /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回各位数字的乘积</span></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 计算一个整数的各位数字的和。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 输入的整数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 各位数字的和</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">Sum</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">// 初始化和为 0</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 当 n 大于 0 时，继续循环</span></span><br><span class="line">        <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 将 n 的最后一位数字加到 res 中</span></span><br><span class="line">            res += n % <span class="number">10</span>;</span><br><span class="line">            <span class="comment">// 去掉 n 的最后一位数字</span></span><br><span class="line">            n /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回各位数字的和</span></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><em>官方解</em></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 计算一个整数的各位数字的乘积与各位数字的和的差值。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 输入的整数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 各位数字的乘积与各位数字的和的差值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">subtractProductAndSum</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">// 初始化乘积 m 为 1，和 s 为 0</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> <span class="number">1</span>, s = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 当 n 不为 0 时，继续循环</span></span><br><span class="line">        <span class="keyword">while</span> (n != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 获取 n 的最后一位数字</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> n % <span class="number">10</span>;</span><br><span class="line">            <span class="comment">// 去掉 n 的最后一位数字</span></span><br><span class="line">            n /= <span class="number">10</span>;</span><br><span class="line">            <span class="comment">// 将最后一位数字乘到乘积 m 中</span></span><br><span class="line">            m *= x;</span><br><span class="line">            <span class="comment">// 将最后一位数字加到和 s 中</span></span><br><span class="line">            s += x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回乘积与和的差值</span></span><br><span class="line">        <span class="keyword">return</span> m - s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="数学：因数与倍数">数学：因数与倍数</h2>
-<h3 id="231-2-的幂"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/power-of-two/">231. 2 的幂</a></h3>
-<blockquote>
+
+<h2 id="数学：因数与倍数"><a href="#数学：因数与倍数" class="headerlink" title="数学：因数与倍数"></a>数学：因数与倍数</h2><h3 id="231-2-的幂"><a href="#231-2-的幂" class="headerlink" title="231. 2 的幂"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/power-of-two/">231. 2 的幂</a></h3><blockquote>
 <p>给你一个整数 <code>n</code>，请你判断该整数是否是 2 的幂次方。如果是，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
 <p>如果存在一个整数 <code>x</code> 使得 <code>n == 2x</code> ，则认为 <code>n</code> 是 2 的幂次方。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">输入：n <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">输出：true</span><br><span class="line">解释：<span class="number">20</span> <span class="operator">=</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">输入：n <span class="operator">=</span> <span class="number">16</span></span><br><span class="line">输出：true</span><br><span class="line">解释：<span class="number">24</span> <span class="operator">=</span> <span class="number">16</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 3：</strong></p>
 <figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">输入：<span class="attr">n</span> = <span class="number">3</span></span><br><span class="line">输出：<span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>-231 &lt;= n &lt;= 231 - 1</code></li>
 </ul>
-<p>**进阶：**你能够不使用循环/递归解决此问题吗？</p>
+<p><strong>进阶：</strong>你能够不使用循环&#x2F;递归解决此问题吗？</p>
 </blockquote>
 <p><em>方法一</em></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPowerOfTwo</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">int</span> a=<span class="number">1</span>,target=n;</span><br><span class="line">        <span class="keyword">while</span>(n&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            a*=<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(a==target)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            n/=<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><em>方法二</em></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPowerOfTwo</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 计算以 2 为底的对数</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">log2</span> <span class="operator">=</span> Math.log(n) / Math.log(<span class="number">2</span>);</span><br><span class="line">        <span class="comment">// 判断 log2 是否为整数</span></span><br><span class="line">        <span class="keyword">return</span> log2 == Math.floor(log2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>让我们分析一下为什么在某些情况下，使用 <code>Math.log(n) / Math.log(2)</code> 可能会导致错误的结果。</p>
-<h3 id="问题分析：">问题分析：</h3>
-<p>在计算机中，浮点数的计算可能会引入舍入误差。即使理论上 <code>Math.log(n) / Math.log(2)</code> 应该是一个整数，由于浮点数的精度限制，实际计算结果可能会略微偏离整数值，导致判断失败。</p>
-<h3 id="解决方案：">解决方案：</h3>
-<p>为了避免浮点数计算的舍入误差，我们可以使用位运算来判断一个数是否是 2 的幂。这种方法不仅效率高，而且不会受到浮点数精度的影响。</p>
+<h3 id="问题分析："><a href="#问题分析：" class="headerlink" title="问题分析："></a>问题分析：</h3><p>在计算机中，浮点数的计算可能会引入舍入误差。即使理论上 <code>Math.log(n) / Math.log(2)</code> 应该是一个整数，由于浮点数的精度限制，实际计算结果可能会略微偏离整数值，导致判断失败。</p>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>为了避免浮点数计算的舍入误差，我们可以使用位运算来判断一个数是否是 2 的幂。这种方法不仅效率高，而且不会受到浮点数精度的影响。</p>
 </blockquote>
 <p><em>方法三</em></p>
 <blockquote>
-<h3 id="位运算方法：">位运算方法：</h3>
-<p>一个数 <code>n</code> 是 2 的幂，当且仅当 <code>n</code> 是正数，并且 <code>n</code> 的二进制表示中只有一个 1。例如：</p>
+<h3 id="位运算方法："><a href="#位运算方法：" class="headerlink" title="位运算方法："></a>位运算方法：</h3><p>一个数 <code>n</code> 是 2 的幂，当且仅当 <code>n</code> 是正数，并且 <code>n</code> 的二进制表示中只有一个 1。例如：</p>
 <ul>
 <li>1 的二进制表示是 <code>0001</code></li>
 <li>2 的二进制表示是 <code>0010</code></li>
@@ -552,14 +536,13 @@ IconifyProviders = {
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPowerOfTwo</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">// 确保 n 是正数，并且 n 的二进制表示中只有一个 1</span></span><br><span class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> &amp;&amp; (n &amp; (n - <span class="number">1</span>)) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<h3 id="解释：-3">解释：</h3>
-<ol>
-<li><strong><code>n &gt; 0</code></strong>：确保 <code>n</code> 是正数。</li>
-<li><strong><code>(n &amp; (n - 1)) == 0</code></strong>：判断 <code>n</code> 的二进制表示中是否只有一个 1。</li>
+<h3 id="解释：-2"><a href="#解释：-2" class="headerlink" title="解释："></a>解释：</h3><ol>
+<li>**<code>n &gt; 0</code>**：确保 <code>n</code> 是正数。</li>
+<li>**<code>(n &amp; (n - 1)) == 0</code>**：判断 <code>n</code> 的二进制表示中是否只有一个 1。</li>
 </ol>
-<h3 id="示例：-3">示例：</h3>
-<p>假设输入 <code>n</code> 为 536870912，我们来验证这个方法：</p>
+<h3 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h3><p>假设输入 <code>n</code> 为 536870912，我们来验证这个方法：</p>
 <ul>
 <li><code>n = 536870912</code></li>
 <li><code>n - 1 = 536870911</code></li>
@@ -567,57 +550,67 @@ IconifyProviders = {
 </ul>
 <p>所以，536870912 是 2 的幂。</p>
 </blockquote>
-<h3 id="326-3-的幂"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/power-of-three/">326. 3 的幂</a></h3>
-<blockquote>
+<h3 id="326-3-的幂"><a href="#326-3-的幂" class="headerlink" title="326. 3 的幂"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/power-of-three/">326. 3 的幂</a></h3><blockquote>
 <p>给定一个整数，写一个函数来判断它是否是 3 的幂次方。如果是，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
 <p>整数 <code>n</code> 是 3 的幂次方需满足：存在整数 <code>x</code> 使得 <code>n == 3x</code></p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">输入：<span class="attr">n</span> = <span class="number">27</span></span><br><span class="line">输出：<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">输入：<span class="attr">n</span> = <span class="number">0</span></span><br><span class="line">输出：<span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 3：</strong></p>
 <figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">输入：<span class="attr">n</span> = <span class="number">9</span></span><br><span class="line">输出：<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 4：</strong></p>
 <figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">输入：<span class="attr">n</span> = <span class="number">45</span></span><br><span class="line">输出：<span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>-231 &lt;= n &lt;= 231 - 1</code></li>
 </ul>
-<p>**进阶：**你能不使用循环或者递归来完成本题吗？</p>
+<p><strong>进阶：</strong>你能不使用循环或者递归来完成本题吗？</p>
 </blockquote>
 <p><em>解法</em></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 判断一个整数是否是 3 的幂。</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> n 输入的整数</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 如果 n 是 3 的幂，返回 true；否则返回 false</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPowerOfThree</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="comment">// 如果 n 小于或等于 0，直接返回 false，因为 3 的幂必须是正数</span></span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// 初始化 x 为 1，tag 为 n</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">1</span>, tag = n;</span><br><span class="line">        <span class="comment">// 如果 n 等于 1，直接返回 true，因为 1 是 3 的 0 次幂</span></span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 当 n 大于 0 时，继续循环</span></span><br><span class="line">        <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 如果 x 等于 tag，返回 true，表示 n 是 3 的幂</span></span><br><span class="line">            <span class="keyword">if</span> (x == tag) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="comment">// 将 x 乘以 3</span></span><br><span class="line">            x *= <span class="number">3</span>;</span><br><span class="line">            <span class="comment">// 将 n 除以 3</span></span><br><span class="line">            n /= <span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果循环结束时 x 不等于 tag，返回 false，表示 n 不是 3 的幂</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><em>优化</em></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPowerOfThree</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (n != <span class="number">0</span> &amp;&amp; n % <span class="number">3</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            n /= <span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="263-丑数"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/ugly-number/">263. 丑数</a></h3>
-<blockquote>
+
+<h3 id="263-丑数"><a href="#263-丑数" class="headerlink" title="263. 丑数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/ugly-number/">263. 丑数</a></h3><blockquote>
 <p><strong>丑数</strong> 就是只包含质因数 <code>2</code>、<code>3</code> 和 <code>5</code> 的正整数。</p>
 <p>给你一个整数 <code>n</code> ，请你判断 <code>n</code> 是否为 <strong>丑数</strong> 。如果是，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">输入：n = 6</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">输出：<span class="literal">true</span></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">解释：6 = 2 × 3</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">输入：n = 1</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">输出：<span class="literal">true</span></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">解释：1 没有质因数，因此它的全部质因数是 &#123;2, 3, 5&#125; 的空集。习惯上将其视作第一个丑数。</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 3：</strong></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">输入：n = 14</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">输出：<span class="literal">false</span></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">解释：14 不是丑数，因为它包含了另外一个质因数 7 。</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>-231 &lt;= n &lt;= 231 - 1</code></li>
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isUgly</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;=<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">while</span>(n%<span class="number">2</span>==<span class="number">0</span>||n%<span class="number">3</span>==<span class="number">0</span>||n%<span class="number">5</span>==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>) n/=<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (n%<span class="number">3</span>==<span class="number">0</span>) n/=<span class="number">3</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (n%<span class="number">5</span>==<span class="number">0</span>) n/=<span class="number">5</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n==<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><em>优化解法</em></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isUgly</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span>[] factors = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> factor : factors) &#123;</span><br><span class="line">            <span class="keyword">while</span> (n % factor == <span class="number">0</span>) &#123;</span><br><span class="line">                n /= factor;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="数组-矩阵">数组 &amp; 矩阵</h2>
-<h3 id="1470-重新排列数组"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/shuffle-the-array/">1470. 重新排列数组</a></h3>
-<blockquote>
+
+<h2 id="数组-矩阵"><a href="#数组-矩阵" class="headerlink" title="数组 &amp; 矩阵"></a>数组 &amp; 矩阵</h2><h3 id="1470-重新排列数组"><a href="#1470-重新排列数组" class="headerlink" title="1470. 重新排列数组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/shuffle-the-array/">1470. 重新排列数组</a></h3><blockquote>
 <p>给你一个数组 <code>nums</code> ，数组中有 <code>2n</code> 个元素，按 <code>[x1,x2,...,xn,y1,y2,...,yn]</code> 的格式排列。</p>
 <p>请你将数组按 <code>[x1,y1,x2,y2,...,xn,yn]</code> 格式重新排列，返回重排后的数组。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">输入：nums = [2,5,1,3,4,7], n = 3</span><br><span class="line">输出：[2,3,5,4,1,7] </span><br><span class="line">解释：由于 <span class="attribute">x1</span>=2, <span class="attribute">x2</span>=5, <span class="attribute">x3</span>=1, <span class="attribute">y1</span>=3, <span class="attribute">y2</span>=4, <span class="attribute">y3</span>=7 ，所以答案为 [2,3,5,4,1,7]</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">输入：nums = [<span class="number">1,2,3,4</span>,<span class="number">4,3,2,1</span>], n = <span class="number">4</span></span><br><span class="line">输出：[<span class="number">1,4,2,3</span>,<span class="number">3,2,4,1</span>]</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 3：</strong></p>
 <figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">输入：nums = [<span class="number">1,1,2,2</span>], n = <span class="number">2</span></span><br><span class="line">输出：[<span class="number">1,2,1,2</span>]</span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= n &lt;= 500</code></li>
@@ -626,15 +619,17 @@ IconifyProviders = {
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] shuffle(<span class="type">int</span>[] nums, <span class="type">int</span> n) &#123;</span><br><span class="line">        <span class="type">int</span>[] arr=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>*n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;i&lt;n;i++,j+=<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            arr[j]=nums[i];</span><br><span class="line">            arr[j+<span class="number">1</span>]=nums[i+n];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="867-转置矩阵"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/transpose-matrix/">867. 转置矩阵</a></h3>
-<blockquote>
+
+<h3 id="867-转置矩阵"><a href="#867-转置矩阵" class="headerlink" title="867. 转置矩阵"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/transpose-matrix/">867. 转置矩阵</a></h3><blockquote>
 <p>给你一个二维整数数组 <code>matrix</code>， 返回 <code>matrix</code> 的 <strong>转置矩阵</strong> 。</p>
 <p>矩阵的 <strong>转置</strong> 是指将矩阵的主对角线翻转，交换矩阵的行索引与列索引。</p>
 <p><img src="/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/hint_transpose.png" alt="img" loading="lazy"></p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">输入：matrix = <span class="string">[[1,2,3],[4,5,6],[7,8,9]]</span></span><br><span class="line">输出：<span class="string">[[1,4,7],[2,5,8],[3,6,9]]</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">输入：matrix = <span class="string">[[1,2,3],[4,5,6]]</span></span><br><span class="line">输出：<span class="string">[[1,4],[2,5],[3,6]]</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>m == matrix.length</code></li>
@@ -645,45 +640,39 @@ IconifyProviders = {
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将一个矩阵进行转置。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> matrix 输入的矩阵</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 转置后的矩阵</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] transpose(<span class="type">int</span>[][] matrix) &#123;</span><br><span class="line">        <span class="comment">// 获取矩阵的行数和列数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> matrix.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="comment">// 创建一个新的矩阵，用于存储转置后的结果</span></span><br><span class="line">        <span class="type">int</span>[][] transposed = <span class="keyword">new</span> <span class="title class_">int</span>[n][m];</span><br><span class="line">        <span class="comment">// 遍历原矩阵的每个元素</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="comment">// 将原矩阵的元素 (i, j) 放到转置矩阵的 (j, i) 位置</span></span><br><span class="line">                transposed[j][i] = matrix[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回转置后的矩阵</span></span><br><span class="line">        <span class="keyword">return</span> transposed;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<h3 id="解释：-4">解释：</h3>
-<ol>
-<li>
-<p><strong>方法注释</strong>：</p>
+<h3 id="解释：-3"><a href="#解释：-3" class="headerlink" title="解释："></a>解释：</h3><ol>
+<li><p><strong>方法注释</strong>：</p>
 <ul>
 <li><strong>功能</strong>：将一个矩阵进行转置。</li>
 <li><strong>参数</strong>：<code>matrix</code> 输入的矩阵。</li>
 <li><strong>返回值</strong>：转置后的矩阵。</li>
 </ul>
 </li>
-<li>
-<p><strong>获取矩阵的行数和列数</strong>：</p>
+<li><p><strong>获取矩阵的行数和列数</strong>：</p>
 <ul>
 <li><code>int m = matrix.length;</code>：获取矩阵的行数。</li>
 <li><code>int n = matrix[0].length;</code>：获取矩阵的列数。</li>
 </ul>
 </li>
-<li>
-<p><strong>创建转置矩阵</strong>：</p>
+<li><p><strong>创建转置矩阵</strong>：</p>
 <ul>
 <li><code>int[][] transposed = new int[n][m];</code>：创建一个新的矩阵 <code>transposed</code>，用于存储转置后的结果。转置矩阵的行数等于原矩阵的列数，列数等于原矩阵的行数。</li>
 </ul>
 </li>
-<li>
-<p><strong>遍历原矩阵的每个元素</strong>：</p>
+<li><p><strong>遍历原矩阵的每个元素</strong>：</p>
 <ul>
 <li><code>for (int i = 0; i &lt; m; i++)</code>：遍历原矩阵的每一行。</li>
 <li><code>for (int j = 0; j &lt; n; j++)</code>：遍历原矩阵的每一列。</li>
 <li><code>transposed[j][i] = matrix[i][j];</code>：将原矩阵的元素 <code>(i, j)</code> 放到转置矩阵的 <code>(j, i)</code> 位置。</li>
 </ul>
 </li>
-<li>
-<p><strong>返回转置后的矩阵</strong>：</p>
+<li><p><strong>返回转置后的矩阵</strong>：</p>
 <ul>
 <li><code>return transposed;</code>：返回转置后的矩阵。</li>
 </ul>
-<h3 id="解释：-5">解释：</h3>
-<ul>
+<h3 id="解释：-4"><a href="#解释：-4" class="headerlink" title="解释："></a>解释：</h3><ul>
 <li>原矩阵的元素 <code>(0, 0)</code> 为 1，转置后放到 <code>(0, 0)</code> 位置。</li>
 <li>原矩阵的元素 <code>(0, 1)</code> 为 2，转置后放到 <code>(1, 0)</code> 位置。</li>
 <li>原矩阵的元素 <code>(0, 2)</code> 为 3，转置后放到 <code>(2, 0)</code> 位置。</li>
@@ -694,36 +683,40 @@ IconifyProviders = {
 </li>
 </ol>
 </blockquote>
-<h2 id="数组-字符串">数组 &amp; 字符串</h2>
-<h3 id="1422-分割字符串的最大得分"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-score-after-splitting-a-string/">1422. 分割字符串的最大得分</a></h3>
-<blockquote>
+<h2 id="数组-字符串"><a href="#数组-字符串" class="headerlink" title="数组 &amp; 字符串"></a>数组 &amp; 字符串</h2><h3 id="1422-分割字符串的最大得分"><a href="#1422-分割字符串的最大得分" class="headerlink" title="1422. 分割字符串的最大得分"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-score-after-splitting-a-string/">1422. 分割字符串的最大得分</a></h3><blockquote>
 <p>给你一个由若干 0 和 1 组成的字符串 <code>s</code> ，请你计算并返回将该字符串分割成两个 <strong>非空</strong> 子字符串（即 <strong>左</strong> 子字符串和 <strong>右</strong> 子字符串）所能获得的最大得分。</p>
 <p>「分割字符串的得分」为 <strong>左</strong> 子字符串中 <strong>0</strong> 的数量加上 <strong>右</strong> 子字符串中 <strong>1</strong> 的数量。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;011101&quot;</span><br><span class="line">输出：5 </span><br><span class="line">解释：</span><br><span class="line">将字符串 s 划分为两个非空子字符串的可行方案有：</span><br><span class="line">左子字符串 = &quot;0&quot; 且 右子字符串 = &quot;11101&quot;，得分 =<span class="number"> 1 </span>+<span class="number"> 4 </span>=<span class="number"> 5 </span></span><br><span class="line">左子字符串 = &quot;01&quot; 且 右子字符串 = &quot;1101&quot;，得分 =<span class="number"> 1 </span>+<span class="number"> 3 </span>=<span class="number"> 4 </span></span><br><span class="line">左子字符串 = &quot;011&quot; 且 右子字符串 = &quot;101&quot;，得分 =<span class="number"> 1 </span>+<span class="number"> 2 </span>=<span class="number"> 3 </span></span><br><span class="line">左子字符串 = &quot;0111&quot; 且 右子字符串 = &quot;01&quot;，得分 =<span class="number"> 1 </span>+<span class="number"> 1 </span>=<span class="number"> 2 </span></span><br><span class="line">左子字符串 = &quot;01110&quot; 且 右子字符串 = &quot;1&quot;，得分 =<span class="number"> 2 </span>+<span class="number"> 1 </span>= 3</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">输入：<span class="attr">s</span> = <span class="string">&quot;00111&quot;</span></span><br><span class="line">输出：<span class="number">5</span></span><br><span class="line">解释：当 左子字符串 = <span class="string">&quot;00&quot;</span> 且 右子字符串 = <span class="string">&quot;111&quot;</span> 时，我们得到最大得分 = <span class="number">2</span> + <span class="number">3</span> = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 3：</strong></p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">输入：s <span class="operator">=</span> <span class="string">&quot;1111&quot;</span></span><br><span class="line">输出：<span class="number">3</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>2 &lt;= s.length &lt;= 500</code></li>
-<li>字符串 <code>s</code> 仅由字符 <code>'0'</code> 和 <code>'1'</code> 组成。</li>
+<li>字符串 <code>s</code> 仅由字符 <code>&#39;0&#39;</code> 和 <code>&#39;1&#39;</code> 组成。</li>
 </ul>
 </blockquote>
 <p><strong>字符串定位用.charAt(i)</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxScore</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> max=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n=s.length();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> flag=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;i+<span class="number">1</span>&amp;&amp;i+<span class="number">1</span>&lt;n;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(s.charAt(j)==<span class="string">&#x27;0&#x27;</span>) flag++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=n-<span class="number">1</span>;j&gt;i;j--)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(s.charAt(j)==<span class="string">&#x27;1&#x27;</span>) flag++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(flag&gt;max) max=flag;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>优化</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxScore</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.length();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">score</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s.charAt(j) == <span class="string">&#x27;0&#x27;</span>) &#123;</span><br><span class="line">                    score++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s.charAt(j) == <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">                    score++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ans = Math.max(ans, score);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2586-统计范围内的元音字符串数"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-the-number-of-vowel-strings-in-range/">2586. 统计范围内的元音字符串数</a></h3>
-<blockquote>
+
+<h3 id="2586-统计范围内的元音字符串数"><a href="#2586-统计范围内的元音字符串数" class="headerlink" title="2586. 统计范围内的元音字符串数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-the-number-of-vowel-strings-in-range/">2586. 统计范围内的元音字符串数</a></h3><blockquote>
 <p>给你一个下标从 <strong>0</strong> 开始的字符串数组 <code>words</code> 和两个整数：<code>left</code> 和 <code>right</code> 。</p>
-<p>如果字符串以元音字母开头并以元音字母结尾，那么该字符串就是一个 <strong>元音字符串</strong> ，其中元音字母是 <code>'a'</code>、<code>'e'</code>、<code>'i'</code>、<code>'o'</code>、<code>'u'</code> 。</p>
+<p>如果字符串以元音字母开头并以元音字母结尾，那么该字符串就是一个 <strong>元音字符串</strong> ，其中元音字母是 <code>&#39;a&#39;</code>、<code>&#39;e&#39;</code>、<code>&#39;i&#39;</code>、<code>&#39;o&#39;</code>、<code>&#39;u&#39;</code> 。</p>
 <p>返回 <code>words[i]</code> 是元音字符串的数目，其中 <code>i</code> 在闭区间 <code>[left, right]</code> 内。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">输入：<span class="keyword">words</span> = [<span class="string">&quot;are&quot;</span>,<span class="string">&quot;amy&quot;</span>,<span class="string">&quot;u&quot;</span>], left = <span class="number">0</span>, <span class="literal">right</span> = <span class="number">2</span></span><br><span class="line">输出：<span class="number">2</span></span><br><span class="line">解释：</span><br><span class="line">- <span class="string">&quot;are&quot;</span> 是一个元音字符串，因为它以 <span class="string">&#x27;a&#x27;</span> 开头并以 <span class="string">&#x27;e&#x27;</span> 结尾。</span><br><span class="line">- <span class="string">&quot;amy&quot;</span> 不是元音字符串，因为它没有以元音字母结尾。</span><br><span class="line">- <span class="string">&quot;u&quot;</span> 是一个元音字符串，因为它以 <span class="string">&#x27;u&#x27;</span> 开头并以 <span class="string">&#x27;u&#x27;</span> 结尾。</span><br><span class="line">在上述范围中的元音字符串数目为 <span class="number">2</span> 。</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">输入：<span class="keyword">words</span> = [<span class="string">&quot;hey&quot;</span>,<span class="string">&quot;aeo&quot;</span>,<span class="string">&quot;mu&quot;</span>,<span class="string">&quot;ooo&quot;</span>,<span class="string">&quot;artro&quot;</span>], left = <span class="number">1</span>, <span class="literal">right</span> = <span class="number">4</span></span><br><span class="line">输出：<span class="number">3</span></span><br><span class="line">解释：</span><br><span class="line">- <span class="string">&quot;aeo&quot;</span> 是一个元音字符串，因为它以 <span class="string">&#x27;a&#x27;</span> 开头并以 <span class="string">&#x27;o&#x27;</span> 结尾。</span><br><span class="line">- <span class="string">&quot;mu&quot;</span> 不是元音字符串，因为它没有以元音字母开头。</span><br><span class="line">- <span class="string">&quot;ooo&quot;</span> 是一个元音字符串，因为它以 <span class="string">&#x27;o&#x27;</span> 开头并以 <span class="string">&#x27;o&#x27;</span> 结尾。</span><br><span class="line">- <span class="string">&quot;artro&quot;</span> 是一个元音字符串，因为它以 <span class="string">&#x27;a&#x27;</span> 开头并以 <span class="string">&#x27;o&#x27;</span> 结尾。</span><br><span class="line">在上述范围中的元音字符串数目为 <span class="number">3</span> 。</span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= words.length &lt;= 1000</code></li>
@@ -734,17 +727,16 @@ IconifyProviders = {
 </blockquote>
 <p><strong>暴力破解</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">vowelStrings</span><span class="params">(String[] words, <span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="type">int</span> flag=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> x=words[left].length()-<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>((words[left].charAt(<span class="number">0</span>)==<span class="string">&#x27;a&#x27;</span>||words[left].charAt(<span class="number">0</span>)==<span class="string">&#x27;e&#x27;</span>||words[left].charAt(<span class="number">0</span>)==<span class="string">&#x27;u&#x27;</span>||words[left].charAt(<span class="number">0</span>)==<span class="string">&#x27;i&#x27;</span>||words[left].charAt(<span class="number">0</span>)==<span class="string">&#x27;o&#x27;</span>)&amp;&amp;(words[left].charAt(x)==<span class="string">&#x27;a&#x27;</span>||words[left].charAt(x)==<span class="string">&#x27;e&#x27;</span>||words[left].charAt(x)==<span class="string">&#x27;u&#x27;</span>||words[left].charAt(x)==<span class="string">&#x27;i&#x27;</span>||words[left].charAt(x)==<span class="string">&#x27;o&#x27;</span>))</span><br><span class="line">            flag++;</span><br><span class="line">            left++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>官方</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 计算字符串数组中从 left 到 right 范围内的每个字符串是否以元音字母开头和结尾。</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> words 字符串数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> left  起始索引</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> right 结束索引</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 符合条件的字符串数量</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">vowelStrings</span><span class="params">(String[] words, <span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">        <span class="comment">// 使用 HashSet 存储元音字母</span></span><br><span class="line">        Set&lt;Character&gt; vowels = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;Character&gt;() &#123;&#123;</span><br><span class="line">            add(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">            add(<span class="string">&#x27;e&#x27;</span>);</span><br><span class="line">            add(<span class="string">&#x27;i&#x27;</span>);</span><br><span class="line">            add(<span class="string">&#x27;o&#x27;</span>);</span><br><span class="line">            add(<span class="string">&#x27;u&#x27;</span>);</span><br><span class="line">        &#125;&#125;;</span><br><span class="line">        <span class="comment">// 初始化计数器</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 遍历字符串数组中从 left 到 right 范围内的每个字符串</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> left; i &lt;= right; ++i) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">word</span> <span class="operator">=</span> words[i];</span><br><span class="line">            <span class="comment">// 检查字符串的第一个字符和最后一个字符是否都在元音字母集合中</span></span><br><span class="line">            <span class="keyword">if</span> (vowels.contains(word.charAt(<span class="number">0</span>)) &amp;&amp; vowels.contains(word.charAt(word.length() - <span class="number">1</span>))) &#123;</span><br><span class="line">                <span class="comment">// 如果是，计数器加 1</span></span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 返回符合条件的字符串数量</span></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<h3 id="代码思路：">代码思路：</h3>
-<p>这个代码的思路是通过使用一个 <code>Set</code> 来存储元音字母，然后遍历字符串数组 <code>words</code> 中从 <code>left</code> 到 <code>right</code> 范围内的每个字符串，检查字符串的第一个字符和最后一个字符是否都在 <code>Set</code> 中。如果是，则计数器加 1。解释：</p>
+<h3 id="代码思路："><a href="#代码思路：" class="headerlink" title="代码思路："></a>代码思路：</h3><p>这个代码的思路是通过使用一个 <code>Set</code> 来存储元音字母，然后遍历字符串数组 <code>words</code> 中从 <code>left</code> 到 <code>right</code> 范围内的每个字符串，检查字符串的第一个字符和最后一个字符是否都在 <code>Set</code> 中。如果是，则计数器加 1。解释：</p>
 <ol>
-<li><strong>方法注释</strong>：
-<ul>
+<li><strong>方法注释</strong>：<ul>
 <li><strong>功能</strong>：计算字符串数组中从 <code>left</code> 到 <code>right</code> 范围内的每个字符串是否以元音字母开头和结尾。</li>
-<li><strong>参数</strong>：
-<ul>
+<li><strong>参数</strong>：<ul>
 <li><code>words</code>：字符串数组。</li>
 <li><code>left</code>：起始索引。</li>
 <li><code>right</code>：结束索引。</li>
@@ -753,46 +745,43 @@ IconifyProviders = {
 <li><strong>返回值</strong>：符合条件的字符串数量。</li>
 </ul>
 </li>
-<li><strong>使用 <code>HashSet</code> 存储元音字母</strong>：
-<ul>
-<li><code>Set&lt;Character&gt; vowels = new HashSet&lt;Character&gt;() &#123;&#123; add('a'); add('e'); add('i'); add('o'); add('u'); &#125;&#125;;</code>：创建一个 <code>HashSet</code>，并初始化元音字母 <code>'a'</code>, <code>'e'</code>, <code>'i'</code>, <code>'o'</code>, <code>'u'</code>。</li>
+<li><strong>使用 <code>HashSet</code> 存储元音字母</strong>：<ul>
+<li><code>Set&lt;Character&gt; vowels = new HashSet&lt;Character&gt;() &#123;&#123; add('a'); add('e'); add('i'); add('o'); add('u'); &#125;&#125;;</code>：创建一个 <code>HashSet</code>，并初始化元音字母 <code>&#39;a&#39;</code>, <code>&#39;e&#39;</code>, <code>&#39;i&#39;</code>, <code>&#39;o&#39;</code>, <code>&#39;u&#39;</code>。</li>
 </ul>
 </li>
-<li><strong>初始化计数器</strong>：
-<ul>
+<li><strong>初始化计数器</strong>：<ul>
 <li><code>int ans = 0;</code>：初始化计数器为 0。</li>
 </ul>
 </li>
-<li><strong>遍历字符串数组中从 <code>left</code> 到 <code>right</code> 范围内的每个字符串</strong>：
-<ul>
+<li><strong>遍历字符串数组中从 <code>left</code> 到 <code>right</code> 范围内的每个字符串</strong>：<ul>
 <li><code>for (int i = left; i &lt;= right; ++i)</code>：遍历从 <code>left</code> 到 <code>right</code> 范围内的每个字符串。</li>
 <li><code>String word = words[i];</code>：获取当前字符串。</li>
 </ul>
 </li>
-<li><strong>检查字符串的第一个字符和最后一个字符是否都在元音字母集合中</strong>：
-<ul>
+<li><strong>检查字符串的第一个字符和最后一个字符是否都在元音字母集合中</strong>：<ul>
 <li><code>if (vowels.contains(word.charAt(0)) &amp;&amp; vowels.contains(word.charAt(word.length() - 1)))</code>：检查字符串的第一个字符和最后一个字符是否都在 <code>vowels</code> 集合中。</li>
 <li><code>++ans;</code>：如果是，计数器加 1。</li>
 </ul>
 </li>
-<li><strong>返回符合条件的字符串数量</strong>：
-<ul>
+<li><strong>返回符合条件的字符串数量</strong>：<ul>
 <li><code>return ans;</code>：返回计数器的值。</li>
 </ul>
 </li>
 </ol>
 </blockquote>
-<h3 id="852-山脉数组的峰顶索引"><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/peak-index-in-a-mountain-array/">852. 山脉数组的峰顶索引</a></h3>
-<blockquote>
+<h3 id="852-山脉数组的峰顶索引"><a href="#852-山脉数组的峰顶索引" class="headerlink" title="852. 山脉数组的峰顶索引"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/peak-index-in-a-mountain-array/">852. 山脉数组的峰顶索引</a></h3><blockquote>
 <p>给定一个长度为 <code>n</code> 的整数 <strong>山脉</strong> 数组 <code>arr</code> ，其中的值递增到一个 <strong>峰值元素</strong> 然后递减。</p>
 <p>返回峰值元素的下标。</p>
 <p>你必须设计并实现时间复杂度为 <code>O(log(n))</code> 的解决方案。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight fix"><table><tr><td class="code"><pre><span class="line"><span class="attr">输入：arr </span>=<span class="string"> [0,1,0]</span></span><br><span class="line"><span class="string">输出：1</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
 <figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">输入：arr = [<span class="number">0,2,1,0</span>]</span><br><span class="line">输出：<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 3：</strong></p>
 <figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">输入：arr = [<span class="number">0,10,5,2</span>]</span><br><span class="line">输出：<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>3 &lt;= arr.length &lt;= 105</code></li>
@@ -802,8 +791,10 @@ IconifyProviders = {
 </blockquote>
 <p><strong>枚举</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">peakIndexInMountainArray</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="type">int</span> max_index=<span class="number">0</span>,n=arr.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// if(arr.charAt(i)&lt;arr.charAt(i+1)) max=i+1;</span></span><br><span class="line">            <span class="comment">// else</span></span><br><span class="line">             <span class="keyword">if</span>(arr[i]&gt;arr[i+<span class="number">1</span>])&#123; max_index=i; <span class="keyword">break</span>;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max_index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>二分查找</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">peakIndexInMountainArray</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> arr.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">1</span>, right = n - <span class="number">2</span>, ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (left + right) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (arr[mid] &gt; arr[mid + <span class="number">1</span>]) &#123;</span><br><span class="line">                ans = mid;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </div></section><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>Eulus</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://elaina-1017.xyz/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/" title="「新」动计划·编程入门Java">http://elaina-1017.xyz/posts/%E3%80%8C%E6%96%B0%E3%80%8D%E5%8A%A8%E8%AE%A1%E5%88%92%20%C2%B7%20%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8Java/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/posts/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%97%85/" rel="prev" title="魔女之旅"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">魔女之旅</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/posts/Git%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" rel="next" title="Git常用语法"><span class="post-nav-text">Git常用语法</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2024 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> Eulus</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   setTimeout(blog_live_time, 1000);
   const start = new Date('2024-10-11T10:17:00');
