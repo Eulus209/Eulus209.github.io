@@ -1,53 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI-Chat</title>
-    <url>/posts/AI-Chat/</url>
-    <content><![CDATA[<style>
-/* iframe 容器样式 */
-.iframe-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* 使用视口高度 */
-    min-height: 400px; /* 最小高度 */
-    max-height: 900px; /* 最大高度 */
-    margin: 0 auto;
-    overflow: hidden;
-}
-/* iframe 样式 */
-.iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 12px; /* 圆角边框 */
-    box-shadow: 0 0 20px rgba(255, 0, 85, 0.2); /* 霓虹阴影效果 */
-}
+    <title>贪吃蛇</title>
+    <url>/posts/Game/</url>
+    <content><![CDATA[<iframe src="./Game.html" width="100%" height="600px"></iframe>
 
-/* 响应式设计 */
-@media screen and (max-width: 768px) {
-    .iframe-container {
-        height: calc(100vh - 40px); /* 移动设备减少一些高度 */
-        min-height: 300px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .iframe-container {
-        height: calc(100vh - 20px);
-        min-height: 200px;
-    }
-}
-</style>
-
-<!-- iframe 包装器 -->
-
-<div class="iframe-container">
-    <iframe src="./gpt4o.html" frameborder="0" allowfullscreen></iframe>
-</div>
 ]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
   </entry>
   <entry>
     <title>CPP_STL</title>
@@ -455,391 +419,6 @@
 ]]></content>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>贪吃蛇</title>
-    <url>/posts/Game/</url>
-    <content><![CDATA[<iframe src="./Game.html" width="100%" height="600px"></iframe>
-
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++基础与进阶</title>
-    <url>/posts/C_PLUS-%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/</url>
-    <content><![CDATA[<p><img src="/posts/C_PLUS-%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/elaina1.jpg" alt="elaina1" loading="lazy"></p>
-<h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><h3 id="1-起源"><a href="#1-起源" class="headerlink" title="1. 起源"></a>1. 起源</h3><p>C++ 是由丹麦计算机科学家 Bjarne Stroustrup 在 1979 年开始设计的。当时，Stroustrup 在贝尔实验室工作，他希望扩展 C 语言，使其支持面向对象编程（OOP）。最初，这个项目被称为“带类的 C”（C with Classes）。</p>
-<h3 id="2-发展"><a href="#2-发展" class="headerlink" title="2. 发展"></a>2. 发展</h3><ul>
-<li><strong>1983 年</strong>：语言正式命名为 C++，并引入了许多新特性，如虚函数、运算符重载、引用、常量等。</li>
-<li><strong>1985 年</strong>：第一本关于 C++ 的书《The C++ Programming Language》由 Stroustrup 出版。</li>
-<li><strong>1989 年</strong>：C++ 2.0 发布，引入了多重继承、抽象类、静态成员函数、保护成员等特性。</li>
-<li><strong>1998 年</strong>：C++ 标准（C++98）发布，这是第一个正式的 C++ 标准，引入了标准模板库（STL）。</li>
-<li><strong>2003 年</strong>：C++03 发布，主要是对 C++98 的修正和改进。</li>
-<li><strong>2011 年</strong>：C++11 发布，引入了大量新特性，如 lambda 表达式、智能指针、多线程支持等。</li>
-<li><strong>2014 年</strong>：C++14 发布，主要是对 C++11 的改进和扩展。</li>
-<li><strong>2017 年</strong>：C++17 发布，引入了文件系统库、并行算法等新特性。</li>
-<li><strong>2020 年</strong>：C++20 发布，引入了模块、协程、概念等新特性。</li>
-</ul>
-<h3 id="C-的特性"><a href="#C-的特性" class="headerlink" title="C++ 的特性"></a>C++ 的特性</h3><p>C++ 是一种多范式编程语言，支持多种编程范式，包括过程式编程、面向对象编程、泛型编程和函数式编程。以下是 C++ 的主要特性：</p>
-<h4 id="1-面向对象编程（OOP）"><a href="#1-面向对象编程（OOP）" class="headerlink" title="1. 面向对象编程（OOP）"></a>1. 面向对象编程（OOP）</h4><ul>
-<li><strong>类和对象</strong>：C++ 支持类和对象的概念，允许开发者通过封装、继承和多态来组织代码。</li>
-<li><strong>封装</strong>：通过访问修饰符（<code>public</code>、<code>private</code>、<code>protected</code>）控制成员的访问权限。</li>
-<li><strong>继承</strong>：允许一个类继承另一个类的属性和方法。</li>
-<li><strong>多态</strong>：通过虚函数和重载实现多态性。</li>
-</ul>
-<h4 id="2-泛型编程"><a href="#2-泛型编程" class="headerlink" title="2. 泛型编程"></a>2. 泛型编程</h4><ul>
-<li><strong>模板</strong>：C++ 支持模板，允许编写通用的代码，适用于多种数据类型。</li>
-<li><strong>标准模板库（STL）</strong>：提供了丰富的容器、算法和迭代器，极大地简化了编程。</li>
-</ul>
-<h4 id="3-高效性"><a href="#3-高效性" class="headerlink" title="3. 高效性"></a>3. 高效性</h4><ul>
-<li><strong>底层访问</strong>：C++ 提供了对底层硬件的直接访问，允许开发者编写高效的代码。</li>
-<li><strong>内存管理</strong>：C++ 允许手动管理内存，通过指针和动态内存分配（<code>new</code> 和 <code>delete</code>）来控制内存使用。</li>
-</ul>
-<h4 id="4-标准库"><a href="#4-标准库" class="headerlink" title="4. 标准库"></a>4. 标准库</h4><ul>
-<li><strong>输入输出</strong>：提供了 <code>iostream</code> 库，用于处理输入输出操作。</li>
-<li><strong>字符串处理</strong>：提供了 <code>string</code> 类，用于字符串处理。</li>
-<li><strong>容器</strong>：提供了多种容器，如 <code>vector</code>、<code>list</code>、<code>map</code>、<code>set</code> 等。</li>
-<li><strong>算法</strong>：提供了丰富的算法，如排序、查找、遍历等。</li>
-</ul>
-<h4 id="5-异常处理"><a href="#5-异常处理" class="headerlink" title="5. 异常处理"></a>5. 异常处理</h4><ul>
-<li><strong>异常处理机制</strong>：C++ 支持异常处理，用于处理程序运行时可能出现的错误。</li>
-</ul>
-<h4 id="6-多线程支持"><a href="#6-多线程支持" class="headerlink" title="6. 多线程支持"></a>6. 多线程支持</h4><ul>
-<li><strong>多线程库</strong>：C++11 引入了标准的多线程库，提供了线程、互斥锁、条件变量等工具。</li>
-</ul>
-<h4 id="7-智能指针"><a href="#7-智能指针" class="headerlink" title="7. 智能指针"></a>7. 智能指针</h4><ul>
-<li><strong>智能指针</strong>：C++11 引入了智能指针（<code>unique_ptr</code>、<code>shared_ptr</code>、<code>weak_ptr</code>），用于自动管理动态内存，避免内存泄漏。</li>
-</ul>
-<h4 id="8-元编程"><a href="#8-元编程" class="headerlink" title="8. 元编程"></a>8. 元编程</h4><ul>
-<li><strong>模板元编程</strong>：C++ 支持模板元编程，允许编写代码生成代码。</li>
-</ul>
-<h3 id="C-的应用领域"><a href="#C-的应用领域" class="headerlink" title="C++ 的应用领域"></a>C++ 的应用领域</h3><p>C++ 是一种功能强大且灵活的编程语言，广泛应用于多个领域。以下是 C++ 的主要应用领域：</p>
-<h4 id="1-系统编程"><a href="#1-系统编程" class="headerlink" title="1. 系统编程"></a>1. 系统编程</h4><ul>
-<li><strong>操作系统</strong>：C++ 常用于开发操作系统内核和驱动程序。</li>
-<li><strong>嵌入式系统</strong>：C++ 适用于开发嵌入式系统，如微控制器、传感器网络等。</li>
-</ul>
-<h4 id="2-游戏开发"><a href="#2-游戏开发" class="headerlink" title="2. 游戏开发"></a>2. 游戏开发</h4><ul>
-<li><strong>游戏引擎</strong>：C++ 是开发游戏引擎的首选语言，如 Unreal Engine、Unity（部分使用 C++）。</li>
-<li><strong>游戏逻辑</strong>：C++ 用于编写游戏的核心逻辑和性能关键部分。</li>
-</ul>
-<h4 id="3-高性能计算"><a href="#3-高性能计算" class="headerlink" title="3. 高性能计算"></a>3. 高性能计算</h4><ul>
-<li><strong>科学计算</strong>：C++ 常用于科学计算和数值模拟，如物理模拟、天气预报等。</li>
-<li><strong>图形处理</strong>：C++ 用于开发图形处理库和工具，如 OpenGL、DirectX。</li>
-</ul>
-<h4 id="4-金融和交易系统"><a href="#4-金融和交易系统" class="headerlink" title="4. 金融和交易系统"></a>4. 金融和交易系统</h4><ul>
-<li><strong>高频交易</strong>：C++ 用于开发高频交易系统，因其高效性和低延迟。</li>
-<li><strong>金融建模</strong>：C++ 用于金融建模和风险分析。</li>
-</ul>
-<h4 id="5-网络和通信"><a href="#5-网络和通信" class="headerlink" title="5. 网络和通信"></a>5. 网络和通信</h4><ul>
-<li><strong>网络服务器</strong>：C++ 用于开发高性能的网络服务器和通信协议。</li>
-<li><strong>实时通信</strong>：C++ 用于开发实时通信系统，如 VoIP、视频会议等。</li>
-</ul>
-<h4 id="6-数据库系统"><a href="#6-数据库系统" class="headerlink" title="6. 数据库系统"></a>6. 数据库系统</h4><ul>
-<li><strong>数据库引擎</strong>：C++ 用于开发数据库引擎和存储系统。</li>
-<li><strong>数据处理</strong>：C++ 用于开发数据处理和分析工具。</li>
-</ul>
-<h4 id="7-桌面应用"><a href="#7-桌面应用" class="headerlink" title="7. 桌面应用"></a>7. 桌面应用</h4><ul>
-<li><strong>图形用户界面（GUI）</strong>：C++ 用于开发桌面应用程序，如 Qt、MFC 等框架。</li>
-<li><strong>办公软件</strong>：C++ 用于开发办公软件，如 Microsoft Office 的部分组件。</li>
-</ul>
-<h4 id="8-人工智能和机器学习"><a href="#8-人工智能和机器学习" class="headerlink" title="8. 人工智能和机器学习"></a>8. 人工智能和机器学习</h4><ul>
-<li><strong>机器学习框架</strong>：C++ 用于开发机器学习框架和库，如 TensorFlow、PyTorch（部分使用 C++）。</li>
-<li><strong>深度学习</strong>：C++ 用于开发深度学习模型和算法。</li>
-</ul>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>C++ 是一种功能强大且灵活的编程语言，具有丰富的历史和特性。它支持多种编程范式，包括面向对象编程、泛型编程和函数式编程，广泛应用于系统编程、游戏开发、高性能计算、金融和交易系统、网络和通信、数据库系统、桌面应用、人工智能和机器学习等领域。通过不断的发展和更新，C++ 仍然是现代软件开发中不可或缺的一部分。</p>
-<p><img src="/posts/C_PLUS-%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/shisyou.jpg" alt="shisyou" loading="lazy"></p>
-<h2 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h2><h3 id="1-基本结构"><a href="#1-基本结构" class="headerlink" title="1. 基本结构"></a>1. 基本结构</h3><p>C++ 程序的基本结构包括以下几个部分：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span>  <span class="comment">// 预处理指令，包含标准输入输出库</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;  <span class="comment">// 使用标准命名空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;  <span class="comment">// 主函数，程序的入口点</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; endl;  <span class="comment">// 输出语句</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">// 返回值，表示程序正常结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>#include &lt;iostream&gt;</code>：预处理指令，用于包含标准输入输出库。</li>
-<li><code>using namespace std;</code>：使用标准命名空间，避免每次使用标准库函数时都需要加上 <code>std::</code> 前缀。</li>
-<li><code>int main()</code>：主函数，程序的入口点。每个 C++ 程序都必须有一个 <code>main</code> 函数。</li>
-<li><code>cout &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; endl;</code>：输出语句，将字符串 “Hello, World!” 输出到控制台。</li>
-<li><code>return 0;</code>：返回值，表示程序正常结束。</li>
-</ul>
-<h3 id="2-注释"><a href="#2-注释" class="headerlink" title="2. 注释"></a>2. 注释</h3><p>C++ 支持两种注释方式：</p>
-<ul>
-<li>单行注释：<code>// 这是单行注释</code></li>
-<li>多行注释：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这是多行注释</span></span><br><span class="line"><span class="comment">可以跨越多行</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="3-变量和数据类型"><a href="#3-变量和数据类型" class="headerlink" title="3. 变量和数据类型"></a>3. 变量和数据类型</h3><p>C++ 支持多种数据类型：</p>
-<ul>
-<li><p>基本数据类型：</p>
-<ul>
-<li><code>int</code>：整数类型</li>
-<li><code>float</code>：单精度浮点数</li>
-<li><code>double</code>：双精度浮点数</li>
-<li><code>char</code>：字符类型</li>
-<li><code>bool</code>：布尔类型（<code>true</code> 或 <code>false</code>）</li>
-</ul>
-</li>
-<li><p>变量声明：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> age = <span class="number">25</span>;</span><br><span class="line"><span class="type">float</span> height = <span class="number">1.75</span>;</span><br><span class="line"><span class="type">char</span> grade = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line"><span class="type">bool</span> isStudent = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>常量：使用 <code>const</code> 关键字定义常量</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAX_VALUE = <span class="number">100</span>;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="4-运算符"><a href="#4-运算符" class="headerlink" title="4. 运算符"></a>4. 运算符</h3><p>C++ 支持多种运算符：</p>
-<ul>
-<li>算术运算符：<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
-<li>关系运算符：<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
-<li>逻辑运算符：<code>&amp;&amp;</code>, <code>||</code>, <code>!</code></li>
-<li>赋值运算符：<code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></li>
-<li>位运算符：<code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code></li>
-</ul>
-<h3 id="5-控制结构"><a href="#5-控制结构" class="headerlink" title="5. 控制结构"></a>5. 控制结构</h3><p>C++ 提供了多种控制结构来控制程序的流程：</p>
-<ul>
-<li><p>条件语句：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    <span class="comment">// 如果条件为真，执行这里的代码</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (another_condition) &#123;</span><br><span class="line">    <span class="comment">// 如果另一个条件为真，执行这里的代码</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 如果所有条件都不为真，执行这里的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>循环语句：</p>
-<ul>
-<li><p><code>for</code> 循环：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>while</code> 循环：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>do-while</code> 循环：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125; <span class="keyword">while</span> (condition);</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><code>switch</code> 语句：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> (expression) &#123;</span><br><span class="line">    <span class="keyword">case</span> value1:</span><br><span class="line">        <span class="comment">// 如果 expression 等于 value1，执行这里的代码</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value2:</span><br><span class="line">        <span class="comment">// 如果 expression 等于 value2，执行这里的代码</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="comment">// 如果 expression 不等于任何 case 值，执行这里的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="6-函数"><a href="#6-函数" class="headerlink" title="6. 函数"></a>6. 函数</h3><p>函数是 C++ 中的基本模块，用于封装可重用的代码块。</p>
-<ul>
-<li><p>函数定义：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">return_type <span class="title">function_name</span><span class="params">(parameter_list)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 函数体</span></span><br><span class="line">    <span class="keyword">return</span> value;  <span class="comment">// 返回值（如果需要）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>示例：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数调用：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> result = <span class="built_in">add</span>(<span class="number">3</span>, <span class="number">4</span>);  <span class="comment">// 调用 add 函数，返回值为 7</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="7-数组"><a href="#7-数组" class="headerlink" title="7. 数组"></a>7. 数组</h3><p>数组是用于存储多个相同类型元素的集合。</p>
-<ul>
-<li><p>数组声明：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> numbers[<span class="number">5</span>];  <span class="comment">// 声明一个包含 5 个整数的数组</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>数组初始化：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> numbers[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>访问数组元素：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> firstElement = numbers[<span class="number">0</span>];  <span class="comment">// 访问第一个元素</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="8-指针"><a href="#8-指针" class="headerlink" title="8. 指针"></a>8. 指针</h3><p>指针是 C++ 中非常重要的概念，用于存储变量的内存地址。</p>
-<ul>
-<li><p>指针声明：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> *ptr;  <span class="comment">// 声明一个指向整数的指针</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>指针赋值：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line">ptr = &amp;x;  <span class="comment">// ptr 存储 x 的地址</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解引用指针：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value = *ptr;  <span class="comment">// 获取 ptr 指向的值</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="9-类和对象"><a href="#9-类和对象" class="headerlink" title="9. 类和对象"></a>9. 类和对象</h3><p>C++ 是一种面向对象的编程语言，支持类和对象的概念。</p>
-<ul>
-<li><p>类定义：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> myVariable;  <span class="comment">// 成员变量</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123;  <span class="comment">// 成员函数</span></span><br><span class="line">        <span class="comment">// 方法体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对象创建：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">MyClass obj;  <span class="comment">// 创建 MyClass 类的对象</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>访问成员：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">obj.myVariable = <span class="number">10</span>;  <span class="comment">// 访问成员变量</span></span><br><span class="line">obj.<span class="built_in">myMethod</span>();  <span class="comment">// 调用成员函数</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="10-继承和多态"><a href="#10-继承和多态" class="headerlink" title="10. 继承和多态"></a>10. 继承和多态</h3><p>C++ 支持继承和多态，这是面向对象编程的重要特性。</p>
-<ul>
-<li><p>继承：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DerivedClass</span> : <span class="keyword">public</span> BaseClass &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 派生类的成员</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多态：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">makeSound</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Animal sound&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> : <span class="keyword">public</span> Animal &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">makeSound</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Woof!&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Animal *animal = <span class="keyword">new</span> <span class="built_in">Dog</span>();</span><br><span class="line">animal-&gt;<span class="built_in">makeSound</span>();  <span class="comment">// 输出 &quot;Woof!&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="11-标准库"><a href="#11-标准库" class="headerlink" title="11. 标准库"></a>11. 标准库</h3><p>C++ 提供了丰富的标准库，包括输入输出、字符串处理、容器、算法等。</p>
-<ul>
-<li><p>标准输入输出：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    cin &gt;&gt; x;  <span class="comment">// 从标准输入读取数据</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;You entered: &quot;</span> &lt;&lt; x &lt;&lt; endl;  <span class="comment">// 输出到标准输出</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字符串处理：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">    str += <span class="string">&quot; World&quot;</span>;</span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;  <span class="comment">// 输出 &quot;Hello World&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>容器：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="12-异常处理"><a href="#12-异常处理" class="headerlink" title="12. 异常处理"></a>12. 异常处理</h3><p>C++ 支持异常处理，用于处理程序运行时可能出现的错误。</p>
-<ul>
-<li><p>异常处理：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 可能抛出异常的代码</span></span><br><span class="line">&#125; <span class="built_in">catch</span> (exception_type e) &#123;</span><br><span class="line">    <span class="comment">// 处理异常的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>示例：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;Negative value&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="built_in">catch</span> (<span class="type">const</span> <span class="type">char</span>* msg) &#123;</span><br><span class="line">    cerr &lt;&lt; msg &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="13-模板"><a href="#13-模板" class="headerlink" title="13. 模板"></a>13. 模板</h3><p>C++ 支持模板，用于编写通用的代码，适用于多种数据类型。</p>
-<ul>
-<li><p>函数模板：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">add</span><span class="params">(T a, T b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>类模板：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T myVariable;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="14-命名空间"><a href="#14-命名空间" class="headerlink" title="14. 命名空间"></a>14. 命名空间</h3><p>命名空间用于避免命名冲突。</p>
-<ul>
-<li><p>命名空间定义：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> MyNamespace &#123;</span><br><span class="line">    <span class="type">int</span> myVariable = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用命名空间：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> MyNamespace;</span><br><span class="line">cout &lt;&lt; myVariable &lt;&lt; endl;  <span class="comment">// 输出 10</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="15-文件操作"><a href="#15-文件操作" class="headerlink" title="15. 文件操作"></a>15. 文件操作</h3><p>C++ 支持文件操作，用于读写文件。</p>
-<ul>
-<li>文件读写：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">ofstream <span class="title">outFile</span><span class="params">(<span class="string">&quot;example.txt&quot;</span>)</span></span>;</span><br><span class="line">    outFile &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; endl;</span><br><span class="line">    outFile.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function">ifstream <span class="title">inFile</span><span class="params">(<span class="string">&quot;example.txt&quot;</span>)</span></span>;</span><br><span class="line">    string line;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">getline</span>(inFile, line)) &#123;</span><br><span class="line">        cout &lt;&lt; line &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    inFile.<span class="built_in">close</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>C++ 是一种功能强大且灵活的编程语言，支持多种编程范式，包括过程式编程、面向对象编程和泛型编程。掌握 C++ 的基本语法和特性是深入学习 C++ 编程的基础。通过不断实践和学习，你可以逐步掌握 C++ 的高级特性和最佳实践。</p>
-<h2 id="C-进阶"><a href="#C-进阶" class="headerlink" title="C++进阶"></a>C++进阶</h2><p>C++ 进阶内容涵盖了更高级的编程技巧和特性，包括模板编程、STL（标准模板库）、智能指针、多线程编程、异常处理、RAII（资源获取即初始化）、元编程等。以下是对这些进阶内容的详细讲解：</p>
-<h3 id="1-模板编程"><a href="#1-模板编程" class="headerlink" title="1. 模板编程"></a>1. 模板编程</h3><p>模板编程是 C++ 中的一种泛型编程技术，允许编写通用的代码，适用于多种数据类型。</p>
-<h4 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h4><p>函数模板允许定义一个通用的函数，可以处理多种数据类型。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">add</span><span class="params">(T a, T b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> result1 = <span class="built_in">add</span>(<span class="number">3</span>, <span class="number">4</span>);  <span class="comment">// 调用 add&lt;int&gt;</span></span><br><span class="line">    <span class="type">double</span> result2 = <span class="built_in">add</span>(<span class="number">3.5</span>, <span class="number">4.5</span>);  <span class="comment">// 调用 add&lt;double&gt;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h4><p>类模板允许定义一个通用的类，可以处理多种数据类型。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T myVariable;</span><br><span class="line">    <span class="built_in">MyClass</span>(T value) : <span class="built_in">myVariable</span>(value) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">MyClass&lt;<span class="type">int</span>&gt; <span class="title">obj1</span><span class="params">(<span class="number">10</span>)</span></span>;  <span class="comment">// 创建 MyClass&lt;int&gt; 对象</span></span><br><span class="line">    <span class="function">MyClass&lt;<span class="type">double</span>&gt; <span class="title">obj2</span><span class="params">(<span class="number">3.14</span>)</span></span>;  <span class="comment">// 创建 MyClass&lt;double&gt; 对象</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-STL（标准模板库）"><a href="#2-STL（标准模板库）" class="headerlink" title="2. STL（标准模板库）"></a>2. STL（标准模板库）</h3><p>STL 是 C++ 标准库的一部分，提供了丰富的容器、算法和迭代器，极大地简化了编程。</p>
-<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>STL 提供了多种容器，如 <code>vector</code>、<code>list</code>、<code>map</code>、<code>set</code> 等。</p>
-<ul>
-<li><p><code>vector</code>：动态数组</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    vec.<span class="built_in">push_back</span>(<span class="number">6</span>);  <span class="comment">// 添加元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>list</code>：双向链表</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    list&lt;<span class="type">int</span>&gt; lst = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    lst.<span class="built_in">push_back</span>(<span class="number">6</span>);  <span class="comment">// 添加元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : lst) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>map</code>：关联容器，存储键值对</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    map&lt;string, <span class="type">int</span>&gt; ages;</span><br><span class="line">    ages[<span class="string">&quot;Alice&quot;</span>] = <span class="number">25</span>;</span><br><span class="line">    ages[<span class="string">&quot;Bob&quot;</span>] = <span class="number">30</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; pair : ages) &#123;</span><br><span class="line">        cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>set</code>：集合，存储唯一元素</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    set&lt;<span class="type">int</span>&gt; s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    s.<span class="built_in">insert</span>(<span class="number">6</span>);  <span class="comment">// 添加元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : s) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>STL 提供了丰富的算法，如排序、查找、遍历等。</p>
-<ul>
-<li><p><code>sort</code>：排序算法</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line">    <span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>find</code>：查找算法</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">auto</span> it = <span class="built_in">find</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Found at index: &quot;</span> &lt;&lt; it - vec.<span class="built_in">begin</span>() &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><p>迭代器是 STL 中用于遍历容器元素的通用工具。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator it = vec.<span class="built_in">begin</span>(); it != vec.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">        cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-智能指针"><a href="#3-智能指针" class="headerlink" title="3. 智能指针"></a>3. 智能指针</h3><p>智能指针是 C++ 中用于管理动态内存的工具，可以自动释放内存，避免内存泄漏。</p>
-<ul>
-<li><p><code>unique_ptr</code>：独占所有权的智能指针</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">ptr</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>(<span class="number">10</span>))</span></span>;</span><br><span class="line">    cout &lt;&lt; *ptr &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>shared_ptr</code>：共享所有权的智能指针</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">shared_ptr&lt;<span class="type">int</span>&gt; <span class="title">ptr1</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>(<span class="number">10</span>))</span></span>;</span><br><span class="line">    shared_ptr&lt;<span class="type">int</span>&gt; ptr2 = ptr1;</span><br><span class="line">    cout &lt;&lt; *ptr1 &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *ptr2 &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>weak_ptr</code>：弱引用智能指针，用于解决 <code>shared_ptr</code> 的循环引用问题</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">shared_ptr&lt;<span class="type">int</span>&gt; <span class="title">ptr1</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>(<span class="number">10</span>))</span></span>;</span><br><span class="line">    weak_ptr&lt;<span class="type">int</span>&gt; ptr2 = ptr1;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">auto</span> ptr = ptr<span class="number">2.l</span>ock()) &#123;</span><br><span class="line">        cout &lt;&lt; *ptr &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="4-多线程编程"><a href="#4-多线程编程" class="headerlink" title="4. 多线程编程"></a>4. 多线程编程</h3><p>C++11 引入了标准的多线程库，提供了线程、互斥锁、条件变量等工具。</p>
-<ul>
-<li><p>线程</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">threadFunction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello from thread&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">thread <span class="title">t</span><span class="params">(threadFunction)</span></span>;</span><br><span class="line">    t.<span class="built_in">join</span>();  <span class="comment">// 等待线程结束</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>互斥锁</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">mutex mtx;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">threadFunction</span><span class="params">(<span class="type">int</span> id)</span> </span>&#123;</span><br><span class="line">    mtx.<span class="built_in">lock</span>();</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Thread &quot;</span> &lt;&lt; id &lt;&lt; <span class="string">&quot; is running&quot;</span> &lt;&lt; endl;</span><br><span class="line">    mtx.<span class="built_in">unlock</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">thread <span class="title">t1</span><span class="params">(threadFunction, <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">thread <span class="title">t2</span><span class="params">(threadFunction, <span class="number">2</span>)</span></span>;</span><br><span class="line">    t<span class="number">1.</span><span class="built_in">join</span>();</span><br><span class="line">    t<span class="number">2.</span><span class="built_in">join</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>条件变量</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;condition_variable&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">mutex mtx;</span><br><span class="line">condition_variable cv;</span><br><span class="line"><span class="type">bool</span> ready = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">workerThread</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">unique_lock&lt;mutex&gt; <span class="title">lock</span><span class="params">(mtx)</span></span>;</span><br><span class="line">    cv.<span class="built_in">wait</span>(lock, []&#123; <span class="keyword">return</span> ready; &#125;);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Worker thread is running&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">thread <span class="title">t</span><span class="params">(workerThread)</span></span>;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">lock_guard&lt;mutex&gt; <span class="title">lock</span><span class="params">(mtx)</span></span>;</span><br><span class="line">        ready = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cv.<span class="built_in">notify_one</span>();</span><br><span class="line">    t.<span class="built_in">join</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="5-异常处理-1"><a href="#5-异常处理-1" class="headerlink" title="5. 异常处理"></a>5. 异常处理</h3><p>异常处理是 C++ 中用于处理程序运行时错误的机制。</p>
-<ul>
-<li>抛出和捕获异常<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">divide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;Division by zero&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; a / b &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">divide</span>(<span class="number">10</span>, <span class="number">0</span>);</span><br><span class="line">    &#125; <span class="built_in">catch</span> (<span class="type">const</span> <span class="type">char</span>* msg) &#123;</span><br><span class="line">        cerr &lt;&lt; msg &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="6-RAII（资源获取即初始化）"><a href="#6-RAII（资源获取即初始化）" class="headerlink" title="6. RAII（资源获取即初始化）"></a>6. RAII（资源获取即初始化）</h3><p>RAII 是一种编程技术，通过对象的生命周期来管理资源，确保资源在对象销毁时自动释放。</p>
-<ul>
-<li>示例：使用 RAII 管理文件资源<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FileHandler</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">FileHandler</span>(<span class="type">const</span> string&amp; filename) : <span class="built_in">file</span>(filename, ios::out) &#123;&#125;</span><br><span class="line">    ~<span class="built_in">FileHandler</span>() &#123;</span><br><span class="line">        file.<span class="built_in">close</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">ofstream&amp; <span class="title">getFile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> file;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    ofstream file;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">FileHandler <span class="title">fh</span><span class="params">(<span class="string">&quot;example.txt&quot;</span>)</span></span>;</span><br><span class="line">    fh.<span class="built_in">getFile</span>() &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="7-元编程"><a href="#7-元编程" class="headerlink" title="7. 元编程"></a>7. 元编程</h3><p>元编程是 C++ 中的一种高级编程技术，通过编写代码生成代码。</p>
-<ul>
-<li>模板元编程<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="type">int</span> N&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Factorial</span> &#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">int</span> value = N * Factorial&lt;N - <span class="number">1</span>&gt;::value;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Factorial</span>&lt;<span class="number">0</span>&gt; &#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">int</span> value = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; Factorial&lt;<span class="number">5</span>&gt;::value &lt;&lt; endl;  <span class="comment">// 输出 120</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="8-智能指针与-RAII-结合"><a href="#8-智能指针与-RAII-结合" class="headerlink" title="8. 智能指针与 RAII 结合"></a>8. 智能指针与 RAII 结合</h3><p>智能指针与 RAII 结合使用，可以更安全地管理动态内存。</p>
-<ul>
-<li>示例：使用 <code>unique_ptr</code> 管理动态数组<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">unique_ptr&lt;<span class="type">int</span>[]&gt; <span class="title">arr</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>])</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">        arr[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="9-高级特性"><a href="#9-高级特性" class="headerlink" title="9. 高级特性"></a>9. 高级特性</h3><p>C++ 还提供了一些高级特性，如移动语义、完美转发、lambda 表达式等。</p>
-<ul>
-<li><p>移动语义</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>() &#123; cout &lt;&lt; <span class="string">&quot;Constructor&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="built_in">MyClass</span>(<span class="type">const</span> MyClass&amp;) &#123; cout &lt;&lt; <span class="string">&quot;Copy Constructor&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="built_in">MyClass</span>(MyClass&amp;&amp;) <span class="keyword">noexcept</span> &#123; cout &lt;&lt; <span class="string">&quot;Move Constructor&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    ~<span class="built_in">MyClass</span>() &#123; cout &lt;&lt; <span class="string">&quot;Destructor&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    MyClass obj1;</span><br><span class="line">    MyClass obj2 = <span class="built_in">move</span>(obj1);  <span class="comment">// 调用移动构造函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完美转发</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">int</span>&amp; x)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;Lvalue: &quot;</span> &lt;&lt; x &lt;&lt; endl; &#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">int</span>&amp;&amp; x)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;Rvalue: &quot;</span> &lt;&lt; x &lt;&lt; endl; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">forward</span><span class="params">(T&amp;&amp; x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(forward&lt;T&gt;(x));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">    forward(a);  <span class="comment">// 调用 print(int&amp;)</span></span><br><span class="line">    forward(<span class="number">20</span>);  <span class="comment">// 调用 print(int&amp;&amp;)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Lambda 表达式</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    for_each(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), [](<span class="type">int</span> x) &#123; cout &lt;&lt; x &lt;&lt; <span class="string">&quot; &quot;</span>; &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>C++ 进阶内容涵盖了模板编程、STL、智能指针、多线程编程、异常处理、RAII、元编程等高级特性。掌握这些进阶内容可以帮助你编写更高效、更安全的 C++ 代码，并解决更复杂的问题。通过不断实践和学习，你可以逐步掌握这些高级特性和最佳实践。</p>
-<h2 id="C-竞赛"><a href="#C-竞赛" class="headerlink" title="C++竞赛"></a>C++竞赛</h2><p>在算法竞赛中，C++ 是一种非常流行的编程语言，因为它具有高效的性能和丰富的标准库。以下是一些在算法竞赛中常用的 C++ 语法和技巧：</p>
-<h3 id="1-输入输出优化"><a href="#1-输入输出优化" class="headerlink" title="1. 输入输出优化"></a>1. 输入输出优化</h3><p>在算法竞赛中，输入输出速度非常重要。使用 <code>cin</code> 和 <code>cout</code> 可能会比 <code>scanf</code> 和 <code>printf</code> 慢，但可以通过以下方式优化：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);  <span class="comment">// 关闭与 C 标准库的同步</span></span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">NULL</span>);  <span class="comment">// 解绑 cin 和 cout</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; n &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-快速读取输入"><a href="#2-快速读取输入" class="headerlink" title="2. 快速读取输入"></a>2. 快速读取输入</h3><p>在需要快速读取大量输入时，可以使用以下技巧：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">readInt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="type">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (ch &lt; <span class="string">&#x27;0&#x27;</span> || ch &gt; <span class="string">&#x27;9&#x27;</span>) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + ch - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="built_in">readInt</span>();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-常用数据结构"><a href="#3-常用数据结构" class="headerlink" title="3. 常用数据结构"></a>3. 常用数据结构</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>数组是最基本的数据结构，用于存储相同类型的元素。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">100</span>];  <span class="comment">// 声明一个包含 100 个整数的数组</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="向量（Vector）"><a href="#向量（Vector）" class="headerlink" title="向量（Vector）"></a>向量（Vector）</h4><p>向量是动态数组，可以根据需要自动调整大小。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    vec.<span class="built_in">push_back</span>(<span class="number">6</span>);  <span class="comment">// 添加元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h4><p>栈是一种后进先出（LIFO）的数据结构。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; s;</span><br><span class="line">    s.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    s.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; s.<span class="built_in">top</span>() &lt;&lt; endl;  <span class="comment">// 输出 2</span></span><br><span class="line">    s.<span class="built_in">pop</span>();</span><br><span class="line">    cout &lt;&lt; s.<span class="built_in">top</span>() &lt;&lt; endl;  <span class="comment">// 输出 1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="队列（Queue）"><a href="#队列（Queue）" class="headerlink" title="队列（Queue）"></a>队列（Queue）</h4><p>队列是一种先进先出（FIFO）的数据结构。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    q.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; q.<span class="built_in">front</span>() &lt;&lt; endl;  <span class="comment">// 输出 1</span></span><br><span class="line">    q.<span class="built_in">pop</span>();</span><br><span class="line">    cout &lt;&lt; q.<span class="built_in">front</span>() &lt;&lt; endl;  <span class="comment">// 输出 2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="优先队列（Priority-Queue）"><a href="#优先队列（Priority-Queue）" class="headerlink" title="优先队列（Priority Queue）"></a>优先队列（Priority Queue）</h4><p>优先队列是一种特殊的队列，元素按照优先级排序。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>&gt; pq;</span><br><span class="line">    pq.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">    pq.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    pq.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; pq.<span class="built_in">top</span>() &lt;&lt; endl;  <span class="comment">// 输出 3</span></span><br><span class="line">    pq.<span class="built_in">pop</span>();</span><br><span class="line">    cout &lt;&lt; pq.<span class="built_in">top</span>() &lt;&lt; endl;  <span class="comment">// 输出 2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-常用算法"><a href="#4-常用算法" class="headerlink" title="4. 常用算法"></a>4. 常用算法</h3><h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p>C++ 标准库提供了 <code>sort</code> 函数，可以对数组或向量进行排序。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line">    <span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p>C++ 标准库提供了 <code>lower_bound</code> 和 <code>upper_bound</code> 函数，用于在有序数组中进行二分查找。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">auto</span> it = <span class="built_in">lower_bound</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Found at index: &quot;</span> &lt;&lt; it - vec.<span class="built_in">begin</span>() &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-常用技巧"><a href="#5-常用技巧" class="headerlink" title="5. 常用技巧"></a>5. 常用技巧</h3><h4 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h4><p>位运算在算法竞赛中非常常见，可以用于快速计算和优化。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">5</span>;  <span class="comment">// 二进制表示为 0101</span></span><br><span class="line"><span class="type">int</span> b = <span class="number">3</span>;  <span class="comment">// 二进制表示为 0011</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> andResult = a &amp; b;  <span class="comment">// 按位与，结果为 0001</span></span><br><span class="line"><span class="type">int</span> orResult = a | b;   <span class="comment">// 按位或，结果为 0111</span></span><br><span class="line"><span class="type">int</span> xorResult = a ^ b;  <span class="comment">// 按位异或，结果为 0110</span></span><br><span class="line"><span class="type">int</span> notResult = ~a;     <span class="comment">// 按位取反，结果为 1010</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h4><p>快速幂算法用于快速计算幂运算。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">fastPow</span><span class="params">(<span class="type">long</span> <span class="type">long</span> base, <span class="type">long</span> <span class="type">long</span> exp, <span class="type">long</span> <span class="type">long</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> result = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (exp &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (exp % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            result = (result * base) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        base = (base * base) % mod;</span><br><span class="line">        exp /= <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h4><p>前缀和是一种常用的技巧，用于快速计算数组中某个区间的和。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; arr = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">prefixSum</span><span class="params">(arr.size() + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; arr.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        prefixSum[i + <span class="number">1</span>] = prefixSum[i] + arr[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> l = <span class="number">1</span>, r = <span class="number">3</span>;</span><br><span class="line">    <span class="type">int</span> sum = prefixSum[r + <span class="number">1</span>] - prefixSum[l];  <span class="comment">// 计算区间 [l, r] 的和</span></span><br><span class="line">    cout &lt;&lt; sum &lt;&lt; endl;  <span class="comment">// 输出 9</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-常用库函数"><a href="#6-常用库函数" class="headerlink" title="6. 常用库函数"></a>6. 常用库函数</h3><h4 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h4><p>C++ 标准库提供了许多常用的数学函数。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> x = <span class="number">2.0</span>;</span><br><span class="line">    <span class="type">double</span> sqrtX = <span class="built_in">sqrt</span>(x);  <span class="comment">// 平方根</span></span><br><span class="line">    <span class="type">double</span> powX = <span class="built_in">pow</span>(x, <span class="number">3</span>);  <span class="comment">// 幂运算</span></span><br><span class="line">    <span class="type">double</span> logX = <span class="built_in">log</span>(x);  <span class="comment">// 自然对数</span></span><br><span class="line">    cout &lt;&lt; sqrtX &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; powX &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; logX &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h4><p>C++ 标准库提供了丰富的字符串处理函数。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    <span class="built_in">reverse</span>(str.<span class="built_in">begin</span>(), str.<span class="built_in">end</span>());  <span class="comment">// 反转字符串</span></span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;  <span class="comment">// 输出 &quot;olleh&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>在算法竞赛中，C++ 的常用语法和技巧包括输入输出优化、常用数据结构（如数组、向量、栈、队列、优先队列）、常用算法（如排序、二分查找）、常用技巧（如位运算、快速幂、前缀和）以及常用库函数（如数学函数、字符串处理函数）。掌握这些内容可以帮助你在算法竞赛中高效地解决问题。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1296,6 +875,378 @@
       </tags>
   </entry>
   <entry>
+    <title>C++基础与进阶</title>
+    <url>/posts/C_PLUS-%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/</url>
+    <content><![CDATA[<p><img src="/posts/C_PLUS-%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/elaina1.jpg" alt="elaina1" loading="lazy"></p>
+<h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><h3 id="1-起源"><a href="#1-起源" class="headerlink" title="1. 起源"></a>1. 起源</h3><p>C++ 是由丹麦计算机科学家 Bjarne Stroustrup 在 1979 年开始设计的。当时，Stroustrup 在贝尔实验室工作，他希望扩展 C 语言，使其支持面向对象编程（OOP）。最初，这个项目被称为“带类的 C”（C with Classes）。</p>
+<h3 id="2-发展"><a href="#2-发展" class="headerlink" title="2. 发展"></a>2. 发展</h3><ul>
+<li><strong>1983 年</strong>：语言正式命名为 C++，并引入了许多新特性，如虚函数、运算符重载、引用、常量等。</li>
+<li><strong>1985 年</strong>：第一本关于 C++ 的书《The C++ Programming Language》由 Stroustrup 出版。</li>
+<li><strong>1989 年</strong>：C++ 2.0 发布，引入了多重继承、抽象类、静态成员函数、保护成员等特性。</li>
+<li><strong>1998 年</strong>：C++ 标准（C++98）发布，这是第一个正式的 C++ 标准，引入了标准模板库（STL）。</li>
+<li><strong>2003 年</strong>：C++03 发布，主要是对 C++98 的修正和改进。</li>
+<li><strong>2011 年</strong>：C++11 发布，引入了大量新特性，如 lambda 表达式、智能指针、多线程支持等。</li>
+<li><strong>2014 年</strong>：C++14 发布，主要是对 C++11 的改进和扩展。</li>
+<li><strong>2017 年</strong>：C++17 发布，引入了文件系统库、并行算法等新特性。</li>
+<li><strong>2020 年</strong>：C++20 发布，引入了模块、协程、概念等新特性。</li>
+</ul>
+<h3 id="C-的特性"><a href="#C-的特性" class="headerlink" title="C++ 的特性"></a>C++ 的特性</h3><p>C++ 是一种多范式编程语言，支持多种编程范式，包括过程式编程、面向对象编程、泛型编程和函数式编程。以下是 C++ 的主要特性：</p>
+<h4 id="1-面向对象编程（OOP）"><a href="#1-面向对象编程（OOP）" class="headerlink" title="1. 面向对象编程（OOP）"></a>1. 面向对象编程（OOP）</h4><ul>
+<li><strong>类和对象</strong>：C++ 支持类和对象的概念，允许开发者通过封装、继承和多态来组织代码。</li>
+<li><strong>封装</strong>：通过访问修饰符（<code>public</code>、<code>private</code>、<code>protected</code>）控制成员的访问权限。</li>
+<li><strong>继承</strong>：允许一个类继承另一个类的属性和方法。</li>
+<li><strong>多态</strong>：通过虚函数和重载实现多态性。</li>
+</ul>
+<h4 id="2-泛型编程"><a href="#2-泛型编程" class="headerlink" title="2. 泛型编程"></a>2. 泛型编程</h4><ul>
+<li><strong>模板</strong>：C++ 支持模板，允许编写通用的代码，适用于多种数据类型。</li>
+<li><strong>标准模板库（STL）</strong>：提供了丰富的容器、算法和迭代器，极大地简化了编程。</li>
+</ul>
+<h4 id="3-高效性"><a href="#3-高效性" class="headerlink" title="3. 高效性"></a>3. 高效性</h4><ul>
+<li><strong>底层访问</strong>：C++ 提供了对底层硬件的直接访问，允许开发者编写高效的代码。</li>
+<li><strong>内存管理</strong>：C++ 允许手动管理内存，通过指针和动态内存分配（<code>new</code> 和 <code>delete</code>）来控制内存使用。</li>
+</ul>
+<h4 id="4-标准库"><a href="#4-标准库" class="headerlink" title="4. 标准库"></a>4. 标准库</h4><ul>
+<li><strong>输入输出</strong>：提供了 <code>iostream</code> 库，用于处理输入输出操作。</li>
+<li><strong>字符串处理</strong>：提供了 <code>string</code> 类，用于字符串处理。</li>
+<li><strong>容器</strong>：提供了多种容器，如 <code>vector</code>、<code>list</code>、<code>map</code>、<code>set</code> 等。</li>
+<li><strong>算法</strong>：提供了丰富的算法，如排序、查找、遍历等。</li>
+</ul>
+<h4 id="5-异常处理"><a href="#5-异常处理" class="headerlink" title="5. 异常处理"></a>5. 异常处理</h4><ul>
+<li><strong>异常处理机制</strong>：C++ 支持异常处理，用于处理程序运行时可能出现的错误。</li>
+</ul>
+<h4 id="6-多线程支持"><a href="#6-多线程支持" class="headerlink" title="6. 多线程支持"></a>6. 多线程支持</h4><ul>
+<li><strong>多线程库</strong>：C++11 引入了标准的多线程库，提供了线程、互斥锁、条件变量等工具。</li>
+</ul>
+<h4 id="7-智能指针"><a href="#7-智能指针" class="headerlink" title="7. 智能指针"></a>7. 智能指针</h4><ul>
+<li><strong>智能指针</strong>：C++11 引入了智能指针（<code>unique_ptr</code>、<code>shared_ptr</code>、<code>weak_ptr</code>），用于自动管理动态内存，避免内存泄漏。</li>
+</ul>
+<h4 id="8-元编程"><a href="#8-元编程" class="headerlink" title="8. 元编程"></a>8. 元编程</h4><ul>
+<li><strong>模板元编程</strong>：C++ 支持模板元编程，允许编写代码生成代码。</li>
+</ul>
+<h3 id="C-的应用领域"><a href="#C-的应用领域" class="headerlink" title="C++ 的应用领域"></a>C++ 的应用领域</h3><p>C++ 是一种功能强大且灵活的编程语言，广泛应用于多个领域。以下是 C++ 的主要应用领域：</p>
+<h4 id="1-系统编程"><a href="#1-系统编程" class="headerlink" title="1. 系统编程"></a>1. 系统编程</h4><ul>
+<li><strong>操作系统</strong>：C++ 常用于开发操作系统内核和驱动程序。</li>
+<li><strong>嵌入式系统</strong>：C++ 适用于开发嵌入式系统，如微控制器、传感器网络等。</li>
+</ul>
+<h4 id="2-游戏开发"><a href="#2-游戏开发" class="headerlink" title="2. 游戏开发"></a>2. 游戏开发</h4><ul>
+<li><strong>游戏引擎</strong>：C++ 是开发游戏引擎的首选语言，如 Unreal Engine、Unity（部分使用 C++）。</li>
+<li><strong>游戏逻辑</strong>：C++ 用于编写游戏的核心逻辑和性能关键部分。</li>
+</ul>
+<h4 id="3-高性能计算"><a href="#3-高性能计算" class="headerlink" title="3. 高性能计算"></a>3. 高性能计算</h4><ul>
+<li><strong>科学计算</strong>：C++ 常用于科学计算和数值模拟，如物理模拟、天气预报等。</li>
+<li><strong>图形处理</strong>：C++ 用于开发图形处理库和工具，如 OpenGL、DirectX。</li>
+</ul>
+<h4 id="4-金融和交易系统"><a href="#4-金融和交易系统" class="headerlink" title="4. 金融和交易系统"></a>4. 金融和交易系统</h4><ul>
+<li><strong>高频交易</strong>：C++ 用于开发高频交易系统，因其高效性和低延迟。</li>
+<li><strong>金融建模</strong>：C++ 用于金融建模和风险分析。</li>
+</ul>
+<h4 id="5-网络和通信"><a href="#5-网络和通信" class="headerlink" title="5. 网络和通信"></a>5. 网络和通信</h4><ul>
+<li><strong>网络服务器</strong>：C++ 用于开发高性能的网络服务器和通信协议。</li>
+<li><strong>实时通信</strong>：C++ 用于开发实时通信系统，如 VoIP、视频会议等。</li>
+</ul>
+<h4 id="6-数据库系统"><a href="#6-数据库系统" class="headerlink" title="6. 数据库系统"></a>6. 数据库系统</h4><ul>
+<li><strong>数据库引擎</strong>：C++ 用于开发数据库引擎和存储系统。</li>
+<li><strong>数据处理</strong>：C++ 用于开发数据处理和分析工具。</li>
+</ul>
+<h4 id="7-桌面应用"><a href="#7-桌面应用" class="headerlink" title="7. 桌面应用"></a>7. 桌面应用</h4><ul>
+<li><strong>图形用户界面（GUI）</strong>：C++ 用于开发桌面应用程序，如 Qt、MFC 等框架。</li>
+<li><strong>办公软件</strong>：C++ 用于开发办公软件，如 Microsoft Office 的部分组件。</li>
+</ul>
+<h4 id="8-人工智能和机器学习"><a href="#8-人工智能和机器学习" class="headerlink" title="8. 人工智能和机器学习"></a>8. 人工智能和机器学习</h4><ul>
+<li><strong>机器学习框架</strong>：C++ 用于开发机器学习框架和库，如 TensorFlow、PyTorch（部分使用 C++）。</li>
+<li><strong>深度学习</strong>：C++ 用于开发深度学习模型和算法。</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>C++ 是一种功能强大且灵活的编程语言，具有丰富的历史和特性。它支持多种编程范式，包括面向对象编程、泛型编程和函数式编程，广泛应用于系统编程、游戏开发、高性能计算、金融和交易系统、网络和通信、数据库系统、桌面应用、人工智能和机器学习等领域。通过不断的发展和更新，C++ 仍然是现代软件开发中不可或缺的一部分。</p>
+<p><img src="/posts/C_PLUS-%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/shisyou.jpg" alt="shisyou" loading="lazy"></p>
+<h2 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h2><h3 id="1-基本结构"><a href="#1-基本结构" class="headerlink" title="1. 基本结构"></a>1. 基本结构</h3><p>C++ 程序的基本结构包括以下几个部分：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span>  <span class="comment">// 预处理指令，包含标准输入输出库</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;  <span class="comment">// 使用标准命名空间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;  <span class="comment">// 主函数，程序的入口点</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; endl;  <span class="comment">// 输出语句</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">// 返回值，表示程序正常结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>#include &lt;iostream&gt;</code>：预处理指令，用于包含标准输入输出库。</li>
+<li><code>using namespace std;</code>：使用标准命名空间，避免每次使用标准库函数时都需要加上 <code>std::</code> 前缀。</li>
+<li><code>int main()</code>：主函数，程序的入口点。每个 C++ 程序都必须有一个 <code>main</code> 函数。</li>
+<li><code>cout &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; endl;</code>：输出语句，将字符串 “Hello, World!” 输出到控制台。</li>
+<li><code>return 0;</code>：返回值，表示程序正常结束。</li>
+</ul>
+<h3 id="2-注释"><a href="#2-注释" class="headerlink" title="2. 注释"></a>2. 注释</h3><p>C++ 支持两种注释方式：</p>
+<ul>
+<li>单行注释：<code>// 这是单行注释</code></li>
+<li>多行注释：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这是多行注释</span></span><br><span class="line"><span class="comment">可以跨越多行</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-变量和数据类型"><a href="#3-变量和数据类型" class="headerlink" title="3. 变量和数据类型"></a>3. 变量和数据类型</h3><p>C++ 支持多种数据类型：</p>
+<ul>
+<li><p>基本数据类型：</p>
+<ul>
+<li><code>int</code>：整数类型</li>
+<li><code>float</code>：单精度浮点数</li>
+<li><code>double</code>：双精度浮点数</li>
+<li><code>char</code>：字符类型</li>
+<li><code>bool</code>：布尔类型（<code>true</code> 或 <code>false</code>）</li>
+</ul>
+</li>
+<li><p>变量声明：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> age = <span class="number">25</span>;</span><br><span class="line"><span class="type">float</span> height = <span class="number">1.75</span>;</span><br><span class="line"><span class="type">char</span> grade = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line"><span class="type">bool</span> isStudent = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常量：使用 <code>const</code> 关键字定义常量</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAX_VALUE = <span class="number">100</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4-运算符"><a href="#4-运算符" class="headerlink" title="4. 运算符"></a>4. 运算符</h3><p>C++ 支持多种运算符：</p>
+<ul>
+<li>算术运算符：<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
+<li>关系运算符：<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+<li>逻辑运算符：<code>&amp;&amp;</code>, <code>||</code>, <code>!</code></li>
+<li>赋值运算符：<code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></li>
+<li>位运算符：<code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code></li>
+</ul>
+<h3 id="5-控制结构"><a href="#5-控制结构" class="headerlink" title="5. 控制结构"></a>5. 控制结构</h3><p>C++ 提供了多种控制结构来控制程序的流程：</p>
+<ul>
+<li><p>条件语句：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    <span class="comment">// 如果条件为真，执行这里的代码</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (another_condition) &#123;</span><br><span class="line">    <span class="comment">// 如果另一个条件为真，执行这里的代码</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 如果所有条件都不为真，执行这里的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环语句：</p>
+<ul>
+<li><p><code>for</code> 循环：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>while</code> 循环：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>do-while</code> 循环：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125; <span class="keyword">while</span> (condition);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><code>switch</code> 语句：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> (expression) &#123;</span><br><span class="line">    <span class="keyword">case</span> value1:</span><br><span class="line">        <span class="comment">// 如果 expression 等于 value1，执行这里的代码</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value2:</span><br><span class="line">        <span class="comment">// 如果 expression 等于 value2，执行这里的代码</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="comment">// 如果 expression 不等于任何 case 值，执行这里的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="6-函数"><a href="#6-函数" class="headerlink" title="6. 函数"></a>6. 函数</h3><p>函数是 C++ 中的基本模块，用于封装可重用的代码块。</p>
+<ul>
+<li><p>函数定义：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">return_type <span class="title">function_name</span><span class="params">(parameter_list)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 函数体</span></span><br><span class="line">    <span class="keyword">return</span> value;  <span class="comment">// 返回值（如果需要）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数调用：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> result = <span class="built_in">add</span>(<span class="number">3</span>, <span class="number">4</span>);  <span class="comment">// 调用 add 函数，返回值为 7</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="7-数组"><a href="#7-数组" class="headerlink" title="7. 数组"></a>7. 数组</h3><p>数组是用于存储多个相同类型元素的集合。</p>
+<ul>
+<li><p>数组声明：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> numbers[<span class="number">5</span>];  <span class="comment">// 声明一个包含 5 个整数的数组</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组初始化：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> numbers[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问数组元素：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> firstElement = numbers[<span class="number">0</span>];  <span class="comment">// 访问第一个元素</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="8-指针"><a href="#8-指针" class="headerlink" title="8. 指针"></a>8. 指针</h3><p>指针是 C++ 中非常重要的概念，用于存储变量的内存地址。</p>
+<ul>
+<li><p>指针声明：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> *ptr;  <span class="comment">// 声明一个指向整数的指针</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指针赋值：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line">ptr = &amp;x;  <span class="comment">// ptr 存储 x 的地址</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解引用指针：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> value = *ptr;  <span class="comment">// 获取 ptr 指向的值</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="9-类和对象"><a href="#9-类和对象" class="headerlink" title="9. 类和对象"></a>9. 类和对象</h3><p>C++ 是一种面向对象的编程语言，支持类和对象的概念。</p>
+<ul>
+<li><p>类定义：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> myVariable;  <span class="comment">// 成员变量</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">myMethod</span><span class="params">()</span> </span>&#123;  <span class="comment">// 成员函数</span></span><br><span class="line">        <span class="comment">// 方法体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象创建：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">MyClass obj;  <span class="comment">// 创建 MyClass 类的对象</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问成员：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">obj.myVariable = <span class="number">10</span>;  <span class="comment">// 访问成员变量</span></span><br><span class="line">obj.<span class="built_in">myMethod</span>();  <span class="comment">// 调用成员函数</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="10-继承和多态"><a href="#10-继承和多态" class="headerlink" title="10. 继承和多态"></a>10. 继承和多态</h3><p>C++ 支持继承和多态，这是面向对象编程的重要特性。</p>
+<ul>
+<li><p>继承：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DerivedClass</span> : <span class="keyword">public</span> BaseClass &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 派生类的成员</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多态：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">makeSound</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Animal sound&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> : <span class="keyword">public</span> Animal &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">makeSound</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Woof!&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Animal *animal = <span class="keyword">new</span> <span class="built_in">Dog</span>();</span><br><span class="line">animal-&gt;<span class="built_in">makeSound</span>();  <span class="comment">// 输出 &quot;Woof!&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="11-标准库"><a href="#11-标准库" class="headerlink" title="11. 标准库"></a>11. 标准库</h3><p>C++ 提供了丰富的标准库，包括输入输出、字符串处理、容器、算法等。</p>
+<ul>
+<li><p>标准输入输出：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    cin &gt;&gt; x;  <span class="comment">// 从标准输入读取数据</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;You entered: &quot;</span> &lt;&lt; x &lt;&lt; endl;  <span class="comment">// 输出到标准输出</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字符串处理：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">    str += <span class="string">&quot; World&quot;</span>;</span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;  <span class="comment">// 输出 &quot;Hello World&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>容器：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="12-异常处理"><a href="#12-异常处理" class="headerlink" title="12. 异常处理"></a>12. 异常处理</h3><p>C++ 支持异常处理，用于处理程序运行时可能出现的错误。</p>
+<ul>
+<li><p>异常处理：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 可能抛出异常的代码</span></span><br><span class="line">&#125; <span class="built_in">catch</span> (exception_type e) &#123;</span><br><span class="line">    <span class="comment">// 处理异常的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;Negative value&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="built_in">catch</span> (<span class="type">const</span> <span class="type">char</span>* msg) &#123;</span><br><span class="line">    cerr &lt;&lt; msg &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="13-模板"><a href="#13-模板" class="headerlink" title="13. 模板"></a>13. 模板</h3><p>C++ 支持模板，用于编写通用的代码，适用于多种数据类型。</p>
+<ul>
+<li><p>函数模板：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">add</span><span class="params">(T a, T b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类模板：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T myVariable;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="14-命名空间"><a href="#14-命名空间" class="headerlink" title="14. 命名空间"></a>14. 命名空间</h3><p>命名空间用于避免命名冲突。</p>
+<ul>
+<li><p>命名空间定义：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> MyNamespace &#123;</span><br><span class="line">    <span class="type">int</span> myVariable = <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用命名空间：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> MyNamespace;</span><br><span class="line">cout &lt;&lt; myVariable &lt;&lt; endl;  <span class="comment">// 输出 10</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="15-文件操作"><a href="#15-文件操作" class="headerlink" title="15. 文件操作"></a>15. 文件操作</h3><p>C++ 支持文件操作，用于读写文件。</p>
+<ul>
+<li>文件读写：<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">ofstream <span class="title">outFile</span><span class="params">(<span class="string">&quot;example.txt&quot;</span>)</span></span>;</span><br><span class="line">    outFile &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; endl;</span><br><span class="line">    outFile.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function">ifstream <span class="title">inFile</span><span class="params">(<span class="string">&quot;example.txt&quot;</span>)</span></span>;</span><br><span class="line">    string line;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">getline</span>(inFile, line)) &#123;</span><br><span class="line">        cout &lt;&lt; line &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    inFile.<span class="built_in">close</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>C++ 是一种功能强大且灵活的编程语言，支持多种编程范式，包括过程式编程、面向对象编程和泛型编程。掌握 C++ 的基本语法和特性是深入学习 C++ 编程的基础。通过不断实践和学习，你可以逐步掌握 C++ 的高级特性和最佳实践。</p>
+<h2 id="C-进阶"><a href="#C-进阶" class="headerlink" title="C++进阶"></a>C++进阶</h2><p>C++ 进阶内容涵盖了更高级的编程技巧和特性，包括模板编程、STL（标准模板库）、智能指针、多线程编程、异常处理、RAII（资源获取即初始化）、元编程等。以下是对这些进阶内容的详细讲解：</p>
+<h3 id="1-模板编程"><a href="#1-模板编程" class="headerlink" title="1. 模板编程"></a>1. 模板编程</h3><p>模板编程是 C++ 中的一种泛型编程技术，允许编写通用的代码，适用于多种数据类型。</p>
+<h4 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h4><p>函数模板允许定义一个通用的函数，可以处理多种数据类型。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">add</span><span class="params">(T a, T b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> result1 = <span class="built_in">add</span>(<span class="number">3</span>, <span class="number">4</span>);  <span class="comment">// 调用 add&lt;int&gt;</span></span><br><span class="line">    <span class="type">double</span> result2 = <span class="built_in">add</span>(<span class="number">3.5</span>, <span class="number">4.5</span>);  <span class="comment">// 调用 add&lt;double&gt;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h4><p>类模板允许定义一个通用的类，可以处理多种数据类型。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T myVariable;</span><br><span class="line">    <span class="built_in">MyClass</span>(T value) : <span class="built_in">myVariable</span>(value) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">MyClass&lt;<span class="type">int</span>&gt; <span class="title">obj1</span><span class="params">(<span class="number">10</span>)</span></span>;  <span class="comment">// 创建 MyClass&lt;int&gt; 对象</span></span><br><span class="line">    <span class="function">MyClass&lt;<span class="type">double</span>&gt; <span class="title">obj2</span><span class="params">(<span class="number">3.14</span>)</span></span>;  <span class="comment">// 创建 MyClass&lt;double&gt; 对象</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-STL（标准模板库）"><a href="#2-STL（标准模板库）" class="headerlink" title="2. STL（标准模板库）"></a>2. STL（标准模板库）</h3><p>STL 是 C++ 标准库的一部分，提供了丰富的容器、算法和迭代器，极大地简化了编程。</p>
+<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>STL 提供了多种容器，如 <code>vector</code>、<code>list</code>、<code>map</code>、<code>set</code> 等。</p>
+<ul>
+<li><p><code>vector</code>：动态数组</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    vec.<span class="built_in">push_back</span>(<span class="number">6</span>);  <span class="comment">// 添加元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>list</code>：双向链表</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;list&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    list&lt;<span class="type">int</span>&gt; lst = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    lst.<span class="built_in">push_back</span>(<span class="number">6</span>);  <span class="comment">// 添加元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : lst) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>map</code>：关联容器，存储键值对</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    map&lt;string, <span class="type">int</span>&gt; ages;</span><br><span class="line">    ages[<span class="string">&quot;Alice&quot;</span>] = <span class="number">25</span>;</span><br><span class="line">    ages[<span class="string">&quot;Bob&quot;</span>] = <span class="number">30</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; pair : ages) &#123;</span><br><span class="line">        cout &lt;&lt; pair.first &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; pair.second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>set</code>：集合，存储唯一元素</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    set&lt;<span class="type">int</span>&gt; s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    s.<span class="built_in">insert</span>(<span class="number">6</span>);  <span class="comment">// 添加元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : s) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>STL 提供了丰富的算法，如排序、查找、遍历等。</p>
+<ul>
+<li><p><code>sort</code>：排序算法</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line">    <span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>find</code>：查找算法</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">auto</span> it = <span class="built_in">find</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Found at index: &quot;</span> &lt;&lt; it - vec.<span class="built_in">begin</span>() &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><p>迭代器是 STL 中用于遍历容器元素的通用工具。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (vector&lt;<span class="type">int</span>&gt;::iterator it = vec.<span class="built_in">begin</span>(); it != vec.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">        cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-智能指针"><a href="#3-智能指针" class="headerlink" title="3. 智能指针"></a>3. 智能指针</h3><p>智能指针是 C++ 中用于管理动态内存的工具，可以自动释放内存，避免内存泄漏。</p>
+<ul>
+<li><p><code>unique_ptr</code>：独占所有权的智能指针</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">ptr</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>(<span class="number">10</span>))</span></span>;</span><br><span class="line">    cout &lt;&lt; *ptr &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>shared_ptr</code>：共享所有权的智能指针</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">shared_ptr&lt;<span class="type">int</span>&gt; <span class="title">ptr1</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>(<span class="number">10</span>))</span></span>;</span><br><span class="line">    shared_ptr&lt;<span class="type">int</span>&gt; ptr2 = ptr1;</span><br><span class="line">    cout &lt;&lt; *ptr1 &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; *ptr2 &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>weak_ptr</code>：弱引用智能指针，用于解决 <code>shared_ptr</code> 的循环引用问题</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">shared_ptr&lt;<span class="type">int</span>&gt; <span class="title">ptr1</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>(<span class="number">10</span>))</span></span>;</span><br><span class="line">    weak_ptr&lt;<span class="type">int</span>&gt; ptr2 = ptr1;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">auto</span> ptr = ptr<span class="number">2.l</span>ock()) &#123;</span><br><span class="line">        cout &lt;&lt; *ptr &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4-多线程编程"><a href="#4-多线程编程" class="headerlink" title="4. 多线程编程"></a>4. 多线程编程</h3><p>C++11 引入了标准的多线程库，提供了线程、互斥锁、条件变量等工具。</p>
+<ul>
+<li><p>线程</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">threadFunction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Hello from thread&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">thread <span class="title">t</span><span class="params">(threadFunction)</span></span>;</span><br><span class="line">    t.<span class="built_in">join</span>();  <span class="comment">// 等待线程结束</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>互斥锁</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">mutex mtx;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">threadFunction</span><span class="params">(<span class="type">int</span> id)</span> </span>&#123;</span><br><span class="line">    mtx.<span class="built_in">lock</span>();</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Thread &quot;</span> &lt;&lt; id &lt;&lt; <span class="string">&quot; is running&quot;</span> &lt;&lt; endl;</span><br><span class="line">    mtx.<span class="built_in">unlock</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">thread <span class="title">t1</span><span class="params">(threadFunction, <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">thread <span class="title">t2</span><span class="params">(threadFunction, <span class="number">2</span>)</span></span>;</span><br><span class="line">    t<span class="number">1.</span><span class="built_in">join</span>();</span><br><span class="line">    t<span class="number">2.</span><span class="built_in">join</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>条件变量</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;condition_variable&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">mutex mtx;</span><br><span class="line">condition_variable cv;</span><br><span class="line"><span class="type">bool</span> ready = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">workerThread</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">unique_lock&lt;mutex&gt; <span class="title">lock</span><span class="params">(mtx)</span></span>;</span><br><span class="line">    cv.<span class="built_in">wait</span>(lock, []&#123; <span class="keyword">return</span> ready; &#125;);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Worker thread is running&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">thread <span class="title">t</span><span class="params">(workerThread)</span></span>;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">lock_guard&lt;mutex&gt; <span class="title">lock</span><span class="params">(mtx)</span></span>;</span><br><span class="line">        ready = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cv.<span class="built_in">notify_one</span>();</span><br><span class="line">    t.<span class="built_in">join</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="5-异常处理-1"><a href="#5-异常处理-1" class="headerlink" title="5. 异常处理"></a>5. 异常处理</h3><p>异常处理是 C++ 中用于处理程序运行时错误的机制。</p>
+<ul>
+<li>抛出和捕获异常<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">divide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;Division by zero&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; a / b &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">divide</span>(<span class="number">10</span>, <span class="number">0</span>);</span><br><span class="line">    &#125; <span class="built_in">catch</span> (<span class="type">const</span> <span class="type">char</span>* msg) &#123;</span><br><span class="line">        cerr &lt;&lt; msg &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="6-RAII（资源获取即初始化）"><a href="#6-RAII（资源获取即初始化）" class="headerlink" title="6. RAII（资源获取即初始化）"></a>6. RAII（资源获取即初始化）</h3><p>RAII 是一种编程技术，通过对象的生命周期来管理资源，确保资源在对象销毁时自动释放。</p>
+<ul>
+<li>示例：使用 RAII 管理文件资源<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FileHandler</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">FileHandler</span>(<span class="type">const</span> string&amp; filename) : <span class="built_in">file</span>(filename, ios::out) &#123;&#125;</span><br><span class="line">    ~<span class="built_in">FileHandler</span>() &#123;</span><br><span class="line">        file.<span class="built_in">close</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">ofstream&amp; <span class="title">getFile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> file;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    ofstream file;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">FileHandler <span class="title">fh</span><span class="params">(<span class="string">&quot;example.txt&quot;</span>)</span></span>;</span><br><span class="line">    fh.<span class="built_in">getFile</span>() &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="7-元编程"><a href="#7-元编程" class="headerlink" title="7. 元编程"></a>7. 元编程</h3><p>元编程是 C++ 中的一种高级编程技术，通过编写代码生成代码。</p>
+<ul>
+<li>模板元编程<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="type">int</span> N&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Factorial</span> &#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">int</span> value = N * Factorial&lt;N - <span class="number">1</span>&gt;::value;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Factorial</span>&lt;<span class="number">0</span>&gt; &#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">int</span> value = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; Factorial&lt;<span class="number">5</span>&gt;::value &lt;&lt; endl;  <span class="comment">// 输出 120</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="8-智能指针与-RAII-结合"><a href="#8-智能指针与-RAII-结合" class="headerlink" title="8. 智能指针与 RAII 结合"></a>8. 智能指针与 RAII 结合</h3><p>智能指针与 RAII 结合使用，可以更安全地管理动态内存。</p>
+<ul>
+<li>示例：使用 <code>unique_ptr</code> 管理动态数组<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">unique_ptr&lt;<span class="type">int</span>[]&gt; <span class="title">arr</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>])</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">        arr[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">        cout &lt;&lt; arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="9-高级特性"><a href="#9-高级特性" class="headerlink" title="9. 高级特性"></a>9. 高级特性</h3><p>C++ 还提供了一些高级特性，如移动语义、完美转发、lambda 表达式等。</p>
+<ul>
+<li><p>移动语义</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>() &#123; cout &lt;&lt; <span class="string">&quot;Constructor&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="built_in">MyClass</span>(<span class="type">const</span> MyClass&amp;) &#123; cout &lt;&lt; <span class="string">&quot;Copy Constructor&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="built_in">MyClass</span>(MyClass&amp;&amp;) <span class="keyword">noexcept</span> &#123; cout &lt;&lt; <span class="string">&quot;Move Constructor&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    ~<span class="built_in">MyClass</span>() &#123; cout &lt;&lt; <span class="string">&quot;Destructor&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    MyClass obj1;</span><br><span class="line">    MyClass obj2 = <span class="built_in">move</span>(obj1);  <span class="comment">// 调用移动构造函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完美转发</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">int</span>&amp; x)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;Lvalue: &quot;</span> &lt;&lt; x &lt;&lt; endl; &#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">int</span>&amp;&amp; x)</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;Rvalue: &quot;</span> &lt;&lt; x &lt;&lt; endl; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">forward</span><span class="params">(T&amp;&amp; x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(forward&lt;T&gt;(x));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">    forward(a);  <span class="comment">// 调用 print(int&amp;)</span></span><br><span class="line">    forward(<span class="number">20</span>);  <span class="comment">// 调用 print(int&amp;&amp;)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Lambda 表达式</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    for_each(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), [](<span class="type">int</span> x) &#123; cout &lt;&lt; x &lt;&lt; <span class="string">&quot; &quot;</span>; &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>C++ 进阶内容涵盖了模板编程、STL、智能指针、多线程编程、异常处理、RAII、元编程等高级特性。掌握这些进阶内容可以帮助你编写更高效、更安全的 C++ 代码，并解决更复杂的问题。通过不断实践和学习，你可以逐步掌握这些高级特性和最佳实践。</p>
+<h2 id="C-竞赛"><a href="#C-竞赛" class="headerlink" title="C++竞赛"></a>C++竞赛</h2><p>在算法竞赛中，C++ 是一种非常流行的编程语言，因为它具有高效的性能和丰富的标准库。以下是一些在算法竞赛中常用的 C++ 语法和技巧：</p>
+<h3 id="1-输入输出优化"><a href="#1-输入输出优化" class="headerlink" title="1. 输入输出优化"></a>1. 输入输出优化</h3><p>在算法竞赛中，输入输出速度非常重要。使用 <code>cin</code> 和 <code>cout</code> 可能会比 <code>scanf</code> 和 <code>printf</code> 慢，但可以通过以下方式优化：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);  <span class="comment">// 关闭与 C 标准库的同步</span></span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">NULL</span>);  <span class="comment">// 解绑 cin 和 cout</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; n &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-快速读取输入"><a href="#2-快速读取输入" class="headerlink" title="2. 快速读取输入"></a>2. 快速读取输入</h3><p>在需要快速读取大量输入时，可以使用以下技巧：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">readInt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="type">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (ch &lt; <span class="string">&#x27;0&#x27;</span> || ch &gt; <span class="string">&#x27;9&#x27;</span>) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; ch &lt;= <span class="string">&#x27;9&#x27;</span>) &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + ch - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="built_in">readInt</span>();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-常用数据结构"><a href="#3-常用数据结构" class="headerlink" title="3. 常用数据结构"></a>3. 常用数据结构</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>数组是最基本的数据结构，用于存储相同类型的元素。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">100</span>];  <span class="comment">// 声明一个包含 100 个整数的数组</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="向量（Vector）"><a href="#向量（Vector）" class="headerlink" title="向量（Vector）"></a>向量（Vector）</h4><p>向量是动态数组，可以根据需要自动调整大小。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    vec.<span class="built_in">push_back</span>(<span class="number">6</span>);  <span class="comment">// 添加元素</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h4><p>栈是一种后进先出（LIFO）的数据结构。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; s;</span><br><span class="line">    s.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    s.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; s.<span class="built_in">top</span>() &lt;&lt; endl;  <span class="comment">// 输出 2</span></span><br><span class="line">    s.<span class="built_in">pop</span>();</span><br><span class="line">    cout &lt;&lt; s.<span class="built_in">top</span>() &lt;&lt; endl;  <span class="comment">// 输出 1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="队列（Queue）"><a href="#队列（Queue）" class="headerlink" title="队列（Queue）"></a>队列（Queue）</h4><p>队列是一种先进先出（FIFO）的数据结构。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    q.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; q.<span class="built_in">front</span>() &lt;&lt; endl;  <span class="comment">// 输出 1</span></span><br><span class="line">    q.<span class="built_in">pop</span>();</span><br><span class="line">    cout &lt;&lt; q.<span class="built_in">front</span>() &lt;&lt; endl;  <span class="comment">// 输出 2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="优先队列（Priority-Queue）"><a href="#优先队列（Priority-Queue）" class="headerlink" title="优先队列（Priority Queue）"></a>优先队列（Priority Queue）</h4><p>优先队列是一种特殊的队列，元素按照优先级排序。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>&gt; pq;</span><br><span class="line">    pq.<span class="built_in">push</span>(<span class="number">3</span>);</span><br><span class="line">    pq.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line">    pq.<span class="built_in">push</span>(<span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; pq.<span class="built_in">top</span>() &lt;&lt; endl;  <span class="comment">// 输出 3</span></span><br><span class="line">    pq.<span class="built_in">pop</span>();</span><br><span class="line">    cout &lt;&lt; pq.<span class="built_in">top</span>() &lt;&lt; endl;  <span class="comment">// 输出 2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-常用算法"><a href="#4-常用算法" class="headerlink" title="4. 常用算法"></a>4. 常用算法</h3><h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p>C++ 标准库提供了 <code>sort</code> 函数，可以对数组或向量进行排序。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>&#125;;</span><br><span class="line">    <span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p>C++ 标准库提供了 <code>lower_bound</code> 和 <code>upper_bound</code> 函数，用于在有序数组中进行二分查找。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">auto</span> it = <span class="built_in">lower_bound</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(), <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">if</span> (it != vec.<span class="built_in">end</span>()) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Found at index: &quot;</span> &lt;&lt; it - vec.<span class="built_in">begin</span>() &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-常用技巧"><a href="#5-常用技巧" class="headerlink" title="5. 常用技巧"></a>5. 常用技巧</h3><h4 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h4><p>位运算在算法竞赛中非常常见，可以用于快速计算和优化。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">5</span>;  <span class="comment">// 二进制表示为 0101</span></span><br><span class="line"><span class="type">int</span> b = <span class="number">3</span>;  <span class="comment">// 二进制表示为 0011</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> andResult = a &amp; b;  <span class="comment">// 按位与，结果为 0001</span></span><br><span class="line"><span class="type">int</span> orResult = a | b;   <span class="comment">// 按位或，结果为 0111</span></span><br><span class="line"><span class="type">int</span> xorResult = a ^ b;  <span class="comment">// 按位异或，结果为 0110</span></span><br><span class="line"><span class="type">int</span> notResult = ~a;     <span class="comment">// 按位取反，结果为 1010</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h4><p>快速幂算法用于快速计算幂运算。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">fastPow</span><span class="params">(<span class="type">long</span> <span class="type">long</span> base, <span class="type">long</span> <span class="type">long</span> exp, <span class="type">long</span> <span class="type">long</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> result = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (exp &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (exp % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            result = (result * base) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        base = (base * base) % mod;</span><br><span class="line">        exp /= <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h4><p>前缀和是一种常用的技巧，用于快速计算数组中某个区间的和。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; arr = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">prefixSum</span><span class="params">(arr.size() + <span class="number">1</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; arr.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        prefixSum[i + <span class="number">1</span>] = prefixSum[i] + arr[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> l = <span class="number">1</span>, r = <span class="number">3</span>;</span><br><span class="line">    <span class="type">int</span> sum = prefixSum[r + <span class="number">1</span>] - prefixSum[l];  <span class="comment">// 计算区间 [l, r] 的和</span></span><br><span class="line">    cout &lt;&lt; sum &lt;&lt; endl;  <span class="comment">// 输出 9</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-常用库函数"><a href="#6-常用库函数" class="headerlink" title="6. 常用库函数"></a>6. 常用库函数</h3><h4 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h4><p>C++ 标准库提供了许多常用的数学函数。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> x = <span class="number">2.0</span>;</span><br><span class="line">    <span class="type">double</span> sqrtX = <span class="built_in">sqrt</span>(x);  <span class="comment">// 平方根</span></span><br><span class="line">    <span class="type">double</span> powX = <span class="built_in">pow</span>(x, <span class="number">3</span>);  <span class="comment">// 幂运算</span></span><br><span class="line">    <span class="type">double</span> logX = <span class="built_in">log</span>(x);  <span class="comment">// 自然对数</span></span><br><span class="line">    cout &lt;&lt; sqrtX &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; powX &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; logX &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h4><p>C++ 标准库提供了丰富的字符串处理函数。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    string str = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    <span class="built_in">reverse</span>(str.<span class="built_in">begin</span>(), str.<span class="built_in">end</span>());  <span class="comment">// 反转字符串</span></span><br><span class="line">    cout &lt;&lt; str &lt;&lt; endl;  <span class="comment">// 输出 &quot;olleh&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>在算法竞赛中，C++ 的常用语法和技巧包括输入输出优化、常用数据结构（如数组、向量、栈、队列、优先队列）、常用算法（如排序、二分查找）、常用技巧（如位运算、快速幂、前缀和）以及常用库函数（如数学函数、字符串处理函数）。掌握这些内容可以帮助你在算法竞赛中高效地解决问题。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue学习笔记</title>
     <url>/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="vue核心语法"><a href="#vue核心语法" class="headerlink" title="vue核心语法"></a>vue核心语法</h1><p><img src="/posts/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx.png" alt="7e7d013ec57818bd9e0b93afee147ee13decdbe94401a0-DfOpXx" loading="lazy"></p>
@@ -1535,6 +1486,76 @@
       </categories>
       <tags>
         <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>inori</title>
+    <url>/posts/inori/</url>
+    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=31649312&auto=1&height=66"></iframe>
+]]></content>
+      <tags>
+        <tag>动漫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI-Chat</title>
+    <url>/posts/ai/</url>
+    <content><![CDATA[<style>
+/* iframe 容器样式 */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 使用视口高度 */
+    min-height: 400px; /* 最小高度 */
+    max-height: 900px; /* 最大高度 */
+    margin: 0 auto;
+    overflow: hidden;
+}
+/* iframe 样式 */
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px; /* 圆角边框 */
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.2); /* 霓虹阴影效果 */
+}
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .iframe-container {
+        height: calc(100vh - 40px); /* 移动设备减少一些高度 */
+        min-height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .iframe-container {
+        height: calc(100vh - 20px);
+        min-height: 200px;
+    }
+}
+</style>
+
+<!-- iframe 包装器 -->
+
+<div class="iframe-container">
+    <iframe src="./ai.html" frameborder="0" allowfullscreen></iframe>
+</div>
+]]></content>
+  </entry>
+  <entry>
+    <title>扫雷</title>
+    <url>/posts/saolei/</url>
+    <content><![CDATA[<iframe src="./扫雷.html" width="100%" height="600px"></iframe>
+
+]]></content>
+      <categories>
+        <category>游戏</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -2332,28 +2353,6 @@
       </categories>
       <tags>
         <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>inori</title>
-    <url>/posts/inori/</url>
-    <content><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=31649312&auto=1&height=66"></iframe>
-]]></content>
-      <tags>
-        <tag>动漫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>扫雷</title>
-    <url>/posts/saolei/</url>
-    <content><![CDATA[<iframe src="./扫雷.html" width="100%" height="600px"></iframe>
-
-]]></content>
-      <categories>
-        <category>游戏</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -3261,7 +3260,7 @@
 <h2 id="竞赛语法"><a href="#竞赛语法" class="headerlink" title="竞赛语法"></a>竞赛语法</h2><ol>
 <li>cin和cout</li>
 </ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">ios::<span class="built_in">sycn_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">清除cin和cout的同步流</span><br><span class="line">尽量不要用endl,endl=<span class="string">&#x27;\n&#x27;</span>+刷新同步流</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">ios::<span class="built_in">sycn_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">清除cin和cout的同步流</span><br><span class="line">    尽量不要用endl,endl=<span class="string">&#x27;\n&#x27;</span>+刷新同步流</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>开long long</li>
@@ -3383,7 +3382,7 @@
 </blockquote>
 <h4 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1"></a>输入样例1</h4><figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">2</span><br><span class="line">5 3</span><br><span class="line">1<span class="number"> 2 </span>3<span class="number"> 4 </span>5</span><br><span class="line">1 2</span><br><span class="line">2 5</span><br><span class="line">3 4</span><br><span class="line">7 2</span><br><span class="line">-1<span class="number"> 9 </span>-10<span class="number"> 8 </span>2<span class="number"> 6 </span>11</span><br><span class="line">1 5</span><br><span class="line">2 7</span><br></pre></td></tr></table></figure>
 
-<h4 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">3</span><br><span class="line">14</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">26</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a>输出样例1</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">14</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">26</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="comment">// 定义常量 N，表示数组的最大长度</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="comment">// 定义数组 a 和前缀和数组 pr</span></span><br><span class="line">ll a[N], pr[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 关闭同步流，加快输入输出速度</span></span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>), cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 读取测试用例的数量 T</span></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="comment">// 处理每个测试用例</span></span><br><span class="line">    <span class="keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="comment">// 读取数组长度 n 和查询次数 q</span></span><br><span class="line">        <span class="type">int</span> n, q;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; q;</span><br><span class="line">        <span class="comment">// 读取数组 a 的元素</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) cin &gt;&gt; a[i];</span><br><span class="line">        <span class="comment">// 构建前缀和数组 pr</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) pr[i] = pr[i - <span class="number">1</span>] + a[i];</span><br><span class="line">        <span class="comment">// 处理 q 次区间查询操作</span></span><br><span class="line">        <span class="keyword">while</span> (q--) &#123;</span><br><span class="line">            <span class="type">int</span> l, r;</span><br><span class="line">            cin &gt;&gt; l &gt;&gt; r;</span><br><span class="line">            <span class="comment">// 通过前缀和数组计算区间和并输出</span></span><br><span class="line">            cout &lt;&lt; pr[r] - pr[l - <span class="number">1</span>] &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 

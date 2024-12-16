@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天助手</title>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.1/dist/markdown-it.min.js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>聊天助手</h2>
+            <select id="modelSelect" class="model-select">
+                <option value="gpt-4o" selected>gpt-4o</option>
+                <option value="gpt-4o-2024-08-06">gpt-4o-2024-08-06</option>
+                <option value="claude-3.5-sonnet-20241022">claude-3.5-sonnet-20241022</option>
+                <option value="gpt-4o-mini">gpt-4o-mini</option>
+                <option value="gpt-4o-mini-2024-07-18">gpt-4o-mini-2024-07-18</option>
+            </select>
+            <select id="bgSelect" class="model-select">
+                <option value="default">默认背景</option>
+                <option value="img/bg1.jpg">碧蓝档案</option>
+                <option value="img/bg2.jpg">贞德</option>
+                <option value="img/bg3.jpg">阿尔托莉雅</option>
+                <option value="img/bg4.jpg">Saber</option>
+                <option value="img/bg5.jpg">时崎狂三</option>
+                <option value="auto" selected>自动轮播</option>
+            </select>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- 消息将在这里动态添加 -->
+        </div>
+        <div class="chat-input">
+            <div class="input-group">
+                <button id="clearButton" class="clear-button">
+                    <i class="clear-icon">🗑️</i>
+                    <span class="clear-tooltip">清空对话</span>
+                </button>
+                <textarea id="userInput" placeholder="输入你的问题..."></textarea>
+            </div>
+            <button id="sendButton">发送</button>
+        </div>
+    </div>
+</body>
+</html>
